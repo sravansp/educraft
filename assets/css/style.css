@@ -104,15 +104,7 @@
      -webkit-perspective: 1000;
 }
 
-/* .card-details3::after {
-     content: '';
-     position: absolute;
-     inset: 0;
-     background-color: rgb(255 255 255/60%);
-     backdrop-filter: blur(5px);
-     border-radius: inherit;
-     z-index: -1;
-   } */
+
 .noice-bg {
      background-image: url(../images/texture/noise-bg.png);
 }
@@ -134,9 +126,6 @@
 /*MACBOOK PRO*/
 .contenitore-css-macbook {
      width: 100%;
-     /* overflow:hidden; */
-     /* height: 100%; */
-     /* margin-top: 25vh; */
      position: relative;
 }
 
@@ -144,9 +133,6 @@
      max-width: 100%;
      /* Set the desired maximum width of the macbook */
      min-width: 99vmin;
-     /* Set the desired minimum width of the macbook */
-     /* margin: 50px auto 0; */
-     /* Align mockup to center */
 }
 
 .css-macbook div {
@@ -277,53 +263,6 @@
      height: 100%;
      border: 0;
 }
-
-/* Macbook body */
-/* .css-macbook .macbook-body {
-     position: relative;
-     width: 100%;
-     height: 0;
-     padding-bottom: 2.3%;
-     background: #e6e7e8;
-} */
-
-/* The groove */
-/* .css-macbook .macbook-body:before {
-     content: '';
-     display: block;
-     position: absolute;
-     top: 0;
-     left: 50%;
-     width: 14.0740%;
-     height: 0;
-     padding-bottom: 1.4814%;
-     margin-left: -7.037%;
-     background: #a9abae;
-
-     -webkit-border-bottom-left-radius: 7.0370% 50%;
-     -moz-border-radius-bottomleft: 7.0370% 50%;
-     border-bottom-left-radius: 7.0370% 50%;
-
-     -webkit-border-bottom-right-radius: 7.0370% 50%;
-     -moz-border-radius-bottomtight: 7.0370% 50%;
-     border-bottom-right-radius: 7.0370% 50%;
-} */
-
-/* Macbook bottom */
-/* .css-macbook .macbook-bottom-cover {
-     width: 100%;
-     height: 0;
-     padding-bottom: 0.7407%;
-     background: #a9abae;
-
-     -webkit-border-bottom-left-radius: 12% 600%;
-     -moz-border-radius-bottomleft: 12% 600%;
-     border-bottom-left-radius: 12% 600%;
-
-     -webkit-border-bottom-right-radius: 12% 600%;
-     -moz-border-radius-bottomtight: 12% 600%;
-     border-bottom-right-radius: 12% 600%;
-} */
 
 .video-ux-design {
      width: 100%;
