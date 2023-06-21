@@ -16,7 +16,7 @@ gsap.config({
 const smoother = ScrollSmoother.create({
      // wrapper: ".body",
      content: ".scroll_smoother",
-     smooth: 0.9,
+     smooth: 2,
 
 });
 /* After Adding New Content to DOM */
@@ -30,3 +30,6 @@ document.querySelector('.button').onmousemove = function (e) {
      e.target.style.setProperty('--x', x + 'px');
      e.target.style.setProperty('--y', y + 'px');
 };
+var th1 = gsap.timeline({ repeat: -1 });
+th1.to(".title_section", 30, { backgroundPosition: "-960px 0" });
+

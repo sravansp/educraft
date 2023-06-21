@@ -16,15 +16,22 @@
 
 :root {
      --primary-bg: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%);
+     --secondary-bg : #272727;
      --primary-color: #FF9900;
+     --secondary-color : #272727;
 }
 
 .primary_bg {
      background: var(--primary-bg);
 }
+.secondary_bg {
+     background: var(--secondary-bg);
+}
+
 .active_nav {
      color: var(--primary-color);
 }
+
 .btn_md {
      padding: 10px 20px;
      gap: 12px;
@@ -96,6 +103,7 @@
      -webkit-backface-visibility: hidden;
      -webkit-perspective: 1000;
 }
+
 /* .card-details3::after {
      content: '';
      position: absolute;
@@ -126,14 +134,13 @@
 /*MACBOOK PRO*/
 .contenitore-css-macbook {
      width: 100%;
-      /* overflow:hidden; */
+     /* overflow:hidden; */
      /* height: 100%; */
      /* margin-top: 25vh; */
      position: relative;
 }
 
 .css-macbook {
-     scale: 2.9;
      max-width: 100%;
      /* Set the desired maximum width of the macbook */
      min-width: 99vmin;
@@ -333,17 +340,27 @@
      -webkit-transform: translateZ(20px);
      -moz-transform: translateZ(20px);
      transform: translateZ(20px);
-     background: rgba(0,0,0,.78);
- }
- .course{
+     background: rgba(0, 0, 0, .78);
+}
+
+.course {
      background: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%);
- -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
- background-clip: text;
- }
- .button1{
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+}
+
+.button1 {
      background: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%);
- }
- .git{
+}
+
+.git {
      background: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%);
- }
+}
+
+.title_section {
+     background-image: url(https://cdn.pixabay.com/photo/2017/07/03/20/17/abstract-2468874_960_720.jpg);
+     background-attachment: fixed;
+     -webkit-text-fill-color: transparent;
+     -webkit-background-clip: text;
+}

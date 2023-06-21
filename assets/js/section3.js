@@ -139,25 +139,26 @@ video_timeline
                delay: 3000
           }
      )
-     .to(
+     .fromTo(
           ".css-macbook", {
+               scale: 2.9
+          }, {
                scale: 0.7,
-               duration: 4000,
+               duration: 9000,
                // delay: 1
           }
+          ,"-=1"
+        
      )
 
      .fromTo(
           ".mobile_screen_postion", {
                opacity: 0,
-               // stagger: 0.5,
-               // y: 100
           }, {
                duration: 5000,
                opacity: 1,
-               delay: -100,
-               // y: 0
-          }
+              
+          },"-=20"
      )
      .fromTo(
           ".lptitle_span", {
