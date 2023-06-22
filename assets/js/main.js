@@ -17,6 +17,9 @@ const smoother = ScrollSmoother.create({
      // wrapper: ".body",
      content: ".scroll_smoother",
      smooth: 2,
+     effects: true,
+     // normalizeScroll: true,
+    smoothTouch: 0.1,
 
 });
 /* After Adding New Content to DOM */
@@ -30,6 +33,36 @@ document.querySelector('.button').onmousemove = function (e) {
      e.target.style.setProperty('--x', x + 'px');
      e.target.style.setProperty('--y', y + 'px');
 };
-var th1 = gsap.timeline({ repeat: -1 });
-th1.to(".title_section", 30, { backgroundPosition: "-960px 0" });
+var th1 = gsap.timeline({
+     repeat: -1
+});
+th1.to(".title_section", 30, {
+     backgroundPosition: "-960px 0"
+});
 
+//Parallax Scrolling
+let getRatio = el => window.innerHeight / (window.innerHeight + el.offsetHeight);
+
+gsap.utils.toArray("section").forEach((section, i) => {
+     section.bg = section.querySelector(".bg");
+
+     // Give the backgrounds some random images
+       section.bg.style.backgroundImage = `url(https://picsum.photos/1600/800?random=${i})`;
+
+     // the first image (i === 0) should be handled differently because it should start at the very top.
+     // use function-based values in order to keep things responsive
+     gsap.fromTo(section.bg, {
+          backgroundPosition: () => i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px"
+     }, {
+          backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+          ease: "none",
+          scrollTrigger: {
+               trigger: section,
+               start: () => i ? "top bottom" : "top top",
+               end: "bottom top",
+               scrub: true,
+               invalidateOnRefresh: true // to make it responsive
+          }
+     });
+
+});
