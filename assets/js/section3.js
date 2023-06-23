@@ -19,6 +19,7 @@
 console.log("first");
 let section = document.getElementsByClassName("section_3");
 const boxes = document.querySelectorAll(".desktopContentSection");
+const boxesmotfirst = document.querySelectorAll(".desktopContentSection:not(:first-child)");
 
 const tl = gsap.timeline();
 boxes.forEach((box, i) => {
@@ -26,10 +27,11 @@ boxes.forEach((box, i) => {
           tl.fromTo(
                box, {
                     opacity: 0,
-                    yPercent: 100
+                    yPercent: 50
                }, {
                     opacity: 1,
                     yPercent: 0
+                    
                },
                i
           );
@@ -42,7 +44,7 @@ boxes.forEach((box, i) => {
                }, {
                     opacity: 0,
                     yPercent: -50,
-                    delay: 0.5
+                    delay: 0.1
                },
                i
           );

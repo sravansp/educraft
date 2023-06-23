@@ -1,4 +1,4 @@
-console.clear();
+// console.clear();
 const element = document.querySelector(".cursor");
 const target = document.querySelector(".target");
 const text = document.querySelector(".text");
@@ -42,25 +42,25 @@ class Cursor {
 
       if (hypotenuse < triggerDistance) {
         // look at this code to adjust the round cursor area sizing
-        TweenMax.to(this.el, 0.2, {
+        gsap.to(this.el, 0.2, {
           left: targetPosition.left - Math.sin(angle) * hypotenuse / 2,
           top: targetPosition.top - Math.cos(angle) * hypotenuse / 2,
           height: single.clientHeight,
           width: single.clientWidth });
 
-        TweenMax.to(single.querySelector(".text"), 1.2, {
+        gsap.to(single.querySelector(".text"), 1, {
           x: -(Math.sin(angle) * hypotenuse / 4),
           y: -(Math.cos(angle) * hypotenuse / 4) });
 
       } else {
-        TweenMax.to(this.el, 0.2, {
+        gsap.to(this.el, 0.2, {
           left: cursorPosition.left,
           top: cursorPosition.top,
           height: "12px",
           width: "12px" });
 
 
-        TweenMax.to(single.querySelector(".text"), 1.2, {
+        gsap.to(single.querySelector(".text"), 1, {
           x: 0,
           y: 0 });
 

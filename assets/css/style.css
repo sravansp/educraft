@@ -313,4 +313,43 @@
      background-size: cover;
      background-position: center;
      background-repeat: no-repeat;
+     overflow: hidden;
    }
+.scroll_box_main {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+}
+   .wrapper{
+     position:absolute;
+     width:150%;
+     height: 165px;
+     left:50%;
+     /* top:120px; */
+     /* background:grey; */
+     overflow:hidden;
+     cursor:pointer;
+   }
+   .wrapper .box{
+     position:absolute;
+     width: 260px;
+     border-radius: 15px;
+     height:165px;
+     background-color:green;
+     color:black;
+     font-size:40px;
+     font-weight:600;
+     line-height:50px;
+     text-align:center;
+     margin-right: 12px;
+     border-bottom:5px solid transparent;
+   }
+   .wrapper .boxes {
+     position:relative;
+     left:-250px;
+     height: auto;
+   }
+   /* .wrapper .box:hover{
+     color:green;
+     border-bottom:5px solid green;
+   } */
