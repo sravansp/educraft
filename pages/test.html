@@ -21,56 +21,76 @@
 <body>
     <div class="content">
         <section class="h-screen bg-green-100"></section>
-        <section class="h-screen">
+        <section class="h-screen overflow-hidden">
 
             <style>
-                .scroll-container {
-                    width: 100%;
-                    overflow: hidden;
-                }
-
-                .scroll-content {
+                .gallery {
+                    z-index: 1;
                     display: flex;
-                    /* Ensures the content is in a row */
-                    width: fit-content;
-                    /* Optional - Adjusts the width based on the content */
+                    flex-wrap: nowrap;
+                    overflow: visible;
+                    max-width: auto;
+                    width: 800vh;
+                    padding-bottom: 100vh;
                 }
 
-                .scroll-content img {
+                .image {
+                    width: 30vw;
+                    /* filter: saturate(0); */
+                    padding: 1rem;
+                    align-items: center;
+                    display: inline-flex;
+                }
+
+                /* .image:nth-child(2n) {
+                    width: 25vw;
+                } */
+
+                .image:hover {
+                    z-index: 99999999999 !important;
+                    filter: saturate(1);
+                }
+
+                img {
+                    /* transition: 0.3s ease-out; */
+                    overflow: hidden;
                     width: 100%;
-                    /* Optional - Adjusts the image width as needed */
-                }
-
-
-
-                .box {
-                    width: 250px;
-                    height: 160px;
-                    /* flex-shrink: 0; */
-                }
-
-                .box:nth-child(odd) {
-                    background-color: lightgray;
-                }
-
-                .box:nth-child(even) {
-                    background-color: darkgray;
                 }
             </style>
 
-            <div class="scroll-container">
-                <div class="scroll-content">
+            <div class="gallery">
+
+                <div class="image rounded-xl h-40 w-64 overflow-hidden">
                     <img src="../assets/images/scrollslider/ss1.png" alt="">
+               </div>
+                <div class="image rounded-xl h-40 w-64 overflow-hidden">
                     <img src="../assets/images/scrollslider/ss1.png" alt="">
+               </div>
+                <div class="image rounded-xl h-40 w-64 overflow-hidden">
                     <img src="../assets/images/scrollslider/ss1.png" alt="">
+               </div>
+                <div class="image rounded-xl h-40 w-64 overflow-hidden">
                     <img src="../assets/images/scrollslider/ss1.png" alt="">
+               </div>
+                <div class="image rounded-xl h-40 w-64 overflow-hidden">
                     <img src="../assets/images/scrollslider/ss1.png" alt="">
+               </div>
+                <div class="image rounded-xl h-40 w-64 overflow-hidden">
                     <img src="../assets/images/scrollslider/ss1.png" alt="">
+               </div>
+                <div class="image rounded-xl h-40 w-64 overflow-hidden">
                     <img src="../assets/images/scrollslider/ss1.png" alt="">
+               </div>
+                <div class="image rounded-xl h-40 w-64 overflow-hidden">
                     <img src="../assets/images/scrollslider/ss1.png" alt="">
+               </div>
+                <div class="image rounded-xl h-40 w-64 overflow-hidden">
                     <img src="../assets/images/scrollslider/ss1.png" alt="">
+               </div>
+                <div class="image rounded-xl h-40 w-64 overflow-hidden">
                     <img src="../assets/images/scrollslider/ss1.png" alt="">
-                </div>
+               </div>
+
             </div>
 
 
@@ -98,14 +118,61 @@
         // Import the necessary GSAP plugins
         gsap.registerPlugin(ScrollTrigger);
 
-        // ScrollTrigger configuration
-        ScrollTrigger.create({
-            trigger: ".scroll-container",
-            pin: true, // Optional - Pins the container during scrolling
-            start: "center center", // Optional - Adjusts the starting position
-            end: "+=3000", // Optional - Adjusts the end position
-            scrub: true, // Optional - Enables smooth scrolling
-            horizontal: true // Enables horizontal scrolling
+        const additionalX = {
+            val: 0
+        };
+        let additionalXAnim;
+        let offset = 0;
+        let originalImages = gsap.utils.toArray(".image");
+        const container = document.querySelector(".gallery");
+        const sliderWidth = container.offsetWidth;
+
+        // DUPLICATE IMAGES FOR LOOP
+        originalImages.forEach((image) => {
+            var clone = image.cloneNode(true);
+            container.appendChild(clone);
+        });
+
+        let images = gsap.utils.toArray(".image");
+
+        // SET ANIMATION
+        images.forEach((item) => {
+            gsap.to(item, {
+                x: "-=" + Number(sliderWidth / 2),
+                duration: 30,
+                repeat: -1,
+                ease: "none",
+                modifiers: {
+                    x: gsap.utils.unitize((x) => {
+                        offset += additionalX.val;
+                        x = (parseFloat(x) + offset) % -Number(sliderWidth * 0.5);
+                        return x;
+                    })
+                }
+            });
+        });
+
+        const imagesScrollerTrigger = ScrollTrigger.create({
+            trigger: ".gallery",
+            start: "top 50%",
+            end: "bottom 50%",
+            onUpdate: function (self) {
+                const velocity = self.getVelocity();
+                if (velocity > 0) {
+                    if (additionalXAnim) additionalXAnim.kill();
+                    additionalX.val = -velocity / 2000;
+                    additionalXAnim = gsap.to(additionalX, {
+                        val: 0
+                    });
+                }
+                if (velocity < 0) {
+                    if (additionalXAnim) additionalXAnim.kill();
+                    additionalX.val = -velocity / 4000;
+                    additionalXAnim = gsap.to(additionalX, {
+                        val: 0
+                    });
+                }
+            }
         });
     </script>
 </body>
