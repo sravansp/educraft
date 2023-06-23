@@ -1911,4 +1911,13 @@ video {
     font-size: 6rem;
     line-height: 1;
   }
+
+  .\32xl\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
+  }
+
+  .\32xl\:font-extrabold {
+    font-weight: 800;
+  }
 }
