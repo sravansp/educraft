@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educraft | A place every student should be.</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico">
+
+    <!-- TAILWIND CSS  -->
+    <link href="../dist/output.css" rel="stylesheet">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <!-- STYLE & CUSTOM CSS  -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- REMIX ICON  -->
+    <link rel="stylesheet" href="../assets/pluggins/remixicon/remixicon.css">
+</head>
+
+<body>
+    <div class="content">
+        <section class="h-screen bg-green-100"></section>
+        <section class="h-screen">
+
+            <style>
+                .scroll-container {
+                    width: 100%;
+                    overflow: hidden;
+                }
+
+                .scroll-content {
+                    display: flex;
+                    /* Ensures the content is in a row */
+                    width: fit-content;
+                    /* Optional - Adjusts the width based on the content */
+                }
+
+                .scroll-content img {
+                    width: 100%;
+                    /* Optional - Adjusts the image width as needed */
+                }
+
+
+
+                .box {
+                    width: 250px;
+                    height: 160px;
+                    /* flex-shrink: 0; */
+                }
+
+                .box:nth-child(odd) {
+                    background-color: lightgray;
+                }
+
+                .box:nth-child(even) {
+                    background-color: darkgray;
+                }
+            </style>
+
+            <div class="scroll-container">
+                <div class="scroll-content">
+                    <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    <img src="../assets/images/scrollslider/ss1.png" alt="">
+                </div>
+            </div>
+
+
+
+
+        </section>
+        <section class="h-screen bg-red-100"></section>
+        <section class="h-screen bg-blue-100"></section>
+    </div>
+
+
+
+    <div class="cursor" id="cursor"></div>
+    <script src="../assets/pluggins/jquery/jquery-3.6.3.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="../assets/pluggins/scrollsmoother/ss.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <!-- <script src="../assets/js/main.js"></script> -->
+
+
+    <script>
+        // Import the necessary GSAP plugins
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ScrollTrigger configuration
+        ScrollTrigger.create({
+            trigger: ".scroll-container",
+            pin: true, // Optional - Pins the container during scrolling
+            start: "center center", // Optional - Adjusts the starting position
+            end: "+=3000", // Optional - Adjusts the end position
+            scrub: true, // Optional - Enables smooth scrolling
+            horizontal: true // Enables horizontal scrolling
+        });
+    </script>
+</body>
+
+</html>

@@ -16,7 +16,7 @@
 //      .add(viewport())
 //  First Animation 
 // function scroll_() {
-console.log("first");
+// console.log("first");
 let section = document.getElementsByClassName("section_3");
 const boxes = document.querySelectorAll(".desktopContentSection");
 const boxesmotfirst = document.querySelectorAll(".desktopContentSection:not(:first-child)");
