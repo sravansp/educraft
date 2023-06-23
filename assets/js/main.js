@@ -13,16 +13,16 @@ gsap.config({
      }
 });
 // smooth scrolling container
-const smoother = ScrollSmoother.create({
-     // wrapper: ".body",
-     content: ".scroll_smoother",
-     smooth: 2,
-     effects: true,
-     // normalizeScroll: true,
-    smoothTouch: 0.1,
-    speed:30,
+// const smoother = ScrollSmoother.create({
+//      // wrapper: ".body",
+//      content: ".scroll_smoother",
+//      smooth: 2,
+//      effects: true,
+//      // normalizeScroll: true,
+//     smoothTouch: 0.1,
+//     speed:30,
 
-});
+// });
 /* After Adding New Content to DOM */
 // smoother.refresh();
 
