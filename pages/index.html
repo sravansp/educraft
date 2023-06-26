@@ -72,8 +72,8 @@
                <div class="content">
 
                     <section class="z-10 flex items-center justify-center h-screen bg-white section section_1">
-                         <div
-                              class="landing_wrapper h-[calc(100%_-_3%)] w-[calc(100%_-_1.5%)] rounded-[2rem] overflow-hidden relative bg-black ">
+                         <div class="landing_wrapper w-full h-screen  overflow-hidden relative bg-black ">
+                              <!-- h-[calc(100%_-_3%)] w-[calc(100%_-_1.5%)] rounded-[2rem] -->
                               <div
                                    class="circle-bg bg-[#FFC3AA] w-[564px] h-[564px] rounded-full absolute -top-60 left-[20%]">
                               </div>
@@ -149,7 +149,7 @@
                     </section>
 
 
-                    <section class="z-10 h-screen bg-white section section_2">
+                    <section class="z-10 min-h-screen bg-white section section_2">
                          <div class="flex flex-col items-center justify-between max-w-screen-xl m-auto bg-white ">
                               <!-- div contains heading,discription and about us button -->
                               <div
@@ -233,16 +233,16 @@
                                                        viewBox="0 0 390 390" fill="none"
                                                        xmlns="http://www.w3.org/2000/svg">
                                                        <path d="M0.996094 357.008C0.996094 374.681 15.323 389.008 32.9961 389.008H357.996C375.669 389.008 389.996 374.681 389.996 357.008V142.008C389.996 124.335 375.669 110.008 357.996 110.008H311.996C294.323 110.008 279.996 95.6809 279.996 78.0078V32.0078C279.996 14.3347 265.669 0.0078125 247.996 0.0078125H32.9961C15.323 0.0078125 0.996094 14.3347 0.996094 32.0078L0.996094 357.008Z"
-                                                            fill="#EFEFEF" />
+                                                            fill="#f36f37" />
                                                   </svg>
 
                                                   <div class="absolute bottom-0 p-10">
-                                                       <p class="pb-6">
+                                                       <p class="pb-6 text-white">
                                                             Lorem ipsum dolor sit amet consectetur adipisicing elit
                                                        </p>
-                                                       <p class="text-3xl font-semibold">
+                                                       <p class="text-3xl font-semibold text-white">
                                                             Future Ready Courses for
-                                                            <span class="text-[#f36f37]">Future Experts</span>
+                                                            <span class="">Future Experts</span>
                                                        </p>
                                                   </div>
 
@@ -259,7 +259,7 @@
                                                        <g clip-path="url(#clip0_101_1613)">
                                                             <path fill-rule="evenodd" clip-rule="evenodd"
                                                                  d="M40.8586 25.3125C40.7645 21.8236 40.2985 18.3546 39.4684 14.9645C41.6411 14.4128 43.7538 13.6471 45.7754 12.6786C48.5739 16.3303 50.2389 20.7232 50.5639 25.3125H40.8586ZM39.4686 39.0367C40.2985 35.6462 40.7645 32.1768 40.8586 28.6875H50.5637C50.2389 33.2767 48.574 37.6696 45.7754 41.3213C43.754 40.3527 41.6413 39.5875 39.4684 39.0368L39.4686 39.0367ZM37.1378 45.6173C37.6587 44.5282 38.1165 43.41 38.5089 42.2683C40.1946 42.6936 41.8425 43.257 43.4357 43.953C41.0259 46.2923 38.1462 48.0924 34.9877 49.234C35.8152 48.0979 36.5349 46.8871 37.1373 45.6173H37.1378ZM19.902 44.152C21.8848 48.265 24.472 50.625 27 50.625C29.528 50.625 32.1152 48.2651 34.098 44.1521C34.5026 43.307 34.8644 42.4422 35.1823 41.5609C29.765 40.6598 24.2361 40.6598 18.8188 41.5609C19.1363 42.4422 19.4978 43.3069 19.902 44.152ZM15.4905 42.2683C15.8832 43.4101 16.3413 44.5283 16.8626 45.6173C17.4647 46.8873 18.1844 48.0981 19.0121 49.234C15.8537 48.0922 12.974 46.2921 10.5641 43.953C12.157 43.2572 13.8046 42.6937 15.4901 42.2683H15.4905ZM13.1424 28.6875C13.2359 32.1769 13.7016 35.6463 14.5317 39.0368C12.3588 39.5874 10.2461 40.3526 8.22466 41.3213C5.4261 37.6696 3.76116 33.2767 3.43638 28.6875H13.1424ZM14.5317 14.9641C13.7015 18.3543 13.2357 21.8234 13.1424 25.3125H3.43638C3.76131 20.7233 5.42623 16.3304 8.22466 12.6786C10.2463 13.6472 12.359 14.4129 14.5317 14.9645V14.9641ZM16.8626 8.38287C16.3413 9.47169 15.8832 10.5896 15.4905 11.7312C13.8049 11.3061 12.1573 10.7426 10.5645 10.0464C12.9745 7.70758 15.8542 5.90774 19.0125 4.76624C18.1842 5.90179 17.4642 7.11257 16.8621 8.38266L16.8626 8.38287ZM37.4825 28.6875C37.3711 32.0931 36.9236 35.357 36.1738 38.3121C30.1048 37.2422 23.8955 37.2422 17.8265 38.3121C17.0761 35.357 16.6294 32.0931 16.5187 28.6875H37.4825ZM16.5185 25.3125C16.6294 21.9068 17.0761 18.6429 17.8263 15.6878C20.8545 16.2257 23.9244 16.4941 27 16.4897C30.0757 16.4939 33.1457 16.2254 36.174 15.6873C36.9234 18.6423 37.3711 21.9059 37.4825 25.3125H16.5185ZM34.098 9.84878C32.1152 5.73423 29.5284 3.375 27 3.375C24.4716 3.375 21.8848 5.73476 19.902 9.8493C19.4977 10.6937 19.1363 11.5581 18.8192 12.439C21.5224 12.8934 24.2589 13.1195 27 13.115C29.7416 13.1193 32.4788 12.893 35.1825 12.4385C34.8648 11.5575 34.5029 10.6932 34.098 9.84878ZM37.1383 8.38276C36.5362 7.11278 35.8165 5.90195 34.9886 4.76613C38.1471 5.90747 41.0268 7.70733 43.4367 10.0463C41.8436 10.7426 40.1957 11.3061 38.5098 11.7311C38.1174 10.5896 37.6596 9.47163 37.1387 8.38276H37.1383ZM27 0C12.1116 0 0 12.1114 0 27C0 41.8886 12.1116 54 27 54C41.8884 54 54 41.8879 54 27C54 12.1121 41.888 0 27 0Z"
-                                                                 fill="#070707" />
+                                                                 fill="#FFFFFF" />
                                                        </g>
                                                        <defs>
                                                             <clipPath id="clip0_101_1613">
@@ -595,14 +595,185 @@
                          </div>
                     </section>
 
-                    <section class="z-10 h-screen section section_7 m-0 overflow-x-hidden flex items-center">
+                    <section
+                         class="z-10 h-screen section section_7 m-0 overflow-x-hidden flex items-center justify-center">
 
-               
+                         <h3 class="text-secondary">section 7 - Image Gallery</h3>
 
                     </section>
 
-                    <section class="z-10 flex items-center justify-center h-screen section section_8">
-                         <h3 class="text-secondary">section 8 - Top Students</h3>
+                    <section class="z-10 max-w-screen-lg m-auto h-screen section section_8">
+                         <div class="wrapper_container">
+                              <div class="flex justify-between items-center">
+                                   <p class="text-5xl font-bold text-secondary">Our November’s <br>
+                                        Superstar
+                                   </p>
+                                   <div class="h-[1px] w-[420px] bg-slate-300">
+
+                                   </div>
+                                   <div>
+                                        <button class="btn_md primary_bg flex items-center justify-between ">
+                                             <span>See courses</span>
+                                             <i class="ri-arrow-right-s-line"></i>
+                                        </button>
+                                   </div>
+                              </div>
+                              <div class="flex justify-between mt-16">
+                                   <!-- image1----------- -->
+
+
+                                   <div>
+                                        <div class="flex justify-center h-[286px]">
+                                             <img src="../assets/images/students/Group 427319117.png">
+                                        </div>
+                                        <div class="flex justify-between w-[280px] mt-5">
+                                             <div>
+                                                  <p class="text-orange-500 font-bold ">SCORED 76</p>
+
+                                             </div>
+                                             <div class="flex w-[110px] justify-between">
+                                                  <div>
+                                                       <p class="text-gray-400 text-sm">Age</p>
+                                                  </div>
+                                                  <div>
+                                                       <p class="font-semibold text-sm">8 years</p>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+                                        <div class="flex justify-between w-[280px]">
+                                             <div>
+                                                  <p class="text-gray-500 text-[11px]">MBZIRC 2023</p>
+                                             </div>
+                                             <div class="flex w-[110px] justify-between">
+                                                  <div>
+                                                       <p class="text-gray-400 text-sm">Grade</p>
+                                                  </div>
+                                                  <div class="pr-10">
+                                                       <p class="font-semibold text-sm">2</p>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+                                        <div class="flex justify-between w-[280px]">
+                                             <div>
+                                                  <p class="text-[13px]">Sahil Soleman</p>
+                                             </div>
+                                             <div class="flex w-[110px] justify-between">
+                                                  <div>
+                                                       <p class="text-gray-400 text-sm">From</p>
+                                                  </div>
+                                                  <div class="pl-3">
+                                                       <p class="font-semibold text-sm">Sharjah</p>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+
+                                   </div>
+                                   <!-- image2--------------- -->
+                                   <div class="">
+                                        <div class="flex justify-center h-[286px]">
+                                             <img src="../assets/images/students/Group 427319118.png">
+                                        </div>
+                                        <div class="flex justify-between w-[280px] mt-5">
+                                             <div>
+                                                  <p class="text-orange-500 font-bold ">SCORED 76</p>
+
+                                             </div>
+                                             <div class="flex w-[110px] justify-between">
+                                                  <div>
+                                                       <p class="text-gray-400 text-sm">Age</p>
+                                                  </div>
+                                                  <div>
+                                                       <p class="font-semibold text-sm">8 years</p>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+                                        <div class="flex justify-between w-[280px]">
+                                             <div>
+                                                  <p class="text-gray-500 text-[11px]">MBZIRC 2023</p>
+                                             </div>
+                                             <div class="flex w-[110px] justify-between">
+                                                  <div>
+                                                       <p class="text-gray-400 text-sm">Grade</p>
+                                                  </div>
+                                                  <div class="pr-10">
+                                                       <p class="font-semibold text-sm">2</p>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+                                        <div class="flex justify-between w-[280px]">
+                                             <div>
+                                                  <p class="text-[13px]">Sahil Soleman</p>
+                                             </div>
+                                             <div class="flex w-[110px] justify-between">
+                                                  <div>
+                                                       <p class="text-gray-400 text-sm">From</p>
+                                                  </div>
+                                                  <div class="pl-3">
+                                                       <p class="font-semibold text-sm">Sharjah</p>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+
+                                   </div>
+                                   <!-- image3---------- -->
+                                   <div>
+                                        <div class="flex justify-center h-[286px]">
+                                             <img src="../assets/images/students/Group 427319119.png">
+                                        </div>
+                                        <div class="flex justify-between w-[280px] mt-5">
+                                             <div>
+                                                  <p class="text-orange-500 font-bold ">SCORED 76</p>
+
+                                             </div>
+                                             <div class="flex w-[110px] justify-between">
+                                                  <div>
+                                                       <p class="text-gray-400 text-sm">Age</p>
+                                                  </div>
+                                                  <div>
+                                                       <p class="font-semibold text-sm">8 years</p>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+                                        <div class="flex justify-between w-[280px]">
+                                             <div>
+                                                  <p class="text-gray-500 text-[11px]">MBZIRC 2023</p>
+                                             </div>
+                                             <div class="flex w-[110px] justify-between">
+                                                  <div>
+                                                       <p class="text-gray-400 text-sm">Grade</p>
+                                                  </div>
+                                                  <div class="pr-10">
+                                                       <p class="font-semibold text-sm">2</p>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+                                        <div class="flex justify-between w-[280px]">
+                                             <div>
+                                                  <p class="text-[13px]">Sahil Soleman</p>
+                                             </div>
+                                             <div class="flex w-[110px] justify-between">
+                                                  <div>
+                                                       <p class="text-gray-400 text-sm">From</p>
+                                                  </div>
+                                                  <div class="pl-3">
+                                                       <p class="font-semibold text-sm">Sharjah</p>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+
+                                   </div>
+
+                              </div>
+                         </div>
                     </section>
 
                     <section
@@ -611,8 +782,12 @@
                          <h3 class="text-secondary">section 9 - Testimonial</h3>
                          <!-- </div> -->
                     </section>
-
-                    <section class="h-[84vh] section section_10 relative overflow-hidden">
+                    <section class="z-10 flex items-center justify-center h-screen section section_10">
+                         <!-- <div class="bg"> -->
+                         <h3 class="text-secondary">section 10 - Accordiaon </h3>
+                         <!-- </div> -->
+                    </section>
+                    <section class="h-[84vh] section section_11 relative overflow-hidden">
                          <div class="parallax-container">
                               <div class="parallax-video">
                                    <video class=" " autoplay muted loop poster="../assets/videos/hero.gif"
@@ -624,16 +799,46 @@
 
                     </section>
 
-                    <section class="z-10 flex items-center justify-center h-screen section section_11">
-                         <!-- <div class="bg"> -->
-                         <h3 class="text-secondary">section 11 - Testimonial</h3>
-                         <!-- </div> -->
-                    </section>
+                    <section class="z-10 max-w-screen-lg m-auto section section_12">
+                         <div class="flex mt-28 mb-14 justify-between">
+                              <div>
+                                   <div>
+                                        <p class="font-bold text-4xl ">Start your free <br> 7 days trial</p>
+                                        <p class="mt-7 font-bold">$5.99/month after trial ends</p>
+                                   </div>
+                                   <div class="mt-7">
+                                        <button class="btn_md primary_bg"> Join </button>
+                                   </div>
+                              </div>
 
-                    <section class="z-10 flex items-center justify-center h-screen section section_12">
-                         <!-- <div class="bg"> -->
-                         <h3 class="text-secondary">section 12 - </h3>
-                         <!-- </div> -->
+                              <div class="text-base flex flex-col gap-10">
+                                   <p class="font-bold">You will get...</p>
+                                   <div class="flex flex-col gap-10 childfeatures">
+                                        <p class="font-light childsf">unlimited access to 500+ games</p>
+                                        <div class="flex childsf">
+                                             <p class="font-light">New arrivals every month</p>
+                                             <img class="pl-1" src="../assets/images/fire.svg">
+                                        </div>
+                                        <div class="flex childsf ">
+                                             <p class="font-light">Tools to develop new literacy,numbers and soft skills
+                                             </p>
+                                             <img class="w-[80px] pl-10" src="../assets/images/circle.svg">
+
+                                        </div>
+
+                                        <p class="font-light childsf">Resources to make your kids confident & ready for
+                                             school
+                                        </p>
+                                        <p class="font-light childsf">Hours of entertainment available offline</p>
+                                        <p class="font-light childsf">No ads,no in-app purchases</p>
+
+                                        <div class="flex childsf">
+                                             <p class="font-light">Meaningful screen time</p>
+                                             <img class="w-[30px] pl-3" src="../assets/images/heart-sharp.svg" alt="">
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
                     </section>
 
                     <section

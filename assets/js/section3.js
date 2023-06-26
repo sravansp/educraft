@@ -1,22 +1,4 @@
-// $('div').click(function(){
-//      TweenMax.staggerTo("div", 1, {left:"632px", onComplete:goBack}, 0.5);
-//    });
 
-//   function goBack(){
-//        TweenMax.staggerTo("div", 1, {left:"0px"}, 0.5);
-//    };
-
-
-
-
-// const main = gsap.timeline();
-
-// main
-// .add(scroll_())
-//      .add(viewport())
-//  First Animation 
-// function scroll_() {
-// console.log("first");
 let section = document.getElementsByClassName("section_3");
 const boxes = document.querySelectorAll(".desktopContentSection");
 const boxesmotfirst = document.querySelectorAll(".desktopContentSection:not(:first-child)");
@@ -149,7 +131,6 @@ video_timeline
                duration: 9000,
                // delay: 1
           }
-          ,"-=1"
         
      )
 
@@ -158,9 +139,10 @@ video_timeline
                opacity: 0,
           }, {
                duration: 5000,
+               delay: -5000,
                opacity: 1,
               
-          },"-=20"
+          }
      )
      .fromTo(
           ".lptitle_span", {
@@ -171,7 +153,7 @@ video_timeline
                duration: 4000,
                opacity: 1,
                stagger: 4000,
-               delay: -300,
+               delay: -4500,
                y: 0
           }
      )
