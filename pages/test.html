@@ -20,11 +20,49 @@
 
 <body>
     <div class="content">
-        <section class="h-screen bg-green-100"></section>
+        <section class="h-screen bg-white">
+            <div class="container">
+                <div class="card">
+                    <div class="box">
+                        <div class="icon bg-white">
+                            <div class="iconbox">
+
+                            </div>
+                        </div>
+                        <div class="content flex flex-col gap-5 absolute p-8 top-[35%]">
+                            <!-- <h3>Design</h3> -->
+                            <p class="text-xl text-white">
+                                This program will add more value to ICT/Computer science classes.
+                            </p>
+                            <h1 class="text-3xl text-white font-bold">Enhancing ICT/CS classes enjoyment for students
+                            </h1>
+                            <!-- <a href="#">Read More</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="h-screen overflow-hidden">
 
             <style>
                 .gallery {
+                    z-index: 1;
+                    display: flex;
+                    flex-direction: column;
+                    width: 800vh;
+                    /* padding-bottom: 100vh; */
+                }
+
+                .top_imgs {
+                    z-index: 1;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    overflow: visible;
+                    max-width: auto;
+                    width: 800vh;
+                }
+
+                .bottom_imgs {
                     z-index: 1;
                     display: flex;
                     flex-wrap: nowrap;
@@ -35,9 +73,19 @@
                 }
 
                 .image {
-                    width: 30vw;
+                    /* width: 25vw; */
                     /* filter: saturate(0); */
-                    padding: 1rem;
+                    /* padding: 1rem; */
+                    margin-right: 16px;
+                    align-items: center;
+                    display: inline-flex;
+                }
+
+                .image2 {
+                    /* width: 25vw; */
+                    /* filter: saturate(0); */
+                    /* padding: 1rem; */
+                    margin-right: 16px;
                     align-items: center;
                     display: inline-flex;
                 }
@@ -51,46 +99,216 @@
                     filter: saturate(1);
                 }
 
-                img {
+                .gallery img {
                     /* transition: 0.3s ease-out; */
                     overflow: hidden;
                     width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    height: 100%;
+                }
+
+
+
+
+                .container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 5rem;
+                }
+
+                .container .card {
+                    position: relative;
+                    width: 390px;
+                    height: 390px;
+                    /* background: var(--clr); */
+                    border-radius: 20px;
+                    /* border-top-left-radius: 70px; */
+                    overflow: hidden;
+                }
+
+                .container .card .box {
+                    position: absolute;
+                    inset: 10px;
+                    /* background: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%); */
+                    /* background: linear-gradient(312deg, #FF9900 8.95%, #F06445 134.14%); */
+                    background: #EFEFEF;
+                    border-radius: 30px;
+                    transition: 0.5s all ease;
+                }
+
+                .container .card .box:hover {
+                    background: linear-gradient(312deg, #FF9900 8.95%, #F06445 134.14%);
+                    transition: 0.5s all ease;
+                }
+
+                .container .card .box .icon {
+                    position: absolute;
+                    width: 140px;
+                    height: 140px;
+                    /* background: var(--clr); */
+                    border-bottom-left-radius: 30%;
+                    transition: 0.5s;
+                    right: 0;
+                }
+
+                .container .card .box .icon::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -30px;
+                    right: 0;
+                    width: 30px;
+                    height: 30px;
+                    background: transparent;
+                    border-top-right-radius: 30px;
+                    box-shadow: 6px -5px 0 5px #ffffff;
+                }
+
+                .container .card .box .icon::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 140px;
+                    width: 30px;
+                    height: 30px;
+                    background: transparent;
+                    border-top-right-radius: 30px;
+                    box-shadow: 5px -5px 0 5px #ffffff;
+                }
+
+                .container .card .box .icon .iconbox {
+                    position: absolute;
+                    inset: 15px;
+                    background: #EFEFEF;
+                    border-radius: 30%;
+                    border-top-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    top: 0;
+                    right: 0;
+                    font-weight: 600;
+                }
+
+                .container .card .box .icon .iconbox ion-icon {
+                    font-size: 4rem;
+                    color: var(--clr);
+                    --ionicon-stroke-width: 20px;
+                }
+
+                /* .container .card .box .content {
+                    position: absolute;
+                    top: 150px;
+                    padding: 20px;
+                    text-align: center;
+                } */
+
+                .container .card .box .content h3 {
+                    color: var(--clr);
+                    font-size: 1.35rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 0.12rem;
+                }
+
+                /* .container .card .box .content p {
+                    color: #FAFAFA;
+                    font-size: 0.95rem;
+                    opacity: 0.75;
+                    margin: 0 0 10px;
+                } */
+
+                .container .card .box .content a {
+                    background: var(--clr);
+                    display: inline-block;
+                    padding: 10px 25px;
+                    text-decoration: none;
+                    color: #333;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    border-radius: 30px;
+                    transition: 0.5s;
+                }
+
+                .container .card .box .content a:hover {
+                    letter-spacing: 0.2rem;
+                }
+
+                @media only screen and (max-width: 1080px) {
+                    .container {
+                        padding: 2rem 1rem;
+                    }
                 }
             </style>
-
             <div class="gallery">
+                <div class="top_imgs">
 
-                <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                    <img src="../assets/images/scrollslider/ss1.png" alt="">
-               </div>
-                <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                    <img src="../assets/images/scrollslider/ss1.png" alt="">
-               </div>
-                <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                    <img src="../assets/images/scrollslider/ss1.png" alt="">
-               </div>
-                <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                    <img src="../assets/images/scrollslider/ss1.png" alt="">
-               </div>
-                <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                    <img src="../assets/images/scrollslider/ss1.png" alt="">
-               </div>
-                <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                    <img src="../assets/images/scrollslider/ss1.png" alt="">
-               </div>
-                <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                    <img src="../assets/images/scrollslider/ss1.png" alt="">
-               </div>
-                <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                    <img src="../assets/images/scrollslider/ss1.png" alt="">
-               </div>
-                <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                    <img src="../assets/images/scrollslider/ss1.png" alt="">
-               </div>
-                <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                    <img src="../assets/images/scrollslider/ss1.png" alt="">
-               </div>
-
+                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    </div>
+                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    </div>
+                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    </div>
+                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    </div>
+                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    </div>
+                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    </div>
+                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    </div>
+                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    </div>
+                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    </div>
+                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss1.png" alt="">
+                    </div>
+                </div>
+                <div class="bottom_imgs mt-6">
+                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss2.png" alt="">
+                    </div>
+                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss2.png" alt="">
+                    </div>
+                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss2.png" alt="">
+                    </div>
+                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss2.png" alt="">
+                    </div>
+                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss2.png" alt="">
+                    </div>
+                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss2.png" alt="">
+                    </div>
+                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss2.png" alt="">
+                    </div>
+                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss2.png" alt="">
+                    </div>
+                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss2.png" alt="">
+                    </div>
+                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
+                        <img src="../assets/images/scrollslider/ss2.png" alt="">
+                    </div>
+                </div>
             </div>
 
 
@@ -124,6 +342,7 @@
         let additionalXAnim;
         let offset = 0;
         let originalImages = gsap.utils.toArray(".image");
+        let originalImages2 = gsap.utils.toArray(".image2");
         const container = document.querySelector(".gallery");
         const sliderWidth = container.offsetWidth;
 
@@ -132,15 +351,20 @@
             var clone = image.cloneNode(true);
             container.appendChild(clone);
         });
+        originalImages2.forEach((image) => {
+            var clone = image.cloneNode(true);
+            container.appendChild(clone);
+        });
 
         let images = gsap.utils.toArray(".image");
+        let images2 = gsap.utils.toArray(".image2");
 
         // SET ANIMATION
         images.forEach((item) => {
             gsap.to(item, {
                 x: "+=" - Number(sliderWidth / 2),
                 duration: 30,
-                repeat: 1,
+                repeat: -1,
                 ease: "none",
                 modifiers: {
                     x: gsap.utils.unitize((x) => {
@@ -148,7 +372,24 @@
                         x = (parseFloat(x) + offset) % -Number(sliderWidth * 0.5);
                         // console.log(x);
                         return x;
-                    
+
+                    })
+                }
+            });
+        });
+        images2.forEach((item) => {
+            gsap.to(item, {
+                x: "+=" - Number(sliderWidth / 2),
+                duration: 30,
+                repeat: -1,
+                ease: "none",
+                modifiers: {
+                    x: gsap.utils.unitize((x) => {
+                        offset += additionalX.val;
+                        x = (parseFloat(x) + offset) % -Number(sliderWidth * 0.5);
+                        // console.log(x);
+                        return x;
+
                     })
                 }
             });

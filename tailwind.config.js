@@ -4,7 +4,8 @@ module.exports = {
     './pages/index.html',
     "./pages/courses.html",
     "./pages/contact.html",
-    "./pages/test.html"
+    "./pages/test.html",
+    "./pages/programs.html",
   ],
   theme: {
     extend: {

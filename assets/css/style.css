@@ -16,14 +16,15 @@
 
 :root {
      --primary-bg: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%);
-     --secondary-bg : #272727;
+     --secondary-bg: #272727;
      --primary-color: #FF9900;
-     --secondary-color : #272727;
+     --secondary-color: #272727;
 }
 
 .primary_bg {
      background: var(--primary-bg);
 }
+
 .secondary_bg {
      background: var(--secondary-bg);
 }
@@ -51,6 +52,7 @@
      text-align: center;
      /* letter-spacing: -0.509404px; */
 }
+
 
 .button {
      position: relative;
@@ -303,14 +305,16 @@
      -webkit-text-fill-color: transparent;
      -webkit-background-clip: text;
 }
+
 .bg {
      position: absolute;
      top: 0;
      left: 0;
      z-index: -1;
-     overflow: hidden; 
-   }
- 
+     overflow: hidden;
+}
+
+
 .bg-image1 {
      width: 100%;
      height: 100%;
@@ -319,29 +323,29 @@
      background-position: center;
      background-repeat: no-repeat;
      overflow: hidden;
-   }
+}
 
 
-   .parallax-container {
+.parallax-container {
      height: 100vh;
      overflow: hidden;
-   }
-   
-   .parallax-video {
+}
+
+.parallax-video {
      position: relative;
      height: 200%;
      width: 100%;
-   }
-   
-   .parallax-video video {
+}
+
+.parallax-video video {
      position: absolute;
      top: 0;
      left: 0;
      width: 100%;
      height: auto;
      transform: translate3d(0, 0, 0);
-   }
-   
+}
+
 /* .childfeatures .childsf::after {
      content: "";
      height: 1px;
