@@ -26,6 +26,16 @@ const smoother = ScrollSmoother.create({
 /* After Adding New Content to DOM */
 smoother.refresh();
 
+
+/* Navbar Fixed top by scroll Down*/
+
+
+
+
+
+
+
+// Navbar button 
 document.querySelector('.button').onmousemove = function (e) {
 
      var x = e.pageX - e.target.offsetLeft;

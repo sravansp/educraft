@@ -26,7 +26,7 @@ boxes.forEach((box, i) => {
                }, {
                     opacity: 0,
                     yPercent: -50,
-                    delay: 0.1
+                    delay: 0.3
                },
                i
           );

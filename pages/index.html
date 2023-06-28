@@ -23,7 +23,7 @@
      <div class="mx-auto scroll_smoother">
           <header class="mx-auto max-w-screen-2xl">
                <nav id="navbar"
-                    class="navbar absolute top-0 flex items-center justify-between gap-[20px] h-32 transition duration-300 pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-[6%] md:pr-[6%] 2xl:pl-20 2xl:pr-20  z-50 bg-opacity-50 w-full max-w-screen-2xl mx-auto">
+                    class="navbar fixed top-0 flex items-center justify-between gap-[20px] h-32 transition duration-300 pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-[6%] md:pr-[6%] 2xl:pl-20 2xl:pr-20  z-50 bg-opacity-50 w-full max-w-screen-2xl mx-auto">
                     <div class="flex items-center justify-between gap-32 max-w-screen-2xl">
                          <div class="logo_animation ">
                               <div class="relative flex items-center justify-center gap-2 header_logo">
@@ -149,41 +149,40 @@
                     </section>
 
 
-                    <section class="z-10 min-h-screen bg-white section section_2">
-                         <div class="flex flex-col items-center justify-between max-w-screen-xl m-auto bg-white ">
-                              <!-- div contains heading,discription and about us button -->
+                    <section class="z-10 min-h-screen bg-white section section_2 my-auto">
+                         <div
+                              class="flex flex-col items-center min-h-screen justify-between max-w-screen-xl m-auto bg-white py-20 gap-8 px-8">
                               <div
-                                   class="relative flex flex-col justify-between w-full h-full mb-10 lg:flex lg:flex-row">
+                                   class="relative flex flex-col justify-between w-full h-full mb-10 lg:flex lg:flex-row gap-10">
                                    <div
-                                        class="capitalize text-6xl font-semibold leading-[60px] relative w-full pt-6 text-secondary">
-                                        <span class="relative">Educraft
-                                             <img class="absolute top-" src="../assets/images/2 lines.png" alt="" />
-                                        </span>
-                                        Real-World <br />
-                                        robotics education
+                                        class="capitalize text-3xl text-center lg:text-start lg:text-5xl font-semibold lg:leading-[60px] lg:w-2/5 relative w-full  text-secondary">
+                                        <h1 class="relative">Educraft classroom integrated robotics Training
+                                        </h1>
+                                        <img class="absolute top-[22%] hidden lg:block"
+                                             src="../assets/images/2 lines.png" alt="" />
                                    </div>
 
-                                   <div
-                                        class="w-full lg:w-[1000px] lg:ml-10 flex flex-col justify-center items-center lg:flex lg:flex-col lg:items-start">
-                                        <div class="py-5 text">
-                                             Lorem ipsum dolor sit amet consectetur, adipisicing
-                                             elit.Quaearchitecto dolorem debitis minus est consectetur,
-                                             adipisicing elit. Quae architectodolorem debitis minus est
-                                             adipisicing elit. Quae architecto dolorem debitis minus est
-                                        </div>
+                                   <div class="w-full flex flex-col justify-center lg:items-start lg:w-2/5">
+                                        <p class="text-lg flex-wrap">
+                                             Our program for individual and school include hands on
+                                             microbit, scratch, robotics, ardiuno, RasperiPi, Tinkercard and classes on
+                                             IOT,
+                                             Ai, AR,VR and other Technologies to help to students understand connection
+                                             and relevants between the school topic and real world`
+                                        </p>
 
-                                        <button class="pt-10 font-semibold text-orange-500">
+                                        <a href="" class="pt-10 font-semibold text-orange-500">
                                              More About Us
-                                        </button>
+                                        </a>
                                    </div>
                               </div>
 
                               <div class="flex flex-col justify-between gap-20 xl:flex xl:flex-row">
                                    <!-- card1 -->
                                    <a href="">
-                                        <div class="flex flex-wrap w-full gap-10 mt-12 sm:mt-0">
-                                             <div class="h-[370px] w-[370px] relative">
-                                                  <svg class="absolute curve-shape parent" width="370" height="370"
+                                        <div class="flex flex-wrap w-full gap-10 ">
+                                             <div class="h-[350px] w-[350px] relative">
+                                                  <svg class="absolute curve-shape parent" width="350" height="350"
                                                        viewBox="0 0 389 389" fill="none"
                                                        xmlns="http://www.w3.org/2000/svg">
                                                        <path d="M32 0C14.3269 0 0 14.3269 0 32V357C0 374.673 14.3269 389 32 389H247C264.673 389 279 374.673 279 357V311C279 293.327 293.327 279 311 279H357C374.673 279 389 264.673 389 247V32C389 14.3269 374.673 0 357 0H32Z"
@@ -200,7 +199,7 @@
                                                        </p>
                                                   </div>
                                                   <div
-                                                       class="h-[90px] w-[90px] bg-[#efefef] rounded-3xl absolute bottom-0 right-0 flex justify-center items-center">
+                                                       class="h-[85px] w-[85px] bg-[#efefef] rounded-3xl absolute bottom-0 right-0 flex justify-center items-center">
                                                        <div class="">
                                                             <img src="../assets/images/arows25.png" alt="" />
                                                        </div>
@@ -228,8 +227,8 @@
                                    <!-- card2 -->
                                    <a href="">
                                         <div class="flex flex-wrap w-full gap-10">
-                                             <div class="h-[370px] w-[370px] relative">
-                                                  <svg class="absolute curve-shape" width="370" height="370"
+                                             <div class="h-[350px] w-[350px] relative">
+                                                  <svg class="absolute curve-shape" width="350" height="350"
                                                        viewBox="0 0 390 390" fill="none"
                                                        xmlns="http://www.w3.org/2000/svg">
                                                        <path d="M0.996094 357.008C0.996094 374.681 15.323 389.008 32.9961 389.008H357.996C375.669 389.008 389.996 374.681 389.996 357.008V142.008C389.996 124.335 375.669 110.008 357.996 110.008H311.996C294.323 110.008 279.996 95.6809 279.996 78.0078V32.0078C279.996 14.3347 265.669 0.0078125 247.996 0.0078125H32.9961C15.323 0.0078125 0.996094 14.3347 0.996094 32.0078L0.996094 357.008Z"
@@ -247,7 +246,7 @@
                                                   </div>
 
                                                   <div
-                                                       class="h-[90px] w-[90px] bg-[#efefef] rounded-3xl absolute right-0 flex justify-center items-center">
+                                                       class="h-[85px] w-[85px] bg-[#efefef] rounded-3xl absolute right-0 flex justify-center items-center">
                                                        <div class="">
                                                             <img src="../assets/images/arows25.png" alt="" />
                                                        </div>
@@ -274,8 +273,8 @@
                                    <!-- card3 -->
                                    <a href="">
                                         <div class="flex flex-wrap w-full gap-10">
-                                             <div class="h-[370px] w-[370px] relative">
-                                                  <svg class="absolute" width="370" height="370" viewBox="0 0 389 389"
+                                             <div class="h-[350px] w-[350px] relative">
+                                                  <svg class="absolute" width="350" height="350" viewBox="0 0 389 389"
                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
                                                        <path d="M32 0C14.3269 0 0 14.3269 0 32V357C0 374.673 14.3269 389 32 389H247C264.673 389 279 374.673 279 357V311C279 293.327 293.327 279 311 279H357C374.673 279 389 264.673 389 247V32C389 14.3269 374.673 0 357 0H32Z"
                                                             fill="#EFEFEF" />
@@ -292,7 +291,7 @@
                                                        </p>
                                                   </div>
                                                   <div
-                                                       class="h-[90px] w-[90px] bg-[#efefef] rounded-3xl absolute bottom-0 right-0 flex justify-center items-center">
+                                                       class="h-[85px] w-[85px] bg-[#efefef] rounded-3xl absolute bottom-0 right-0 flex justify-center items-center">
                                                        <div class="">
                                                             <img src="../assets/images/arows25.png" alt="" />
                                                        </div>
@@ -317,8 +316,8 @@
 
                     <section class="relative z-10 h-screen overflow-hidden section section_3">
                          <div
-                              class="flex items-center content-center justify-center w-full h-screen overflow-hidden flex-c bg-[url(../assets/images/bg-section_3.png)]">
-                              <video  allowfullscreen poster="../assets/videos/hero.gif" class="hidden video-ux-design"
+                              class="flex items-center content-center justify-center w-full h-screen overflow-hidden flex-c bg-[url(../assets/images/bg-section_3.png)] bg-cover bg-no-repeat bg-center">
+                              <video allowfullscreen poster="../assets/videos/hero.gif" class="hidden video-ux-design"
                                    playsinline="true" webkit-playsinline="true" muted="muted">
                                    <source src="../assets/videos/hero.mp4" id="sample" type="video/mp4">
                               </video>
@@ -385,21 +384,19 @@
                     </section>
 
 
-                    <section class="z-10 bg-white section section_4">
-                         <div class="h-screen md:flex scroll-smooth">
-                              <div class="flex flex-col justify-around w-full h-full px-12 py-10 md:w-1/2">
+                    <section class="z-10 bg-primary bg-opacity-5 section section_4">
+                         <div class="h-full md:h-screen max-w-screen-2xl m-auto md:flex py-20 px-10 gap-8">
+                              <div class="flex flex-col justify-between md:w-1/2 gap-8 md:gap-0">
                                    <div class="text-secondary">
-                                        <p class="text-4xl lg:text-5xl font-semibold leading-[50px] mt-10 md:mt-0">
-                                             Experience a fun <br /><span class="flex">and safe <img class=""
+                                        <h1 class="text-4xl lg:text-5xl font-bold">
+                                             Experience a fun <span class="flex">and safe <img class=" pl-4 h-full"
                                                        src="../assets/images/pink boxx.jpg" alt="" /></span>
-                                        </p>
-                                        <p class="text-4xl lg:text-5xl font-semibold leading-[50px]">
-                                             MakerSpace for Kids <br />
+                                             MakerSpace for Kids
                                              to learn robotics
-                                        </p>
+                                        </h1>
                                    </div>
 
-                                   <p class="w-full py-5">
+                                   <p class="w-full">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quas
                                         molestiae rem laboriosa excepturi laudantium fugit autem? Lorem ipsum
                                         dolor sit amet consectetur adipisicing elit. Placeat quas molestiae
@@ -416,7 +413,7 @@
                                         <a href="" class="no-underline">Request a call</a>
                                    </div>
 
-                                   <div class="flex justify-between w-full pt-5">
+                                   <div class="flex justify-between w-full">
                                         <div>Logo 1</div>
                                         <div>Logo 2</div>
                                         <div>Logo 3</div>
@@ -426,36 +423,41 @@
 
                               <!-- Right Section  -->
 
-                              <div class="flex items-center justify-center w-full h-full py-12 md:w-1/2">
+                              <div class="flex w-full pt-10 md:pt-0 md:w-1/2">
                                    <!-- container (3 boxes) -->
-                                   <div class="flex flex-col w-full h-full gap-5 px-2 md:pr-10">
+                                   <div class="flex flex-col gap-5 w-full">
                                         <!-- Right side top  -->
-                                        <div class="w-full h-[60%] flex flex-col">
-                                             <!-- 1st box  -->
-                                             <div class="relative overflow-hidden rounded-3xl">
-                                                  <img class="object-cover w-full h-full"
-                                                       src="../assets/images/makerspace1.jpg" alt="" />
+                                        <!-- <div class=""> -->
+                                        <!-- 1st box  -->
+                                        <div
+                                             class="markerspace relative overflow-hidden rounded-3xl w-full h-2/3 flex flex-col">
+                                             <img class="object-cover w-full h-full"
+                                                  src="../assets/images/makerspace1.jpg" alt="" />
 
-                                                  <!-- MakerSpace icon -->
-                                                  <div class="absolute top-3 left-3">
-                                                       <button>
-                                                            <img class="w-[80%]"
-                                                                 src="../assets/images/Makerspace White icon.png"
-                                                                 alt="" />
-                                                       </button>
-                                                  </div>
+                                             <!-- MakerSpace icon -->
+                                             <div class="absolute top-3 left-3">
+                                                  <button>
+                                                       <img class="w-[80%]"
+                                                            src="../assets/images/Makerspace White icon.png" alt="" />
+                                                  </button>
+                                             </div>
 
-                                                  <!-- orange arrow icon bottom right -->
-                                                  <div class="absolute bottom-3 right-3">
-                                                       <button>
-                                                            <img src="../assets/images/arrow link button.png" alt="" />
-                                                       </button>
+                                             <!-- orange arrow icon bottom right -->
+                                             <div class="icon">
+                                                  <div class="iconbox primary_bg flex justify-center items-center">
+                                                       <img src="../assets/images/arrow-right-up.png" alt="">
                                                   </div>
                                              </div>
+                                             <!-- <div class="absolute bottom-3 right-3">
+                                                 <button>
+                                                     <img src="../assets/images/arrow link button.png" alt="" />
+                                                 </button>
+                                             </div> -->
                                         </div>
+                                        <!-- </div> -->
 
                                         <!-- Right side bottom  -->
-                                        <div class="w-full h-[40%] flex gap-5">
+                                        <div class="w-full h-1/3 flex gap-5">
                                              <!-- 2nd box  -->
                                              <div class="relative w-full h-full overflow-hidden rounded-3xl">
                                                   <img class="object-cover w-full h-full"
@@ -602,14 +604,14 @@
 
                     </section>
 
-                    <section class="z-10 max-w-screen-lg m-auto h-screen section section_8">
-                         <div class="wrapper_container">
-                              <div class="flex justify-between items-center">
-                                   <p class="text-5xl font-bold text-secondary">Our November’s <br>
+                    <section class="z-10 max-w-screen-lg m-auto min-h-screen h-full section section_8">
+                         <div class="wrapper_container py-20">
+                              <div
+                                   class="flex flex-col lg:flex-row gap-5 justify-center text-center md:justify-between items-center">
+                                   <p class="text-4xl md:text-5xl font-bold text-secondary">Our November's <br>
                                         Superstar
                                    </p>
-                                   <div class="h-[1px] w-[420px] bg-slate-300">
-
+                                   <div class="h-[1px] w-[80%] m-auto lg:m-0 lg:w-[420px] bg-slate-300">
                                    </div>
                                    <div>
                                         <button class="btn_md primary_bg flex items-center justify-between ">
@@ -618,11 +620,10 @@
                                         </button>
                                    </div>
                               </div>
-                              <div class="flex justify-between mt-16">
+                              <div class="flex flex-col lg:flex-row gap-5 justify-between mt-16">
+
                                    <!-- image1----------- -->
-
-
-                                   <div>
+                                   <div class="flex flex-col items-center">
                                         <div class="flex justify-center h-[286px]">
                                              <img src="../assets/images/students/Group 427319117.png">
                                         </div>
@@ -672,7 +673,7 @@
 
                                    </div>
                                    <!-- image2--------------- -->
-                                   <div class="">
+                                   <div class="flex flex-col items-center">
                                         <div class="flex justify-center h-[286px]">
                                              <img src="../assets/images/students/Group 427319118.png">
                                         </div>
@@ -722,7 +723,7 @@
 
                                    </div>
                                    <!-- image3---------- -->
-                                   <div>
+                                   <div class="flex flex-col items-center">
                                         <div class="flex justify-center h-[286px]">
                                              <img src="../assets/images/students/Group 427319119.png">
                                         </div>
@@ -863,7 +864,280 @@
 
                </div>
           </main>
-          <footer></footer>
+          <footer>
+               <div class="mx-auto max-w-screen-xl py-20 px-5 sm:px-10 lg:px-0">
+                    <div class="contact_footer relative primary_bg rounded-3xl  lg:h-[249px]">
+                         <div class="icon bg-white">
+                              <div class="iconbox flex justify-center items-center">
+                                   <img src="../assets/images/arroe-up-right-orange.png" alt="">
+
+                              </div>
+                          </div>
+                         <figure class="hidden sm:block">
+                              <img class="absolute bottom-0 h-[370px]" src="../assets/images/student_contuct.png"
+                                   alt="">
+                         </figure>
+                         <div
+                              class="flex flex-col sm:flex-col lg:flex-row gap-10 sm:w-1/2 ml-auto h-full lg:w-full justify-between lg:pl-[25%] pr-[10%] py-10 lg:py-0">
+                              <div class="flex flex-col justify-center text-start gap-8">
+                                   <h1 class="text-xl text-white sm:text-5xl font-semibold">
+                                        Get in Touch
+                                   </h1>
+                                   <p class="flex items-center justify-center  text-white text-[18px] font-normal">Let
+                                        us know how we can ignite your child's creativity,critical thinking, and
+                                        problem-solving skills</p>
+                              </div>
+                              <div class="w-1/2 flex lg:justify-center items-center">
+                                   <div class="flex flex-col gap-3 items-center">
+                                        <a href="" class="bg-white rounded-3xl px-10 py-4 whitespace-nowrap">
+                                             Contact us
+                                        </a>
+                                        <span class=" text-white">Or</span>
+                                        <a class="text-white underline font-medium" href="#">Request a call</a>
+                                   </div>
+                              </div>
+                         </div>
+                         
+                    </div>
+               </div>
+               <div class="bg-indigo-400 bg-opacity-10">
+                    <div class="mx-auto max-w-screen-lg py-20 px-10 lg:px-0">
+                         <div
+                              class="grid grid-cols-2 gap-12 lg:mt-0 lg:grid-cols-5 lg:gap-y-16 text-center lg:text-start justify-items-center">
+                              <div class="col-span-2 sm:col-span-1">
+                                   <p class="text-primary font-medium">Services</p>
+
+                                   <ul class="mt-6 space-y-4 text-sm">
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  1on1 Coaching
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  Company Review
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  Accounts Review
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  HR Consulting
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  SEO Optimisation
+                                             </a>
+                                        </li>
+                                   </ul>
+                              </div>
+
+                              <div class="col-span-2 sm:col-span-1">
+                                   <p class="text-primary font-medium">Company</p>
+
+                                   <ul class="mt-6 space-y-4 text-sm">
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  About
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  Meet the Team
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  Accounts Review
+                                             </a>
+                                        </li>
+                                   </ul>
+                              </div>
+
+                              <div class="col-span-2 sm:col-span-1">
+                                   <p class="text-primary font-medium">Helpful Links</p>
+
+                                   <ul class="mt-6 space-y-4 text-sm">
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  Contact
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  FAQs
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  Live Chat
+                                             </a>
+                                        </li>
+                                   </ul>
+                              </div>
+
+                              <div class="col-span-2 sm:col-span-1">
+                                   <p class="text-primary font-medium">Legal</p>
+
+                                   <ul class="mt-6 space-y-4 text-sm">
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  Accessibility
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  Returns Policy
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  Refund Policy
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  Hiring Statistics
+                                             </a>
+                                        </li>
+                                   </ul>
+                              </div>
+
+                              <div class="col-span-2 sm:col-span-1">
+                                   <p class="text-primary font-medium">Downloads</p>
+
+                                   <ul class="mt-6 space-y-4 text-sm">
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  Marketing Calendar
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-700 transition hover:opacity-75">
+                                                  SEO Infographics
+                                             </a>
+                                        </li>
+                                   </ul>
+                              </div>
+
+                              <ul class="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end">
+                                   <li>
+                                        <a href="/" rel="noreferrer" target="_blank"
+                                             class="text-gray-700 transition hover:opacity-75">
+                                             <span class="sr-only">Facebook</span>
+
+                                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"
+                                                  aria-hidden="true">
+                                                  <path fill-rule="evenodd"
+                                                       d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                                       clip-rule="evenodd" />
+                                             </svg>
+                                        </a>
+                                   </li>
+
+                                   <li>
+                                        <a href="/" rel="noreferrer" target="_blank"
+                                             class="text-gray-700 transition hover:opacity-75">
+                                             <span class="sr-only">Instagram</span>
+
+                                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"
+                                                  aria-hidden="true">
+                                                  <path fill-rule="evenodd"
+                                                       d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                                       clip-rule="evenodd" />
+                                             </svg>
+                                        </a>
+                                   </li>
+
+                                   <li>
+                                        <a href="/" rel="noreferrer" target="_blank"
+                                             class="text-gray-700 transition hover:opacity-75">
+                                             <span class="sr-only">Twitter</span>
+
+                                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"
+                                                  aria-hidden="true">
+                                                  <path
+                                                       d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                                             </svg>
+                                        </a>
+                                   </li>
+
+                                   <li>
+                                        <a href="/" rel="noreferrer" target="_blank"
+                                             class="text-gray-700 transition hover:opacity-75">
+                                             <span class="sr-only">GitHub</span>
+
+                                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"
+                                                  aria-hidden="true">
+                                                  <path fill-rule="evenodd"
+                                                       d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                                       clip-rule="evenodd" />
+                                             </svg>
+                                        </a>
+                                   </li>
+
+                                   <li>
+                                        <a href="/" rel="noreferrer" target="_blank"
+                                             class="text-gray-700 transition hover:opacity-75">
+                                             <span class="sr-only">Dribbble</span>
+
+                                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"
+                                                  aria-hidden="true">
+                                                  <path fill-rule="evenodd"
+                                                       d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                                                       clip-rule="evenodd" />
+                                             </svg>
+                                        </a>
+                                   </li>
+                              </ul>
+                         </div>
+
+                         <div class="border-gray-100 pt-8">
+                              <div class="sm:flex sm:justify-between">
+                                   <p class="text-xs text-gray-500">
+                                        &copy; 2022. Company Name. All rights reserved.
+                                   </p>
+
+                                   <ul class="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
+                                        <li>
+                                             <a href="#" class="text-gray-500 transition hover:opacity-75">
+                                                  Terms & Conditions
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-500 transition hover:opacity-75">
+                                                  Privacy Policy
+                                             </a>
+                                        </li>
+
+                                        <li>
+                                             <a href="#" class="text-gray-500 transition hover:opacity-75">
+                                                  Cookies
+                                             </a>
+                                        </li>
+                                   </ul>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </footer>
      </div>
 
 
