@@ -35,7 +35,7 @@
                 }
 
                 /* ------------------------- Home - Horizontal Items -------------------------------------------------- */
-                .container {
+                .gallery-section {
                     --section-padding: clamp(5em, 21vh, 12em);
                     --container-padding: clamp(2.5em, 8vw, 8em);
                     --gap-padding: clamp(1.5em, 4vw, 2.5em);
@@ -53,24 +53,31 @@
                     width: 100%;
                 }
 
+                .gallery-imgs {
+                    display: block;
+                    width: 100%;
+                    order: 2;
+                    position: relative;
+                }
+
                 .horizontal-items {
                     overflow: hidden;
                     padding-top: calc(var(--section-padding) * .75);
                     padding-bottom: calc(var(--section-padding) - 2.5vw);
                 }
 
-                .horizontal-items .container {
+                .horizontal-items .gallery-section {
                     padding: 0;
                     transform: rotate(0deg);
                 }
 
-                .horizontal-items .row {
+                .horizontal-items .row-img {
                     width: 120vw;
                     left: -10vw;
                     will-change: transform;
                 }
 
-                .horizontal-items .flex-col {
+                .horizontal-items .gallery-imgs {
                     width: 20%;
                     padding: calc(var(--gap-padding) / 2);
                     padding: 1.25vw;
@@ -93,11 +100,11 @@
                 }
 
                 @media screen and (max-width: 1000px) {
-                    .horizontal-items .flex-col {
+                    .horizontal-items .gallery-imgs {
                         width: 33.333%;
                     }
 
-                    .horizontal-items .flex-col:nth-child(4) {
+                    .horizontal-items .gallery-imgs:nth-child(4) {
                         display: none;
                     }
 
@@ -108,35 +115,35 @@
                         padding-top: calc(var(--section-padding) * 1);
                     }
 
-                    .horizontal-items .flex-col {
+                    .horizontal-items .gallery-imgs {
                         width: 50%;
                         padding: 2.5vw;
                     }
 
-                    .horizontal-items .flex-col:nth-child(4) {
+                    .horizontal-items .gallery-imgs:nth-child(4) {
                         display: block;
                     }
 
-                    .horizontal-items .row {
+                    .horizontal-items .row-img {
                         width: 120vw;
                     }
 
-                    .horizontal-items .row.row-1,
-                    .horizontal-items .row.row-2 {
+                    .horizontal-items .row-img.row-1,
+                    .horizontal-items .row-img.row-2 {
                         transform: translate(0, 0) !important;
                     }
 
-                    .horizontal-items .row-1 .flex-col:nth-child(3),
-                    .horizontal-items .row-1 .flex-col:nth-child(4) {
+                    .horizontal-items .row-img-1 .gallery-imgs:nth-child(3),
+                    .horizontal-items .row-img-1 .gallery-imgs:nth-child(4) {
                         transform: translate(-20vw, 0);
                     }
 
-                    .horizontal-items .row-2 .flex-col:nth-child(3),
-                    .horizontal-items .row-2 .flex-col:nth-child(4) {
+                    .horizontal-items .row-img-2 .gallery-imgs:nth-child(3),
+                    .horizontal-items .row-img-2 .gallery-imgs:nth-child(4) {
                         display: none;
                     }
 
-                    .horizontal-items .container {
+                    .horizontal-items .gallery-section {
                         display: none;
                         opacity: 0;
                         visibility: hidden;
@@ -146,20 +153,13 @@
                         padding-top: 0;
                     }
                 }
-
-                .flex-col {
-                    display: block;
-                    width: 100%;
-                    order: 2;
-                    position: relative;
-                }
             </style>
         </section>
         <section class="section horizontal-items" data-scroll-section>
-            <div class="container">
-                <div class="flex flex-wrap relative row-1" data-scroll data-scroll-speed="-1"
+            <div class="gallery-section">
+                <div class="row-img flex flex-wrap relative row-1" data-scroll data-scroll-speed="-1"
                     data-scroll-direction="horizontal">
-                    <div class="flex-col">
+                    <div class="gallery-imgs">
                         <div class="horizontal-single-item">
                             <div class="overlay lazy"
                                 style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
@@ -167,7 +167,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-col">
+                    <div class="gallery-imgs">
                         <div class="horizontal-single-item">
                             <div class="overlay lazy"
                                 style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
@@ -175,7 +175,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-col">
+                    <div class="gallery-imgs">
                         <div class="horizontal-single-item">
                             <div class="overlay lazy"
                                 style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
@@ -183,7 +183,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-col">
+                    <div class="gallery-imgs">
                         <div class="horizontal-single-item">
                             <div class="overlay lazy"
                                 style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
@@ -191,7 +191,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-col">
+                    <div class="gallery-imgs">
                         <div class="horizontal-single-item">
                             <div class="overlay lazy"
                                 style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
@@ -201,9 +201,9 @@
                     </div>
 
                 </div>
-                <div class="row flex flex-wrap relative row-2" data-scroll data-scroll-speed="1"
+                <div class="row-img flex flex-wrap relative row-2" data-scroll data-scroll-speed="1"
                     data-scroll-direction="horizontal">
-                    <div class="flex-col">
+                    <div class="gallery-imgs">
                         <div class="horizontal-single-item">
                             <div class="overlay lazy"
                                 style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
@@ -211,7 +211,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-col">
+                    <div class="gallery-imgs">
                         <div class="horizontal-single-item">
                             <div class="overlay lazy"
                                 style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
@@ -219,7 +219,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-col">
+                    <div class="gallery-imgs">
                         <div class="horizontal-single-item">
                             <div class="overlay lazy"
                                 style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
@@ -227,7 +227,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-col">
+                    <div class="gallery-imgs">
                         <div class="horizontal-single-item">
                             <div class="overlay lazy"
                                 style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
@@ -235,7 +235,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-col">
+                    <div class="gallery-imgs">
                         <div class="horizontal-single-item">
                             <div class="overlay lazy"
                                 style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
