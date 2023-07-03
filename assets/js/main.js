@@ -108,7 +108,3 @@ function parallaxScroll() {
 
 // Register the scroll event listener
 window.addEventListener('scroll', parallaxScroll);
-
-
-
-

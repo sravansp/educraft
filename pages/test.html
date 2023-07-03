@@ -13,464 +13,245 @@
 
     <!-- STYLE & CUSTOM CSS  -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-
+    <link href="../assets/pluggins/locomotive/locomotive-scroll.css" rel="stylesheet">
     <!-- REMIX ICON  -->
     <link rel="stylesheet" href="../assets/pluggins/remixicon/remixicon.css">
 </head>
 
 <body>
-    <div class="content">
-        <section class="h-screen bg-white">
-            <div class="wrapper_card">
-                <div class="card">
-                    <div class="box">
-                        <div class="icon bg-white">
-                            <div class="iconbox">
+    <div class="content" data-scroll-container>
+        <section class="h-screen bg-purple-300" data-scroll-section>
 
+        </section>
+        <section class="h-screen overflow-hidden bg-green-300" data-scroll-section>
+
+            <style>
+                :root {
+
+                    --section-padding: clamp(5em, 21vh, 12em);
+                    --container-padding: clamp(2.5em, 8vw, 8em);
+                    --gap-padding: clamp(1.5em, 4vw, 2.5em);
+
+                }
+
+                /* ------------------------- Home - Horizontal Items -------------------------------------------------- */
+                .container {
+                    --section-padding: clamp(5em, 21vh, 12em);
+                    --container-padding: clamp(2.5em, 8vw, 8em);
+                    --gap-padding: clamp(1.5em, 4vw, 2.5em);
+                    margin: 0 auto;
+                    padding-left: var(--container-padding);
+                    padding-right: var(--container-padding);
+                    max-width: 100em;
+                }
+
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                .horizontal-items {
+                    overflow: hidden;
+                    padding-top: calc(var(--section-padding) * .75);
+                    padding-bottom: calc(var(--section-padding) - 2.5vw);
+                }
+
+                .horizontal-items .container {
+                    padding: 0;
+                    transform: rotate(0deg);
+                }
+
+                .horizontal-items .row {
+                    width: 120vw;
+                    left: -10vw;
+                    will-change: transform;
+                }
+
+                .horizontal-items .flex-col {
+                    width: 20%;
+                    padding: calc(var(--gap-padding) / 2);
+                    padding: 1.25vw;
+                    will-change: transform;
+                }
+
+                .horizontal-items .horizontal-single-item {
+                    position: relative;
+
+                    /* added css  */
+                    border-radius: 14px;
+                    overflow: hidden;
+                    height: 165px;
+                }
+
+                .horizontal-items .horizontal-single-item::before {
+                    display: block;
+                    content: "";
+                    padding-top: 75%;
+                }
+
+                @media screen and (max-width: 1000px) {
+                    .horizontal-items .flex-col {
+                        width: 33.333%;
+                    }
+
+                    .horizontal-items .flex-col:nth-child(4) {
+                        display: none;
+                    }
+
+                }
+
+                @media screen and (max-width: 540px) {
+                    .horizontal-items {
+                        padding-top: calc(var(--section-padding) * 1);
+                    }
+
+                    .horizontal-items .flex-col {
+                        width: 50%;
+                        padding: 2.5vw;
+                    }
+
+                    .horizontal-items .flex-col:nth-child(4) {
+                        display: block;
+                    }
+
+                    .horizontal-items .row {
+                        width: 120vw;
+                    }
+
+                    .horizontal-items .row.row-1,
+                    .horizontal-items .row.row-2 {
+                        transform: translate(0, 0) !important;
+                    }
+
+                    .horizontal-items .row-1 .flex-col:nth-child(3),
+                    .horizontal-items .row-1 .flex-col:nth-child(4) {
+                        transform: translate(-20vw, 0);
+                    }
+
+                    .horizontal-items .row-2 .flex-col:nth-child(3),
+                    .horizontal-items .row-2 .flex-col:nth-child(4) {
+                        display: none;
+                    }
+
+                    .horizontal-items .container {
+                        display: none;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    .horizontal-items {
+                        padding-top: 0;
+                    }
+                }
+
+                .flex-col {
+                    display: block;
+                    width: 100%;
+                    order: 2;
+                    position: relative;
+                }
+            </style>
+        </section>
+        <section class="section horizontal-items" data-scroll-section>
+            <div class="container">
+                <div class="flex flex-wrap relative row-1" data-scroll data-scroll-speed="-1"
+                    data-scroll-direction="horizontal">
+                    <div class="flex-col">
+                        <div class="horizontal-single-item">
+                            <div class="overlay lazy"
+                                style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
+                                data-bg="../assets/images/scrollslider/st1.png">
                             </div>
                         </div>
-                        <div class="content flex flex-col gap-5 absolute p-8 top-[35%]">
-                            <!-- <h3>Design</h3> -->
-                            <p class="text-xl text-white">
-                                This program will add more value to ICT/Computer science classes.
-                            </p>
-                            <h1 class="text-3xl text-white font-bold">Enhancing ICT/CS classes enjoyment for students
-                            </h1>
-                            <!-- <a href="#">Read More</a> -->
+                    </div>
+                    <div class="flex-col">
+                        <div class="horizontal-single-item">
+                            <div class="overlay lazy"
+                                style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
+                                data-bg="../assets/images/scrollslider/st2.png">
+                            </div>
                         </div>
                     </div>
+                    <div class="flex-col">
+                        <div class="horizontal-single-item">
+                            <div class="overlay lazy"
+                                style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
+                                data-bg="../assets/images/scrollslider/st3.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <div class="horizontal-single-item">
+                            <div class="overlay lazy"
+                                style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
+                                data-bg="../assets/images/scrollslider/st1.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <div class="horizontal-single-item">
+                            <div class="overlay lazy"
+                                style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
+                                data-bg="../assets/images/scrollslider/st2.png">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row flex flex-wrap relative row-2" data-scroll data-scroll-speed="1"
+                    data-scroll-direction="horizontal">
+                    <div class="flex-col">
+                        <div class="horizontal-single-item">
+                            <div class="overlay lazy"
+                                style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
+                                data-bg="../assets/images/scrollslider/sb1.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <div class="horizontal-single-item">
+                            <div class="overlay lazy"
+                                style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
+                                data-bg="../assets/images/scrollslider/sb2.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <div class="horizontal-single-item">
+                            <div class="overlay lazy"
+                                style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
+                                data-bg="../assets/images/scrollslider/sb3.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <div class="horizontal-single-item">
+                            <div class="overlay lazy"
+                                style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
+                                data-bg="../assets/images/scrollslider/sb1.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <div class="horizontal-single-item">
+                            <div class="overlay lazy"
+                                style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
+                                data-bg="../assets/images/scrollslider/sb2.png">
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
-        <section class="h-screen overflow-hidden">
+        <section class="z-10 h-screen bg-primary bg-opacity-5 section section_4" data-scroll-section>
 
-            <style>
-                .gallery {
-                    z-index: 1;
-                    display: flex;
-                    flex-direction: column;
-                    width: 800vh;
-                    /* padding-bottom: 100vh; */
-                }
+        </section>
 
-                .top_imgs {
-                    z-index: 1;
-                    display: flex;
-                    flex-wrap: nowrap;
-                    overflow: visible;
-                    max-width: auto;
-                    width: 800vh;
-                }
-
-                .bottom_imgs {
-                    z-index: 1;
-                    display: flex;
-                    flex-wrap: nowrap;
-                    overflow: visible;
-                    max-width: auto;
-                    width: 800vh;
-                    padding-bottom: 100vh;
-                }
-
-                .image {
-                    /* width: 25vw; */
-                    /* filter: saturate(0); */
-                    /* padding: 1rem; */
-                    margin-right: 16px;
-                    align-items: center;
-                    display: inline-flex;
-                }
-
-                .image2 {
-                    /* width: 25vw; */
-                    /* filter: saturate(0); */
-                    /* padding: 1rem; */
-                    margin-right: 16px;
-                    align-items: center;
-                    display: inline-flex;
-                }
-
-                /* .image:nth-child(2n) {
-                    width: 25vw;
-                } */
-
-                .image:hover {
-                    z-index: 99999999999 !important;
-                    filter: saturate(1);
-                }
-
-                .gallery img {
-                    /* transition: 0.3s ease-out; */
-                    overflow: hidden;
-                    width: 100%;
-                    object-fit: cover;
-                    object-position: center;
-                    height: 100%;
-                }
-
-
-
-
-                .wrapper_card {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-wrap: wrap;
-                    gap: 5rem;
-                }
-
-                .wrapper_card .card {
-                    position: relative;
-                    width: 390px;
-                    height: 390px;
-                    /* background: var(--clr); */
-                    border-radius: 20px;
-                    /* border-top-left-radius: 70px; */
-                    overflow: hidden;
-                }
-
-                .wrapper_card .card .box {
-                    position: absolute;
-                    inset: 10px;
-                    /* background: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%); */
-                    /* background: linear-gradient(312deg, #FF9900 8.95%, #F06445 134.14%); */
-                    background: #EFEFEF;
-                    border-radius: 30px;
-                    transition: 0.5s all ease;
-                }
-
-                .wrapper_card .card .box:hover {
-                    background: linear-gradient(312deg, #FF9900 8.95%, #F06445 134.14%);
-                    transition: 0.5s all ease;
-                }
-
-                .wrapper_card .card .box .icon {
-                    position: absolute;
-                    width: 140px;
-                    height: 140px;
-                    /* background: var(--clr); */
-                    border-bottom-left-radius: 30%;
-                    transition: 0.5s;
-                    right: 0;
-                }
-
-                .wrapper_card .card .box .icon::before {
-                    content: '';
-                    position: absolute;
-                    bottom: -30px;
-                    right: 0;
-                    width: 30px;
-                    height: 30px;
-                    background: transparent;
-                    border-top-right-radius: 30px;
-                    box-shadow: 6px -5px 0 5px #ffffff;
-                }
-
-                .wrapper_card .card .box .icon::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    right: 140px;
-                    width: 30px;
-                    height: 30px;
-                    background: transparent;
-                    border-top-right-radius: 30px;
-                    box-shadow: 5px -5px 0 5px #ffffff;
-                }
-
-                .wrapper_card .card .box .icon .iconbox {
-                    position: absolute;
-                    inset: 15px;
-                    background: #EFEFEF;
-                    border-radius: 30%;
-                    border-top-right-radius: 30px;
-                    border-bottom-left-radius: 30px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    top: 0;
-                    right: 0;
-                    font-weight: 600;
-                }
-
-
-
-                .wrapper_card .card .box .content h3 {
-                    color: var(--clr);
-                    font-size: 1.35rem;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 0.12rem;
-                }
-
-
-                .wrapper_card .card .box .content a {
-                    background: var(--clr);
-                    display: inline-block;
-                    padding: 10px 25px;
-                    text-decoration: none;
-                    color: #333;
-                    text-transform: uppercase;
-                    font-weight: 600;
-                    border-radius: 30px;
-                    transition: 0.5s;
-                }
-
-                .wrapper_card .card .box .content a:hover {
-                    letter-spacing: 0.2rem;
-                }
-
-                @media only screen and (max-width: 1080px) {
-                    .wrapper_card {
-                        padding: 2rem 1rem;
-                    }
-                }
-
-
-
-
-
-
-
-
-
-
-                .markerspace .icon {
-                    position: absolute;
-                    width: 110px;
-                    height: 110px;
-                    background: #FEF8F5;
-                    border-top-left-radius: 2.2rem;
-                    transition: 0.5s;
-                    bottom: 0;
-                    right: 0;
-                }
-
-                .markerspace .icon::before {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    left: -30px;
-                    width: 30px;
-                    height: 30px;
-                    background: #e71e1e00;
-                    border-bottom-right-radius: 1.5rem;
-                    box-shadow: 6px 6px 0 5px #FEF8F5;
-                }
-
-                .markerspace .icon::after {
-                    content: '';
-                    position: absolute;
-                    top: -30px;
-                    right: 0px;
-                    width: 30px;
-                    height: 30px;
-                    background: transparent;
-                    border-bottom-right-radius: 1.5rem;
-                    box-shadow: 6px 6px 0 5px #FEF8F5;
-                }
-
-                .markerspace .icon .iconbox {
-                    position: absolute;
-                    inset: 20px;
-                    /* background: #EFEFEF; */
-                    border-radius: 1.5rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    bottom: 0;
-                    right: 0;
-                    font-weight: 600;
-                }
-
-                @media only screen and (max-width: 1080px) {
-                    .markerspace .icon {
-                        width: 80px;
-                        height: 80px;
-                    }
-                }
-            </style>
-            <div class="gallery">
-                <div class="top_imgs">
-
-                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss1.png" alt="">
-                    </div>
-                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss1.png" alt="">
-                    </div>
-                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss1.png" alt="">
-                    </div>
-                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss1.png" alt="">
-                    </div>
-                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss1.png" alt="">
-                    </div>
-                    <!-- <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss1.png" alt="">
-                    </div>
-                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss1.png" alt="">
-                    </div>
-                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss1.png" alt="">
-                    </div>
-                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss1.png" alt="">
-                    </div>
-                    <div class="image rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss1.png" alt="">
-                    </div> -->
-                </div>
-                <div class="bottom_imgs mt-6">
-                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss2.png" alt="">
-                    </div>
-                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss2.png" alt="">
-                    </div>
-                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss2.png" alt="">
-                    </div>
-                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss2.png" alt="">
-                    </div>
-                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss2.png" alt="">
-                    </div>
-                    <!-- <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss2.png" alt="">
-                    </div>
-                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss2.png" alt="">
-                    </div>
-                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss2.png" alt="">
-                    </div>
-                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss2.png" alt="">
-                    </div>
-                    <div class="image2 rounded-xl h-40 w-64 overflow-hidden">
-                        <img src="../assets/images/scrollslider/ss2.png" alt=""> -->
-                </div>
-            </div>
-    </div>
-
-
-
-
-    </section>
-    <section class="z-10 bg-primary bg-opacity-5 section section_4">
-        <div class="h-full md:h-screen max-w-screen-2xl m-auto md:flex py-20 px-10 gap-8">
-            <div class="flex flex-col justify-between md:w-1/2 gap-8 md:gap-0">
-                <div class="text-secondary">
-                    <h1 class="text-4xl lg:text-5xl font-bold">
-                        Experience a fun <span class="flex">and safe <img class=" pl-4 h-full"
-                                src="../assets/images/pink boxx.jpg" alt="" /></span>
-                        MakerSpace for Kids
-                        to learn robotics
-                    </h1>
-                </div>
-
-                <p class="w-full">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quas
-                    molestiae rem laboriosa excepturi laudantium fugit autem? Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Placeat quas molestiae
-                    rem laboriosa excepturi laudantium fugit autem laudantium fugit autem
-                </p>
-
-                <div class="flex items-center gap-8">
-                    <a class="btn_md primary_bg" href="">
-                        <span>Contact Us</span>
-                        <span class="flex items-center justify-center bg-white rounded-full bg-opacity-40 w-7 h-7">
-                            <i class="text-sm ri-arrow-right-line"></i></span>
-                    </a>
-                    <a href="" class="no-underline">Request a call</a>
-                </div>
-
-                <div class="flex justify-between w-full">
-                    <div>Logo 1</div>
-                    <div>Logo 2</div>
-                    <div>Logo 3</div>
-                    <div>Logo 4</div>
-                </div>
-            </div>
-
-            <!-- Right Section  -->
-
-            <div class="flex w-full pt-10 md:pt-0 md:w-1/2">
-                <!-- container (3 boxes) -->
-                <div class="flex flex-col gap-5 w-full">
-                    <!-- Right side top  -->
-                    <!-- <div class=""> -->
-                    <!-- 1st box  -->
-                    <div class="markerspace relative overflow-hidden rounded-3xl w-full h-2/3 flex flex-col">
-                        <img class="object-cover w-full h-full" src="../assets/images/makerspace1.jpg" alt="" />
-
-                        <!-- MakerSpace icon -->
-                        <div class="absolute top-3 left-3">
-                            <button>
-                                <img class="w-[80%]" src="../assets/images/Makerspace White icon.png" alt="" />
-                            </button>
-                        </div>
-
-                        <!-- orange arrow icon bottom right -->
-                        <div class="icon">
-                            <div class="iconbox primary_bg flex justify-center items-center">
-                                <img src="../assets/images/arrow-right-up.png" alt="">
-                            </div>
-                        </div>
-                        <!-- <div class="absolute bottom-3 right-3">
-                                <button>
-                                    <img src="../assets/images/arrow link button.png" alt="" />
-                                </button>
-                            </div> -->
-                    </div>
-                    <!-- </div> -->
-
-                    <!-- Right side bottom  -->
-                    <div class="w-full h-1/3 flex gap-5">
-                        <!-- 2nd box  -->
-                        <div class="relative w-full h-full overflow-hidden rounded-3xl">
-                            <img class="object-cover w-full h-full" src="../assets/images/Makerspace_2 image.png"
-                                alt="" />
-
-                            <!-- Future Makers Icon  -->
-                            <div class="absolute top-3 left-3">
-                                <button>
-                                    <img class="w-[80%]" src="../assets/images/future makers.png" alt="" />
-                                </button>
-                            </div>
-
-                            <!-- white arrow button  -->
-                            <div class="absolute bottom-5 right-5">
-                                <button>
-                                    <img src="../assets/images/white arrow button.png" alt="" />
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- 3rd box  -->
-                        <div class="relative h-full overflow-hidden rounded-3xl">
-                            <img class="object-cover w-full h-full" src="../assets/images/makerspace3 image.jpg"
-                                alt="" />
-
-                            <!-- event icon  -->
-                            <div class="absolute top-3 left-3">
-                                <button>
-                                    <img class="w-[80%]" src="../assets/images/event icon.png" alt="" />
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="h-screen bg-blue-100"></section>
+        <section class="h-screen bg-blue-100" data-scroll-section></section>
     </div>
 
 
@@ -483,94 +264,103 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="../assets/pluggins/scrollsmoother/ss.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-    <!-- <script src="../assets/js/main.js"></script> -->
+
+    <script src="../assets/pluggins/locomotive/locomotive-scroll.min.js"></script>
+    <script src="../assets/pluggins/cdn.jsdelivr.net/npm/vanilla-lazyload%4017.6.1/dist/lazyload.min.js"></script>
+
 
 
     <script>
-        // Import the necessary GSAP plugins
-        gsap.registerPlugin(ScrollTrigger);
+        const selectAll = (e) => document.querySelectorAll(e);
 
-        const additionalX = {
-            val: 0
-        };
-        let additionalXAnim;
-        let offset = 0;
-        let originalImages = gsap.utils.toArray(".image");
-        let originalImages2 = gsap.utils.toArray(".image2");
-        const container = document.querySelector(".gallery");
-        const sliderWidth = container.offsetWidth;
-
-        // DUPLICATE IMAGES FOR LOOP
-        originalImages.forEach((image) => {
-            var clone = image.cloneNode(true);
-            container.appendChild(clone);
-        });
-        originalImages2.forEach((image) => {
-            var clone = image.cloneNode(true);
-            container.appendChild(clone);
-        });
-
-        let images = gsap.utils.toArray(".image");
-        let images2 = gsap.utils.toArray(".image2");
-
-        // SET ANIMATION
-        images.forEach((item) => {
-            gsap.to(item, {
-                x: "+=" - Number(sliderWidth / 2),
-                duration: 30,
-                repeat: -1,
-                ease: "none",
-                modifiers: {
-                    x: gsap.utils.unitize((x) => {
-                        offset += additionalX.val;
-                        x = (parseFloat(x) + offset) % -Number(sliderWidth * 0.5);
-                        // console.log(x);
-                        return x;
-
-                    })
-                }
+        initLazyLoad();
+        // initPlayVideoInview();
+        initSmoothScroll();
+        /**
+         * Lazy Load
+         */
+        function initLazyLoad() {
+            // https://github.com/locomotivemtl/locomotive-scroll/issues/225
+            // https://github.com/verlok/vanilla-lazyload
+            var lazyLoadInstance = new LazyLoad({
+                elements_selector: ".lazy",
             });
-        });
-        images2.forEach((item) => {
-            gsap.to(item, {
-                x: "+=" - Number(sliderWidth / 2),
-                duration: 30,
-                repeat: -1,
-                ease: "none",
-                modifiers: {
-                    x: gsap.utils.unitize((x) => {
-                        offset += additionalX.val;
-                        x = (parseFloat(x) + offset) % -Number(sliderWidth * 0.5);
-                        // console.log(x);
-                        return x;
 
-                    })
-                }
+        }
+
+        /**
+         * Play Video Inview
+         */
+        // function initPlayVideoInview() {
+
+        //     let allVideoDivs = gsap.utils.toArray('.playpauze');
+
+        //     allVideoDivs.forEach((videoDiv, i) => {
+
+        //         let videoElem = videoDiv.querySelector('video')
+
+        //         ScrollTrigger.create({
+        //             scroller: document.querySelector('[data-scroll-container]'),
+        //             trigger: videoElem,
+        //             start: '0% 120%',
+        //             end: '100% -20%',
+        //             onEnter: () => videoElem.play(),
+        //             onEnterBack: () => videoElem.play(),
+        //             onLeave: () => videoElem.pause(),
+        //             onLeaveBack: () => videoElem.pause(),
+        //         });
+
+        //     });
+        // }
+
+        function initSmoothScroll() {
+
+            scroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true,
             });
-        });
 
-        const imagesScrollerTrigger = ScrollTrigger.create({
-            trigger: ".gallery",
-            start: "top 50%",
-            end: "bottom 50%",
-            onUpdate: function (self) {
-                const velocity = self.getVelocity();
-                if (velocity > 0) {
-                    if (additionalXAnim) additionalXAnim.kill();
-                    additionalX.val = -velocity / 6000;
-                    additionalXAnim = gsap.to(additionalX, {
-                        val: 0
-                    });
-                }
-                if (velocity < 0) {
-                    if (additionalXAnim) additionalXAnim.kill();
-                    additionalX.val = -velocity / 6000;
-                    additionalXAnim = gsap.to(additionalX, {
-                        val: 0
-                    });
-                }
+            window.onresize = scroll.update();
+
+            scroll.on("scroll", () => ScrollTrigger.update());
+
+            // ScrollTrigger.scrollerProxy('[data-scroll-container]', {
+            //     scrollTop(value) {
+            //         return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
+            //     }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+            //     getBoundingClientRect() {
+            //         return {
+            //             top: 0,
+            //             left: 0,
+            //             width: window.innerWidth,
+            //             height: window.innerHeight
+            //         };
+            //     },
+            //     // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+            //     pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" :
+            //         "fixed"
+            // });
+
+            // ScrollTrigger.defaults({
+            //     scroller: document.querySelector('[data-scroll-container]'),
+            // });
+
+            /**
+             * Remove Old Locomotive Scrollbar
+             */
+
+            const scrollbar = selectAll('.c-scrollbar');
+
+            if (scrollbar.length > 1) {
+                scrollbar[0].remove();
             }
-        });
+
+            // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+            ScrollTrigger.addEventListener('refresh', () => scroll.update());
+
+            // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+            ScrollTrigger.refresh();
+        }
     </script>
 </body>
 
