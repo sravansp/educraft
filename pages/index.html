@@ -11,63 +11,75 @@
      <!-- TAILWIND CSS  -->
      <link href="../dist/output.css" rel="stylesheet">
      <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+     <link href="../assets/pluggins/locomotive/locomotive-scroll.css" rel="stylesheet" />
 
      <!-- STYLE & CUSTOM CSS  -->
      <link rel="stylesheet" href="../assets/css/style.css" />
-
      <!-- REMIX ICON  -->
      <link rel="stylesheet" href="../assets/pluggins/remixicon/remixicon.css">
 </head>
 
 <body class="body font-[Poppins] text-sm box-border">
-     <div class="mx-auto scroll_smoother">
-          <header class="mx-auto max-w-screen-2xl">
-               <nav id="navbar"
-                    class="navbar fixed top-0 flex items-center justify-between gap-[20px] h-32 transition duration-300 pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-[6%] md:pr-[6%] 2xl:pl-20 2xl:pr-20  z-50 bg-opacity-50 w-full max-w-screen-2xl mx-auto">
-                    <div class="flex items-center justify-between gap-32 max-w-screen-2xl">
-                         <div class="logo_animation ">
-                              <div class="relative flex items-center justify-center gap-2 header_logo">
-                                   <img class="w-[100px]" src="../assets/images/brand/logo.png" alt="">
-                              </div>
-                         </div>
-                         <div class="items-center hidden gap-8 nav_items sm:flex text-md target">
-                              <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-                                   href="./courses.html">Courses</a>
-                              <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-                                   href="./programs.html">Programs</a>
-                              <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-                                   href="">About Us</a>
-                              <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-                                   href="">Blog</a>
-                              <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-                                   href="">Contact</a>
+     <header class="mx-auto max-w-screen-2xl">
+          <nav id="navbar"
+               class="navbar fixed top-0 hidden lg:flex items-center justify-between gap-[20px] h-24 pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-[6%] md:pr-[6%] 2xl:pl-20 2xl:pr-20  z-50 bg-opacity-50 w-full max-w-screen-2xl mx-auto">
+               <div class="flex items-center justify-between gap-32 max-w-screen-2xl">
+                    <div class="logo_animation ">
+                         <div class="relative flex items-center justify-center gap-2 header_logo">
+                              <img class="w-[100px]" src="../assets/images/brand/logo.png" alt="">
                          </div>
                     </div>
-                    <div class="flex items-center justify-between gap-8">
-                         <a class="nav__links text-white h-[72px] gap-2 place-items-center hover:text-primary transition-all duration-200 flex"
-                              href=""><span>Login</span> <i class="ri-login-circle-line"></i></a>
-                         <a class="p-2 px-4 text-sm text-black transition duration-300 bg-white rounded-full button"
-                              data-magnetic href="">
-                              <span class="text-btn">Try it free</span>
-                         </a>
+                    <div class="items-center hidden gap-8 nav_items sm:flex text-md target">
+                         <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
+                              href="./courses.html">Courses</a>
+                         <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
+                              href="./programs.html">Programs</a>
+                         <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
+                              href="">About Us</a>
+                         <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
+                              href="">Blog</a>
+                         <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
+                              href="">Contact</a>
                     </div>
-               </nav>
-               <div class="menu sm:hidden">
-                    <button class="nav-tgl" id="nav-tgl" type="button" aria-label="toggle menu">
-                         <span aria-hidden="true"></span>
-                    </button>
-                    <nav class="nav">
-                         <div class="flex items-center justify-center text-4xl text-white side_viewer" id="side_viewer">
-                              <ul class="flex flex-col gap-6">
-                                   <li class="link">Home</li>
-                                   <li class="link">Curriculam</li>
-                                   <li class="link">Classes</li>
-                                   <li class="link">About Us</li>
-                              </ul>
-                         </div>
-                    </nav>
                </div>
-          </header>
+               <div class="flex items-center justify-between gap-8">
+                    <a class="nav__links text-white h-[72px] gap-2 place-items-center hover:text-primary transition-all duration-200 flex"
+                         href=""><span>Login</span> <i class="ri-login-circle-line"></i></a>
+                    <a class="p-2 px-4 text-sm text-black hover:text-white transition duration-300 bg-white rounded-full button"
+                         data-magnetic href="">
+                         <span class="text-btn">Try it free</span>
+                    </a>
+               </div>
+          </nav>
+          <div id="wrapper" class="lg:hidden flex items-center justify-center">
+
+               <button class="navbar-toggle" id="toggle" type="button">
+                    <svg viewBox="0 0 100 100" width="60">
+                         <path class="line top"
+                              d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+                         <path class="line middle" d="m 30,50 h 40" />
+                         <path class="line bottom"
+                              d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+                    </svg>
+               </button>
+
+               <div class="flex justify-center items-center h-screen">
+                    <div class="navbar-mobile">
+                         <ul>
+                              <li><a data-text="1" href="#">Home</a></li>
+                              <li><a data-text="2" href="#">Courses</a></li>
+                              <li><a data-text="3" href="#">Programs</a></li>
+                              <li><a data-text="4" href="#">About Us</a></li>
+                              <li><a data-text="5" href="#">Blog</a></li>
+                              <li><a data-text="6" href="#">Contact</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <div id="bg-circle"></div>
+          </div>
+
+     </header>
+     <div class="mx-auto scroll_smoother">
           <main>
                <div class="content">
 
@@ -337,7 +349,7 @@
                                         <div class="inline mb-6 text-white project_data lg:text-xl 2xl:text-3xl">
                                              <p class="">lorem ipsum text dummy.</p>
                                         </div>
-                                        <div class="relative target w-[20%] mx-auto h-auto">
+                                        <div class="relative target mx-auto h-auto">
                                              <a class="mx-auto btn_md primary_bg w-fit text" href="">
                                                   <span>Get Access </span>
                                              </a>
@@ -355,13 +367,13 @@
                                         <div class="inline mb-6 text-white project_data lg:text-xl 2xl:text-3xl">
                                              <p class="">New releases every month.</p>
                                         </div>
-                                        <div class="relative target w-[20%] mx-auto h-auto">
+                                        <div class="relative target mx-auto h-auto">
                                              <a class="mx-auto btn_md primary_bg w-fit text" href="">
                                                   <span>Start Free Trial</span>
                                              </a>
                                         </div>
                                    </div>
-                                   <!-- <div
+                                   <div
                                         class="absolute bottom-0 flex flex-col justify-center w-full h-full desktopContentSection">
                                         <div class="mt-5 project_head sm:mt-0">
                                              <h1 class="mb-5 font-bold lg:text-6xl 2xl:text-7xl text-primary">
@@ -373,12 +385,12 @@
                                         <div class="inline mb-6 text-white project_data lg:text-xl 2xl:text-3xl">
                                              <p class="">To deliver exceptional programs</p>
                                         </div>
-                                        <div class="relative target w-[20%] mx-auto h-auto">
+                                        <div class="relative target mx-auto h-auto">
                                              <a class="mx-auto btn_md primary_bg w-fit text" href="">
                                                   <span>See Courses</span>
                                              </a>
                                         </div>
-                                   </div> -->
+                                   </div>
                               </div>
                          </div>
                     </section>
@@ -573,7 +585,7 @@
                               <div class="flex flex-col items-center justify-center gap-10 wrapper_">
                                    <div>
                                         <h1
-                                             class="title_section text-8xl 2xl:text-9xl 2xl:font-extrabold leading-[126px] text-center text-[#f40032] font-bold">
+                                             class="title_section text-8xl 2xl:text-9xl 2xl:font-extrabold leading-[126px] text-center text-[#f40032] font-extrabold">
                                              Your child's future
                                              gateway. Step in
                                              <h1>
@@ -597,10 +609,115 @@
                          </div>
                     </section>
 
-                    <section
-                         class="z-10 flex items-center justify-center h-screen m-0 overflow-x-hidden section section_7">
+                    <!-- <section class="section horizontal-items" data-scroll-section>
+                         <div class="gallery-section">
+                              <div class="relative flex flex-wrap row-img row-1" data-scroll data-scroll-speed="-1"
+                                   data-scroll-direction="horizontal">
+                                   <div class="gallery-imgs">
+                                        <div class="horizontal-single-item">
+                                             <div class="overlay lazy" style="
+                                 background-position: center center;
+                                 background-repeat: no-repeat;
+                                 background-size: cover;
+                               " data-bg="../assets/images/scrollslider/st1.png"></div>
+                                        </div>
+                                   </div>
+                                   <div class="gallery-imgs">
+                                        <div class="horizontal-single-item">
+                                             <div class="overlay lazy" style="
+                                 background-position: center center;
+                                 background-repeat: no-repeat;
+                                 background-size: cover;
+                               " data-bg="../assets/images/scrollslider/st2.png"></div>
+                                        </div>
+                                   </div>
+                                   <div class="gallery-imgs">
+                                        <div class="horizontal-single-item">
+                                             <div class="overlay lazy" style="
+                                 background-position: center center;
+                                 background-repeat: no-repeat;
+                                 background-size: cover;
+                               " data-bg="../assets/images/scrollslider/st3.png"></div>
+                                        </div>
+                                   </div>
+                                   <div class="gallery-imgs">
+                                        <div class="horizontal-single-item">
+                                             <div class="overlay lazy" style="
+                                 background-position: center center;
+                                 background-repeat: no-repeat;
+                                 background-size: cover;
+                               " data-bg="../assets/images/scrollslider/st1.png"></div>
+                                        </div>
+                                   </div>
+                                   <div class="gallery-imgs">
+                                        <div class="horizontal-single-item">
+                                             <div class="overlay lazy" style="
+                                 background-position: center center;
+                                 background-repeat: no-repeat;
+                                 background-size: cover;
+                               " data-bg="../assets/images/scrollslider/st2.png"></div>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="relative flex flex-wrap row-img row-2" data-scroll data-scroll-speed="1"
+                                   data-scroll-direction="horizontal">
+                                   <div class="gallery-imgs">
+                                        <div class="horizontal-single-item">
+                                             <div class="overlay lazy" style="
+                                 background-position: center center;
+                                 background-repeat: no-repeat;
+                                 background-size: cover;
+                               " data-bg="../assets/images/scrollslider/sb1.png"></div>
+                                        </div>
+                                   </div>
+                                   <div class="gallery-imgs">
+                                        <div class="horizontal-single-item">
+                                             <div class="overlay lazy" style="
+                                 background-position: center center;
+                                 background-repeat: no-repeat;
+                                 background-size: cover;
+                               " data-bg="../assets/images/scrollslider/sb2.png"></div>
+                                        </div>
+                                   </div>
+                                   <div class="gallery-imgs">
+                                        <div class="horizontal-single-item">
+                                             <div class="overlay lazy" style="
+                                 background-position: center center;
+                                 background-repeat: no-repeat;
+                                 background-size: cover;
+                               " data-bg="../assets/images/scrollslider/sb3.png"></div>
+                                        </div>
+                                   </div>
+                                   <div class="gallery-imgs">
+                                        <div class="horizontal-single-item">
+                                             <div class="overlay lazy" style="
+                                 background-position: center center;
+                                 background-repeat: no-repeat;
+                                 background-size: cover;
+                               " data-bg="../assets/images/scrollslider/sb1.png"></div>
+                                        </div>
+                                   </div>
+                                   <div class="gallery-imgs">
+                                        <div class="horizontal-single-item">
+                                             <div class="overlay lazy" style="
+                                 background-position: center center;
+                                 background-repeat: no-repeat;
+                                 background-size: cover;
+                               " data-bg="../assets/images/scrollslider/sb2.png"></div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </section> -->
 
-                         <h3 class="text-secondary">section 7 - Image Gallery</h3>
+                    <section class="h-[84vh] section section_11 relative overflow-hidden">
+                         <div class="parallax-container">
+                              <div class="parallax-video">
+                                   <video class="" autoplay muted loop poster="../assets/videos/hero.gif" muted="muted">
+                                        <source src="../assets/videos/screenloop.mp4" id="sample" type="video/mp4">
+                                   </video>
+                              </div>
+                         </div>
 
                     </section>
 
@@ -777,30 +894,9 @@
                          </div>
                     </section>
 
-                    <section
-                         class="z-10 flex items-center justify-center h-screen bg-primary bg-opacity-5 section section_9">
-                         <!-- <div class="bg"> -->
-                         <h3 class="text-secondary">section 9 - Testimonial</h3>
-                         <!-- </div> -->
-                    </section>
-                    <section class="z-10 flex items-center justify-center h-screen section section_10">
-                         <!-- <div class="bg"> -->
-                         <h3 class="text-secondary">section 10 - Accordiaon </h3>
-                         <!-- </div> -->
-                    </section>
-                    <section class="h-[84vh] section section_11 relative overflow-hidden">
-                         <div class="parallax-container">
-                              <div class="parallax-video">
-                                   <video class="" autoplay muted loop poster="../assets/videos/hero.gif"
-                                        muted="muted">
-                                        <source src="../assets/videos/screenloop.mp4" id="sample" type="video/mp4">
-                                   </video>
-                              </div>
-                         </div>
 
-                    </section>
 
-                    <section class="z-10 max-w-screen-lg m-auto section section_12">
+                    <!-- <section class="z-10 max-w-screen-lg m-auto section section_12">
                          <div class="flex justify-between mt-28 mb-14">
                               <div>
                                    <div>
@@ -840,7 +936,7 @@
                                    </div>
                               </div>
                          </div>
-                    </section>
+                    </section> -->
 
                     <section
                          class="flex items-center justify-center h-[84vh] section section_13 overflow-hidden relative">
@@ -858,75 +954,77 @@
 
                     <section class="bg-white md:h-screen" data-scroll-section>
                          <div class="flex flex-col h-full max-w-screen-xl gap-10 px-10 py-10 m-auto wrapper_main">
-                             <div class="flex flex-col md:flex-row gap-5 md:gap-0 items-center justify-between md:h-[25%]">
-                                 <div class="relative md:w-1/2">
-                                     <h1 class="text-4xl font-bold md:text-5xl lg:text-6xl text-secondary">
-                                         Useful content to check weekly
-                                     </h1>
-                                     <figure class="absolute right-[20%] top-[50%] hidden lg:block">
-                                         <img src="../assets/images/2 lines.png" alt="img">
-                                     </figure>
-                                 </div>
-                                 <div class="md:w-2/5">
-                                     <p class="md:text-base lg:text-xl">
-                                         Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                                         vulputate libero et velit interdum, ac aliquet odio mattis.
-                                         Class aptent taciti sociosqu ad litora torquent per conubia
-                                         nostra, per inceptos himenaeos.
-                                     </p>
-                                 </div>
-                             </div>
-                             <div class="flex h-[15%] lg:justify-end">
-                                 <div class="flex flex-col items-center justify-between w-full gap-5 md:flex-row lg:w-2/5">
-                                     <div class="order-2 md:order-1 lg:w-2/5">
-                                         <a href="#" class="flex items-center justify-between btn_md primary_bg">
-                                             <span>See all blogs</span>
-                                             <i class="ri-arrow-right-s-line"></i>
-                                         </a>
-                                     </div>
-                                     <div class="w-3/5 h-[1px] bg-slate-400 order-1 md:order-2"></div>
-                                 </div>
-                             </div>
-                             <div class="flex flex-col md:flex-row w-full h-full gap-8 md:h-[60%]">
-                                 <div
-                                     class="bg-green-600 rounded-3xl h-48 w-full md:w-[30%] md:h-auto bg-[url(../assets/images/makerspace2.png)] bg-cover bg-no-repeat bg-center relative">
-                                     <div
-                                         class="flex items-center justify-center w-12 h-12 absolute bg-white rounded-xl top-[8%] md:top-[5%] right-[5%]">
-                                         <i class="text-2xl ri-arrow-right-up-line text-primary"></i>
-                                     </div>
-                                 </div>
-                                 <div
-                                     class="bg-green-600 rounded-3xl h-60 md:w-[50%] md:h-auto bg-[url(../assets/images/makerspace1.jpg)] bg-cover bg-no-repeat bg-center relative">
-                                     <div class="flex flex-col items-end w-full">
-                                         <div
-                                             class="relative h-auto bg-white w-fit rounded-bl-2xl before:w-7 before:bg-transparent before:h-7 before:absolute before:-left-7 before:rounded-tr-2xl before:shadow-[6px_-6px_0px_6px_#ffffff]">
-                                             <p class="px-5 py-3 font-bold md:py-0 md:pb-3 md:text-2xl">
-                                                 Dive into learning with
-                                             </p>
-                                         </div>
-             
-                                         <div
-                                             class="relative h-auto bg-white w-fit rounded-bl-2xl before:w-7 before:bg-transparent before:h-7 before:absolute before:-left-7 before:rounded-tr-2xl before:shadow-[6px_-6px_0px_6px_#ffffff] after:w-7 after:bg-transparent after:h-7 after:absolute after:-bottom-7 after:right-0 after:rounded-tr-2xl after:shadow-[6px_-6px_0px_6px_#ffffff]">
-                                             <p class="px-5 py-3 font-bold md:py-0 md:pb-3 md:text-2xl">
-                                                 Educraft!
-                                             </p>
-                                         </div>
-                                     </div>
-                                     <div
-                                         class="flex items-center justify-center w-12 h-12 absolute bg-white rounded-xl top-[48%] md:top-[40%] right-[5%]">
-                                         <i class="text-2xl ri-arrow-right-up-line text-primary"></i>
-                                     </div>
-                                 </div>
-                                 <div
-                                     class="bg-green-600 rounded-3xl h-48 md:w-[20%] md:h-auto bg-[url(../assets/images/makerspace3.jpg)] bg-cover bg-no-repeat bg-center relative">
-                                     <div
-                                         class="flex items-center justify-center w-12 h-12 absolute bg-white rounded-xl top-[8%] md:top-[5%] right-[5%]">
-                                         <i class="text-2xl ri-arrow-right-up-line text-primary"></i>
-                                     </div>
-                                 </div>
-                             </div>
+                              <div
+                                   class="flex flex-col md:flex-row gap-5 md:gap-0 items-center justify-between md:h-[25%]">
+                                   <div class="relative md:w-1/2">
+                                        <h1 class="text-4xl font-bold md:text-5xl lg:text-6xl text-secondary">
+                                             Useful content to check weekly
+                                        </h1>
+                                        <figure class="absolute right-[20%] top-[50%] hidden lg:block">
+                                             <img src="../assets/images/2 lines.png" alt="img">
+                                        </figure>
+                                   </div>
+                                   <div class="md:w-2/5">
+                                        <p class="md:text-base lg:text-xl">
+                                             Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                                             vulputate libero et velit interdum, ac aliquet odio mattis.
+                                             Class aptent taciti sociosqu ad litora torquent per conubia
+                                             nostra, per inceptos himenaeos.
+                                        </p>
+                                   </div>
+                              </div>
+                              <div class="flex h-[15%] lg:justify-end">
+                                   <div
+                                        class="flex flex-col items-center justify-between w-full gap-5 md:flex-row lg:w-2/5">
+                                        <div class="order-2 md:order-1 lg:w-2/5">
+                                             <a href="#" class="flex items-center justify-between btn_md primary_bg">
+                                                  <span>See all blogs</span>
+                                                  <i class="ri-arrow-right-s-line"></i>
+                                             </a>
+                                        </div>
+                                        <div class="w-3/5 h-[1px] bg-slate-400 order-1 md:order-2"></div>
+                                   </div>
+                              </div>
+                              <div class="flex flex-col md:flex-row w-full h-full gap-8 md:h-[60%]">
+                                   <div
+                                        class="bg-green-600 rounded-3xl h-48 w-full md:w-[30%] md:h-auto bg-[url(../assets/images/makerspace2.png)] bg-cover bg-no-repeat bg-center relative">
+                                        <div
+                                             class="flex items-center justify-center w-12 h-12 absolute bg-white rounded-xl top-[8%] md:top-[5%] right-[5%]">
+                                             <i class="text-2xl ri-arrow-right-up-line text-primary"></i>
+                                        </div>
+                                   </div>
+                                   <div
+                                        class="bg-green-600 rounded-3xl h-60 md:w-[50%] md:h-auto bg-[url(../assets/images/makerspace1.jpg)] bg-cover bg-no-repeat bg-center relative">
+                                        <div class="flex flex-col items-end w-full">
+                                             <div
+                                                  class="relative h-auto bg-white w-fit rounded-bl-2xl before:w-7 before:bg-transparent before:h-7 before:absolute before:-left-7 before:rounded-tr-2xl before:shadow-[6px_-6px_0px_6px_#ffffff]">
+                                                  <p class="px-5 py-3 font-bold md:py-0 md:pb-3 md:text-2xl">
+                                                       Dive into learning with
+                                                  </p>
+                                             </div>
+
+                                             <div
+                                                  class="relative h-auto bg-white w-fit rounded-bl-2xl before:w-7 before:bg-transparent before:h-7 before:absolute before:-left-7 before:rounded-tr-2xl before:shadow-[6px_-6px_0px_6px_#ffffff] after:w-7 after:bg-transparent after:h-7 after:absolute after:-bottom-7 after:right-0 after:rounded-tr-2xl after:shadow-[6px_-6px_0px_6px_#ffffff]">
+                                                  <p class="px-5 py-3 font-bold md:py-0 md:pb-3 md:text-2xl">
+                                                       Educraft!
+                                                  </p>
+                                             </div>
+                                        </div>
+                                        <div
+                                             class="flex items-center justify-center w-12 h-12 absolute bg-white rounded-xl top-[48%] md:top-[40%] right-[5%]">
+                                             <i class="text-2xl ri-arrow-right-up-line text-primary"></i>
+                                        </div>
+                                   </div>
+                                   <div
+                                        class="bg-green-600 rounded-3xl h-48 md:w-[20%] md:h-auto bg-[url(../assets/images/makerspace3.jpg)] bg-cover bg-no-repeat bg-center relative">
+                                        <div
+                                             class="flex items-center justify-center w-12 h-12 absolute bg-white rounded-xl top-[8%] md:top-[5%] right-[5%]">
+                                             <i class="text-2xl ri-arrow-right-up-line text-primary"></i>
+                                        </div>
+                                   </div>
+                              </div>
                          </div>
-                     </section>
+                    </section>
 
                </div>
           </main>
@@ -1216,8 +1314,10 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
      <script src="../assets/pluggins/scrollsmoother/ss.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+     <script src="../assets/pluggins/locomotive/locomotive-scroll.min.js"></script>
+     <script src="../assets/pluggins/cdn.jsdelivr.net/npm/vanilla-lazyload%4017.6.1/dist/lazyload.min.js"></script>
      <script src="../assets/js/main.js"></script>
-     <script src="../assets/js/section3.js"></script>
+     <!-- <script src="../assets/js/section3.js"></script> -->
      <!-- <script src="../assets/js/cursor.js"></script> -->
 </body>
 

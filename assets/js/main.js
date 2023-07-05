@@ -18,93 +18,521 @@ const smoother = ScrollSmoother.create({
      content: ".scroll_smoother",
      smooth: 0.9,
      effects: true,
-     // normalizeScroll: true,
+     normalizeScroll: true,
      smoothTouch: 0.1,
      speed: 5,
 
 });
 /* After Adding New Content to DOM */
 smoother.refresh();
+const selectAll = (e) => document.querySelectorAll(e);
+
+// initSmoothScroll();
+// initLazyLoad();
+initscrollFisrt();
+initsecondAnime();
+initbutton();
+initParallaxImage();
+initParallaxVideo();
+initScrolltriggerNav();
+initNavbarResponsive();
+initNavbarFixedTop();
 
 
-/* Navbar Fixed top by scroll Down*/
 
+/**
+ * Scrolltrigger Scroll Check
+ */
+function initScrolltriggerNav() {
 
+     ScrollTrigger.create({
+          start: 'top -30%',
+          onUpdate: self => {
+               $("body").addClass('scrolled');
+          },
+          onLeaveBack: () => {
+               $("body").removeClass('scrolled');
+          },
+     });
 
-
-
+}
 
 
 // Navbar button 
-document.querySelector('.button').onmousemove = function (e) {
+function initbutton() {
 
-     var x = e.pageX - e.target.offsetLeft;
-     var y = e.pageY - e.target.offsetTop;
+     document.querySelector('.button').onmousemove = function (e) {
 
-     e.target.style.setProperty('--x', x + 'px');
-     e.target.style.setProperty('--y', y + 'px');
-};
-var th1 = gsap.timeline({
-     repeat: -1
-});
-th1.to(".title_section", 30, {
-     backgroundPosition: "-960px 0"
-});
+          var x = e.pageX - e.target.offsetLeft;
+          var y = e.pageY - e.target.offsetTop;
+
+          e.target.style.setProperty('--x', x + 'px');
+          e.target.style.setProperty('--y', y + 'px');
+     };
+     var th1 = gsap.timeline({
+          repeat: -1
+     });
+     th1.to(".title_section", 30, {
+          backgroundPosition: "-960px 0"
+     });
+
+}
 
 //Parallax Scrolling Image
-let getRatio = el => window.innerHeight / (window.innerHeight + el.offsetHeight);
+function initParallaxImage() {
+     let getRatio = el => window.innerHeight / (window.innerHeight + el.offsetHeight);
 
-gsap.utils.toArray("section").forEach((section, i) => {
-     section.bg = section.querySelector(".bg");
+     gsap.utils.toArray("section").forEach((section, i) => {
+          section.bg = section.querySelector(".bg");
 
-     // Give the backgrounds some random images
-     //   section.bg.style.backgroundImage = `url(./assets/images/parallax-educraft.jpg)`;
+          // Give the backgrounds some random images
+          //   section.bg.style.backgroundImage = `url(./assets/images/parallax-educraft.jpg)`;
 
-     // the first image (i === 0) should be handled differently because it should start at the very top.
-     // use function-based values in order to keep things responsive
-     gsap.fromTo(section.bg, {
-          backgroundPosition: () => i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px"
-     }, {
-          backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
-          ease: "none",
-          scrollTrigger: {
-               trigger: section,
-               start: () => i ? "top bottom" : "top top",
-               end: "bottom top",
-               scrub: true,
-               invalidateOnRefresh: true // to make it responsive
-          }
-     });
-     // gsap.fromTo(".parallax_content", {
-     //      opacity: 1
-     // }, {
-     //      y: "-50%",
-     //      duration: 1,
-     //      opacity: 0,
-     // });
+          // the first image (i === 0) should be handled differently because it should start at the very top.
+          // use function-based values in order to keep things responsive
+          gsap.fromTo(section.bg, {
+               backgroundPosition: () => i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px"
+          }, {
+               backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+               ease: "none",
+               scrollTrigger: {
+                    trigger: section,
+                    start: () => i ? "top bottom" : "top top",
+                    end: "bottom top",
+                    scrub: true,
+                    invalidateOnRefresh: true // to make it responsive
+               }
+          });
+          // gsap.fromTo(".parallax_content", {
+          //      opacity: 1
+          // }, {
+          //      y: "-50%",
+          //      duration: 1,
+          //      opacity: 0,
+          // });
 
-});
-
-// Parallax Video
-// JavaScript
-// Initialize GSAP timeline
-const parallaxtl = gsap.timeline({});
-
-// Calculate the scroll range for parallax effect
-const scrollRange = document.querySelector('.parallax-container').offsetHeight - window.innerHeight;
-
-// Scroll event handler
-function parallaxScroll() {
-     const scrollTop = window.offsetTop || document.documentElement.scrollTop;
-
-     // Calculate the parallax effect for the video position
-     const videoPosition = (scrollTop / scrollRange) * 100;
-
-     // Update the video position using GSAP
-     parallaxtl.to('.parallax-video', {
-          y: -videoPosition + '%'
      });
 }
 
-// Register the scroll event listener
-window.addEventListener('scroll', parallaxScroll);
+function initParallaxVideo() {
+     // Parallax Video
+     // JavaScript
+     // Initialize GSAP timeline
+     const parallaxtl = gsap.timeline({});
+
+     // Calculate the scroll range for parallax effect
+     const scrollRange = document.querySelector('.parallax-container').offsetHeight - window.innerHeight;
+
+     // Scroll event handler
+     function parallaxScroll() {
+          const scrollTop = window.offsetTop || document.documentElement.scrollTop;
+
+          // Calculate the parallax effect for the video position
+          const videoPosition = (scrollTop / scrollRange) * 100;
+
+          // Update the video position using GSAP
+          parallaxtl.to('.parallax-video', {
+               y: -videoPosition + '%'
+          });
+     }
+
+     // Register the scroll event listener
+     window.addEventListener('scroll', parallaxScroll);
+}
+
+function initNavbarResponsive() {
+     console.clear();
+
+     const html = document.documentElement;
+     const toggle = document.getElementById("toggle");
+     const circle = document.getElementById("bg-circle");
+     const circleWidth = circle.clientWidth;
+
+     // Math calcul to get Height, Width, Diagonal and Circle Radius
+
+     const getVpdr = () => {
+          const vph = Math.pow(html.offsetHeight, 2); // Height
+          const vpw = Math.pow(html.offsetWidth, 2); // Width
+          const vpd = Math.sqrt(vph + vpw); // Diagonal
+          return (vpd * 2) / circleWidth; // Circle radius
+     };
+
+     const openNavbar = () => {
+          const openTimeline = new TimelineMax();
+          openTimeline.to(".navbar-mobile", 0, {
+               display: "flex"
+          });
+          openTimeline.to("#bg-circle", 1.5, {
+               scale: getVpdr(),
+               ease: Expo.easeInOut
+          });
+          openTimeline.staggerFromTo(".navbar-mobile ul li", 0.5, {
+               y: 25,
+               opacity: 0
+          }, {
+               y: 0,
+               opacity: 1
+          }, 0.1, 1);
+     };
+
+     const closeNavbar = () => {
+          const closeTimeline = new TimelineMax();
+          closeTimeline.staggerFromTo(".navbar-mobile ul li", 0.5, {
+               y: 0,
+               opacity: 1,
+               delay: 0.5
+          }, {
+               y: 25,
+               opacity: 0
+          }, -0.1);
+          closeTimeline.to("#bg-circle", 1, {
+               scale: 0,
+               ease: Expo.easeInOut,
+               delay: -0.5
+          });
+          closeTimeline.to(".navbar-mobile", 0, {
+               display: "none"
+          });
+     };
+
+     let isOpen = false;
+
+     toggle.onclick = function () {
+          if (isOpen) {
+               this.classList.remove("active");
+               closeNavbar();
+          } else {
+               this.classList.add("active");
+               openNavbar();
+          }
+          isOpen = !isOpen;
+     };
+
+     // On windows resize, recalcule circle radius and update
+
+     window.onresize = () => {
+          if (isOpen) {
+               gsap.to("#bg-circle", 1, {
+                    scale: getVpdr(),
+                    ease: Expo.easeInOut
+               });
+          }
+     };
+
+}
+
+function initNavbarFixedTop() {
+     var scrollUp = document.querySelector('.navbar');
+
+     ScrollTrigger.create({
+          start: 'top -50',
+          end: 99999,
+          // markers: true,
+          toggleClass: {
+               className: 'navbar--scrolled',
+               targets: '.navbar'
+          }
+     });
+
+     ScrollTrigger.create({
+          start: 'top -300',
+          end: 99999,
+          toggleClass: {
+               className: 'navbar--up',
+               targets: '.navbar'
+          },
+          onUpdate: ({
+               direction
+          }) => {
+               if (direction == -1) {
+                    scrollUp.classList.remove('navbar--up');
+               } else {
+                    scrollUp.classList.add('navbar--up');
+               }
+          }
+     });
+
+     const elem = document.querySelectorAll(".navbar");
+     // const classes = ["a", ".logo"];
+
+     // function toggleClasses() {
+     //      classes.forEach(myClass => elem.classList.toggle(myClass))
+     // }
+
+     // gsap.to(classes, {
+     //      scrollTrigger: {
+     //           trigger: elem,
+     //           start: 'top -150',
+     //           scrub: true
+     //      }
+     // });
+
+
+}
+
+
+/**
+ * Lazy Load
+ */
+function initLazyLoad() {
+     // https://github.com/locomotivemtl/locomotive-scroll/issues/225
+     // https://github.com/verlok/vanilla-lazyload
+     var lazyLoadInstance = new LazyLoad({
+          elements_selector: ".lazy",
+     });
+}
+
+function initSmoothScroll() {
+     scroll = new LocomotiveScroll({
+          el: document.querySelector("[data-scroll-container]"),
+          smooth: true,
+     });
+
+     window.onresize = scroll.update();
+
+     scroll.on("scroll", () => ScrollTrigger.update());
+
+     // ScrollTrigger.scrollerProxy('[data-scroll-container]', {
+     //      scrollTop(value) {
+     //           return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
+     //      }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+     //      getBoundingClientRect() {
+     //           return {
+     //                top: 0,
+     //                left: 0,
+     //                width: window.innerWidth,
+     //                height: window.innerHeight
+     //           };
+     //      },
+     //      // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+     //      pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
+     // });
+
+     // ScrollTrigger.defaults({
+     //      scroller: document.querySelector('[data-scroll-container]'),
+     // });
+   
+
+     /**
+      * Remove Old Locomotive Scrollbar
+      */
+
+     const scrollbar = selectAll(".c-scrollbar");
+
+     if (scrollbar.length > 1) {
+          scrollbar[0].remove();
+     }
+
+     // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
+     ScrollTrigger.addEventListener("refresh", () => scroll.update());
+
+     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+     ScrollTrigger.refresh();
+}
+
+function initscrollFisrt() {
+     let section = document.getElementsByClassName("section_3");
+     const boxes = document.querySelectorAll(".desktopContentSection");
+     const boxesmotfirst = document.querySelectorAll(".desktopContentSection:not(:first-child)");
+
+     const tl = gsap.timeline();
+     boxes.forEach((box, i) => {
+          if (i !== 0) {
+               tl.fromTo(
+                    box, {
+                         opacity: 0,
+                         yPercent: 50
+                    }, {
+                         opacity: 1,
+                         yPercent: 0
+
+                    },
+                    i
+               );
+          }
+          if (i !== boxes.length - 1) {
+               tl.fromTo(
+                    box, {
+                         opacity: 1,
+                         yPercent: 0
+                    }, {
+                         opacity: 0,
+                         yPercent: -50,
+                         delay: 0.5
+                    },
+                    i
+               );
+          }
+     });
+     console.log(section);
+     ScrollTrigger.create({
+          trigger: section,
+          pin: true,
+          //   markers: true,
+          start: "top top",
+          end: `+=${window.innerHeight * boxes.length}`,
+          animation: tl,
+          scrub: true,
+     });
+
+
+}
+
+function initsecondAnime() {
+
+     let videoElem = document.querySelector(".video-ux-design");
+     let src = videoElem.currentSrc || videoElem.src;
+
+
+     once(document.documentElement, "touchstart", function () {
+
+               videoElem.play(), videoElem.pause();
+          }),
+          ScrollTrigger.create({
+               trigger: videoElem,
+               start: "top 70%",
+               end: "bottom",
+               // markers: !0,
+               onEnter: () => videoElem.play(),
+               onEnterBack: () => videoElem.play(),
+               onLeave: () => videoElem.pause(),
+               onLeaveBack: () => videoElem.pause()
+          });
+     //videoElem.play();
+     let video_timeline = gsap.timeline({
+          scrollTrigger: {
+               trigger: ".section_5",
+               start: "top top",
+               // markers: !0,
+               scrub: !0,
+               pin: !0,
+               toggleClass: "acceso"
+          }
+     });
+     video_timeline
+          .fromTo(
+               ".macbook-display", {
+                    backgroundColor: "transparent",
+                    outline: "none"
+               }, {
+                    backgroundColor: "#373435",
+                    duration: 5,
+                    outline: ".5px solid #fff",
+                    delay: 10,
+               }
+          )
+
+          .to(
+               ".eduportal", {
+                    opacity: 0,
+                    duration: 1000,
+                    // delay: 0
+               }
+          )
+          .fromTo(
+               ".pa-hero-bg-overlay", {
+                    opacity: 1
+
+               }, {
+                    opacity: 0,
+                    duration: 1000,
+                    delay: 3000
+               }
+          )
+          .fromTo(
+               ".css-macbook", {
+                    scale: 2.9
+               }, {
+                    scale: 0.7,
+                    duration: 9000,
+                    // delay: 1
+               }
+
+          )
+
+          .fromTo(
+               ".mobile_screen_postion", {
+                    opacity: 0,
+               }, {
+                    duration: 5000,
+                    delay: -5000,
+                    opacity: 1,
+
+               }
+          )
+          .fromTo(
+               ".lptitle_span", {
+                    opacity: 0,
+                    // stagger: 0.5,
+                    y: 100
+               }, {
+                    duration: 4000,
+                    opacity: 1,
+                    stagger: 4000,
+                    delay: -4500,
+                    y: 0
+               }
+          )
+          .fromTo(
+               ".video-ux-design", {
+                    height: "100%",
+                    objectFit: "cover"
+               }, {
+                    height: "-webkit-fill-available",
+                    duration: 5
+               }
+          )
+          .fromTo(
+               ".macbook-screen", {
+                    backgroundColor: "transparent"
+               }, {
+                    backgroundColor: "#4b4b4d",
+                    duration: 2,
+                    delay: 5
+               }
+          );
+     let video_tl = gsap.timeline({
+          defaults: {
+               duration: 3
+          },
+          scrollTrigger: {
+               trigger: videoElem,
+               start: "center center",
+               end: "+=600",
+               scrub: !0
+          }
+     });
+     once(videoElem, "loadedmetadata", () => {
+               video_tl.fromTo(
+                    videoElem, {
+                         currentTime: 0.01
+                    }, {
+                         currentTime: videoElem.duration || 1
+                    }
+               );
+          }),
+          setTimeout(function () {
+               window.fetch &&
+                    fetch(src)
+                    .then((a) => a.blob())
+                    .then((a) => {
+                         let b = URL.createObjectURL(a),
+                              c = videoElem.currentTime;
+                         once(document.documentElement, "touchstart", function () {
+                                   videoElem.play(), videoElem.pause();
+                              }),
+                              videoElem.setAttribute("src", b),
+                              (videoElem.currentTime = c + 0.01);
+                    });
+          }, 1e3);
+
+
+
+}
+
+function once(a, b, c, d) {
+     var e = function () {
+          a.removeEventListener(b, e), c.apply(this, arguments);
+     };
+     return a.addEventListener(b, e, d), e;
+}
