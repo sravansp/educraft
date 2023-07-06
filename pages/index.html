@@ -20,38 +20,40 @@
 </head>
 
 <body class="body font-[Poppins] text-sm box-border">
-     <header class="mx-auto max-w-screen-2xl">
-          <nav id="navbar"
-               class="navbar fixed top-0 hidden lg:flex items-center justify-between gap-[20px] h-24 pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-[6%] md:pr-[6%] 2xl:pl-20 2xl:pr-20  z-50 bg-opacity-50 w-full max-w-screen-2xl mx-auto">
-               <div class="flex items-center justify-between gap-32 max-w-screen-2xl">
-                    <div class="logo_animation ">
-                         <div class="relative flex items-center justify-center gap-2 header_logo">
-                              <img class="w-[100px]" src="../assets/images/brand/logo.png" alt="">
+     <header>
+          <nav id="navbar" class="navbar fixed top-0 hidden lg:block h-24 z-50 bg-opacity-50 w-full ">
+               <div
+                    class="navbar_wrapper max-w-screen-2xl mx-auto h-24 lg:flex items-center justify-between gap-[20px] pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-[6%] md:pr-[6%] 2xl:pl-20 2xl:pr-20">
+                    <div class="flex items-center justify-between gap-32 max-w-screen-2xl">
+                         <div class="logo_animation ">
+                              <div class="relative flex items-center justify-center gap-2 header_logo">
+                                   <img class="w-[100px]" src="../assets/images/brand/logo.png" alt="">
+                              </div>
+                         </div>
+                         <div class="items-center hidden gap-8 nav_items sm:flex text-md target">
+                              <a class="nav__links text-white grid place-items-center hover:text-primary transition-all duration-200"
+                                   href="./courses.html">Courses</a>
+                              <a class="nav__links text-white grid place-items-center hover:text-primary transition-all duration-200"
+                                   href="./programs.html">Programs</a>
+                              <a class="nav__links text-white grid place-items-center hover:text-primary transition-all duration-200"
+                                   href="./aboutus.html">About Us</a>
+                              <a class="nav__links text-white grid place-items-center hover:text-primary transition-all duration-200"
+                                   href="">Blog</a>
+                              <a class="nav__links text-white grid place-items-center hover:text-primary transition-all duration-200"
+                                   href="./contact.html">Contact</a>
                          </div>
                     </div>
-                    <div class="items-center hidden gap-8 nav_items sm:flex text-md target">
-                         <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-                              href="./courses.html">Courses</a>
-                         <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-                              href="./programs.html">Programs</a>
-                         <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-                              href="">About Us</a>
-                         <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-                              href="">Blog</a>
-                         <a class="nav__links text-white h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-                              href="">Contact</a>
+                    <div class="flex items-center justify-between gap-8">
+                         <a class="nav__links text-white gap-2 place-items-center hover:text-primary transition-all duration-200 flex"
+                              href=""><span>Login</span> <i class="ri-login-circle-line"></i></a>
+                         <a class="p-2 px-4 text-sm text-black hover:text-white transition duration-300 bg-white rounded-full button"
+                              data-magnetic href="">
+                              <span class="text-btn">Try it free</span>
+                         </a>
                     </div>
                </div>
-               <div class="flex items-center justify-between gap-8">
-                    <a class="nav__links text-white h-[72px] gap-2 place-items-center hover:text-primary transition-all duration-200 flex"
-                         href=""><span>Login</span> <i class="ri-login-circle-line"></i></a>
-                    <a class="p-2 px-4 text-sm text-black hover:text-white transition duration-300 bg-white rounded-full button"
-                         data-magnetic href="">
-                         <span class="text-btn">Try it free</span>
-                    </a>
-               </div>
           </nav>
-          <div id="wrapper" class="lg:hidden flex items-center justify-center">
+          <!-- <div id="wrapper" class="lg:hidden flex items-center justify-center">
 
                <button class="navbar-toggle" id="toggle" type="button">
                     <svg viewBox="0 0 100 100" width="60">
@@ -76,31 +78,33 @@
                     </div>
                </div>
                <div id="bg-circle"></div>
-          </div>
+          </div> -->
+
 
      </header>
-     <div class="mx-auto scroll_smoother">
+
+     <div class="mx-auto scroll_smoother smooth-scroll">
           <main>
                <div class="content">
 
                     <section class="z-10 flex items-center justify-center h-screen bg-white section section_1">
-                         <div class="relative w-full h-screen overflow-hidden bg-black landing_wrapper ">
+                         <div class="relative w-full h-screen overflow-hidden landing_wrapper hero_bg">
                               <!-- h-[calc(100%_-_3%)] w-[calc(100%_-_1.5%)] rounded-[2rem] -->
-                              <div
+                              <!-- <div
                                    class="circle-bg bg-[#FFC3AA] w-[564px] h-[564px] rounded-full absolute -top-60 left-[20%]">
                               </div>
                               <div
                                    class="circle-bg bg-[#4D62CE] w-[564px] h-[564px] rounded-full absolute -bottom-60 left-8">
-                              </div>
-                              <div class="h-full bg-blur">
+                              </div> -->
+                              <div class="h-full ">
+                                   <!-- bg-blur -->
                                    <div class="h-full overflow-hidden noice-bg">
                                         <div class="flex h-full pt-32 pl-20 pr-20 m-auto wrapper-main max-w-screen-2xl">
-                                             <div class="flex flex-col justify-between w-1/2 mb-5">
+                                             <div class="flex flex-col justify-center gap-8 w-1/2 mb-5">
                                                   <div
                                                        class="hero-tittle capitalize text-white text-6xl xl:text-[4rem] 2xl:text-8xl font-extrabold">
-                                                       <h1 class="whitespace-pre-line">a place
-                                                            every student
-                                                            should be.</h1>
+                                                       <h1 class="whitespace-pre-line">From Learners
+                                                            to Innovators</h1>
                                                   </div>
                                                   <div class="text-base text-white opacity-50 hero-subtitle">
                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -326,7 +330,7 @@
                     </section>
 
 
-                    <section class="relative z-10 h-screen overflow-hidden section section_3">
+                    <!-- <section class="relative z-10 h-screen overflow-hidden section section_3">
                          <div
                               class="flex items-center content-center justify-center w-full h-screen overflow-hidden flex-c bg-[url(../assets/images/bg-section_3.png)] bg-cover bg-no-repeat bg-center">
                               <video allowfullscreen poster="../assets/videos/hero.gif" class="hidden video-ux-design"
@@ -338,7 +342,7 @@
                               <div
                                    class="desktopContent h-[500px] w-full text-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                                    <div
-                                        class="absolute bottom-0 flex flex-col justify-center w-full h-full desktopContentSection">
+                                        class=" bottom-0 flex flex-col justify-center w-full h-screen desktopContentSection">
                                         <div class="mt-5 project_head sm:mt-0">
                                              <h1 class="mb-5 font-bold text-white lg:text-6xl 2xl:text-7xl">For
                                                   Kids Ages</h1>
@@ -356,7 +360,7 @@
                                         </div>
                                    </div>
                                    <div
-                                        class="absolute bottom-0 flex flex-col justify-center w-full h-full desktopContentSection">
+                                        class=" bottom-0 flex flex-col justify-center w-full h-screen  desktopContentSection">
                                         <div class="mt-5 project_head sm:mt-0">
                                              <h1 class="mb-5 font-bold lg:text-6xl 2xl:text-7xl text-primary">For
                                                   500+</h1>
@@ -374,7 +378,7 @@
                                         </div>
                                    </div>
                                    <div
-                                        class="absolute bottom-0 flex flex-col justify-center w-full h-full desktopContentSection">
+                                        class=" bottom-0 flex flex-col justify-center w-full h-screen  desktopContentSection">
                                         <div class="mt-5 project_head sm:mt-0">
                                              <h1 class="mb-5 font-bold lg:text-6xl 2xl:text-7xl text-primary">
                                                   Partnered</h1>
@@ -393,11 +397,91 @@
                                    </div>
                               </div>
                          </div>
+                    </section> -->
+                    <section class="overflow-hidden section section_3">
+                         <div class="wrap-all relative">
+                              <div
+                                   class="bg_scroller absolute top-0 left-0 w-screen h-screen -z-20 bg-[url(../assets/images/bg-section_3.png)] bg-cover bg-no-repeat bg-[top_center]">
+                              </div>
+                              <div
+                                   class="pa-hero-bg-overlay z-[-1]  absolute inset-0 translate-z-20 bg-black bg-opacity-75">
+                              </div>
+                              <div class="start-trig"></div>
+                              <section id="holdone" class="panel w-full h-screen z-10">
+                                   <div
+                                        class=" bottom-0 flex flex-col justify-center items-center w-full h-screen desktopContentSection">
+                                        <div class="mt-5 project_head sm:mt-0">
+                                             <h1 class="font-bold text-white lg:text-6xl 2xl:text-7xl" data-scroll
+                                                  data-scroll-speed="0.8">For
+                                                  Kids Ages</h1>
+                                        </div>
+                                        <div class="my-4 mb-5 font-bold lg:text-6xl 2xl:text-7xl text-primary"
+                                             data-scroll data-scroll-speed="0.5">
+                                             <h1>2-14</h1>
+                                        </div>
+                                        <div class="inline mb-6 text-white project_data lg:text-xl 2xl:text-3xl">
+                                             <p class="">lorem ipsum text dummy.</p>
+                                        </div>
+                                        <div class="relative target mx-auto h-auto">
+                                             <a class="mx-auto btn_md primary_bg w-fit text" href="">
+                                                  <span>Get Access </span>
+                                             </a>
+                                        </div>
+                                   </div>
+                              </section>
+
+                              <section id="holdtwo" class="panel w-full h-screen z-10">
+                                   <div
+                                        class=" bottom-0 flex flex-col justify-center items-center w-full h-screen  desktopContentSection">
+                                        <div class="mt-5 project_head sm:mt-0">
+                                             <h1 class="font-bold lg:text-6xl 2xl:text-7xl text-primary" data-scroll
+                                                  data-scroll-speed="0.8">For
+                                                  500+</h1>
+                                        </div>
+                                        <div class="my-4 mb-5 font-bold text-white lg:text-6xl 2xl:text-7xl" data-scroll
+                                             data-scroll-speed="0.5">
+                                             <h1>Courses Available</h1>
+                                        </div>
+                                        <div class="inline mb-6 text-white project_data lg:text-xl 2xl:text-3xl">
+                                             <p class="">New releases every month.</p>
+                                        </div>
+                                        <div class="relative target mx-auto h-auto">
+                                             <a class="mx-auto btn_md primary_bg w-fit text" href="">
+                                                  <span>Start Free Trial</span>
+                                             </a>
+                                        </div>
+                                   </div>
+                              </section>
+
+                              <section id="holdthree" class="panel w-full h-screen z-10">
+                                   <div
+                                        class=" bottom-0 flex flex-col justify-center items-center w-full h-screen  desktopContentSection">
+                                        <div class="mt-5 project_head sm:mt-0">
+                                             <h1 class="font-bold lg:text-6xl 2xl:text-7xl text-primary" data-scroll
+                                                  data-scroll-speed="0.8">
+                                                  Partnered</h1>
+                                        </div>
+                                        <div class="my-4 mb-5 font-bold text-white lg:text-6xl 2xl:text-7xl" data-scroll
+                                             data-scroll-speed="0.5">
+                                             <h1>with Best organization</h1>
+                                        </div>
+                                        <div class="inline mb-6 text-white project_data lg:text-xl 2xl:text-3xl">
+                                             <p class="">To deliver exceptional programs</p>
+                                        </div>
+                                        <div class="relative target mx-auto h-auto">
+                                             <a class="mx-auto btn_md primary_bg w-fit text" href="">
+                                                  <span>See Courses</span>
+                                             </a>
+                                        </div>
+                                   </div>
+                              </section>
+
+                         </div>
                     </section>
 
-
-                    <section class="z-10 bg-primary bg-opacity-5 section section_4">
-                         <div class="h-full gap-8 px-10 py-20 m-auto md:h-screen max-w-screen-2xl md:flex">
+                    <section class="z-10 bg-white section section_4">
+                         <div
+                              class="h-full gap-8 px-10 py-20 m-auto md:h-screen max-w-screen-2xl md:flex bg-primary bg-opacity-5">
                               <div class="flex flex-col justify-between gap-8 md:w-1/2 md:gap-0">
                                    <div class="text-secondary">
                                         <h1 class="text-4xl font-bold lg:text-5xl">
@@ -511,7 +595,7 @@
                     </section>
 
 
-                    <section class="z-10 section section_5">
+                    <section class="z-10 section section_5 bg-white">
                          <div
                               class="flex items-center content-center justify-center w-full h-screen overflow-hidden panal_main flex-c">
                               <div class='contenitore-css-macbook'>
@@ -579,13 +663,24 @@
 
                     </section>
 
+                    <section class="h-[84vh] section section_11 relative overflow-hidden bg-white">
+                         <div class="parallax-container">
+                              <div class="parallax-video">
+                                   <video class="" autoplay muted loop poster="../assets/videos/hero.gif" muted="muted">
+                                        <source src="../assets/videos/screenloop.mp4" id="sample" type="video/mp4">
+                                   </video>
+                              </div>
+                         </div>
+
+                    </section>
 
                     <section class="z-10 h-screen bg-white section section_6">
-                         <div class="flex items-center justify-center h-full max-w-screen-lg m-auto main_wrapper">
+                         <div
+                              class="flex items-center justify-center h-full max-w-screen-lg m-auto main_wrapper px-10 lg:px-0">
                               <div class="flex flex-col items-center justify-center gap-10 wrapper_">
                                    <div>
                                         <h1
-                                             class="title_section text-8xl 2xl:text-9xl 2xl:font-extrabold leading-[126px] text-center text-[#f40032] font-extrabold">
+                                             class="title_section text-6xl lg:text-8xl 2xl:text-9xl 2xl:font-extrabold  text-center text-[#f40032] font-extrabold">
                                              Your child's future
                                              gateway. Step in
                                              <h1>
@@ -609,7 +704,7 @@
                          </div>
                     </section>
 
-                    <!-- <section class="section horizontal-items" data-scroll-section>
+                    <section class="section horizontal-items">
                          <div class="gallery-section">
                               <div class="relative flex flex-wrap row-img row-1" data-scroll data-scroll-speed="-1"
                                    data-scroll-direction="horizontal">
@@ -708,18 +803,9 @@
                                    </div>
                               </div>
                          </div>
-                    </section> -->
-
-                    <section class="h-[84vh] section section_11 relative overflow-hidden">
-                         <div class="parallax-container">
-                              <div class="parallax-video">
-                                   <video class="" autoplay muted loop poster="../assets/videos/hero.gif" muted="muted">
-                                        <source src="../assets/videos/screenloop.mp4" id="sample" type="video/mp4">
-                                   </video>
-                              </div>
-                         </div>
-
                     </section>
+
+                    
 
                     <section class="z-10 h-full max-w-screen-lg min-h-screen m-auto section section_8">
                          <div class="py-20 wrapper_container">
@@ -939,9 +1025,10 @@
                     </section> -->
 
                     <section
-                         class="flex items-center justify-center h-[84vh] section section_13 overflow-hidden relative">
-                         <div class="bg bg-image1">
+                         class="flex items-center justify-center h-screen section section_13 overflow-hidden relative">
+                         <div class="bg bg-image1 ">
                          </div>
+                         <div class="pa-hero-bg-overlay2 z-[-1]"></div>
                          <div
                               class="flex flex-col w-4/5 gap-8 text-center text-white parallax_content md:w-1/3 xs:w-1/2">
                               <h1 class="text-2xl font-bold sm:text-4xl lg:text-6xl">
@@ -952,7 +1039,7 @@
                          </div>
                     </section>
 
-                    <section class="bg-white md:h-screen" data-scroll-section>
+                    <section class="bg-white md:h-screen">
                          <div class="flex flex-col h-full max-w-screen-xl gap-10 px-10 py-10 m-auto wrapper_main">
                               <div
                                    class="flex flex-col md:flex-row gap-5 md:gap-0 items-center justify-between md:h-[25%]">
@@ -1304,7 +1391,13 @@
           </footer>
      </div>
 
-
+     <div class="preloader">
+          <div class="text-container">
+               <h1>Loading</h1>
+               <h1>Educraft</h1>
+               <h1>...</h1>
+          </div>
+     </div>
 
      <div class="cursor" id="cursor"></div>
      <script src="../assets/pluggins/jquery/jquery-3.6.3.min.js"></script>
@@ -1314,8 +1407,8 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
      <script src="../assets/pluggins/scrollsmoother/ss.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-     <script src="../assets/pluggins/locomotive/locomotive-scroll.min.js"></script>
      <script src="../assets/pluggins/cdn.jsdelivr.net/npm/vanilla-lazyload%4017.6.1/dist/lazyload.min.js"></script>
+     <script src="../assets/pluggins/locomotive/locomotive-scroll.min.js"></script>
      <script src="../assets/js/main.js"></script>
      <!-- <script src="../assets/js/section3.js"></script> -->
      <!-- <script src="../assets/js/cursor.js"></script> -->

@@ -91,6 +91,80 @@
                 </div>
             </div>
         </section>
+        <section>
+
+
+            <div class="wrap-all relative">
+                <div
+                    class="bg absolute top-0 left-0 w-screen h-screen -z-20 bg-[url(../assets/images/bg-section_3.png)] bg-cover bg-no-repeat bg-center">
+                </div>
+                <div class="pa-hero-bg-overlay z-[-1]  absolute inset-0 translate-z-20 bg-black bg-opacity-75"></div>
+                <div class="start-trig"></div>
+                <section id="holdone" class="panel w-full h-screen z-10">
+                    <div
+                        class=" bottom-0 flex flex-col justify-center items-center w-full h-screen desktopContentSection">
+                        <div class="mt-5 project_head sm:mt-0">
+                            <h1 class="mb-5 font-bold text-white lg:text-6xl 2xl:text-7xl">For
+                                Kids Ages</h1>
+                        </div>
+                        <div class="my-4 font-bold lg:text-6xl 2xl:text-7xl text-primary">
+                            <h1>2-14</h1>
+                        </div>
+                        <div class="inline mb-6 text-white project_data lg:text-xl 2xl:text-3xl">
+                            <p class="">lorem ipsum text dummy.</p>
+                        </div>
+                        <div class="relative target mx-auto h-auto">
+                            <a class="mx-auto btn_md primary_bg w-fit text" href="">
+                                <span>Get Access </span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="holdtwo" class="panel w-full h-screen z-10">
+                    <div
+                        class=" bottom-0 flex flex-col justify-center items-center w-full h-screen  desktopContentSection">
+                        <div class="mt-5 project_head sm:mt-0">
+                            <h1 class="mb-5 font-bold lg:text-6xl 2xl:text-7xl text-primary">For
+                                500+</h1>
+                        </div>
+                        <div class="my-4 font-bold text-white lg:text-6xl 2xl:text-7xl">
+                            <h1>Courses Available</h1>
+                        </div>
+                        <div class="inline mb-6 text-white project_data lg:text-xl 2xl:text-3xl">
+                            <p class="">New releases every month.</p>
+                        </div>
+                        <div class="relative target mx-auto h-auto">
+                            <a class="mx-auto btn_md primary_bg w-fit text" href="">
+                                <span>Start Free Trial</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="holdthree" class="panel w-full h-screen z-10">
+                    <div
+                        class=" bottom-0 flex flex-col justify-center items-center w-full h-screen  desktopContentSection">
+                        <div class="mt-5 project_head sm:mt-0">
+                            <h1 class="mb-5 font-bold lg:text-6xl 2xl:text-7xl text-primary">
+                                Partnered</h1>
+                        </div>
+                        <div class="my-4 font-bold text-white lg:text-6xl 2xl:text-7xl">
+                            <h1>with Best organization</h1>
+                        </div>
+                        <div class="inline mb-6 text-white project_data lg:text-xl 2xl:text-3xl">
+                            <p class="">To deliver exceptional programs</p>
+                        </div>
+                        <div class="relative target mx-auto h-auto">
+                            <a class="mx-auto btn_md primary_bg w-fit text" href="">
+                                <span>See Courses</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </section>
         <section class="h-screen overflow-hidden bg-green-300" data-scroll-section>
             <style>
                 :root {
@@ -341,7 +415,7 @@
 
         initLazyLoad();
         // initPlayVideoInview();
-        initSmoothScroll();
+        // initSmoothScroll();
         /**
          * Lazy Load
          */
@@ -400,6 +474,19 @@
             // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
             ScrollTrigger.refresh();
         }
+
+        var largeTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".start-trig",
+                pin: '.wrap-all',
+                //    scroller: ".smooth-scroll",
+                pinSpacing: false,
+                start: "top top",
+                markers: true,
+                //end: '+=200%',
+                end: '+=300%', // two more sections so 2*100% more here
+            },
+        })
     </script>
 </body>
 

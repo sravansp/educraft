@@ -1,5 +1,8 @@
 gsap.registerPlugin(ScrollTrigger);
 
+
+
+
 // you only need to define the configuration settings you want to CHANGE. Omitted properties won't be affected.
 gsap.config({
      autoSleep: 60,
@@ -12,31 +15,51 @@ gsap.config({
           rotation: "rad"
      }
 });
-// smooth scrolling container
-const smoother = ScrollSmoother.create({
-     // wrapper: ".body",
-     content: ".scroll_smoother",
-     smooth: 0.9,
-     effects: true,
-     normalizeScroll: true,
-     smoothTouch: 0.1,
-     speed: 5,
 
-});
-/* After Adding New Content to DOM */
-smoother.refresh();
+// const tl = gsap.timeline();
+
+// tl.from(".hero-tittle", 1.8, {
+//   y: 100,
+//   ease: "power4.out",
+//   delay: 1,
+//   skewY: 7,
+//   stagger: {
+//     amount: 0.3
+//   }
+// })
+// // smooth scrolling container
+// const smoother = ScrollSmoother.create({
+//      // wrapper: ".body",
+//      content: ".scroll_smoother",
+//      smooth: 0.9,
+//      effects: true,
+//      normalizeScroll: true,
+//      smoothTouch: 0.1,
+//      speed: 5,
+
+// });
+// /* After Adding New Content to DOM */
+// smoother.refresh();
 const selectAll = (e) => document.querySelectorAll(e);
 
-// initSmoothScroll();
-// initLazyLoad();
+window.onload = function() {
+     initPreloader();
+}
+
+
+initSmoothScroll();
+
+window.history.scrollRestoration = "manual";
+ScrollTrigger.clearScrollMemory("manual");
 initscrollFisrt();
 initsecondAnime();
-initbutton();
 initParallaxImage();
+initNavbarFixedTop();
+initLazyLoad();
+initbutton();
 initParallaxVideo();
 initScrolltriggerNav();
 initNavbarResponsive();
-initNavbarFixedTop();
 
 
 
@@ -47,6 +70,7 @@ function initScrolltriggerNav() {
 
      ScrollTrigger.create({
           start: 'top -30%',
+          scroller: ".smooth-scroll",
           onUpdate: self => {
                $("body").addClass('scrolled');
           },
@@ -92,24 +116,21 @@ function initParallaxImage() {
           // use function-based values in order to keep things responsive
           gsap.fromTo(section.bg, {
                backgroundPosition: () => i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px"
+               
           }, {
                backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+               scale:1.3,
                ease: "none",
                scrollTrigger: {
                     trigger: section,
                     start: () => i ? "top bottom" : "top top",
                     end: "bottom top",
+                    scroller: ".smooth-scroll",
                     scrub: true,
                     invalidateOnRefresh: true // to make it responsive
                }
           });
-          // gsap.fromTo(".parallax_content", {
-          //      opacity: 1
-          // }, {
-          //      y: "-50%",
-          //      duration: 1,
-          //      opacity: 0,
-          // });
+         
 
      });
 }
@@ -227,6 +248,7 @@ function initNavbarFixedTop() {
      ScrollTrigger.create({
           start: 'top -50',
           end: 99999,
+          scroller: ".smooth-scroll",
           // markers: true,
           toggleClass: {
                className: 'navbar--scrolled',
@@ -237,6 +259,7 @@ function initNavbarFixedTop() {
      ScrollTrigger.create({
           start: 'top -300',
           end: 99999,
+          scroller: ".smooth-scroll",
           toggleClass: {
                className: 'navbar--up',
                targets: '.navbar'
@@ -253,19 +276,6 @@ function initNavbarFixedTop() {
      });
 
      const elem = document.querySelectorAll(".navbar");
-     // const classes = ["a", ".logo"];
-
-     // function toggleClasses() {
-     //      classes.forEach(myClass => elem.classList.toggle(myClass))
-     // }
-
-     // gsap.to(classes, {
-     //      scrollTrigger: {
-     //           trigger: elem,
-     //           start: 'top -150',
-     //           scrub: true
-     //      }
-     // });
 
 
 }
@@ -283,35 +293,46 @@ function initLazyLoad() {
 }
 
 function initSmoothScroll() {
-     scroll = new LocomotiveScroll({
-          el: document.querySelector("[data-scroll-container]"),
+
+     const locoScroll = new LocomotiveScroll({
+          el: document.querySelector(".smooth-scroll"),
           smooth: true,
+          mobile: {
+               breakpoint: 0,
+               smooth: true,
+               getDirection: true,
+          },
+          tablet: {
+               breakpoint: 0,
+               smooth: true,
+               getDirection: true,
+          },
+     });
+     // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+     locoScroll.on("scroll", ScrollTrigger.update);
+
+     // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+     ScrollTrigger.scrollerProxy(".smooth-scroll", {
+          scrollTop(value) {
+               return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+          }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+          getBoundingClientRect() {
+               return {
+                    top: 0,
+                    left: 0,
+                    width: window.innerWidth,
+                    height: window.innerHeight
+               };
+          },
+          // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+          pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
      });
 
-     window.onresize = scroll.update();
+     ScrollTrigger.defaults({
+          scroller: ".smooth-scroll",
+     });
 
-     scroll.on("scroll", () => ScrollTrigger.update());
 
-     // ScrollTrigger.scrollerProxy('[data-scroll-container]', {
-     //      scrollTop(value) {
-     //           return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
-     //      }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-     //      getBoundingClientRect() {
-     //           return {
-     //                top: 0,
-     //                left: 0,
-     //                width: window.innerWidth,
-     //                height: window.innerHeight
-     //           };
-     //      },
-     //      // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-     //      pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
-     // });
-
-     // ScrollTrigger.defaults({
-     //      scroller: document.querySelector('[data-scroll-container]'),
-     // });
-   
 
      /**
       * Remove Old Locomotive Scrollbar
@@ -323,58 +344,28 @@ function initSmoothScroll() {
           scrollbar[0].remove();
      }
 
-     // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
-     ScrollTrigger.addEventListener("refresh", () => scroll.update());
+     // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
      // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
      ScrollTrigger.refresh();
+
 }
 
 function initscrollFisrt() {
-     let section = document.getElementsByClassName("section_3");
-     const boxes = document.querySelectorAll(".desktopContentSection");
-     const boxesmotfirst = document.querySelectorAll(".desktopContentSection:not(:first-child)");
 
-     const tl = gsap.timeline();
-     boxes.forEach((box, i) => {
-          if (i !== 0) {
-               tl.fromTo(
-                    box, {
-                         opacity: 0,
-                         yPercent: 50
-                    }, {
-                         opacity: 1,
-                         yPercent: 0
-
-                    },
-                    i
-               );
-          }
-          if (i !== boxes.length - 1) {
-               tl.fromTo(
-                    box, {
-                         opacity: 1,
-                         yPercent: 0
-                    }, {
-                         opacity: 0,
-                         yPercent: -50,
-                         delay: 0.5
-                    },
-                    i
-               );
-          }
-     });
-     console.log(section);
-     ScrollTrigger.create({
-          trigger: section,
-          pin: true,
-          //   markers: true,
-          start: "top top",
-          end: `+=${window.innerHeight * boxes.length}`,
-          animation: tl,
-          scrub: true,
-     });
-
+     var largeTL = gsap.timeline({
+          scrollTrigger: {
+               trigger: ".start-trig",
+               pin: ".bg_scroller",
+               scroller: ".smooth-scroll",
+               pinSpacing: false,
+               start: "top top",
+               // markers: true,
+               //end: '+=200%',
+               end: '+=400%', // two more sections so 2*100% more here
+          },
+     })
 
 }
 
@@ -392,6 +383,7 @@ function initsecondAnime() {
                trigger: videoElem,
                start: "top 70%",
                end: "bottom",
+               // scroller: ".smooth-scroll",
                // markers: !0,
                onEnter: () => videoElem.play(),
                onEnterBack: () => videoElem.play(),
@@ -403,6 +395,7 @@ function initsecondAnime() {
           scrollTrigger: {
                trigger: ".section_5",
                start: "top top",
+               scroller: ".smooth-scroll",
                // markers: !0,
                scrub: !0,
                pin: !0,
@@ -498,7 +491,8 @@ function initsecondAnime() {
           scrollTrigger: {
                trigger: videoElem,
                start: "center center",
-               end: "+=600",
+               end: "+=8000",
+               // scroller: ".smooth-scroll",
                scrub: !0
           }
      });
@@ -535,4 +529,47 @@ function once(a, b, c, d) {
           a.removeEventListener(b, e), c.apply(this, arguments);
      };
      return a.addEventListener(b, e, d), e;
+}
+
+function initPreloader() {
+     const tl = gsap.timeline();
+
+     tl.to("body", {
+               overflow: "hidden"
+          })
+          .to(".preloader .text-container", {
+               duration: 0,
+               opacity: 1,
+               ease: "Power3.easeOut"
+          })
+          .from(".preloader .text-container h1", {
+               duration: 1.5,
+               delay: 1,
+               y: 70,
+               skewY: 10,
+               stagger: 0.4,
+               ease: "Power3.easeOut"
+          })
+          .to(".preloader .text-container h1", {
+               duration: 1.2,
+               y: 70,
+               skewY: -20,
+               stagger: 0.2,
+               ease: "Power3.easeOut"
+          })
+          .to(".preloader", {
+               duration: 0.8,
+               height: "0vh",
+               ease: "Expo.easeOut"
+          })
+          .to(
+               "body", {
+                    overflow: "auto"
+               },
+               "-=2"
+          )
+          .to(".preloader", {
+               display: "none"
+          });
+
 }

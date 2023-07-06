@@ -25,14 +25,11 @@
 }
 
 
-/* html {
-     overflow: auto;
-} */
+html.has-smooth-scroll,
+html.has-smooth-scroll body {
+     overflow: hidden;
+}
 
-/* body {
-     overflow-y: scroll;
-     overflow-x: hidden;
-} */
 
 .primary_bg {
      background: var(--primary-bg);
@@ -44,6 +41,11 @@
 
 .active_nav {
      color: var(--primary-color);
+}
+
+.hero_bg {
+
+     background: linear-gradient(128deg, #37304E 0%, #44374F 45.15%, #544155 100%);
 }
 
 .btn_md {
@@ -320,6 +322,17 @@
      transform: translateZ(20px);
      background: rgba(0, 0, 0, .78);
 }
+.pa-hero-bg-overlay2 {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     -webkit-transform: translateZ(20px);
+     -moz-transform: translateZ(20px);
+     transform: translateZ(20px);
+     background: rgba(0,0,0,.65);
+}
 
 .course {
      background: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%);
@@ -355,7 +368,7 @@
 .bg-image1 {
      width: 100%;
      height: 100%;
-     background-image: url("../images/parallax-educraft.jpg");
+     background-image: url("../images/2.jpg");
      background-size: cover;
      background-position: center;
      background-repeat: no-repeat;
@@ -645,7 +658,8 @@ body.scrolled .navbar-toggle {
 
 /* navbar top fixed  */
 
-.navbar {
+.navbar,
+.navbar_wrapper {
      transition: ease 0.4s;
 }
 
@@ -656,7 +670,13 @@ body.scrolled .navbar-toggle {
 
 .navbar--scrolled {
      height: 60px;
-     background: #1c1d20;
+     background: #101010cf;
+     backdrop-filter: blur(50px);
+     transition: ease 0.4s;
+}
+
+.navbar--scrolled .navbar_wrapper {
+     height: 60px;
      transition: ease 0.4s;
 }
 
@@ -694,7 +714,7 @@ body.scrolled .navbar-toggle {
 
 .horizontal-items {
      overflow: hidden;
-     padding-top: calc(var(--section-padding) * 0.75);
+     /* padding-top: calc(var(--section-padding) * 0.75); */
      padding-bottom: calc(var(--section-padding) - 2.5vw);
 }
 
@@ -783,4 +803,29 @@ body.scrolled .navbar-toggle {
      .horizontal-items {
           padding-top: 0;
      }
+}
+
+/* Pre Loader Gsap animation  */
+
+.preloader {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: #000;
+     overflow: hidden;
+     z-index: 100;
+}
+
+.preloader .text-container {
+     display: flex;
+     flex-direction: row;
+     gap: 1em;
+     overflow: hidden;
+     color: white;
+     opacity: 0;
 }
