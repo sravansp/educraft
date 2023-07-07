@@ -88,7 +88,7 @@ html.has-smooth-scroll body {
 }
 
 /* Scrollbar Styling */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
      width: 10px;
 }
 
@@ -110,7 +110,7 @@ html.has-smooth-scroll body {
 
 ::-webkit-scrollbar-track-piece:end {
      background: transparent url('images/backgrounds/scrollbar.png') repeat-y !important;
-}
+} */
 
 .button {
      position: relative;

@@ -271,15 +271,17 @@ function initSmoothScroll() {
      const locoScroll = new LocomotiveScroll({
           el: document.querySelector(".smooth-scroll"),
           smooth: true,
-          // mobile: {
-          //      breakpoint: 0,
-          //      smooth: false,
-          //      getDirection: true,
-          // },
+          mobile: {
+               // breakpoint: 0,
+               smooth: true,
+               // inertia: 0.8,
+               // getDirection: true,
+          },
           tablet: {
                breakpoint: 0,
-               smooth: true,
-               getDirection: true,
+               // smooth: true,
+               // inertia: 0.8,
+               // getDirection: true,
           },
      });
      // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
@@ -396,16 +398,7 @@ function initsecondAnime() {
                     // delay: 0
                }
           )
-          .fromTo(
-               ".pa-hero-bg-overlay", {
-                    opacity: 1
-
-               }, {
-                    opacity: 0,
-                    duration: 1000,
-                    delay: 3000
-               }
-          )
+          
           .fromTo(
                ".css-macbook", {
                     scale: 3.5
@@ -416,7 +409,16 @@ function initsecondAnime() {
                }
 
           )
+          .fromTo(
+               ".pa-hero-bg-overlay", {
+                    opacity: 1
 
+               }, {
+                    opacity: 0,
+                    duration: 3000,
+                    delay: -5000
+               }
+          )
           .fromTo(
                ".mobile_screen_postion", {
                     opacity: 0,
