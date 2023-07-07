@@ -42,7 +42,7 @@ gsap.config({
 // smoother.refresh();
 const selectAll = (e) => document.querySelectorAll(e);
 
-window.onload = function() {
+window.onload = function () {
      initPreloader();
 }
 
@@ -116,10 +116,10 @@ function initParallaxImage() {
           // use function-based values in order to keep things responsive
           gsap.fromTo(section.bg, {
                backgroundPosition: () => i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px"
-               
+
           }, {
                backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
-               scale:1.3,
+               scale: 1.2,
                ease: "none",
                scrollTrigger: {
                     trigger: section,
@@ -130,7 +130,7 @@ function initParallaxImage() {
                     invalidateOnRefresh: true // to make it responsive
                }
           });
-         
+
 
      });
 }
@@ -162,82 +162,56 @@ function initParallaxVideo() {
 }
 
 function initNavbarResponsive() {
-     console.clear();
+     // console.clear();
+     var t1 = gsap.timeline({
+          paused: true
+     });
 
-     const html = document.documentElement;
-     const toggle = document.getElementById("toggle");
-     const circle = document.getElementById("bg-circle");
-     const circleWidth = circle.clientWidth;
+     // t1.to(".one", 0.5, {
+     //     y: 6,
+     //     rotation: 45,
+     //     ease: Expo.easeInOut,
+     // });
+     // t1.to(".two", 0.5, {
+     //     y: -6,
+     //     rotation: -45,
+     //     ease: Expo.easeInOut,
+     //     delay: -0.5,
+     // });
 
-     // Math calcul to get Height, Width, Diagonal and Circle Radius
+     t1.to(".menu-mobile", 1.5, {
+          top: "0%",
+          ease: Expo.easeInOut,
+          delay: -0.5,
+     });
 
-     const getVpdr = () => {
-          const vph = Math.pow(html.offsetHeight, 2); // Height
-          const vpw = Math.pow(html.offsetWidth, 2); // Width
-          const vpd = Math.sqrt(vph + vpw); // Diagonal
-          return (vpd * 2) / circleWidth; // Circle radius
-     };
-
-     const openNavbar = () => {
-          const openTimeline = new TimelineMax();
-          openTimeline.to(".navbar-mobile", 0, {
-               display: "flex"
-          });
-          openTimeline.to("#bg-circle", 1.5, {
-               scale: getVpdr(),
-               ease: Expo.easeInOut
-          });
-          openTimeline.staggerFromTo(".navbar-mobile ul li", 0.5, {
-               y: 25,
-               opacity: 0
-          }, {
-               y: 0,
-               opacity: 1
-          }, 0.1, 1);
-     };
-
-     const closeNavbar = () => {
-          const closeTimeline = new TimelineMax();
-          closeTimeline.staggerFromTo(".navbar-mobile ul li", 0.5, {
-               y: 0,
-               opacity: 1,
-               delay: 0.5
-          }, {
-               y: 25,
-               opacity: 0
-          }, -0.1);
-          closeTimeline.to("#bg-circle", 1, {
-               scale: 0,
-               ease: Expo.easeInOut,
-               delay: -0.5
-          });
-          closeTimeline.to(".navbar-mobile", 0, {
-               display: "none"
-          });
-     };
-
+     t1.staggerFrom(
+          ".menu-mobile ul li",
+          0.75, {
+               x: -30,
+               opacity: 0,
+               ease: Expo.easeOut
+          },
+          0.1
+     );
      let isOpen = false;
-
+     t1.reverse();
+     // $(document).on("click", ".navbar-toggle", function () {
+     //     t1.reversed(!t1.reversed());
+     // });
+     $(document).on("click", "a", function () {
+          t1.reversed(!t1.reversed());
+     });
+     const toggle = document.querySelector(".navbar-toggle");
      toggle.onclick = function () {
           if (isOpen) {
                this.classList.remove("active");
-               closeNavbar();
+               t1.reversed(!t1.reversed());
           } else {
                this.classList.add("active");
-               openNavbar();
+               t1.reversed(!t1.reversed());
           }
           isOpen = !isOpen;
-     };
-
-     // On windows resize, recalcule circle radius and update
-
-     window.onresize = () => {
-          if (isOpen) {
-               gsap.to("#bg-circle", 1, {
-                    scale: getVpdr(),
-                    ease: Expo.easeInOut
-               });
-          }
      };
 
 }
@@ -298,14 +272,14 @@ function initSmoothScroll() {
           el: document.querySelector(".smooth-scroll"),
           smooth: true,
           mobile: {
-               breakpoint: 0,
+               // breakpoint: 0,
                smooth: true,
-               getDirection: true,
+               // getDirection: true,
           },
           tablet: {
                breakpoint: 0,
                smooth: true,
-               getDirection: true,
+               // getDirection: true,
           },
      });
      // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
@@ -434,7 +408,7 @@ function initsecondAnime() {
           )
           .fromTo(
                ".css-macbook", {
-                    scale: 2.9
+                    scale: 3.5
                }, {
                     scale: 0.7,
                     duration: 9000,
@@ -481,7 +455,7 @@ function initsecondAnime() {
                }, {
                     backgroundColor: "#4b4b4d",
                     duration: 2,
-                    delay: 5
+                    // delay: 5
                }
           );
      let video_tl = gsap.timeline({

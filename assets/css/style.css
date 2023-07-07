@@ -67,6 +67,25 @@ html.has-smooth-scroll body {
      text-align: center;
      /* letter-spacing: -0.509404px; */
 }
+.btn_lg {
+     padding: 20px 25px;
+     gap: 12px;
+     outline: none;
+     border: none;
+     border-radius: 9999px;
+
+     /* font-size: 20px; */
+     /* font-weight: 600; */
+     /* line-height: 27px; */
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+     color: white;
+     text-align: center;
+     /* letter-spacing: -0.509404px; */
+}
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
@@ -183,7 +202,7 @@ html.has-smooth-scroll body {
 
 /* Center the display */
 .css-macbook .macbook-display-position {
-     width: 40%;
+     /* width: 40%; */
      margin: 0 auto;
 }
 
@@ -538,13 +557,13 @@ body.scrolled .navbar-toggle {
      -ms-user-select: none;
      user-select: none;
      cursor: pointer;
-     position: fixed;
-     z-index: 20;
-     top: 1rem;
+     /* position: fixed; */
+     /* z-index: 20; */
+     /* top: 1rem;
      right: 1rem;
      border: none;
      outline: none;
-     padding: 0;
+     padding: 0; */
 }
 
 .navbar-toggle .line {
@@ -583,10 +602,10 @@ body.scrolled .navbar-toggle {
      stroke-dashoffset: -138px;
 }
 
-.navbar-toggle:not(.active):hover .line.bottom {
+/* .navbar-toggle:not(.active):hover .line.bottom {
      stroke-dasharray: 40 180;
      stroke-dashoffset: 0px;
-}
+} */
 
 .navbar-mobile {
      position: fixed;
@@ -828,4 +847,11 @@ body.scrolled .navbar-toggle {
      overflow: hidden;
      color: white;
      opacity: 0;
+}
+.bg_student::after {
+     width: 300px;
+     height: 72px;
+     position: absolute;
+     filter: blur(17.453479766845703px);
+
 }
