@@ -271,15 +271,15 @@ function initSmoothScroll() {
      const locoScroll = new LocomotiveScroll({
           el: document.querySelector(".smooth-scroll"),
           smooth: true,
-          mobile: {
-               // breakpoint: 0,
-               smooth: true,
-               // getDirection: true,
-          },
+          // mobile: {
+          //      breakpoint: 0,
+          //      smooth: false,
+          //      getDirection: true,
+          // },
           tablet: {
                breakpoint: 0,
                smooth: true,
-               // getDirection: true,
+               getDirection: true,
           },
      });
      // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
