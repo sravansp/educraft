@@ -1,3 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+    --primary-bg: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%);
+    --secondary-bg: #272727;
+    --primary-color: #FF9900;
+    --secondary-color: #272727;
+    --section-padding: clamp(5em, 21vh, 12em);
+    --container-padding: clamp(2.5em, 8vw, 8em);
+    --gap-padding: clamp(1.5em, 4vw, 2.5em);
+}
+
+
+@layer components {
+    
+.primary_bg {
+    background: var(--primary-bg);
+}
+
+.secondary_bg {
+    background: var(--secondary-bg);
+}
+
+.active_nav {
+    color: var(--primary-color);
+}
+
+.hero_bg {
+
+    background: linear-gradient(128deg, #37304E 0%, #44374F 45.15%, #544155 100%);
+}
+
+.btn_md {
+    padding: 10px 20px;
+    gap: 12px;
+    outline: none;
+    border: none;
+    border-radius: 9999px;
+
+    /* font-size: 20px; */
+    /* font-weight: 600; */
+    /* line-height: 27px; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    text-align: center;
+    /* letter-spacing: -0.509404px; */
+}
+.btn_lg {
+    padding: 20px 25px;
+    gap: 12px;
+    outline: none;
+    border: none;
+    border-radius: 9999px;
+
+    /* font-size: 20px; */
+    /* font-weight: 600; */
+    /* line-height: 27px; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    text-align: center;
+    /* letter-spacing: -0.509404px; */
+}
+  }

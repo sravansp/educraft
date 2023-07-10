@@ -14,79 +14,6 @@
      src: url(..fonts/Gilroy/Gilroy-SemiBold.ttf) format("truetype");
 }
 
-:root {
-     --primary-bg: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%);
-     --secondary-bg: #272727;
-     --primary-color: #FF9900;
-     --secondary-color: #272727;
-     --section-padding: clamp(5em, 21vh, 12em);
-     --container-padding: clamp(2.5em, 8vw, 8em);
-     --gap-padding: clamp(1.5em, 4vw, 2.5em);
-}
-
-
-html.has-smooth-scroll,
-html.has-smooth-scroll body {
-     overflow: hidden;
-}
-
-
-.primary_bg {
-     background: var(--primary-bg);
-}
-
-.secondary_bg {
-     background: var(--secondary-bg);
-}
-
-.active_nav {
-     color: var(--primary-color);
-}
-
-.hero_bg {
-
-     background: linear-gradient(128deg, #37304E 0%, #44374F 45.15%, #544155 100%);
-}
-
-.btn_md {
-     padding: 10px 20px;
-     gap: 12px;
-     outline: none;
-     border: none;
-     border-radius: 9999px;
-
-     /* font-size: 20px; */
-     /* font-weight: 600; */
-     /* line-height: 27px; */
-
-     display: flex;
-     align-items: center;
-     justify-content: center;
-
-     color: white;
-     text-align: center;
-     /* letter-spacing: -0.509404px; */
-}
-.btn_lg {
-     padding: 20px 25px;
-     gap: 12px;
-     outline: none;
-     border: none;
-     border-radius: 9999px;
-
-     /* font-size: 20px; */
-     /* font-weight: 600; */
-     /* line-height: 27px; */
-
-     display: flex;
-     align-items: center;
-     justify-content: center;
-
-     color: white;
-     text-align: center;
-     /* letter-spacing: -0.509404px; */
-}
-
 /* Scrollbar Styling */
 /* ::-webkit-scrollbar {
      width: 10px;
@@ -855,3 +782,21 @@ body.scrolled .navbar-toggle {
      filter: blur(17.453479766845703px);
 
 }
+
+.footer {
+     background: linear-gradient(108.38deg, #221D33 1.7%, #3A2B46 45.59%, #523B53 98.92%);
+ }
+
+ .glass_container {
+
+
+     /* border: 1.18px solid; */
+
+     border-image-source: radial-gradient(21.19% 40.1% at 100.03% 0%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%),
+         radial-gradient(24.21% 39.21% at 0% 0%, rgba(255, 255, 255, 0.81) 0%, rgba(255, 255, 255, 0.19) 100%),
+         radial-gradient(98% 49.86% at 100.03% 100%, #A34E33 0%, rgba(51, 163, 109, 0.05) 100%);
+
+     border-radius: 13.497px;
+     background: linear-gradient(135deg, rgba(255, 255, 255, 0.40) 3.04%, rgba(255, 255, 255, 0.00) 96.03%);
+     backdrop-filter: blur(13.497163772583008px);
+ }
