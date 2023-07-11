@@ -40,7 +40,21 @@ gsap.config({
 // });
 // /* After Adding New Content to DOM */
 // smoother.refresh();
+
+
+
+
+
+
+
 const selectAll = (e) => document.querySelectorAll(e);
+
+
+
+
+
+
+
 
 window.onload = function () {
      initPreloader();
@@ -51,8 +65,18 @@ initSmoothScroll();
 
 window.history.scrollRestoration = "manual";
 ScrollTrigger.clearScrollMemory("manual");
+
+// create
+let mm = gsap.matchMedia();
+
+// add a media query. When it matches, the associated function will run
+mm.add("(min-width: 1024px)", () => {
+     initsecondAnime();
+});
+
+
 initscrollFisrt();
-initsecondAnime();
+
 initParallaxImage();
 initNavbarFixedTop();
 initLazyLoad();
@@ -347,6 +371,8 @@ function initscrollFisrt() {
 
 function initsecondAnime() {
 
+
+
      let videoElem = document.querySelector(".video-ux-design");
      let src = videoElem.currentSrc || videoElem.src;
 
@@ -375,8 +401,21 @@ function initsecondAnime() {
                // markers: !0,
                scrub: !0,
                pin: !0,
+               end: '+=200%',
                toggleClass: "acceso"
           }
+
+
+          // scrollTrigger: {
+          //      trigger: ".start-trig",
+          //      pin: ".bg_scroller",
+          //      scroller: ".smooth-scroll",
+          //      pinSpacing: false,
+          //      start: "top top",
+          //      // markers: true,
+          //      //end: '+=200%',
+          //      end: '+=400%', // two more sections so 2*100% more here
+          // },
      });
      video_timeline
           .fromTo(
@@ -398,7 +437,7 @@ function initsecondAnime() {
                     // delay: 0
                }
           )
-          
+
           .fromTo(
                ".css-macbook", {
                     scale: 3.5
@@ -496,8 +535,6 @@ function initsecondAnime() {
                     });
           }, 1e3);
 
-
-
 }
 
 function once(a, b, c, d) {
@@ -508,7 +545,14 @@ function once(a, b, c, d) {
 }
 
 function initPreloader() {
-     const tl = gsap.timeline();
+     const tl = gsap.timeline(
+
+          // {
+          //      paused: true,
+          //      onUpdate: progressUpdate,
+          //      onComplete: loadComplete
+          // }
+     );
 
      tl.to("body", {
                overflow: "hidden"
@@ -518,19 +562,12 @@ function initPreloader() {
                opacity: 1,
                ease: "Power3.easeOut"
           })
-          .from(".preloader .text-container h1", {
-               duration: 1.5,
+          .from(".preloader .text-container svg", {
+               duration: 2.7,
                delay: 1,
-               y: 70,
-               skewY: 10,
-               stagger: 0.4,
-               ease: "Power3.easeOut"
-          })
-          .to(".preloader .text-container h1", {
-               duration: 1.2,
-               y: 70,
-               skewY: -20,
-               stagger: 0.2,
+               // y: 70,
+               // skewY: 10,
+               // stagger: 0.4,
                ease: "Power3.easeOut"
           })
           .to(".preloader", {
