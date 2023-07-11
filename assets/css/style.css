@@ -777,6 +777,33 @@ body.scrolled .navbar-toggle {
      opacity: 0;
 }
 
+.preloader .text-container svg {
+
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     margin: auto;
+
+     animation: dash 3s infinite alternate;
+
+     stroke-dasharray: 400px;
+     stroke-dashoffset: -400px;
+}
+
+@keyframes dash {
+     from {
+          stroke-dashoffset: -400px;
+     }
+
+     to {
+          stroke-dashoffset: 0px;
+     }
+}
+
+
+
 .bg_student::after {
      width: 300px;
      height: 72px;
