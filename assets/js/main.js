@@ -534,9 +534,9 @@ function initPreloader() {
                ease: "Power3.easeOut"
           })
           .to(".preloader", {
-               duration: 0.8,
+               duration: 1,
                height: "0vh",
-               ease: "Expo.easeOut"
+               ease: "expo.inOut"
           })
           .to(
                "body", {
