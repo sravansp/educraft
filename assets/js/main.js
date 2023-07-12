@@ -84,7 +84,7 @@ initbutton();
 initParallaxVideo();
 initScrolltriggerNav();
 initNavbarResponsive();
-
+initplyrseeVideo();
 
 
 /**
@@ -401,7 +401,7 @@ function initsecondAnime() {
                // markers: !0,
                scrub: !0,
                pin: !0,
-               end: '+=200%',
+               // end: '+=200%',
                toggleClass: "acceso"
           }
 
@@ -585,4 +585,46 @@ function initPreloader() {
                display: "none"
           });
 
+}
+
+function initplyrseeVideo() {
+
+
+     let buttons;
+     let lightbox = document.querySelector('.lightbox');
+     let player;
+
+     const showLightbox = () => {
+          buttons = document.querySelectorAll('.btn_see_video');
+          buttons.forEach(button => {
+               button.addEventListener('click', () => {
+                    lightbox.style.display = 'block';
+                    document.querySelector('#player iframe').src = 'https://player.vimeo.com/video/' + button.dataset.link;
+                    player = new Plyr('#player');
+                    player.play();
+               });
+          });
+     }
+
+     const closeLightbox = () => {
+          lightbox.addEventListener('click', function (e) {
+               if (e.target !== this) return;
+               document.querySelector('.lightbox').style.display = 'none';
+               player.destroy();
+          });
+     }
+
+     document.addEventListener('DOMContentLoaded', () => {
+          // This is the bare minimum JavaScript. You can opt to pass no arguments to setup.
+
+          // Expose
+          window.player = player;
+
+          // Bind event listener
+          function on(selector, type, callback) {
+               document.querySelector(selector).addEventListener(type, callback, false);
+          }
+          showLightbox();
+          closeLightbox();
+     });
 }

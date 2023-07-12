@@ -81,7 +81,7 @@
      position: absolute;
      inset: 0;
      background: linear-gradient(119.3deg, rgba(48, 38, 67, 0.6) 3.18%, rgba(21, 15, 17, 0.6) 25.55%, rgba(52, 56, 63, 0.6) 62.89%, rgba(39, 56, 72, 0.6) 106.42%);
-     /* background: linear-gradient(112deg, rgb(29 15 56 / 60%) 3.18%, rgb(51 24 33 / 60%) 25.55%, rgb(40 47 59 / 60%) 62.89%, rgb(46 77 106 / 60%) 106.42%); */
+
      backdrop-filter: blur(210px);
      -webkit-backdrop-filter: blur(210px);
      height: 100%;
@@ -840,3 +840,15 @@ body.scrolled .navbar-toggle {
      pointer-events: none;
 
 }
+
+.lightbox {
+     display: none;
+     position: fixed;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     background: rgba(0, 0, 0, .7);
+     z-index: 9999;
+   }
+   

@@ -30,7 +30,8 @@
 
 .hero_bg {
 
-    background: linear-gradient(128deg, #37304E 0%, #44374F 45.15%, #544155 100%);
+    /* background: linear-gradient(128deg, #37304E 0%, #44374F 45.15%, #544155 100%); */
+    background: linear-gradient(108.38deg, #221D33 1.7%, #3A2B46 45.59%, #523B53 98.92%);
 }
 
 .btn_md {
