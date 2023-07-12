@@ -223,7 +223,7 @@ function initNavbarResponsive() {
      // $(document).on("click", ".navbar-toggle", function () {
      //     t1.reversed(!t1.reversed());
      // });
-     $(document).on("click", "a", function () {
+     $(document).on("click", ".menu-mobile a", function () {
           t1.reversed(!t1.reversed());
      });
      const toggle = document.querySelector(".navbar-toggle");
@@ -599,7 +599,7 @@ function initplyrseeVideo() {
           buttons.forEach(button => {
                button.addEventListener('click', () => {
                     lightbox.style.display = 'block';
-                    document.querySelector('#player iframe').src = 'https://player.vimeo.com/video/' + button.dataset.link;
+                    // document.querySelector('#player iframe').src = 'https://player.vimeo.com/video/' + button.dataset.link;
                     player = new Plyr('#player');
                     player.play();
                });

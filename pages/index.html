@@ -130,7 +130,7 @@
                                                                  class="flex items-center justify-center bg-white rounded-full bg-opacity-40 w-7 h-7">
                                                                  <i class="text-sm ri-arrow-right-line"></i></span>
                                                        </a>
-                                                       <a data-link="138000061" href="javascript:void(0)"
+                                                       <a href="javascript:void(0)" data-link="106231032"
                                                             class="flex items-center gap-2 text-base text-white btn_see_video">
                                                             <span>See Video</span>
                                                             <i class="text-xl ri-play-circle-line"></i>
@@ -179,7 +179,7 @@
                                                                  class="flex items-center justifhrefnter bg-white rounded-full bg-opacity-40 w-7 h-7">
                                                                  <i class="text-sm ri-arrow-right-line"></i></span>
                                                        </a>
-                                                       <a data-link="138000061" href="javascript:void(0)"
+                                                       <a href="javascript:void(0)"
                                                             class="flex items-center gap-2 text-base text-white btn_see_video">
                                                             <span>See Video</span>
                                                             <i class="text-xl ri-play-circle-line"></i>
@@ -205,13 +205,7 @@
                                    </div>
                               </div>
                          </div>
-                         <div class="lightbox">
-                              <div class="max-w-[50%] m-[15%_auto]">
-                                   <div class="plyr__video-embed" id="player">
-                                        <iframe src="" allowfullscreen allowtransparency allow="autoplay"></iframe>
-                                   </div>
-                              </div>
-                         </div>
+
                     </section>
 
 
@@ -541,7 +535,7 @@
                                    several other feautre including.</p>
                               <div class="relative target lg:w-[20%] mx-auto h-auto ">
                                    <a class="mx-auto btn_md md:btn_lg primary_bg w-fit text" href="">
-                                        <span>Get Access </span>
+                                        <span>Explore All Courses</span>
                                    </a>
                               </div>
 
@@ -599,7 +593,7 @@
                          <div class="parallax-container">
                               <div class="parallax-video">
                                    <video class="" autoplay muted loop poster="../assets/videos/hero.gif" muted="muted">
-                                        <source src="../assets/videos/screenloop.mp4" id="sample" type="video/mp4">
+                                        <source src="../assets/videos/screenloop1.mp4" type="video/mp4">
                                    </video>
                               </div>
                          </div>
@@ -622,7 +616,7 @@
                                              limitless
                                              possibilities</p>
                                    </div>
-                                   <div class="flex justify-around gap-8 btn_group">
+                                   <div class="justify-around gap-8 btn_group hidden">
                                         <div class="relative h-auto mx-auto target">
 
                                              <a class="btn_md primary_bg text" href="">Request a access</a>
@@ -934,8 +928,8 @@
                          </div>
                     </section>
 
-                    <section class="bg-white md:h-screen">
-                         <div class="flex flex-col h-full max-w-screen-xl gap-10 px-10 py-10 m-auto wrapper_main">
+                    <section class="bg-white h-screen">
+                         <div class="flex flex-col h-full max-w-screen-xl gap-10 px-10 py-20 m-auto wrapper_main">
                               <div
                                    class="flex flex-col md:flex-row gap-5 md:gap-0 items-center justify-between md:h-[25%]">
                                    <div class="relative md:w-1/2">
@@ -1171,7 +1165,22 @@
 
           </div>
      </div>
+     <div class="lightbox h-screen">
+          <div class="videopopup absolute left-1/2 top-1/2 w-[90%] lg:w-1/2 -translate-x-1/2 -translate-y-1/2">
+               <div class="m-auto rounded-2xl overflow-hidden">
+                    <!-- <div class="plyr__video-embed" id="player">
+                         <iframe src="" allowfullscreen allowtransparency allow="autoplay"></iframe>
+                    </div> -->
+                    <video id="player" playsinline controls data-poster="">
+                         <source src="../assets/videos/hero-video.mp4" type="video/mp4" />
+                    <!-- <source src="/path/to/video.webm" type="video/webm" />
 
+                    Captions are optional -->
+                    <!-- <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default /> -->
+                    </video>
+               </div>
+          </div>
+     </div>
      <div class="cursor" id="cursor"></div>
      <script src="../assets/pluggins/jquery/jquery-3.6.3.min.js"></script>
 
