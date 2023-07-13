@@ -42,7 +42,8 @@ gsap.config({
 // smoother.refresh();
 
 
-
+window.history.scrollRestoration = "manual";
+ScrollTrigger.clearScrollMemory("manual");
 
 
 
@@ -65,9 +66,9 @@ initSmoothScroll();
 initNavbarFixedTop();
 initNavbarResponsive();
 initplyrseeVideo();
-window.history.scrollRestoration = "manual";
-ScrollTrigger.clearScrollMemory("manual");
+aboutAnimation();
 
+initscrollFisrt();
 // create
 let mm = gsap.matchMedia();
 
@@ -76,7 +77,7 @@ mm.add("(min-width: 1024px)", () => {
      initsecondAnime();
 });
 
-initscrollFisrt();
+
 initParallaxImage();
 initLazyLoad();
 initbutton();
@@ -372,24 +373,24 @@ function initsecondAnime() {
 
 
      let videoElem = document.querySelector(".video-ux-design");
-     let src = videoElem.currentSrc || videoElem.src;
+     // let src = videoElem.currentSrc || videoElem.src;
 
 
-     once(document.documentElement, "touchstart", function () {
+     // once(document.documentElement, "touchstart", function () {
 
-               videoElem.play(), videoElem.pause();
-          }),
-          ScrollTrigger.create({
-               trigger: videoElem,
-               start: "top 70%",
-               end: "bottom",
-               // scroller: ".smooth-scroll",
-               // markers: !0,
-               onEnter: () => videoElem.play(),
-               onEnterBack: () => videoElem.play(),
-               onLeave: () => videoElem.pause(),
-               onLeaveBack: () => videoElem.pause()
-          });
+     //           videoElem.play(), videoElem.pause();
+     //      }),
+     //      ScrollTrigger.create({
+     //           trigger: videoElem,
+     //           start: "top 70%",
+     //           end: "bottom",
+     //           // scroller: ".smooth-scroll",
+     //           // markers: !0,
+     //           onEnter: () => videoElem.play(),
+     //           onEnterBack: () => videoElem.play(),
+     //           onLeave: () => videoElem.pause(),
+     //           onLeaveBack: () => videoElem.pause()
+     //      });
      //videoElem.play();
      let video_timeline = gsap.timeline({
           scrollTrigger: {
@@ -456,16 +457,16 @@ function initsecondAnime() {
                     delay: -5000
                }
           )
-          .fromTo(
-               ".mobile_screen_postion", {
-                    opacity: 0,
-               }, {
-                    duration: 5000,
-                    delay: -5000,
-                    opacity: 1,
+          // .fromTo(
+          //      ".mobile_screen_postion", {
+          //           opacity: 0,
+          //      }, {
+          //           duration: 5000,
+          //           delay: -5000,
+          //           opacity: 1,
 
-               }
-          )
+          //      }
+          // )
           .fromTo(
                ".lptitle_span", {
                     opacity: 0,
@@ -509,29 +510,29 @@ function initsecondAnime() {
                scrub: !0
           }
      });
-     once(videoElem, "loadedmetadata", () => {
-               video_tl.fromTo(
-                    videoElem, {
-                         currentTime: 0.01
-                    }, {
-                         currentTime: videoElem.duration || 1
-                    }
-               );
-          }),
-          setTimeout(function () {
-               window.fetch &&
-                    fetch(src)
-                    .then((a) => a.blob())
-                    .then((a) => {
-                         let b = URL.createObjectURL(a),
-                              c = videoElem.currentTime;
-                         once(document.documentElement, "touchstart", function () {
-                                   videoElem.play(), videoElem.pause();
-                              }),
-                              videoElem.setAttribute("src", b),
-                              (videoElem.currentTime = c + 0.01);
-                    });
-          }, 1e3);
+     // once(videoElem, "loadedmetadata", () => {
+     //           video_tl.fromTo(
+     //                videoElem, {
+     //                     currentTime: 0.01
+     //                }, {
+     //                     currentTime: videoElem.duration || 1
+     //                }
+     //           );
+     //      }),
+     //      setTimeout(function () {
+     //           window.fetch &&
+     //                fetch(src)
+     //                .then((a) => a.blob())
+     //                .then((a) => {
+     //                     let b = URL.createObjectURL(a),
+     //                          c = videoElem.currentTime;
+     //                     once(document.documentElement, "touchstart", function () {
+     //                               videoElem.play(), videoElem.pause();
+     //                          }),
+     //                          videoElem.setAttribute("src", b),
+     //                          (videoElem.currentTime = c + 0.01);
+     //                });
+     //      }, 1e3);
 
 }
 
@@ -625,4 +626,162 @@ function initplyrseeVideo() {
           showLightbox();
           closeLightbox();
      });
+}
+
+function aboutAnimation() {
+     // var tl = gsap.timeline({
+     //      scrollTrigger: {
+     //           trigger:".section_wrapper_1",
+     //           start: "top 80%",
+     //           // end: "bottom top",
+     //           // toggleActions: "restart none none reset"
+     //      },
+     //      paused: true
+     // });
+     // tl.from(".section_wrapper_1 h1", {
+     //      duration: 0.8,
+     //      translateY: 50,
+     //      opacity: 0,
+     //      delay: 0
+     // }, "-=.1");
+     // tl.from(".section_wrapper_1 .main_about_img", {
+     //      duration: 0.5,
+     //      translateY: 100,
+     //      opacity: 0,
+     //      delay: -0.3
+     // });
+     // tl.from(".section_wrapper_1 p", {
+     //      duration: 0.5,
+     //      translateY: 100,
+     //      opacity: 0,
+     //      // delay: -0.3
+     // });
+     // var section = document.querySelector(".section_wrapper_1 p");
+
+     // gsap.set(section, {
+     //      autoAlpha: 1
+     // });
+
+     // var splitHide = new SplitText(section, {
+     //      type: "words",
+     //      wordsClass: "hide"
+     // });
+     // var split = new SplitText(section, {
+     //      type: "words,lines",
+     //      wordsClass: "words",
+     //      linesClass: "lines"
+     // });
+
+     // gsap.from(split.words, {
+     //      repeat: -1,
+     //      duration: 1,
+     //      yPercent: 100,
+     //      stagger: 0.3
+     // });
+
+
+
+
+     // gsap.registerPlugin(ScrollTrigger);
+     // // REVEAL //
+     // gsap.utils.toArray(".revealUp").forEach(function (elem) {
+     //      ScrollTrigger.create({
+     //           trigger: elem,
+     //           start: "top 80%",
+     //           end: "bottom 20%",
+     //           markers: true,
+     //           onEnter: function () {
+     //                gsap.fromTo(
+     //                     elem, {
+     //                          y: 100,
+     //                          autoAlpha: 0
+     //                     }, {
+     //                          duration: 1.25,
+     //                          y: 0,
+     //                          autoAlpha: 1,
+     //                          ease: "back",
+     //                          overwrite: "auto"
+     //                     }
+     //                );
+     //           },
+     //           onLeave: function () {
+     //                gsap.fromTo(elem, {
+     //                     autoAlpha: 1
+     //                }, {
+     //                     autoAlpha: 0,
+     //                     overwrite: "auto"
+     //                });
+     //           },
+     //           onEnterBack: function () {
+     //                gsap.fromTo(
+     //                     elem, {
+     //                          y: -100,
+     //                          autoAlpha: 0
+     //                     }, {
+     //                          duration: 1.25,
+     //                          y: 0,
+     //                          autoAlpha: 1,
+     //                          ease: "back",
+     //                          overwrite: "auto"
+     //                     }
+     //                );
+     //           },
+     //           onLeaveBack: function () {
+     //                gsap.fromTo(elem, {
+     //                     autoAlpha: 1
+     //                }, {
+     //                     autoAlpha: 0,
+     //                     overwrite: "auto"
+     //                });
+     //           }
+     //      });
+     // });
+
+
+
+
+     let reveal = document.querySelectorAll(".section_wrapper_1")
+
+     reveal.forEach((el) => {
+          let headings = el.querySelectorAll("h1")
+          let p = el.querySelectorAll("p")
+
+          let tl = gsap.timeline()
+               .from(headings, {
+                    y: 50,
+                    // stagger: 0.05,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out"
+               })
+               .from(".main_about_img", {
+                    y: 100,
+                    // stagger: 0.05,
+                    opacity: 0,
+                    duration: 1.5,
+                    // delay:-0.5,
+                    ease: "power3.out"
+               },  
+                '-=0.6'
+               )
+               .from(p, {
+                    y: 80,
+                    opacity: 0,
+                    duration: 1.5,
+                    // delay:0.1,
+                    ease: "power3.out"
+               },
+               //  '-=0.6'
+                )
+
+          ScrollTrigger.create({
+               trigger: el,
+               start: "top 100%",
+               end: "bottom",
+               // markers: true,
+               toggleActions: "play none none reverse ",
+               animation: tl
+          })
+     })
+
 }

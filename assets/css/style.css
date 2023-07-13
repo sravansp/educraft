@@ -778,7 +778,7 @@ body.scrolled .navbar-toggle {
      opacity: 0;
 }
 
-/* 
+
 .preloader .text-container svg {
 
      position: absolute;
@@ -802,17 +802,14 @@ body.scrolled .navbar-toggle {
      to {
           stroke-dashoffset: 0px;
      }
-} */
-
+}
+/* 
 .preloader .text-container svg {
      position: absolute;
      font: 5em Poppins;
      top: 50%;
      transform: translate(-50%, -50%);
      left: 50%;
-     /* width: 100%; */
-     /* height: 100%; */
-     /* margin-top: 5%;*/
 }
 
 .preloader .text-container svg text {
@@ -847,7 +844,7 @@ body.scrolled .navbar-toggle {
      100% {
           stroke-width: 0;
      }
-}
+} */
 
 
 .bg_student::after {
@@ -896,3 +893,7 @@ body.scrolled .navbar-toggle {
      background: rgba(0, 0, 0, .7);
      z-index: 9999;
 }
+
+.appear{
+     opacity:1;
+   }
