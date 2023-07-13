@@ -62,7 +62,9 @@ window.onload = function () {
 
 
 initSmoothScroll();
-
+initNavbarFixedTop();
+initNavbarResponsive();
+initplyrseeVideo();
 window.history.scrollRestoration = "manual";
 ScrollTrigger.clearScrollMemory("manual");
 
@@ -74,17 +76,13 @@ mm.add("(min-width: 1024px)", () => {
      initsecondAnime();
 });
 
-
 initscrollFisrt();
-
 initParallaxImage();
-initNavbarFixedTop();
 initLazyLoad();
 initbutton();
 initParallaxVideo();
 initScrolltriggerNav();
-initNavbarResponsive();
-initplyrseeVideo();
+
 
 
 /**
@@ -296,10 +294,10 @@ function initSmoothScroll() {
           el: document.querySelector(".smooth-scroll"),
           smooth: true,
           mobile: {
-               // breakpoint: 0,
+               breakpoint: 0,
                smooth: true,
                // inertia: 0.8,
-               // getDirection: true,
+               getDirection: true,
           },
           tablet: {
                breakpoint: 0,
