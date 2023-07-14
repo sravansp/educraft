@@ -803,6 +803,7 @@ body.scrolled .navbar-toggle {
           stroke-dashoffset: 0px;
      }
 }
+
 /* 
 .preloader .text-container svg {
      position: absolute;
@@ -894,6 +895,157 @@ body.scrolled .navbar-toggle {
      z-index: 9999;
 }
 
-.appear{
-     opacity:1;
-   }
+.appear {
+     opacity: 1;
+}
+
+.bg_video {
+     position: relative;
+     width: 100%;
+     /* height: 100vh; */
+     overflow: hidden;
+}
+
+
+
+.bg_video video {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     min-width: 100%;
+     min-height: 100%;
+     width: auto;
+     height: auto;
+     z-index: -1;
+}
+
+.span-lines.animate .span-line {
+     position: relative;
+     display: inline-flex;
+     overflow: hidden;
+}
+
+.span-lines.animate .span-line .span-line-inner {
+     position: relative;
+     display: block;
+}
+
+.span-lines.animate-2 .span-line {
+     position: relative;
+     display: inline-flex;
+     overflow: hidden;
+}
+
+.span-lines.animate-2 .span-line .span-line-inner {
+     position: relative;
+     display: block;
+}
+.span-lines.animate-3 .span-line {
+     position: relative;
+     display: inline-flex;
+     overflow: hidden;
+}
+
+.span-lines.animate-3 .span-line .span-line-inner {
+     position: relative;
+     display: block;
+}
+
+
+.svgsprite {
+     -webkit-animation: educraft-anime 5s infinite linear;
+     animation: educraft-anime 5s infinite linear;
+}
+
+@keyframes educraft-anime {
+     0% {
+          transform: rotate(0);
+     }
+
+     100% {
+          transform: rotate(360deg);
+     }
+}
+
+.bottom-video {
+     position: relative;
+     contain: layout;
+     /* transform: translateY(-8%); */
+}
+
+.video_scroll_section {
+     margin: 0 auto;
+     /* width: 345px; */
+     /* height: 487px; */
+}
+
+.video-scroll {
+     position: relative;
+     width: 100%;
+     /* height: 100%; */
+     overflow: hidden;
+     transform: translateZ(0);
+     border-radius: 1000px;
+}
+
+.video-scroll video {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     width: 100%;
+     height: 100%;
+     -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width:1023px) {
+     .video-scroll {
+          height: 100%;
+     }
+     .video_scroll_section {
+          height: 200px;
+      }
+}
+@media screen and (min-width:1024px) {
+     .bottom-video {
+          max-width: 100%;
+          /* margin-left: 5rem; */
+          /* transform: translateY(-50%); */
+
+     }
+
+     .video_scroll_section {
+          width: auto;
+          /* height: 53.2rem; */
+          max-width: 40rem;
+          margin: 0 0 0 auto;
+     }
+}
+
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+h1 {
+ 
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+h1 > div {
+  position: relative;
+  margin: 0;
+}
+.split-parent {
+  overflow: hidden;
+}
+.split-child {
+  display: inline-block;
+}
+.text-heading {
+  width: 100%;
+}
