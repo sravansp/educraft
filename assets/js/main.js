@@ -157,6 +157,7 @@ function initParallaxImage() {
      });
 }
 
+
 function initParallaxVideo() {
      // Parallax Video
      // JavaScript
@@ -632,7 +633,7 @@ function aboutAnimation() {
      let reveal = document.querySelectorAll(".section_wrapper_1")
 
      reveal.forEach((el) => {
-          let headings = el.querySelectorAll("h1")
+          let headings = el.querySelectorAll(".animate-element1")
           let p = el.querySelectorAll("p")
 
           let tl = gsap.timeline()
@@ -767,7 +768,7 @@ function initonscrolltrigger() {
                     scrollTrigger: {
                          trigger: triggerElement,
                          toggleActions: 'play none none reset',
-                         start: "top 70%",
+                         start: "top 100%",
                          end: "top 0%"
                     }
                });
@@ -791,8 +792,58 @@ function initonscrolltrigger() {
                     scrollTrigger: {
                          trigger: triggerElement,
                          toggleActions: 'play none none reset',
-                         start: "top 70%",
-                         end: "top 100%"
+                         start: "top 100%",
+                         end: "top 0%"
+                    }
+               });
+               if (targetElement) {
+                    tl.from(targetElement, {
+                         y: "100%",
+                         stagger: .01,
+                         ease: "power3.out",
+                         duration: 1.5,
+                         delay: 0
+                    });
+               }
+          });
+     }
+     if (document.querySelector(".span-lines.animate-4")) {
+          $(".span-lines.animate-4").each(function (index) {
+               let triggerElement = $(this);
+               let targetElement = $(".span-lines.animate-4 .span-line-inner");
+
+               let tl = gsap.timeline({
+                    scrollTrigger: {
+                         trigger: triggerElement,
+                         toggleActions: 'play none none reset',
+                         start: "top 100%",
+                         end: "top 0%",
+
+                    }
+               });
+               if (targetElement) {
+                    tl.from(targetElement, {
+                         y: "100%",
+                         stagger: .01,
+                         ease: "power3.out",
+                         duration: 1.5,
+                         delay: 0
+                    });
+               }
+          });
+     }
+     if (document.querySelector(".span-lines.animate-5")) {
+          $(".span-lines.animate-5").each(function (index) {
+               let triggerElement = $(this);
+               let targetElement = $(".span-lines.animate-5 .span-line-inner");
+
+               let tl = gsap.timeline({
+                    scrollTrigger: {
+                         trigger: triggerElement,
+                         toggleActions: 'play none none reset',
+                         start: "top 100%",
+                         end: "top 0%",
+
                     }
                });
                if (targetElement) {
@@ -809,53 +860,51 @@ function initonscrolltrigger() {
 
      // add a media query. When it matches, the associated function will run
      mm.add("(min-width: 1024px)", () => {
-          const scrollElement = document.querySelector(".video_scroll_section");
-
-          gsap.to(scrollElement, {
-               maxWidth: "100%", // Increase the width to 100%
-               // duration: 10,
-               scrollTrigger: {
-                    trigger: scrollElement,
-                    start: "top 90%", // Animation starts when the element is 80% from the top of the viewport
-                    // end: '+=200%',
-                    end: "+=100%", // Animation ends when the element is 20% from the top of the viewport
-                    scrub: true, // Smoothly animate between start and end values
-                    onUpdate: (self) => {
-                         console.log("Scrolled");
-                         console.log("Progress: ", self.progress.toFixed(2));
+          const scrollElement = document.querySelectorAll(".video_scroll_section");
+          scrollElement.forEach(scrollElement => {
+               gsap.to(scrollElement, {
+                    maxWidth: "100%", // Increase the width to 100%
+                    // duration: 10,
+                    scrollTrigger: {
+                         trigger: scrollElement,
+                         start: "top 90%", // Animation starts when the element is 80% from the top of the viewport
+                         // end: '+=200%',
+                         end: "+=100%", // Animation ends when the element is 20% from the top of the viewport
+                         scrub: true, // Smoothly animate between start and end values
+                         onUpdate: (self) => {
+                              // console.log("Scrolled");
+                              // console.log("Progress: ", self.progress.toFixed(2));
+                         },
                     },
-               },
+               });
           });
+          
 
      });
 
 
      if (document.querySelectorAll(".hh")) {
-          $(".hh").each(function (index) {
-               let triggerElement = $(this);
-               let targetElement = $(".span-lines.animate-2 .span-line-inner");
 
-               var childSplit = new SplitText(".hh", {
-                    type: "lines",
-                    linesClass: "split-child"
-               });
+          var childSplit = new SplitText(".hh", {
+               type: "lines",
+               linesClass: "split-child"
+          });
+          childSplit.lines.forEach(line => {
                let tl = gsap.timeline({
                     scrollTrigger: {
-                         trigger: triggerElement,
-                         toggleActions: 'play none none reset',
+                         trigger: line,
+                         toggleActions: 'play none none none',
                          start: "top 100%",
-                         end: "bottom"
+                         end: "top 0%",
+                         // markers:!0,
                     }
                });
-               // if (targetElement) {
-               tl.from(childSplit.lines, {
+               tl.from(line, {
                     duration: 1,
                     yPercent: 100,
-                    ease: "power4",
+                    ease: "power3.out",
                     stagger: 0.1,
                });
-               // }
-
           });
      }
 
@@ -872,7 +921,7 @@ function initonscrolltrigger() {
                     trigger: element,
                     toggleActions: 'play none none reset',
                     start: "top 100%",
-                    end: "top 0%"
+                    end: "top 0%",
                }
           });
 
@@ -886,4 +935,93 @@ function initonscrolltrigger() {
           });
      });
 
+
+     // Assuming you have an array of elements with class "element"
+     const animatebtns = document.querySelectorAll('.animate-btns');
+
+     // Create a timeline for each element
+     animatebtns.forEach((element) => {
+          const timeline = gsap.timeline({
+               paused: true,
+               scrollTrigger: {
+                    trigger: element,
+                    toggleActions: 'play none none reset',
+                    start: "top 100%",
+                    end: "top 0%",
+                    stagger: {
+                         amount: 0.3
+                    }
+               }
+          });
+
+          // Add animations to the timeline
+          timeline.fromTo(element, {
+               x: 100,
+               duration: 1,
+               opacity: 0
+          }, {
+               x: 0,
+               opacity: 1,
+               duration: 1
+          });
+     });
+     
+     
+     // Assuming you have an array of elements with class "element"
+     const img_appear = document.querySelectorAll('.img_appear');
+
+     // Create a timeline for each element
+     img_appear.forEach((element) => {
+          const timeline = gsap.timeline({
+               paused: true,
+               scrollTrigger: {
+                    trigger: element,
+                    toggleActions: 'play none none reset',
+                    start: "top 100%",
+                    end: "top 0%",
+               }
+          });
+
+          // Add animations to the timeline
+          timeline.fromTo(element, {
+               scale: 0,
+               // duration: 1,
+               opacity: 0
+          }, {
+               scale: 1,
+               opacity: 1,
+               duration: 0.5
+          });
+     });
+     
+     
+          // Assuming you have an array of elements with class "element"
+          const circledivround = document.querySelectorAll('.circle-div-round');
+     
+          // Create a timeline for each element
+          circledivround.forEach((element) => {
+               const timeline = gsap.timeline({
+                    paused: true,
+                    scrollTrigger: {
+                         trigger: element,
+                         toggleActions: 'play none none reset',
+                         start: "top 100%",
+                         end: "bottom bottom",
+                         stagger: {
+                              amount: 0.3
+                         }
+                    }
+               });
+     
+               // Add animations to the timeline
+               timeline.fromTo(element, {
+                    scale: 0,
+                    duration: 1,
+                    opacity: 0
+               }, {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 1
+               });
+          });
 }
