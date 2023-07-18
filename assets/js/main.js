@@ -843,7 +843,7 @@ function initonscrolltrigger() {
                     scrollTrigger: {
                          trigger: triggerElement,
                          toggleActions: 'play none none reset',
-                         start: "top 50%",
+                         start: "top 100%",
                          end: "bottom"
                     }
                });
@@ -859,5 +859,31 @@ function initonscrolltrigger() {
           });
      }
 
+
+
+     // Assuming you have an array of elements with class "element"
+     const elements = document.querySelectorAll('.divider');
+
+     // Create a timeline for each element
+     elements.forEach((element) => {
+          const timeline = gsap.timeline({
+               paused: true,
+               scrollTrigger: {
+                    trigger: element,
+                    toggleActions: 'play none none reset',
+                    start: "top 100%",
+                    end: "top 0%"
+               }
+          });
+
+          // Add animations to the timeline
+          timeline.fromTo(element, {
+               width: "20%",
+               duration: 1
+          }, {
+               width: "100%",
+               duration: 1
+          });
+     });
 
 }
