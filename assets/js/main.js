@@ -59,6 +59,7 @@ const selectAll = (e) => document.querySelectorAll(e);
 
 window.onload = function () {
      initPreloader();
+     aboutAnimation();
 }
 
 
@@ -66,7 +67,7 @@ initSmoothScroll();
 initNavbarFixedTop();
 initNavbarResponsive();
 initplyrseeVideo();
-aboutAnimation();
+
 initscrollFisrt();
 // create
 let mm = gsap.matchMedia();
@@ -640,7 +641,8 @@ function aboutAnimation() {
                     // stagger: 0.05,
                     opacity: 0,
                     duration: 1,
-                    ease: "power3.out"
+                    ease: "power3.out",
+                     delay:5,
                })
                .from(".main_about_img", {
                          y: 100,
