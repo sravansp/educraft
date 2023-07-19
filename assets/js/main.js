@@ -1,8 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
 
-
-
-
 // you only need to define the configuration settings you want to CHANGE. Omitted properties won't be affected.
 gsap.config({
      autoSleep: 60,
@@ -12,8 +9,8 @@ gsap.config({
      units: {
           left: "%",
           top: "%",
-          rotation: "rad"
-     }
+          rotation: "rad",
+     },
 });
 
 // const tl = gsap.timeline();
@@ -41,32 +38,21 @@ gsap.config({
 // /* After Adding New Content to DOM */
 // smoother.refresh();
 
-
 window.history.scrollRestoration = "manual";
 ScrollTrigger.clearScrollMemory("manual");
 
-
-
-
 const selectAll = (e) => document.querySelectorAll(e);
-
-
-
-
-
-
-
 
 window.onload = function () {
      initPreloader();
      aboutAnimation();
-}
-
+     //   initProgramPage();
+};
 
 initSmoothScroll();
 initNavbarFixedTop();
 initNavbarResponsive();
-initplyrseeVideo();
+// initplyrseeVideo();
 
 initscrollFisrt();
 // create
@@ -77,57 +63,49 @@ mm.add("(min-width: 1024px)", () => {
      initsecondAnime();
 });
 
-
 initParallaxImage();
-initLazyLoad();
+// initLazyLoad();
 initbutton();
 // initParallaxVideo();
 initScrolltriggerNav();
-
-
 
 /**
  * Scrolltrigger Scroll Check
  */
 function initScrolltriggerNav() {
-
      ScrollTrigger.create({
-          start: 'top -30%',
+          start: "top -30%",
           scroller: ".smooth-scroll",
-          onUpdate: self => {
-               $("body").addClass('scrolled');
+          onUpdate: (self) => {
+               $("body").addClass("scrolled");
           },
           onLeaveBack: () => {
-               $("body").removeClass('scrolled');
+               $("body").removeClass("scrolled");
           },
      });
-
 }
 
-
-// Navbar button 
+// Navbar button
 function initbutton() {
-
-     document.querySelector('.button').onmousemove = function (e) {
-
+     document.querySelector(".button").onmousemove = function (e) {
           var x = e.pageX - e.target.offsetLeft;
           var y = e.pageY - e.target.offsetTop;
 
-          e.target.style.setProperty('--x', x + 'px');
-          e.target.style.setProperty('--y', y + 'px');
+          e.target.style.setProperty("--x", x + "px");
+          e.target.style.setProperty("--y", y + "px");
      };
      var th1 = gsap.timeline({
-          repeat: -1
+          repeat: -1,
      });
      th1.to(".title_section", 30, {
-          backgroundPosition: "-960px 0"
+          backgroundPosition: "-960px 0",
      });
-
 }
 
 //Parallax Scrolling Image
 function initParallaxImage() {
-     let getRatio = el => window.innerHeight / (window.innerHeight + el.offsetHeight);
+     let getRatio = (el) =>
+          window.innerHeight / (window.innerHeight + el.offsetHeight);
 
      gsap.utils.toArray("section").forEach((section, i) => {
           section.bg = section.querySelector(".bg");
@@ -137,27 +115,27 @@ function initParallaxImage() {
 
           // the first image (i === 0) should be handled differently because it should start at the very top.
           // use function-based values in order to keep things responsive
-          gsap.fromTo(section.bg, {
-               backgroundPosition: () => i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px"
-
-          }, {
-               backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
-               scale: 1.2,
-               ease: "none",
-               scrollTrigger: {
-                    trigger: section,
-                    start: () => i ? "top bottom" : "top top",
-                    end: "bottom top",
-                    scroller: ".smooth-scroll",
-                    scrub: true,
-                    invalidateOnRefresh: true // to make it responsive
+          gsap.fromTo(
+               section.bg, {
+                    backgroundPosition: () =>
+                         i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px",
+               }, {
+                    backgroundPosition: () =>
+                         `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+                    scale: 1.2,
+                    ease: "none",
+                    scrollTrigger: {
+                         trigger: section,
+                         start: () => (i ? "top bottom" : "top top"),
+                         end: "bottom top",
+                         scroller: ".smooth-scroll",
+                         scrub: true,
+                         invalidateOnRefresh: true, // to make it responsive
+                    },
                }
-          });
-
-
+          );
      });
 }
-
 
 function initParallaxVideo() {
      // Parallax Video
@@ -166,7 +144,9 @@ function initParallaxVideo() {
      const parallaxtl = gsap.timeline({});
 
      // Calculate the scroll range for parallax effect
-     const scrollRange = document.querySelector('.parallax-container').offsetHeight - window.innerHeight;
+     const scrollRange =
+          document.querySelector(".parallax-container").offsetHeight -
+          window.innerHeight;
 
      // Scroll event handler
      function parallaxScroll() {
@@ -176,19 +156,19 @@ function initParallaxVideo() {
           const videoPosition = (scrollTop / scrollRange) * 100;
 
           // Update the video position using GSAP
-          parallaxtl.to('.parallax-video', {
-               y: -videoPosition + '%'
+          parallaxtl.to(".parallax-video", {
+               y: -videoPosition + "%",
           });
      }
 
      // Register the scroll event listener
-     window.addEventListener('scroll', parallaxScroll);
+     window.addEventListener("scroll", parallaxScroll);
 }
 
 function initNavbarResponsive() {
      // console.clear();
      var t1 = gsap.timeline({
-          paused: true
+          paused: true,
      });
 
      // t1.to(".one", 0.5, {
@@ -214,13 +194,13 @@ function initNavbarResponsive() {
           0.75, {
                x: -30,
                opacity: 0,
-               ease: Expo.easeOut
+               ease: Expo.easeOut,
           },
           0.1
      );
      let isOpen = false;
      t1.reverse();
-  
+
      $(document).on("click", ".menu-mobile a", function () {
           t1.reversed(!t1.reversed());
      });
@@ -235,47 +215,43 @@ function initNavbarResponsive() {
           }
           isOpen = !isOpen;
      };
-
 }
 
 function initNavbarFixedTop() {
-     var scrollUp = document.querySelector('.navbar');
+     var scrollUp = document.querySelector(".navbar");
 
      ScrollTrigger.create({
-          start: 'top -50',
+          start: "top -50",
           end: 99999,
           scroller: ".smooth-scroll",
           // markers: true,
           toggleClass: {
-               className: 'navbar--scrolled',
-               targets: '.navbar'
-          }
+               className: "navbar--scrolled",
+               targets: ".navbar",
+          },
      });
 
      ScrollTrigger.create({
-          start: 'top -300',
+          start: "top -300",
           end: 99999,
           scroller: ".smooth-scroll",
           toggleClass: {
-               className: 'navbar--up',
-               targets: '.navbar'
+               className: "navbar--up",
+               targets: ".navbar",
           },
           onUpdate: ({
                direction
           }) => {
                if (direction == -1) {
-                    scrollUp.classList.remove('navbar--up');
+                    scrollUp.classList.remove("navbar--up");
                } else {
-                    scrollUp.classList.add('navbar--up');
+                    scrollUp.classList.add("navbar--up");
                }
-          }
+          },
      });
 
      const elem = document.querySelectorAll(".navbar");
-
-
 }
-
 
 /**
  * Lazy Load
@@ -289,7 +265,6 @@ function initLazyLoad() {
 }
 
 function initSmoothScroll() {
-
      const locoScroll = new LocomotiveScroll({
           el: document.querySelector(".smooth-scroll"),
           smooth: true,
@@ -312,25 +287,27 @@ function initSmoothScroll() {
      // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
      ScrollTrigger.scrollerProxy(".smooth-scroll", {
           scrollTop(value) {
-               return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+               return arguments.length ?
+                    locoScroll.scrollTo(value, 0, 0) :
+                    locoScroll.scroll.instance.scroll.y;
           }, // we don't have to define a scrollLeft because we're only scrolling vertically.
           getBoundingClientRect() {
                return {
                     top: 0,
                     left: 0,
                     width: window.innerWidth,
-                    height: window.innerHeight
+                    height: window.innerHeight,
                };
           },
           // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-          pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
+          pinType: document.querySelector(".smooth-scroll").style.transform ?
+               "transform" :
+               "fixed",
      });
 
      ScrollTrigger.defaults({
           scroller: ".smooth-scroll",
      });
-
-
 
      /**
       * Remove Old Locomotive Scrollbar
@@ -342,16 +319,14 @@ function initSmoothScroll() {
           scrollbar[0].remove();
      }
 
-     // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+     // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
      ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
      // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
      ScrollTrigger.refresh();
-
 }
 
 function initscrollFisrt() {
-
      var largeTL = gsap.timeline({
           scrollTrigger: {
                trigger: ".start-trig",
@@ -361,19 +336,14 @@ function initscrollFisrt() {
                start: "top top",
                // markers: true,
                //end: '+=200%',
-               end: '+=400%', // two more sections so 2*100% more here
+               end: "+=400%", // two more sections so 2*100% more here
           },
-     })
-
+     });
 }
 
 function initsecondAnime() {
-
-
-
      let videoElem = document.querySelector(".video-ux-design");
      // let src = videoElem.currentSrc || videoElem.src;
-
 
      // once(document.documentElement, "touchstart", function () {
 
@@ -400,9 +370,8 @@ function initsecondAnime() {
                scrub: !0,
                pin: !0,
                // end: '+=200%',
-               toggleClass: "acceso"
-          }
-
+               toggleClass: "acceso",
+          },
 
           // scrollTrigger: {
           //      trigger: ".start-trig",
@@ -419,7 +388,7 @@ function initsecondAnime() {
           .fromTo(
                ".macbook-display", {
                     backgroundColor: "transparent",
-                    outline: "none"
+                    outline: "none",
                }, {
                     backgroundColor: "#373435",
                     duration: 5,
@@ -428,32 +397,28 @@ function initsecondAnime() {
                }
           )
 
-          .to(
-               ".eduportal", {
-                    opacity: 0,
-                    duration: 1000,
-                    // delay: 0
-               }
-          )
+          .to(".eduportal", {
+               opacity: 0,
+               duration: 1000,
+               // delay: 0
+          })
 
           .fromTo(
                ".css-macbook", {
-                    scale: 3.5
+                    scale: 3.5,
                }, {
                     scale: 0.7,
                     duration: 9000,
                     // delay: 1
                }
-
           )
           .fromTo(
                ".pa-hero-bg-overlay", {
-                    opacity: 1
-
+                    opacity: 1,
                }, {
                     opacity: 0,
                     duration: 3000,
-                    delay: -5000
+                    delay: -5000,
                }
           )
           // .fromTo(
@@ -470,27 +435,27 @@ function initsecondAnime() {
                ".lptitle_span", {
                     opacity: 0,
                     // stagger: 0.5,
-                    y: 100
+                    y: 100,
                }, {
                     duration: 4000,
                     opacity: 1,
                     stagger: 4000,
                     delay: -4500,
-                    y: 0
+                    y: 0,
                }
           )
           .fromTo(
                ".video-ux-design", {
                     height: "100%",
-                    objectFit: "cover"
+                    objectFit: "cover",
                }, {
                     height: "-webkit-fill-available",
-                    duration: 5
+                    duration: 5,
                }
           )
           .fromTo(
                ".macbook-screen", {
-                    backgroundColor: "transparent"
+                    backgroundColor: "transparent",
                }, {
                     backgroundColor: "#4b4b4d",
                     duration: 2,
@@ -499,15 +464,15 @@ function initsecondAnime() {
           );
      let video_tl = gsap.timeline({
           defaults: {
-               duration: 3
+               duration: 3,
           },
           scrollTrigger: {
                trigger: videoElem,
                start: "center center",
                end: "+=8000",
                // scroller: ".smooth-scroll",
-               scrub: !0
-          }
+               scrub: !0,
+          },
      });
      // once(videoElem, "loadedmetadata", () => {
      //           video_tl.fromTo(
@@ -532,7 +497,6 @@ function initsecondAnime() {
      //                          (videoElem.currentTime = c + 0.01);
      //                });
      //      }, 1e3);
-
 }
 
 function once(a, b, c, d) {
@@ -543,22 +507,23 @@ function once(a, b, c, d) {
 }
 
 function initPreloader() {
-     const tl = gsap.timeline(
+     const tl = gsap
+          .timeline
 
-          // {
-          //      paused: true,
-          //      onUpdate: progressUpdate,
-          //      onComplete: loadComplete
-          // }
-     );
+     // {
+     //      paused: true,
+     //      onUpdate: progressUpdate,
+     //      onComplete: loadComplete
+     // }
+     ();
 
      tl.to("body", {
-               overflow: "hidden"
+               overflow: "hidden",
           })
           .to(".preloader .text-container", {
                duration: 0,
                opacity: 1,
-               ease: "Power3.easeOut"
+               ease: "Power3.easeOut",
           })
           .from(".preloader .text-container svg", {
                duration: 2.7,
@@ -566,53 +531,50 @@ function initPreloader() {
                // y: 70,
                // skewY: 10,
                // stagger: 0.4,
-               ease: "Power3.easeOut"
+               ease: "Power3.easeOut",
           })
           .to(".preloader", {
                duration: 1,
                height: "0vh",
-               ease: "expo.inOut"
+               ease: "expo.inOut",
           })
           .to(
                "body", {
-                    overflow: "auto"
+                    overflow: "auto",
                },
                "-=2"
           )
           .to(".preloader", {
-               display: "none"
+               display: "none",
           });
-
 }
 
 function initplyrseeVideo() {
-
-
      let buttons;
-     let lightbox = document.querySelector('.lightbox');
+     let lightbox = document.querySelector(".lightbox");
      let player;
 
      const showLightbox = () => {
-          buttons = document.querySelectorAll('.btn_see_video');
-          buttons.forEach(button => {
-               button.addEventListener('click', () => {
-                    lightbox.style.display = 'block';
+          buttons = document.querySelectorAll(".btn_see_video");
+          buttons.forEach((button) => {
+               button.addEventListener("click", () => {
+                    lightbox.style.display = "block";
                     // document.querySelector('#player iframe').src = 'https://player.vimeo.com/video/' + button.dataset.link;
-                    player = new Plyr('#player');
+                    player = new Plyr("#player");
                     player.play();
                });
           });
-     }
+     };
 
      const closeLightbox = () => {
-          lightbox.addEventListener('click', function (e) {
+          lightbox.addEventListener("click", function (e) {
                if (e.target !== this) return;
-               document.querySelector('.lightbox').style.display = 'none';
+               document.querySelector(".lightbox").style.display = "none";
                player.destroy();
           });
-     }
+     };
 
-     document.addEventListener('DOMContentLoaded', () => {
+     document.addEventListener("DOMContentLoaded", () => {
           // This is the bare minimum JavaScript. You can opt to pass no arguments to setup.
 
           // Expose
@@ -628,62 +590,55 @@ function initplyrseeVideo() {
 }
 
 function aboutAnimation() {
-
-     let reveal = document.querySelectorAll(".section_wrapper_1")
+     let reveal = document.querySelectorAll(".section_wrapper_1");
 
      reveal.forEach((el) => {
-          let headings = el.querySelectorAll(".animate-element1")
-          let p = el.querySelectorAll("p")
+          let headings = el.querySelectorAll(".animate-element1");
+          let p = el.querySelectorAll("p");
 
-          let tl = gsap.timeline()
+          let tl = gsap
+               .timeline()
                .from(headings, {
                     y: 50,
                     // stagger: 0.05,
                     opacity: 0,
                     duration: 1,
                     ease: "power3.out",
-                     delay:5,
+                    delay: 5,
                })
-               .from(".main_about_img", {
+               .from(
+                    ".main_about_img", {
                          y: 100,
                          // stagger: 0.05,
                          opacity: 0,
                          duration: 1.5,
                          // delay:-0.5,
-                         ease: "power3.out"
+                         ease: "power3.out",
                     },
-                    '-=0.6'
-               )
+                    "-=0.6"
+               );
 
+          // ScrollTrigger.create({
+          //      trigger: el,
+          //      start: "top 100%",
+          //      end: "top 0%",
+          //      // markers: true,
+          //      toggleActions: "play none none none ",
+          //      animation: tl
+          // })
+     });
 
-          ScrollTrigger.create({
-               trigger: el,
-               start: "top 100%",
-               end: "bottom",
-               // markers: true,
-               toggleActions: "play none none reverse ",
-               animation: tl
-          })
-     })
+     initTricksWords();
+     initonscrolltrigger();
+}
 
+function initProgramPage(params) {
+     initheaderAnime();
 
-     // gsap.to(square, 3, {
-     //      rotation: "360",
-     //      ease: Linear.easeNone,
-     //      repeat: -1
-     // });
-
-     // gsap.to(".overview-icon", {
-     //      rotation: 360,     // Set the rotation to 360 degrees
-     //      repeat: -8,        // Repeat the animation infinitely
-     //      ease: "linear"     // Use linear easing for a constant rotation speed
-     //    });
-     initTricksWords()
-     initonscrolltrigger()
+     initparaAnime();
 }
 
 function initTricksWords() {
-
      // Copyright start
      // © Code by T.RICKS, https://www.tricksdesign.com/
      // You have the license to use this code in your projects but not redistribute it to others
@@ -692,43 +647,39 @@ function initTricksWords() {
      // Find all text with .tricks class and break each letter into a span
      var spanWord = document.getElementsByClassName("span-lines");
      for (var i = 0; i < spanWord.length; i++) {
-
           var wordWrap = spanWord.item(i);
-          wordWrap.innerHTML = wordWrap.innerHTML.replace(/(^|<\/?[^>]+>|\s+)([^\s<]+)/g, '$1<span class="span-line"><span class="span-line-inner">$2</span></span>');
-
+          wordWrap.innerHTML = wordWrap.innerHTML.replace(
+               /(^|<\/?[^>]+>|\s+)([^\s<]+)/g,
+               '$1<span class="span-line"><span class="span-line-inner">$2</span></span>'
+          );
      }
-
-
-
 }
 
 function initonscrolltrigger() {
-
      // create
      let mm = gsap.matchMedia();
 
-
-
      if (document.querySelector(".span-lines.animate")) {
-          const sla = document.querySelectorAll(".span-lines.animate")
-          sla.forEach(line => {
-
+          const sla = document.querySelectorAll(".span-lines.animate");
+          sla.forEach((line) => {
                // let triggerElement = $(this);
-               const slasli = document.querySelectorAll(".span-lines.animate .span-line-inner")
+               const slasli = document.querySelectorAll(
+                    ".span-lines.animate .span-line-inner"
+               );
                // let targetElement = $(".span-lines.animate .span-line-inner");
 
                let tl = gsap.timeline({
                     scrollTrigger: {
                          trigger: line,
-                         toggleActions: 'play none none reset',
+                         toggleActions: "play none none reset",
                          start: "top 100%",
-                         end: "top 0%"
-                    }
+                         end: "top 0%",
+                    },
                });
                if (slasli) {
                     tl.from(slasli, {
                          // y: "100%",
-                         stagger: .01,
+                         stagger: 0.01,
                          ease: "power3.out",
                          duration: 1.5,
                          delay: 0,
@@ -736,14 +687,12 @@ function initonscrolltrigger() {
                     });
                }
           });
-
      }
-
 
      // add a media query. When it matches, the associated function will run
      mm.add("(min-width: 1024px)", () => {
           const scrollElement = document.querySelectorAll(".video_scroll_section");
-          scrollElement.forEach(scrollElement => {
+          scrollElement.forEach((scrollElement) => {
                gsap.to(scrollElement, {
                     maxWidth: "100%", // Increase the width to 100%
                     // duration: 10,
@@ -760,26 +709,22 @@ function initonscrolltrigger() {
                     },
                });
           });
-
-
      });
 
-
      if (document.querySelectorAll(".hh")) {
-
           var childSplit = new SplitText(".hh", {
                type: "lines",
-               linesClass: "split-child"
+               linesClass: "split-child",
           });
-          childSplit.lines.forEach(line => {
+          childSplit.lines.forEach((line) => {
                let tl = gsap.timeline({
                     scrollTrigger: {
                          trigger: line,
-                         toggleActions: 'play none none reset',
+                         toggleActions: "play none none reset",
                          start: "top 100%",
                          end: "top 0%",
                          // markers:!0,
-                    }
+                    },
                });
                tl.from(line, {
                     duration: 1,
@@ -790,14 +735,11 @@ function initonscrolltrigger() {
           });
      }
      if (document.querySelectorAll(".span-lines.animate-2")) {
-
           const splitLines = new SplitText(".span-lines.animate-2", {
                type: "lines",
-               linesClass: "line"
+               linesClass: "line",
           });
           const lines = splitLines.lines;
-
-
 
           const makeWrapper = (lines, elClass) => {
                lines.forEach((line) => {
@@ -810,17 +752,18 @@ function initonscrolltrigger() {
 
           makeWrapper(lines, "lines");
 
-          lines.forEach(pline => {
+          lines.forEach((pline) => {
                let tl = gsap.timeline({
                     scrollTrigger: {
                          trigger: pline,
-                         toggleActions: 'play none none reset',
+                         toggleActions: "play none none reset",
                          start: "top 100%",
                          end: "top 0%",
                          // markers:!0,
-                    }
+                    },
                });
-               tl.from(pline, {
+               tl.from(
+                    pline, {
                          duration: 1,
                          opacity: 0,
                          y: "150%",
@@ -836,10 +779,8 @@ function initonscrolltrigger() {
           });
      }
 
-
-
      // Assuming you have an array of elements with class "element"
-     const elements = document.querySelectorAll('.divider');
+     const elements = document.querySelectorAll(".divider");
 
      // Create a timeline for each element
      elements.forEach((element) => {
@@ -847,25 +788,26 @@ function initonscrolltrigger() {
                paused: true,
                scrollTrigger: {
                     trigger: element,
-                    toggleActions: 'play none none reset',
+                    toggleActions: "play none none reset",
                     start: "top 100%",
                     end: "top 0%",
-               }
+               },
           });
 
           // Add animations to the timeline
-          timeline.fromTo(element, {
-               width: "20%",
-               duration: 1
-          }, {
-               width: "100%",
-               duration: 1
-          });
+          timeline.fromTo(
+               element, {
+                    width: "20%",
+                    duration: 1,
+               }, {
+                    width: "100%",
+                    duration: 1,
+               }
+          );
      });
 
-
      // Assuming you have an array of elements with class "element"
-     const animatebtns = document.querySelectorAll('.animate-btns');
+     const animatebtns = document.querySelectorAll(".animate-btns");
 
      // Create a timeline for each element
      animatebtns.forEach((element) => {
@@ -873,30 +815,31 @@ function initonscrolltrigger() {
                paused: true,
                scrollTrigger: {
                     trigger: element,
-                    toggleActions: 'play none none reset',
+                    toggleActions: "play none none reset",
                     start: "top 100%",
                     end: "top 0%",
                     stagger: {
-                         amount: 0.3
-                    }
-               }
+                         amount: 0.3,
+                    },
+               },
           });
 
           // Add animations to the timeline
-          timeline.fromTo(element, {
-               yPercent: 100,
-               duration: 1,
-               opacity: 0
-          }, {
-               yPercent: 0,
-               opacity: 1,
-               duration: 1
-          });
+          timeline.fromTo(
+               element, {
+                    xPercent: 100,
+                    duration: 1,
+                    opacity: 0,
+               }, {
+                    xPercent: 0,
+                    opacity: 1,
+                    duration: 1,
+               }
+          );
      });
 
-
      // Assuming you have an array of elements with class "element"
-     const img_appear = document.querySelectorAll('.img_appear');
+     const img_appear = document.querySelectorAll(".img_appear");
 
      // Create a timeline for each element
      img_appear.forEach((element) => {
@@ -904,27 +847,50 @@ function initonscrolltrigger() {
                paused: true,
                scrollTrigger: {
                     trigger: element,
-                    toggleActions: 'play none none reset',
+                    toggleActions: "play none none reset",
                     start: "top 100%",
                     end: "top 0%",
-               }
+               },
           });
 
           // Add animations to the timeline
-          timeline.fromTo(element, {
-               scale: 0,
-               // duration: 1,
-               opacity: 0
-          }, {
-               scale: 1,
-               opacity: 1,
-               duration: 0.5
+          timeline.fromTo(
+               element, {
+                    scale: 0,
+                    // duration: 1,
+                    opacity: 0,
+               }, {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.5,
+               }
+          );
+
+          const items = document.querySelectorAll(".data");
+
+          timeline.from(items, {
+               textContent: 0,
+               duration: 4,
+               ease: "power1.in",
+               snap: {
+                    textContent: 1
+               },
+               // stagger: {
+                    // each: 1.0,
+                    onUpdate: function () {
+                         this.targets()[0].innerHTML = numberWithCommas(Math.ceil(this.targets()[0].textContent));
+                    },
+               // }
           });
+
+
+          function numberWithCommas(x) {
+               return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          }
      });
 
-
      // Assuming you have an array of elements with class "element"
-     const circledivround = document.querySelectorAll('.circle-div-round');
+     const circledivround = document.querySelectorAll(".circle-div-round");
 
      // Create a timeline for each element
      circledivround.forEach((element) => {
@@ -932,24 +898,26 @@ function initonscrolltrigger() {
                paused: true,
                scrollTrigger: {
                     trigger: element,
-                    toggleActions: 'play none none reset',
+                    toggleActions: "play none none reset",
                     start: "top 100%",
                     end: "bottom bottom",
                     stagger: {
-                         amount: 0.3
-                    }
-               }
+                         amount: 0.3,
+                    },
+               },
           });
 
           // Add animations to the timeline
-          timeline.fromTo(element, {
-               scale: 0,
-               duration: 1,
-               opacity: 0
-          }, {
-               scale: 1,
-               opacity: 1,
-               duration: 1
-          });
+          timeline.fromTo(
+               element, {
+                    scale: 0,
+                    duration: 1,
+                    opacity: 0,
+               }, {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 1,
+               }
+          );
      });
 }
