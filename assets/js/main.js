@@ -80,7 +80,7 @@ mm.add("(min-width: 1024px)", () => {
 initParallaxImage();
 initLazyLoad();
 initbutton();
-initParallaxVideo();
+// initParallaxVideo();
 initScrolltriggerNav();
 
 
@@ -219,9 +219,7 @@ function initNavbarResponsive() {
      );
      let isOpen = false;
      t1.reverse();
-     // $(document).on("click", ".navbar-toggle", function () {
-     //     t1.reversed(!t1.reversed());
-     // });
+  
      $(document).on("click", ".menu-mobile a", function () {
           t1.reversed(!t1.reversed());
      });
@@ -710,153 +708,35 @@ function initonscrolltrigger() {
 
 
      if (document.querySelector(".span-lines.animate")) {
-          let allVideoDivs = gsap.utils.toArray('.span-lines.animate');
+          const sla = document.querySelectorAll(".span-lines.animate")
+          sla.forEach(line => {
 
-          allVideoDivs.forEach((videoDiv, i) => {
-               console.log(videoDiv);
-
-               let targetElement = $(".span-lines.animate .span-line-inner");
+               // let triggerElement = $(this);
+               const slasli = document.querySelectorAll(".span-lines.animate .span-line-inner")
+               // let targetElement = $(".span-lines.animate .span-line-inner");
 
                let tl = gsap.timeline({
                     scrollTrigger: {
-                         trigger: videoDiv,
+                         trigger: line,
                          toggleActions: 'play none none reset',
                          start: "top 100%",
                          end: "top 0%"
                     }
                });
-               if (targetElement) {
-                    tl.from(targetElement, {
-                         y: "100%",
-                         stagger: .01,
-                         ease: "power3.out",
-                         duration: 1,
-                         delay: 0
-                    });
-               }
-
-          });
-          // $(".span-lines.animate").each(function (index) {
-          //      let triggerElement = $(this);
-          //      let targetElement = $(".span-lines.animate .span-line-inner");
-
-          //      let tl = gsap.timeline({
-          //           scrollTrigger: {
-          //                trigger: triggerElement,
-          //                toggleActions: 'play none none reset',
-          //                start: "top 100%",
-          //                end: "top 0%"
-          //           }
-          //      });
-          //      if (targetElement) {
-          //           tl.from(targetElement, {
-          //                y: "100%",
-          //                stagger: .01,
-          //                ease: "power3.out",
-          //                duration: 1,
-          //                delay: 0
-          //           });
-          //      }
-          // });
-     }
-     if (document.querySelector(".span-lines.animate-2")) {
-          $(".span-lines.animate-2").each(function (index) {
-               let triggerElement = $(this);
-               let targetElement = $(".span-lines.animate-2 .span-line-inner");
-
-               let tl = gsap.timeline({
-                    scrollTrigger: {
-                         trigger: triggerElement,
-                         toggleActions: 'play none none reset',
-                         start: "top 100%",
-                         end: "top 0%"
-                    }
-               });
-               if (targetElement) {
-                    tl.from(targetElement, {
-                         y: "100%",
+               if (slasli) {
+                    tl.from(slasli, {
+                         // y: "100%",
                          stagger: .01,
                          ease: "power3.out",
                          duration: 1.5,
-                         delay: 0
+                         delay: 0,
+                         yPercent: 100,
                     });
                }
           });
+
      }
-     if (document.querySelector(".span-lines.animate-3")) {
-          $(".span-lines.animate-3").each(function (index) {
-               let triggerElement = $(this);
-               let targetElement = $(".span-lines.animate-3 .span-line-inner");
 
-               let tl = gsap.timeline({
-                    scrollTrigger: {
-                         trigger: triggerElement,
-                         toggleActions: 'play none none reset',
-                         start: "top 100%",
-                         end: "top 0%"
-                    }
-               });
-               if (targetElement) {
-                    tl.from(targetElement, {
-                         y: "100%",
-                         stagger: .01,
-                         ease: "power3.out",
-                         duration: 1.5,
-                         delay: 0
-                    });
-               }
-          });
-     }
-     if (document.querySelector(".span-lines.animate-4")) {
-          $(".span-lines.animate-4").each(function (index) {
-               let triggerElement = $(this);
-               let targetElement = $(".span-lines.animate-4 .span-line-inner");
-
-               let tl = gsap.timeline({
-                    scrollTrigger: {
-                         trigger: triggerElement,
-                         toggleActions: 'play none none reset',
-                         start: "top 100%",
-                         end: "top 0%",
-
-                    }
-               });
-               if (targetElement) {
-                    tl.from(targetElement, {
-                         y: "100%",
-                         stagger: .01,
-                         ease: "power3.out",
-                         duration: 1.5,
-                         delay: 0
-                    });
-               }
-          });
-     }
-     if (document.querySelector(".span-lines.animate-5")) {
-          $(".span-lines.animate-5").each(function (index) {
-               let triggerElement = $(this);
-               let targetElement = $(".span-lines.animate-5 .span-line-inner");
-
-               let tl = gsap.timeline({
-                    scrollTrigger: {
-                         trigger: triggerElement,
-                         toggleActions: 'play none none reset',
-                         start: "top 100%",
-                         end: "top 0%",
-
-                    }
-               });
-               if (targetElement) {
-                    tl.from(targetElement, {
-                         y: "100%",
-                         stagger: .01,
-                         ease: "power3.out",
-                         duration: 1.5,
-                         delay: 0
-                    });
-               }
-          });
-     }
 
      // add a media query. When it matches, the associated function will run
      mm.add("(min-width: 1024px)", () => {
@@ -878,7 +758,7 @@ function initonscrolltrigger() {
                     },
                });
           });
-          
+
 
      });
 
@@ -893,7 +773,7 @@ function initonscrolltrigger() {
                let tl = gsap.timeline({
                     scrollTrigger: {
                          trigger: line,
-                         toggleActions: 'play none none none',
+                         toggleActions: 'play none none reset',
                          start: "top 100%",
                          end: "top 0%",
                          // markers:!0,
@@ -905,6 +785,52 @@ function initonscrolltrigger() {
                     ease: "power3.out",
                     stagger: 0.1,
                });
+          });
+     }
+     if (document.querySelectorAll(".span-lines.animate-2")) {
+
+          const splitLines = new SplitText(".span-lines.animate-2", {
+               type: "lines",
+               linesClass: "line"
+          });
+          const lines = splitLines.lines;
+
+
+
+          const makeWrapper = (lines, elClass) => {
+               lines.forEach((line) => {
+                    const lineEl = document.createElement("div");
+                    lineEl.classList = elClass;
+                    line.parentNode.appendChild(lineEl);
+                    lineEl.appendChild(line);
+               });
+          };
+
+          makeWrapper(lines, "lines");
+
+          lines.forEach(pline => {
+               let tl = gsap.timeline({
+                    scrollTrigger: {
+                         trigger: pline,
+                         toggleActions: 'play none none reset',
+                         start: "top 100%",
+                         end: "top 0%",
+                         // markers:!0,
+                    }
+               });
+               tl.from(pline, {
+                         duration: 1,
+                         opacity: 0,
+                         y: "150%",
+                         rotate: 5,
+                         transformOrigin: "0% 50% -50",
+                         ease: "expo",
+                         stagger: 0.1,
+                         // delay: 0.5
+                         // repeat: -1
+                    },
+                    0.3
+               );
           });
      }
 
@@ -956,17 +882,17 @@ function initonscrolltrigger() {
 
           // Add animations to the timeline
           timeline.fromTo(element, {
-               x: 100,
+               yPercent: 100,
                duration: 1,
                opacity: 0
           }, {
-               x: 0,
+               yPercent: 0,
                opacity: 1,
                duration: 1
           });
      });
-     
-     
+
+
      // Assuming you have an array of elements with class "element"
      const img_appear = document.querySelectorAll('.img_appear');
 
@@ -993,35 +919,35 @@ function initonscrolltrigger() {
                duration: 0.5
           });
      });
-     
-     
-          // Assuming you have an array of elements with class "element"
-          const circledivround = document.querySelectorAll('.circle-div-round');
-     
-          // Create a timeline for each element
-          circledivround.forEach((element) => {
-               const timeline = gsap.timeline({
-                    paused: true,
-                    scrollTrigger: {
-                         trigger: element,
-                         toggleActions: 'play none none reset',
-                         start: "top 100%",
-                         end: "bottom bottom",
-                         stagger: {
-                              amount: 0.3
-                         }
+
+
+     // Assuming you have an array of elements with class "element"
+     const circledivround = document.querySelectorAll('.circle-div-round');
+
+     // Create a timeline for each element
+     circledivround.forEach((element) => {
+          const timeline = gsap.timeline({
+               paused: true,
+               scrollTrigger: {
+                    trigger: element,
+                    toggleActions: 'play none none reset',
+                    start: "top 100%",
+                    end: "bottom bottom",
+                    stagger: {
+                         amount: 0.3
                     }
-               });
-     
-               // Add animations to the timeline
-               timeline.fromTo(element, {
-                    scale: 0,
-                    duration: 1,
-                    opacity: 0
-               }, {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 1
-               });
+               }
           });
+
+          // Add animations to the timeline
+          timeline.fromTo(element, {
+               scale: 0,
+               duration: 1,
+               opacity: 0
+          }, {
+               scale: 1,
+               opacity: 1,
+               duration: 1
+          });
+     });
 }
