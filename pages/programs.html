@@ -2,698 +2,446 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Educraft | Programs | A place every student should be.</title>
-  <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs | Educraft | A place every student should be.</title>
+  <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico" />
 
   <!-- TAILWIND CSS  -->
-  <link href="../dist/output.css" rel="stylesheet">
+  <link href="../dist/output.css" rel="stylesheet" />
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-
+  <link href="../assets/pluggins/locomotive/locomotive-scroll.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/pluggins/plyr/dist/plyr.css" />
   <!-- STYLE & CUSTOM CSS  -->
   <link rel="stylesheet" href="../assets/css/style.css" />
-
   <!-- REMIX ICON  -->
-  <link rel="stylesheet" href="../assets/pluggins/remixicon/remixicon.css">
-
+  <link rel="stylesheet" href="../assets/pluggins/remixicon/remixicon.css" />
 </head>
 
-<body class="font-['Poppins']">
-
-  <header class="mx-auto max-w-screen-2xl">
-    <nav id="navbar"
-      class="navbar absolute top-0 flex items-center justify-between gap-[20px] h-16 transition duration-300 pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-[6%] md:pr-[6%] 2xl:pl-20 2xl:pr-20  z-50 bg-opacity-50 w-full max-w-screen-2xl mx-auto">
-
-      <div class="flex items-center justify-between gap-32 max-w-screen-2xl">
-
-        <div class="logo_animation ">
-
-          <div class="relative flex items-center justify-center gap-2 header_logo">
-
-            <img class="w-[100px]" src="../assets/images/brand/logo_dark.png" alt="">
-
+<body class="body font-[Poppins] text-sm box-border">
+  <header>
+    <nav id="navbar" class="fixed top-0 z-50 hidden w-full h-24 bg-opacity-50 navbar lg:block">
+      <div
+        class="navbar_wrapper max-w-screen-2xl mx-auto h-24 lg:flex items-center justify-between gap-[20px] pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-[6%] md:pr-[6%] 2xl:pl-20 2xl:pr-20">
+        <div class="flex items-center justify-between gap-32 max-w-screen-2xl">
+          <div class="logo_animation">
+            <div class="relative flex items-center justify-center gap-2 header_logo">
+              <a href="./index.html">
+                <figure>
+                  <img class="w-[100px]" src="../assets/images/brand/logo.png" alt="" />
+                </figure>
+              </a>
+            </div>
           </div>
-
+          <div class="items-center hidden gap-8 nav_items sm:flex text-md target">
+            <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+              href="./courses.html">Courses</a>
+            <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+              href="./programs.html">Programs</a>
+            <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+              href="./aboutus.html">About Us</a>
+            <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+              href="">Blog</a>
+            <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+              href="./contact.html">Contact</a>
+          </div>
         </div>
-
-        <div class="items-center hidden gap-8 nav_items sm:flex text-md target">
-
-          <a class="nav__links text-black h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-            href="./index.html">Home</a>
-
-          <a class="nav__links text-black h-[72px] grid place-items-center  hover:text-primary transition-all duration-200"
-            href="./courses.html">Courses</a>
-
-          <a class="nav__links text-black h-[72px] grid place-items-center active_nav hover:text-primary transition-all duration-200"
-            href="#">Programs</a>
-
-          <a class="nav__links text-black h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-            href="">About Us</a>
-
-          <a class="nav__links text-black h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-            href="">Blog</a>
-
-          <a class="nav__links text-black h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-            href="">Contact</a>
-
+        <div class="flex items-center justify-between gap-8">
+          <a class="flex gap-2 text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+            href="https://educraftbeta.benchmark.school/site/login"><span>Login</span> <i
+              class="ri-login-circle-line"></i></a>
+          <a class="p-2 px-4 text-sm text-black transition duration-300 bg-white rounded-full hover:text-white button"
+            data-magnetic href="https://educraftbeta.benchmark.school/site/login">
+            <span class="text-btn">Try it free</span>
+          </a>
         </div>
-
       </div>
-
-      <div class="flex items-center justify-between gap-8">
-
-        <a class="nav__links text-black h-[72px] gap-2 place-items-center hover:text-primary transition-all duration-200 flex"
-          href=""><span>Login</span> <i class="ri-login-circle-line"></i>
-        </a>
-
-        <a class="p-2 px-4 text-sm text-white transition duration-300 bg-black rounded-full button1" data-magnetic
-          href="">
-
-          <span class="text-btn">Try it free</span>
-
-        </a>
-
-      </div>
-
     </nav>
+    <div class="lg:hidden">
+      <div class="flex justify-between items-center h-[56px] px-5 md:px-10 py-10 bg-transparent fixed z-50 w-full">
+        <div class="pl-2 logo_animation logo_mobile">
+          <div class="relative z-40 flex items-center justify-center gap-2 header_logo">
+            <img class="w-[100px]" src="../assets/images/brand/logo.png" alt="" />
+          </div>
+        </div>
+        <button class="navbar-toggle" id="toggle" type="button">
+          <svg viewBox="0 0 100 100" width="50">
+            <path class="line top"
+              d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+            <path class="line middle" d="m 30,50 h 40" />
+            <path class="line bottom"
+              d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+          </svg>
+        </button>
+      </div>
 
-
-
+      <div class="menu-mobile fixed -top-[120%] h-screen w-full z-40 bg-black">
+        <div class="data flex justify-start items-center pl-[20%] h-full">
+          <ul>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="1" href="./index.html">Home</a>
+            </li>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="2" href="./courses.html">Courses</a>
+            </li>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="3" href="./programs.html">Programs</a>
+            </li>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="4" href="./aboutus.html">About Us</a>
+            </li>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="5" href="#">Blog</a>
+            </li>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="6" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </header>
 
   <!-- header----------------- -->
-  <div class="mx-auto scroll_smoother">
 
+  <div class="mx-auto scroll_smoother smooth-scroll">
     <main>
-      <div class="mt-20 ">
-
-        <!-- section 1-------------------- -->
-        <div class=" max-w-screen-lg m-auto flex pt-9 ">
-          <p class="font-extralight text-[18px] text-primary opacity-75">Programs ></p>
-          <p class="text-primary font-bold text-[20px]"> MakerSpace </p>
-        </div>
-        <div class="flex flex-col items-center justify-center max-w-screen-lg m-auto  mt-10">
-          <h1 class="text-[55px] leading-[55px]">MakerSpace</h1>
-          <img src="../assets/images/2 lines.png" alt="">
-          <p class="text-center mt-7 text-[20px] font-light text-gray-500">Discover a fun and safe MakerSpace for
-            kids to unleash creativity, collaborate, and learn robotics while <br> developing essential skills
-            in problem-solving, critical thinking, and teamwork.</p>
-          <img class="mt-20" src="../assets/images/programs_img/makerspace.png" alt="">
-        </div>
-
-
-
-
-
-        <!-- section2-------------- -->
-
-
-
-
-        <div class="flex justify-between mt-32 max-w-screen-lg m-auto gap-8 ">
-          <div>
-            <div>
-              <h1 class="text text-[24px] font-semibold">Our Unique Features</h1>
-              <p class="pt-10 text-gray-500 text-base">Discover a fun and safe MakerSpace for kids to <br>
-                unleash creativity, collaborate, and learn robotics <br> while developing essential skills
-                in problem-solving, <br> critical thinking, and teamwork.</p>
-            </div>
-            <div>
-              <div class="flex pt-10 ">
-                <div><img src="../assets/images/programs_img/shield-check (1) 1.png" alt=""></div>
-                <div>
-                  <p class="text text-[20px] font-medium pl-5">Safety & Security</p>
-                </div>
-              </div>
-              <div>
-                <ul class="lists pt-8 text-gray-500  ">
-                  <li class="flex items-center gap-3 text-base">Age Appropriate Toys & Teaching
-                    Materials
-                  </li>
-                  <li class="flex items-center gap-3 text-base">24x7 CCTV Surveillance System
-                  </li>
-                  <li class="flex items-center gap-3 text-base">Child-Friendly Environment</li>
-                </ul>
-
-              </div>
-
-
-            </div>
-            <div>
-              <div class="flex pt-10 ">
-                <div><img src="../assets/images/programs_img/chalkboard-user 1.png" alt=""></div>
-                <div>
-                  <p class="text text-[20px] font-medium pl-5">Highly Trained Teachers</p>
-                </div>
-              </div>
-              <div>
-                <ul class="lists leading-8 pt-8 text-gray-500  ">
-                  <li class="flex items-center gap-3 text-base">Experienced and dedicated
-
-                  </li>
-                  <li class="flex items-center gap-3 text-base"> Have the sense of humour
-                  </li>
-                  <li class="flex items-center gap-3 text-base">
-                    Great communication skills</li>
-                </ul>
-
-              </div>
-
-            </div>
-            <div>
-              <div class="flex pt-10 ">
-                <div><img src="../assets/images/programs_img/puzzle-piece 1.png" alt=""></div>
-                <div>
-                  <p class="text text-[20px] font-medium pl-5">Children’s Development Programs</p>
-                </div>
-              </div>
-              <div>
-                <ul class="lists leading-8 pt-8 text-gray-500  ">
-                  <li class="flex items-center gap-3 text-base">Object Manipulation, & Coordination
-
-
-                  </li>
-                  <li class="flex items-center gap-3 text-base">Verbal linguistic & visual spatial
-                  </li>
-                  <li class="flex items-center gap-3 text-base">Naturalistic</li>
-                </ul>
-
-              </div>
-
-            </div>
-            <div>
-              <div class="flex pt-10 ">
-                <div><img src="../assets/images/programs_img/horse.png" alt=""></div>
-                <div>
-                  <p class="text text-[20px] font-medium pl-5">Quality Indoor Play Spaces</p>
-                </div>
-              </div>
-              <div>
-                <ul class="lists leading-8 pt-8 text-gray-500  ">
-                  <li class="flex items-center gap-3 text-base">Places for group activities
-
-
-                  </li>
-                  </li>
-                  <li class="flex items-center gap-3 text-base"> Children art & craft area
-                  <li class="flex items-center gap-3 text-base">Interactive soft play area</li>
-                </ul>
-
-              </div>
-
-            </div>
-
-
-
-
-
+      <div class="content">
+        <!-- <section> -->
+          <div class="h-[286px] w-full relative items-center hero_bg">
+            <h1 class="text-6xl font-bold text-center text-white hh lg:pl-12 lg:text-start pt-28">
+              Programs
+            </h1>
+            <img class="absolute lg:right-[75%] scale-up right-[15%]" src="../assets/images/2 lines.png" alt="" />
           </div>
-
-
-
-
-
-
-
-
-
-
-
-          <div class="flex gap-5">
-            <div class="flex flex-col gap-5 h-full">
-
-
-              <!-- safety and security  -->
-
-
-              <div class="bg-green-400 w-[297px] h-[360px] rounded-3xl relative  "><img
-                  class="w-[297px] h-[360px] object-cover object-center rounded-3xl"
-                  src="../assets/images/programs_img/safety 1.png" alt="">
-
-                <div class="absolute top-3 left-3">
-                  <div class="bg-gray-200 rounded-3xl w-[125px] h-7 flex items-center justify-center">
-                    <div class="bg-black w-2 h-2 rounded-full"></div>
-                    <a class="text-xs pl-2" href="#"> safety & security </a>
-
-
-                  </div>
-                </div>
-              </div>
-
-
-
-              <!-- Trained Teachers------ -->
-              <div class="bg-green-500 w-[297px] h-[295px] rounded-3xl relative "><img
-                  class="w-[297px] h-[295px] object-cover rounded-3xl"
-                  src="../assets/images/programs_img/trained-teachers.png" alt="">
-
-                <div class="absolute top-3 left-3">
-                  <div class="bg-gray-200 rounded-3xl w-[135px] h-7 flex items-center justify-center">
-                    <div class="bg-black w-2 h-2 rounded-full"></div>
-                    <a class="text-xs pl-2" href="#"> Trained Teachers </a>
-
-
-                  </div>
-                </div>
-              </div>
-
-
-              <!-- Play area ---------- -->
-              <div class="bg-green-600 w-[297px] h-[278px] rounded-3xl relative  "><img
-                  class="w-[297px] h-[278px] object-cover rounded-3xl" src="../assets/images/programs_img/play area.png"
-                  alt="">
-                <div class="absolute top-3 left-3">
-                  <div class="bg-gray-200 rounded-3xl w-[107px] h-7 flex items-center justify-center">
-                    <div class="bg-black w-2 h-2 rounded-full"></div>
-                    <a class="text-xs pl-2" href="#"> Play Area</a>
-
-
-                  </div>
-                </div>
-
-
-              </div>
-
+        <!-- </section> -->  
+        <section class="mt-20">
+          <div class="flex flex-col gap-5">
+            <h1 class="text-5xl text-center hh lg:text-6xl">
+              School <strong class="pl-1 text"> Partnership</strong>
+            </h1>
+            <div class="w-4/5 mx-auto">
+              <p class="text-xl text-center span-lines animate-2">
+                Discover a fun and safe MakerSpace for kids to unleash creativity, collaborate, and learn robotics while
+                developing essential skills in problem-solving, critical thinking, and teamwork.
+              </p>
             </div>
-
-
-
-
-            <div class="gap-5 flex flex-col h-full  justify-center">
-
-
-
-              <div class="bg-green-500 w-[299px] h-[421px]  rounded-3xl relative"><img
-                  class="w-[299px] h-[422px] object-cover rounded-3xl" src="../assets/images/programs_img/safety 2.jpeg"
-                  alt="">
-
-                <div class="absolute top-3 left-3">
-                  <div class="bg-gray-200 rounded-3xl w-[125px] h-7 flex items-center justify-center">
-                    <div class="bg-black w-2 h-2 rounded-full"></div>
-                    <a class="text-xs pl-2" href="#"> safety & security </a>
-
-
-                  </div>
-                </div>
-
-
+          </div>
+          <div class="h-[800px] max-w-screen-lg w-[1178px] m-auto my-12 flex lg:flex-row">
+            <div class="flex flex-col gap-10">
+              <div class="details details--default">
+                <details>
+                  <summary class="text-3xl font-semibold">Summer</summary>
+                  <p class="text-xl font-light span-lines animate-2">
+                    We understand the importance of <br />
+                    preparing students for the challenges
+                  </p>
+                </details>
               </div>
-
-
-
-
-
-              <div class="bg-green-600 w-[299px] h-[362px] rounded-3xl  relative"><img
-                  class=" w-[299px] h-[363px] object-cover rounded-3xl"
-                  src="../assets/images/programs_img/playspace.jpeg" alt="">
-
-                <div class="absolute top-3 left-3">
-                  <div class="bg-gray-200 rounded-3xl w-[110px] h-7 flex items-center justify-center">
-                    <div class="bg-black w-2 h-2 rounded-full"></div>
-                    <a class="text-xs pl-2" href="#"> Play space</a>
-
-
-                  </div>
-                </div>
-
-
-
+              <div class="details details--default">
+                <details>
+                  <summary class="text-3xl font-semibold">Summer</summary>
+                  <p class="text-xl font-light span-lines animate-2">
+                    We understand the importance of <br />
+                    preparing students for the challenges
+                  </p>
+                </details>
+              </div>
+              <div class="details details--default">
+                <details>
+                  <summary class="text-3xl font-semibold">Summer</summary>
+                  <p class="text-xl font-light span-lines animate-2">
+                    We understand the importance of <br />
+                    preparing students for the challenges
+                  </p>
+                </details>
               </div>
             </div>
           </div>
+        </section>
 
-        </div>
-
-
-
-
-        <!-- secton3------------------- -->
-
-
-        <div class="bg-black h-[540px] mt-40 relative items-center flex flex-col justify-center text-center ">
-
-          <!-- icons start------------------------- -->
-          <div>
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute left-[10%] top-[10%] animate-pulse  ">
-              <img class="w-[30px]  " src="../assets/images/programs_img/icons8-gmail-48.png" alt="">
-            </div>
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute right-[75%] top-[19%] animate-pulse ">
-              <img class="w-[20px]  " src="../assets/images/programs_img/icons8-discord-24.png" alt="">
-            </div>
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute right-[10%] top-[80%] animate-pulse  ">
-              <img class="w-[30px]  " src="../assets/images/programs_img/icons8-gmail-48.png" alt="">
-            </div>
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute right-[4%] top-[45%] animate-pulse ">
-              <img class="w-[20px]  " src="../assets/images/programs_img/icons8-discord-24.png" alt="">
-            </div>
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute left-[4%] top-[39%] animate-pulse  ">
-              <img class="w-[30px]  " src="../assets/images/programs_img/icons8-skype-94.png" alt="">
-            </div>
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute right-[10%] top-[10%] animate-pulse  ">
-              <img class="w-[30px]  " src="../assets/images/programs_img/icons8-skype-94.png" alt=""></div>
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute right-[25%] top-[80%] animate-pulse  ">
-              <img class="w-[30px]  " src="../assets/images/programs_img/icons8-gmail-48.png" alt="">
-            </div>
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute right-[20%] top-[50%] animate-pulse ">
-              <img class="w-[20px]  " src="../assets/images/programs_img/icons8-discord-24.png" alt="">
-            </div>
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute right-[25%] top-[10%] animate-pulse  ">
-              <img class="w-[30px]  " src="../assets/images/programs_img/icons8-skype-94.png" alt="">
-            </div>
-
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute left-[10%] top-[60%] animate-pulse  ">
-              <img class="w-[30px]  " src="../assets/images/programs_img/icons8-gmail-48.png" alt="">
-            </div>
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute right-[75%] top-[70%] animate-pulse ">
-              <img class="w-[20px]  " src="../assets/images/programs_img/icons8-discord-24.png" alt="">
-            </div>
-            <div
-              class="bg-stone-900 rounded-full w-12 h-12 flex items-center justify-center absolute right-[90%] top-[90%] animate-pulse  ">
-              <img class="w-[30px]  " src="../assets/images/programs_img/icons8-skype-94.png" alt="">
-            </div>
-
-            <!-- icons end----------------------------- -->
-
-
-            <h1 class="text-white text-6xl font-semibold">Your Cores Tools</h1>
-            <h2 class="text-primary text-5xl italic pt-5 ">Connected</h2>
-            <p class="text-gray-500 text-xl pt-7">First party integrations to keep your activities in <br>
-              sync,designed with cross cmpatibility in mind.</p>
-            <button class="btn_md primary_bg mt-12 text-base font-normal mx-auto text-white w-[150px] h-[50px] rounded-2xl">Get
-              Started</button>
-          </div>
-
-        </div>
-
-        <!-- section4--------- -->
-        <div class="relative mt-40 w-[1100px] max-w-screen-xl m-auto">
-          <div class="git rounded-3xl h-[249px] ">
-            <div class="flex h-full w-full justify-around">
-
-              <div class="left_text flex flex-col justify-center gap-10">
-                <span class="flex text-white text-2xl font-semibold">2000+ Students take this course.</span>
-                <p class="flex text-white text-lg font-normal">What are you waiting for?</p>
-              </div>
-
-              <div class="right_btn flex justify-center items-center">
-                <button class="bg-white btn_md !text-secondary rounded-full w-[200px] h-[60px] font-bold">Get
-                  Started Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- footer------------------ -->
-
-        <footer class="max-w-screen-lg m-auto bg-white">
-          <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-            <div class="lg:flex lg:items-start lg:gap-8">
-              <div class="text-teal-600">
-
-              </div>
-
-              <div class="grid grid-cols-2 gap-12 mt-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
-                <div class="col-span-2">
-
-                </div>
-
-                <div class="col-span-2 lg:col-span-3 lg:flex lg:items-end">
-
-                </div>
-
-                <div class="col-span-2 sm:col-span-1">
-                  <p class="font-medium text-gray-900">Services</p>
-
-                  <ul class="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        1on1 Coaching
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Company Review
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Accounts Review
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        HR Consulting
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        SEO Optimisation
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="col-span-2 sm:col-span-1">
-                  <p class="font-medium text-gray-900">Company</p>
-
-                  <ul class="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        About
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Meet the Team
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Accounts Review
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="col-span-2 sm:col-span-1">
-                  <p class="font-medium text-gray-900">Helpful Links</p>
-
-                  <ul class="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Contact
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        FAQs
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Live Chat
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="col-span-2 sm:col-span-1">
-                  <p class="font-medium text-gray-900">Legal</p>
-
-                  <ul class="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Accessibility
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Returns Policy
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Refund Policy
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Hiring Statistics
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="col-span-2 sm:col-span-1">
-                  <p class="font-medium text-gray-900">Downloads</p>
-
-                  <ul class="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Marketing Calendar
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        SEO Infographics
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <ul class="flex justify-start col-span-2 gap-6 lg:col-span-5 lg:justify-end">
-                  <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                      <span class="sr-only">Facebook</span>
-
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                          d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                      <span class="sr-only">Instagram</span>
-
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                          d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                      <span class="sr-only">Twitter</span>
-
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                          d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                      </svg>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                      <span class="sr-only">GitHub</span>
-
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                      <span class="sr-only">Dribbble</span>
-
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="pt-8 mt-8 border-t border-gray-100">
-              <div class="sm:flex sm:justify-between">
-                <p class="text-xs text-gray-500">
-                  &copy; 2022. Company Name. All rights reserved.
+        <section>
+          <div class="px-5">
+            <div class="flex flex-col max-w-screen-lg m-auto bg-orange-300 lg:flex-row rounded-3xl">
+              <div class="lg:w-[1178px] h-[615px] leading-[60px]">
+                <h1
+                  class="hh lg:text-6xl lg:text-start pt-16 leading-[45px] scale-up lg:leading-none text-center text-5xl lg:ml-10 lg:pt-10">
+                  Competitive <br />
+                  <strong class="text">Exams</strong>
+                </h1>
+                <p class="mt-16 text-xl text-center span-lines animate-2 lg:text-lg lg:ml-10 lg:text-start para">
+                  We understand the importance of preparing students for the
+                  challenges of competitive exams. EduCraft provides a
+                  specialized program designed to equip students with the skills
+                  and knowledge necessary to excel in these exams. Our
+                  experienced faculty members employ proven strategies and
+                  comprehensive study materials, empowering students to tackle
+                  exams with confidence.
                 </p>
+              </div>
+  
+              <div class="flex flex-col items-center justify-center mt-8 lg:items-start lg:justify-start">
+                <div class="w-[382px] h-[194px] bg-white rounded-3xl m-8 flex items-center justify-center">
+                  <img src="../assets/images/programs/target_3138297 1.png" alt="" />
+                  <span class="pl-4">Employ <br /><strong> Proven Strategies</strong></span>
+                </div>
+  
+                <div class="w-[382px] h-[194px] bg-white rounded-3xl m-8 flex items-center justify-center">
+                  <img src="../assets/images/programs/book.png" alt="" />
+                  <span class="pl-4">Comprehensive <br /><strong> Study Materials</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                <ul class="flex flex-wrap justify-start gap-4 mt-8 text-xs sm:mt-0 lg:justify-end">
-                  <li>
-                    <a href="#" class="text-gray-500 transition hover:opacity-75">
-                      Terms & Conditions
-                    </a>
-                  </li>
+        <section class="mt-20">
+          <div>
+            <h1
+              class="text-5xl text-center uppercase hh lg:text-6xl scale-up lg:text-start lg:flex lg:justify-center">
+              Individual
+              <strong class="pl-1 text"> Projects</strong>
+            </h1>
+            
+            <div class="w-4/5 mx-auto">
+              <p class="text-xl text-center span-lines animate-2">
+                EduCraft recognizes that every student is unique, with distinct
+                interests and talents. That's why we offer the opportunity for
+                students to pursue individual projects that align with their
+                passions and aspirations
+              </p>
+            </div>
+          </div>
 
-                  <li>
-                    <a href="#" class="text-gray-500 transition hover:opacity-75">
-                      Privacy Policy
-                    </a>
-                  </li>
+          <div
+            class="flex flex-col items-center justify-center max-w-screen-lg m-auto mt-20 lg:justify-between lg:flex-row">
+            <div class="relative mt-8">
+              <img class="w-[300px] object-cover object-center" src="../assets/images/programs/holding a car.png"
+                alt="" />
 
-                  <li>
-                    <a href="#" class="text-gray-500 transition hover:opacity-75">
-                      Cookies
+              <div class="absolute top-2 left-3">
+                <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
+                  <div class="w-2 h-2 bg-black rounded-full"></div>
+                  <a class="pl-1 text-xs" href="#"> Robotics </a>
+                </div>
+              </div>
+            </div>
+            <div class="relative mt-10 lg:mt-0">
+              <img class="w-[300px] object-cover object-center" src="../assets/images/programs/mobiles.png" alt="" />
+
+              <div class="absolute top-2 left-3">
+                <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
+                  <div class="w-2 h-2 bg-black rounded-full"></div>
+                  <a class="pl-1 text-xs" href="#"> Mobile App </a>
+                </div>
+              </div>
+            </div>
+            <div class="relative mt-8">
+              <img class="w-[300px] object-cover object-center" src="../assets/images/programs/robotic car.png"
+                alt="" />
+
+              <div class="absolute top-2 left-3">
+                <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
+                  <div class="w-2 h-2 bg-black rounded-full"></div>
+                  <a class="pl-1 text-xs" href="#"> Robotics </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="h-[2px] max-w-screen-lg m-auto lg:w-full w-[380px] font-bold bg-slate-500 mt-10"></div>
+
+          <div class="flex flex-col justify-around max-w-screen-lg m-auto mt-20 text-center lg:flex-row lg:text-start">
+            <span class="scale-up">Individual Projects</span>
+            <p class="text-xl span-lines animate-2 para">
+              Whether it's developing a mobile app, designing a website, or exploring artificial intelligence, our program provides the guidance and resources needed to turn their ideas into reality. By encouraging independent thinking and fostering a spirit of entrepreneurship, EduCraft nurtures the next generation of innovators and problem solvers.
+            </p>
+          </div>
+        </section>
+
+        <section class="mt-20">
+          <div class="flex flex-col justify-between max-w-screen-lg m-auto text-center lg:text-start lg:flex-row">
+            <div>
+              <img class="w-[600px] h-[452px]" src="../assets/images/programs/Group pic.png" alt="" />
+            </div>
+            <div>
+              <h1 class="pl-10 mt-16 text-5xl hh lg:text-6xl scale-up lg:mt-0">
+                BEYOND
+                <strong class="text"> THE CLASSROOM </strong>
+              </h1>
+              <p class="pl-10 mt-10 text-xl span-lines animate-2 lg:mt-20 lg:text-lg para">
+                EduCraft breaks classroom boundaries, offering immersive learning through field trips, workshops, and industry collaborations. Students gain real-world tech insights, deepening their understanding and inspiring exciting career paths beyond four walls.
+              </p>
+            </div>
+          </div>
+        </section>
+        <footer>
+          <div class="mt-32 lg:h-screen footer">
+            <div class="flex flex-col h-full max-w-screen-xl pt-12 m-auto text-white md:px-5">
+              <div class="footer_top lg:h-[44%] p-6 md:px-14 relative">
+                <div class="relative z-10 w-full h-full p-4 md:p-8 glass_container">
+                  <div class="relative flex flex-col items-center h-full gap-10 lg:justify-between lg:flex-row">
+                    <div class="flex flex-col gap-3 lg:w-1/2">
+                      <h1 class="text-3xl font-bold text-center hh sm:text-5xl lg:text-start mt-14 lg:mt-0">
+                        Get in Touch
+                      </h1>
+
+                      <p
+                        class="text-base font-normal text-center opacity-50 span-lines animate-2 lg:text-start lg:opacity-100">
+                        Let us know how we can ignite your child's creativity,
+                        critical thinking, and problem-solving skills
+                      </p>
+                    </div>
+
+                    <div class="flex items-end h-full">
+                      <a class="flex items-center justify-center gap-3 px-6 py-3 bg-white bg-opacity-10 rounded-[56px] hover:primary_bg hover:transition hover:duration-300"
+                        href="./contact.html">
+                        <span class="text-base font-bold">Contact</span>
+
+                        <span class="flex items-center justify-center bg-white rounded-full bg-opacity-20 w-7 h-7">
+                          <i class="ri-phone-line"></i></span>
+                      </a>
+                    </div>
+
+                    <a href="./contact.html"
+                      class="absolute top-0 right-0 flex items-center justify-center w-12 h-12 bg-white hover:primary_bg hover:transition hover:duration-300 bg-opacity-10 rounded-xl">
+                      <i class="text-2xl ri-arrow-right-up-line"></i>
                     </a>
-                  </li>
-                </ul>
+                  </div>
+                </div>
+
+                <div class="absolute top-0 left-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="103" viewBox="0 0 100 103" fill="none">
+                    <path
+                      d="M0.218115 17.77C0.0958221 11.9234 4.56954 7.00307 10.4014 6.57016L87.2423 0.866202C93.5671 0.396711 98.9775 5.35861 99.0558 11.7003L99.8829 78.7149C99.9502 84.1651 96.0161 88.8426 90.635 89.7104L14.5061 101.987C7.91029 103.05 1.89704 98.0367 1.75732 91.3571L0.218115 17.77Z"
+                      fill="url(#paint0_linear_786_2753)" />
+
+                    <defs>
+                      <linearGradient id="paint0_linear_786_2753" x1="107.143" y1="86.784" x2="-0.0452193" y2="4.48317"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFE986" />
+
+                        <stop offset="0.5455" stop-color="#FF9396" />
+
+                        <stop offset="1" stop-color="#962EFF" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="footer_middle lg:h-[44%] h-auto">
+                <div
+                  class="grid gap-6 grid-cols-[repeat(auto-fit,_minmax(210px,_1fr))] text-base font-normal p-6 sm:px-20 lg:px-10">
+                  <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                    <figure>
+                      <img class="mx-auto w-36 md:mx-0" src="../assets/images/brand/logo.png" alt="" />
+                    </figure>
+
+                    <p>Lorem ipsum tagline</p>
+
+                    <p>Lorem ipsum tagline</p>
+
+                    <div class="flex items-center md:w-[80%] gap-4 mt-4 px-3 py-3 bg-white rounded-lg">
+                      <span class="text-[#365C83] opacity-50 text-xs">Powered By</span>
+
+                      <figure>
+                        <img src="../assets/images/Techno-alliance-logo.png" alt="" />
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                    <h1 class="text-3xl opacity-50 hh">Services</h1>
+
+                    <a href="">Courses</a>
+
+                    <a href="">About</a>
+
+                    <a href="">Blog</a>
+
+                    <a href="">Contact</a>
+                  </div>
+
+                  <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                    <h1 class="text-3xl opacity-50 hh">Resources</h1>
+
+                    <a href="">Courses</a>
+
+                    <a href="">About</a>
+
+                    <a href="">Blog</a>
+
+                    <a href="">Contact</a>
+                  </div>
+
+                  <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                    <h1 class="text-3xl opacity-50 hh">Contact</h1>
+
+                    <div class="flex items-center gap-4">
+                      <i class="text-2xl ri-mail-line"></i>
+
+                      <a href="">contact@educraft.ae</a>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                      <i class="text-2xl ri-phone-line"></i>
+
+                      <span>+971 123 456 789</span>
+                    </div>
+
+                    <div class="flex gap-4 pt-5 icons-sm">
+                      <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                        <i class="ri-mail-fill text-[#523B53]"></i>
+                      </a>
+
+                      <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                        <i class="ri-linkedin-fill text-[#523B53]"></i>
+                      </a>
+
+                      <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                        <i class="ri-twitter-fill text-[#523B53]"></i>
+                      </a>
+
+                      <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                        <i class="ri-facebook-fill text-[#523B53]"></i>
+                      </a>
+
+                      <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                        <i class="ri-instagram-line text-[#523B53]"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer_bottom h-14 lg:h-[12%] w-full flex flex-col items-center px-10 md:px-0 relative">
+                <div class="h-[1px] w-full opacity-10 bg-white"></div>
+
+                <div class="lg:w-[30%] md:w-[45%] w-full flex justify-between m-auto opacity-30 text-base font-normal">
+                  <p>© 2023 educraft.ae</p>
+
+                  <p>All rights reserved</p>
+                </div>
+
+                <div class="absolute bottom-0 w-[90%] h-[9px] primary_bg rounded-t-2xl"></div>
               </div>
             </div>
           </div>
         </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       </div>
     </main>
   </div>
-
-  <div class="cursor" id="cursor"></div>
   <script src="../assets/pluggins/jquery/jquery-3.6.3.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-  <script src="../assets/pluggins/scrollsmoother/ss.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script> -->
+  <script src="../assets/pluggins/splittext/SplitText.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+  <script src="../assets/pluggins/locomotive/locomotive-scroll.min.js"></script>
   <script src="../assets/js/main.js"></script>
-  <!-- <script src="../assets/js/section3.js"></script> -->
-  <!-- <script src="../assets/js/cursor.js"></script> -->
 </body>
 
 </html>
