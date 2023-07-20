@@ -14,6 +14,11 @@
      src: url(..fonts/Gilroy/Gilroy-SemiBold.ttf) format("truetype");
 }
 
+@font-face {
+     font-family: "Montserrat-edu";
+     src: url(..font/Montserrat/Montserrat-Regular.ttf) format("truetype");
+}
+
 /* Scrollbar Styling */
 /* ::-webkit-scrollbar {
      width: 10px;
@@ -219,13 +224,20 @@
 
 /* Position the screen and give make it the right size, ratio 16:10 */
 .css-macbook .macbook-screen-position {
-     position: absolute;
+     /* position: absolute;
      top: 6.5%;
      width: 93.2%;
      left: 3.4%;
      height: 0;
      margin: 0;
-     padding-bottom: 58.25%;
+     padding-bottom: 58.25%; */
+     position: absolute;
+     top: 2.5%;
+     width: 97.2%;
+     left: 1.4%;
+     height: 0;
+     margin: 0;
+     padding-bottom: 61.9442%;
      /* Ratio */
 }
 
@@ -1031,14 +1043,15 @@ body.scrolled .navbar-toggle {
      }
 }
 
-.box_bg{
+.box_bg {
 
      background: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%);
 
      opacity: 0.4;
 
 }
-.text{
+
+.text_ {
 
      background: linear-gradient(225.49deg, #FF9900 -10.05%, #F06445 116.14%);
 
@@ -1049,6 +1062,7 @@ body.scrolled .navbar-toggle {
      background-clip: text;
 
 }
+
 h1,
 h2,
 h3 {
@@ -1077,4 +1091,69 @@ h1>div {
 
 .text-heading {
      width: 100%;
+}
+
+
+
+/* PRELOADER CSS */
+.page-loader {
+     width: 100%;
+     height: 100vh;
+     position: absolute;
+     background: #0e0e0e;
+     z-index: 1000;
+     position: fixed;
+     top: 0;
+     left: 0;
+
+
+}
+
+.page-loader .txt {
+     color: #666;
+     text-align: center;
+     top: 40%;
+     position: relative;
+     text-transform: uppercase;
+     letter-spacing: 0.3rem;
+     font-weight: bold;
+     line-height: 1.5;
+}
+
+/* SPINNER ANIMATION */
+.spinner {
+     position: relative;
+     top: 35%;
+     width: 80px;
+     height: 80px;
+     margin: 0 auto;
+     background-color: #fff;
+
+     border-radius: 100%;
+     -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+     animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+     0% {
+          -webkit-transform: scale(0)
+     }
+
+     100% {
+          -webkit-transform: scale(1.0);
+          opacity: 0;
+     }
+}
+
+@keyframes sk-scaleout {
+     0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+     }
+
+     100% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+          opacity: 0;
+     }
 }

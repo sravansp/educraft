@@ -3,584 +3,845 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Educraft | Courses | A place every student should be.</title>
+  <title>About Us | Educraft | A place every student should be.</title>
   <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico" />
 
   <!-- TAILWIND CSS  -->
   <link href="../dist/output.css" rel="stylesheet" />
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-
+  <link href="../assets/pluggins/locomotive/locomotive-scroll.css" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="../assets/pluggins/plyr/dist/plyr.css" /> -->
   <!-- STYLE & CUSTOM CSS  -->
   <link rel="stylesheet" href="../assets/css/style.css" />
-
   <!-- REMIX ICON  -->
   <link rel="stylesheet" href="../assets/pluggins/remixicon/remixicon.css" />
 </head>
 
-<body class="font-['Poppins'] w-100">
-  <header class="mx-auto max-w-screen-2xl">
-    <nav id="navbar"
-      class="navbar absolute top-0 flex items-center justify-between gap-[20px] h-16 transition duration-300 pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-[6%] md:pr-[6%] 2xl:pl-20 2xl:pr-20 z-50 bg-opacity-50 w-full max-w-screen-2xl mx-auto">
-      <div class="flex items-center justify-between gap-32 max-w-screen-2xl">
-        <div class="logo_animation">
-          <div class="relative flex items-center justify-center gap-2 header_logo">
-            <img class="w-[100px]" src="../assets/images/brand/logo_dark.png" alt="" />
+<body class="body font-[Poppins] text-sm box-border">
+  <header>
+    <nav id="navbar" class="fixed top-0 z-50 hidden w-full h-24 bg-opacity-50 navbar lg:block">
+      <div
+        class="navbar_wrapper max-w-screen-2xl mx-auto h-24 lg:flex items-center justify-between gap-[20px] pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-[6%] md:pr-[6%] 2xl:pl-20 2xl:pr-20">
+        <div class="flex items-center justify-between gap-32 max-w-screen-2xl">
+          <div class="logo_animation">
+            <div class="relative flex items-center justify-center gap-2 header_logo">
+              <a href="./index.html">
+                <figure>
+                  <img class="w-[100px]" src="../assets/images/brand/logo.png" alt="" />
+                </figure>
+              </a>
+            </div>
+          </div>
+          <div class="items-center hidden gap-8 nav_items sm:flex text-md target">
+            <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+              href="./courses.html">Courses</a>
+            <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+              href="./programs.html">Programs</a>
+            <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+              href="./aboutus.html">About Us</a>
+            <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+              href="./blog.html">Blog</a>
+            <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+              href="./contact.html">Contact</a>
           </div>
         </div>
-
-        <div class="items-center hidden gap-8 nav_items sm:flex text-md target">
-          <a class="nav__links text-black h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-            href="./index.html">Home</a>
-
-          <a class="nav__links text-black h-[72px] grid place-items-center active_nav hover:text-primary transition-all duration-200"
-            href="#">Courses</a>
-
-          <a class="nav__links text-black h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-            href="./programs.html">Programs</a>
-
-          <a class="nav__links text-black h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-            href="">About Us</a>
-
-          <a class="nav__links text-black h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-            href="">Blog</a>
-
-          <a class="nav__links text-black h-[72px] grid place-items-center hover:text-primary transition-all duration-200"
-            href="">Contact</a>
+        <div class="flex items-center justify-between gap-8">
+          <a class="flex gap-2 text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+            href="https://educraftbeta.benchmark.school/site/login"><span>Login</span> <i
+              class="ri-login-circle-line"></i></a>
+          <a class="p-2 px-4 text-sm text-black transition duration-300 bg-white rounded-full hover:text-white button"
+            data-magnetic href="https://educraftbeta.benchmark.school/site/login">
+            <span class="text-btn">Try it free</span>
+          </a>
         </div>
-      </div>
-
-      <div class="flex items-center justify-between gap-8">
-        <a class="nav__links text-black h-[72px] gap-2 place-items-center hover:text-primary transition-all duration-200 flex"
-          href=""><span>Login</span> <i class="ri-login-circle-line"></i>
-        </a>
-
-        <a class="p-2 px-4 text-sm text-white transition duration-300 bg-black rounded-full button1" data-magnetic
-          href="">
-          <span class="text-btn">Try it free</span>
-        </a>
       </div>
     </nav>
+    <div class="lg:hidden">
+      <div class="flex justify-between items-center h-[56px] px-5 md:px-10 py-10 bg-transparent fixed z-50 w-full">
+        <div class="pl-2 logo_animation logo_mobile">
+          <div class="relative z-40 flex items-center justify-center gap-2 header_logo">
+            <img class="w-[100px]" src="../assets/images/brand/logo.png" alt="" />
+          </div>
+        </div>
+        <button class="navbar-toggle" id="toggle" type="button">
+          <svg viewBox="0 0 100 100" width="50">
+            <path class="line top"
+              d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+            <path class="line middle" d="m 30,50 h 40" />
+            <path class="line bottom"
+              d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="menu-mobile fixed -top-[120%] h-screen w-full z-40 bg-black">
+        <div class="data flex justify-start items-center pl-[20%] h-full">
+          <ul>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="1" href="./index.html">Home</a>
+            </li>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="2" href="./courses.html">Courses</a>
+            </li>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="3" href="./programs.html">Programs</a>
+            </li>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="4" href="./aboutus.html">About Us</a>
+            </li>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="5" href="./blog.html">Blog</a>
+            </li>
+            <li class="text-white text-2xl m-[0.5em_0]">
+              <a data-text="6" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </header>
-  <div class="mx-auto scroll_smoother">
-    <!-- header----------------- -->
 
+  <div class="mx-auto scroll_smoother smooth-scroll">
     <main>
-      <div class="mt-20 content">
-        <!-- section 1-------------------- -->
-        <div class="flex flex-col items-center justify-center max-w-screen-lg m-auto mt-16">
-          <p class="course font-semibold text-[19px]">Courses</p>
-          <h1 class="text-center text-5xl text-gray-800 mt-6 font-semibold">
-            Educraft Portal for <br />
-            your children
-          </h1>
-          <p class="pt-16 text-center text-[17px] text-gray-500">
-            Gain a competitive edge with coding. Kids learn, create, and
-            problem-solve. <br />
-            Unleash their potential today!
-          </p>
-          <div class="border-8 border-black rounded-[38px] border-solid mt-20 overflow-hidden">
-            <img src="../assets/images/image 124 (1).png" alt="" />
-          </div>
-        </div>
-
-        <!-- section2-------------- -->
-
-        <div class="bg-[#FFF9F4] h-screen">
-          <div class="pl-40 mt-32">
-            <h1 class="text-[36px] font-semibold text-gray-800 pt-8">
-              Featured Lesson
-            </h1>
-          </div>
-
-          <div class="flex items-center justify-between max-w-screen-lg gap-8 m-auto mt-10">
-            <div>
-              <div class="flex items-center">
-                <div class="bg-white w-full h-[380px] rounded-3xl p-4">
-                  <div>
-                    <img class="w-[300px]" src="../assets/images/Rectangle 114.png" alt="" />
-                  </div>
-
-                  <div class="ml-5 mt-5">
-                    <h1 class="font-normal text-orange-500">Robotics</h1>
-
-                    <p>
-                      New releases every months sfd <br />
-                      fsdfsdfsdfsdfsdf
-                    </p>
-                  </div>
-
-                  <div class="flex justify-between mt-5 mx-5">
-                    <div class="flex items-center">
-                      <!-- <img src="../assets/images/book-bookmark 1.png" alt=""> -->
-
-                      <i class="ri-git-repository-line text-xl"></i>
-
-                      <p class="pl-3 text-gray-600 text-[16px]">12 Lessons</p>
-                    </div>
-
-                    <div class="flex items-center">
-                      <!-- <img src="../assets/images/clock 1.png" alt=""> -->
-
-                      <i class="ri-time-line text-xl"></i>
-
-                      <p class="pl-3 text-gray-600 text-[16px]">3h 20min</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex items-center">
-                <div class="bg-white h-[380px] rounded-3xl p-4">
-                  <div>
-                    <img class="w-[300px]" src="../assets/images/Rectangle 114 (1).png" alt="" />
-                  </div>
-
-                  <div class="ml-5 mt-5">
-                    <h1 class="font-normal text-orange-500">Robotics</h1>
-
-                    <p>
-                      New releases every months sfd <br />
-                      fsdfsdfsdfsdfsdf
-                    </p>
-                  </div>
-
-                  <div class="flex justify-between mt-5 mx-5">
-                    <div class="flex items-center">
-                      <!-- <img src="../assets/images/book-bookmark 1.png" alt=""> -->
-
-                      <i class="ri-git-repository-line text-xl"></i>
-
-                      <p class="pl-3 text-gray-600 text-[16px]">12 Lessons</p>
-                    </div>
-
-                    <div class="flex items-center">
-                      <!-- <img src="../assets/images/clock 1.png" alt=""> -->
-
-                      <i class="ri-time-line text-xl"></i>
-
-                      <p class="pl-3 text-gray-600 text-[16px]">3h 20min</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex items-center">
-                <div class="bg-white h-[380px] rounded-3xl p-4">
-                  <div>
-                    <img class="w-[300px]" src="../assets/images/Rectangle 114 (2).png" alt="" />
-                  </div>
-
-                  <div class="ml-5 mt-5">
-                    <h1 class="font-normal text-orange-500">Robotics</h1>
-
-                    <p>
-                      New releases every months sfd <br />
-                      fsdfsdfsdfsdfsdf
-                    </p>
-                  </div>
-
-                  <div class="flex justify-between mt-5 mx-5">
-                    <div class="flex items-center">
-                      <!-- <img src="../assets/images/book-bookmark 1.png" alt=""> -->
-
-                      <i class="ri-git-repository-line text-xl"></i>
-
-                      <p class="pl-3 text-gray-600 text-[16px]">12 Lessons</p>
-                    </div>
-
-                    <div class="flex items-center">
-                      <!-- <img src="../assets/images/clock 1.png" alt=""> -->
-
-                      <i class="ri-time-line text-xl"></i>
-
-                      <p class="pl-3 text-gray-600 text-[16px]">3h 20min</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div class="content">
+        <section>
+          <div class="h-[286px] w-full relative items-center hero_bg">
+            <div class="max-w-screen-xl mx-auto">
+              <h1 class="text-6xl font-bold text-center text-white hh lg:pl-10 lg:text-start pt-28">
+                Courses
+              </h1>
+              <img class="mx-auto lg:absolute scale-up" src="../assets/images/2 lines.png" alt="" />
             </div>
           </div>
+        </section>
+        <section>
+          <div class="max-w-screen-xl px-5 py-20 mx-auto md:px-10">
+            <div class="top_wrapper">
+              <div class="text-center lg:text-start">
+                <h1 class="text-5xl scale-up">
+                  Popular
+                  <strong class="pl-1 text">
+                    <br class="lg:hidden" />
+                    Courses</strong>
+                </h1>
+              </div>
+            </div>
+            <div class="overflow-hidden card-wrapper">
+              <!-- cards------------------>
 
-          <div class="flex items-center justify-center mt-8">
-            <!-- <button class="button1 rounded-3xl w-[200px] h-12">
-        
-                      <div class="flex items-center justify-center">
-        
-                        <p class="font-medium text-white ">Explore All Lessons</p>
-        
-                        <img class="pl-3" src="../assets/images/arrow-right-fill.svg">
-        
+              <div class="flex justify-center mt-16 lg:float-left md:float-left md:w-1/2 lg:w-2/6">
+                <div class="flex items-center">
+                  <div class="bg-gray-200 w-full h-[388px] rounded-3xl p-4">
+                    <div class="relative">
+                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <div class="absolute bottom-2 left-3">
+                        <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
+                          <div class="w-2 h-2 bg-black rounded-full"></div>
+
+                          <a class="pl-1 text-xs" href="#"> Robotics </a>
+                        </div>
                       </div>
-        
-                    </button> -->
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Fire.png" alt="" />
 
-            <a class="btn_md primary_bg" href="">
-              <span>Explore All Lessons</span>
+                        <span class="pl-2 text-xs italic text-primary">Enrolled 100+ students</span>
+                      </div>
 
-              <span class="flex items-center justify-center bg-white rounded-full bg-opacity-40 w-7 h-7">
-                <i class="text-sm ri-arrow-right-line"></i></span>
-            </a>
-          </div>
-        </div>
-        <!-- section3-------------- -->
-        <div class="flex items-center justify-between max-w-screen-lg m-auto mt-24">
-          <div>
-            <img class="w-[510px] rounded-3xl" src="../assets/images/pexels-yan-krukau-8613085.jpg" alt="" />
-          </div>
-          <div>
-            <h1 class="text-[40px] leading-[50px] font-medium">
-              Advantages of <br />
-              Educraft Portal for <br />
-              your child's education.
-            </h1>
-            <p class="pt-16">
-              Unparalleled curriculum. Expert instructors. MakerKids <br />
-              redefines your child's tech education.
-            </p>
-            <div class="flex mt-10">
-              <img src="../assets/images/Vector.png" alt="" />
-              <p class="pl-5 text-[20px] font-medium">21st Century Skills</p>
-            </div>
-            <div>
-              <p class="mt-5 ml-12 font-light text-gray-600">
-                Our classes teach kids about teamwork <br />
-                and help to build the confidence they <br />
-                will need to become our future <br />technology leaders.
-              </p>
-            </div>
-            <div class="flex mt-10">
-              <img src="../assets/images/Vector.png" alt="" />
-              <p class="pl-5 text-[20px] font-medium">21st Century Skills</p>
-            </div>
-            <div>
-              <p class="mt-5 ml-12 font-light text-gray-600">
-                Our classes teach kids about teamwork <br />
-                and help to build the confidence they <br />
-                will need to become our future <br />technology leaders.
-              </p>
-            </div>
-            <div class="flex mt-10">
-              <img src="../assets/images/Vector.png" alt="" />
-              <p class="pl-5 text-[20px] font-medium">21st Century Skills</p>
-            </div>
-            <div>
-              <p class="mt-5 ml-12 font-light text-gray-600">
-                Our classes teach kids about teamwork <br />
-                and help to build the confidence they <br />
-                will need to become our future <br />technology leaders.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center justify-center mt-16 ml-48">
-          <button class="button1 rounded-3xl w-[140px] h-12">
-            <div class="flex items-center justify-center">
-              <p class="font-medium text-white">Get Started</p>
-            </div>
-          </button>
-        </div>
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Vector.png" alt="" />
 
-        <!-- section4------------------- -->
+                        <span class="text-xs">4.4</span>
+                      </div>
+                    </div>
+                    <div class="pt-2">
+                      <p class="text-sm font-semibold">
+                        Waverio Reaches it’s revenue goals <br />
+                        faster with Company.
+                      </p>
+                    </div>
 
-        <div class="bg-blue-500 h-[540px] mt-24 relative">
-          <img class="absolute w-8 right-[30%] bottom-[30%]" src="../assets/images/circle-filled.svg" alt="" />
-          <img class="absolute w-[60px] right-[10%] bottom-[70%]" src="../assets/images/hexagon (2).svg" alt="" />
-          <img class="absolute w-[38px] right-[70%] bottom-[52%]" src="../assets/images/8-dots-rotate.svg" alt="" />
-          <img class="absolute w-[26px] right-[90%] bottom-[65%]" src="../assets/images/circle.svg" alt="" />
+                    <div class="flex justify-between pt-2">
+                      <span class="text-xs italic font-light text-gray-500">Anwar Sadath AM</span>
 
-          <div class="pt-40">
-            <h1 class="text-[55px] flex items-center justify-center text-white font-medium">
-              Find a program for your child
-            </h1>
-            <p class="flex items-center justify-center text-white text-center text-[14px] mt-6">
-              Get unlimited access to 6,000+ educraft's top courses for your
-              team.Learn <br />
-              and improve skills across bussiness,tech,design and more.
-            </p>
-          </div>
-          <div class="flex items-center justify-center gap-5 mt-8">
-            <button class="text-white bg-yellow-500 w-[130px] h-[40px] rounded-3xl text-[15px] font-medium">
-              Get Started
-            </button>
-            <button class="w-[130px] h-[40px] rounded-3xl text-[15px] font-medium border text-white border-white">
-              Contact
-            </button>
-          </div>
-        </div>
+                      <span class="text-xs font-light text-gray-500">Grade : 2</span>
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/book-bookmark 1.png" alt="" />
 
-        <!-- section5-------------- -->
-        <div class="relative mt-40 w-[1100px] max-w-screen-xl m-auto">
-          <div class="git rounded-3xl h-[249px]">
-            <div class="flex h-full w-full justify-around">
-              <div class="left_text flex flex-col justify-center gap-10">
-                <span class="flex text-white text-2xl font-semibold">2000+ Students take this course.</span>
-                <p class="flex text-white text-lg font-normal">
-                  What are you waiting for?
-                </p>
+                        <p class="pl-2 text-xs text-gray-600">8 Units</p>
+                      </div>
+
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/play btn.png" alt="" />
+
+                        <p class="pl-2 text-xs text-gray-600">16 Lessons</p>
+                      </div>
+
+                      <div>
+                        <button
+                          class="rounded-xl w-[92px] text-xs text-primary hover:text-white font-semibold transition-all duration-200 hover:bg-primary border-primary border h-[35px]">
+                          <a href="https://educraft.benchmark.school/">Enroll Now</a>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div class="right_btn flex justify-center items-center">
-                <button class="bg-white btn_md !text-secondary rounded-full w-[200px] h-[60px] font-bold">
-                  Get Started Now
-                </button>
+              <div class="flex justify-center mt-16 lg:float-left md:float-left md:w-1/2 lg:w-2/6">
+                <div class="flex items-center">
+                  <div class="bg-gray-200 w-full h-[388px] rounded-3xl p-4">
+                    <div class="relative">
+                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <div class="absolute bottom-2 left-3">
+                        <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
+                          <div class="w-2 h-2 bg-black rounded-full"></div>
+
+                          <a class="pl-1 text-xs" href="#"> Robotics </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Fire.png" alt="" />
+
+                        <span class="pl-2 text-xs italic text-primary">Enrolled 100+ students</span>
+                      </div>
+
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Vector.png" alt="" />
+
+                        <span class="text-xs">4.4</span>
+                      </div>
+                    </div>
+                    <div class="pt-2">
+                      <p class="text-sm font-semibold">
+                        Waverio Reaches it’s revenue goals <br />
+                        faster with Company.
+                      </p>
+                    </div>
+
+                    <div class="flex justify-between pt-2">
+                      <span class="text-xs italic font-light text-gray-500">Anwar Sadath AM</span>
+
+                      <span class="text-xs font-light text-gray-500">Grade : 2</span>
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/book-bookmark 1.png" alt="" />
+
+                        <p class="pl-2 text-xs text-gray-600">8 Units</p>
+                      </div>
+
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/play btn.png" alt="" />
+
+                        <p class="pl-2 text-xs text-gray-600">16 Lessons</p>
+                      </div>
+
+                      <div>
+                        <button
+                          class="rounded-xl w-[92px] text-xs text-primary hover:text-white font-semibold transition-all duration-200 hover:bg-primary border-primary border h-[35px]">
+                          <a href="https://educraft.benchmark.school/">Enroll Now</a>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              <div class="flex justify-center mt-16 lg:float-left md:float-left md:w-1/2 lg:w-2/6">
+                <div class="flex items-center">
+                  <div class="bg-gray-200 w-full h-[388px] rounded-3xl p-4">
+                    <div class="relative">
+                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <div class="absolute bottom-2 left-3">
+                        <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
+                          <div class="w-2 h-2 bg-black rounded-full"></div>
+
+                          <a class="pl-1 text-xs" href="#"> Robotics </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Fire.png" alt="" />
+
+                        <span class="pl-2 text-xs italic text-primary">Enrolled 100+ students</span>
+                      </div>
+
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Vector.png" alt="" />
+
+                        <span class="text-xs">4.4</span>
+                      </div>
+                    </div>
+                    <div class="pt-2">
+                      <p class="text-sm font-semibold">
+                        Waverio Reaches it’s revenue goals <br />
+                        faster with Company.
+                      </p>
+                    </div>
+
+                    <div class="flex justify-between pt-2">
+                      <span class="text-xs italic font-light text-gray-500">Anwar Sadath AM</span>
+
+                      <span class="text-xs font-light text-gray-500">Grade : 2</span>
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/book-bookmark 1.png" alt="" />
+
+                        <p class="pl-2 text-xs text-gray-600">8 Units</p>
+                      </div>
+
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/play btn.png" alt="" />
+
+                        <p class="pl-2 text-xs text-gray-600">16 Lessons</p>
+                      </div>
+
+                      <div>
+                        <button
+                          class="rounded-xl w-[92px] text-xs text-primary hover:text-white font-semibold transition-all duration-200 hover:bg-primary border-primary border h-[35px]">
+                          <a href="https://educraft.benchmark.school/">Enroll Now</a>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-center mt-16 lg:float-left md:float-left md:w-1/2 lg:w-2/6">
+                <div class="flex items-center">
+                  <div class="bg-gray-200 w-full h-[388px] rounded-3xl p-4">
+                    <div class="relative">
+                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <div class="absolute bottom-2 left-3">
+                        <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
+                          <div class="w-2 h-2 bg-black rounded-full"></div>
+
+                          <a class="pl-1 text-xs" href="#"> Robotics </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Fire.png" alt="" />
+
+                        <span class="pl-2 text-xs italic text-primary">Enrolled 100+ students</span>
+                      </div>
+
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Vector.png" alt="" />
+
+                        <span class="text-xs">4.4</span>
+                      </div>
+                    </div>
+                    <div class="pt-2">
+                      <p class="text-sm font-semibold">
+                        Waverio Reaches it’s revenue goals <br />
+                        faster with Company.
+                      </p>
+                    </div>
+
+                    <div class="flex justify-between pt-2">
+                      <span class="text-xs italic font-light text-gray-500">Anwar Sadath AM</span>
+
+                      <span class="text-xs font-light text-gray-500">Grade : 2</span>
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/book-bookmark 1.png" alt="" />
+
+                        <p class="pl-2 text-xs text-gray-600">8 Units</p>
+                      </div>
+
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/play btn.png" alt="" />
+
+                        <p class="pl-2 text-xs text-gray-600">16 Lessons</p>
+                      </div>
+
+                      <div>
+                        <button
+                          class="rounded-xl w-[92px] text-xs text-primary hover:text-white font-semibold transition-all duration-200 hover:bg-primary border-primary border h-[35px]">
+                          <a href="https://educraft.benchmark.school/">Enroll Now</a>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-center mt-16 lg:float-left md:float-left md:w-1/2 lg:w-2/6">
+                <div class="flex items-center">
+                  <div class="bg-gray-200 w-full h-[388px] rounded-3xl p-4">
+                    <div class="relative">
+                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <div class="absolute bottom-2 left-3">
+                        <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
+                          <div class="w-2 h-2 bg-black rounded-full"></div>
+
+                          <a class="pl-1 text-xs" href="#"> Robotics </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Fire.png" alt="" />
+
+                        <span class="pl-2 text-xs italic text-primary">Enrolled 100+ students</span>
+                      </div>
+
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Vector.png" alt="" />
+
+                        <span class="text-xs">4.4</span>
+                      </div>
+                    </div>
+                    <div class="pt-2">
+                      <p class="text-sm font-semibold">
+                        Waverio Reaches it’s revenue goals <br />
+                        faster with Company.
+                      </p>
+                    </div>
+
+                    <div class="flex justify-between pt-2">
+                      <span class="text-xs italic font-light text-gray-500">Anwar Sadath AM</span>
+
+                      <span class="text-xs font-light text-gray-500">Grade : 2</span>
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/book-bookmark 1.png" alt="" />
+
+                        <p class="pl-2 text-xs text-gray-600">8 Units</p>
+                      </div>
+
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/play btn.png" alt="" />
+
+                        <p class="pl-2 text-xs text-gray-600">16 Lessons</p>
+                      </div>
+
+                      <div>
+                        <button
+                          class="rounded-xl w-[92px] text-xs text-primary hover:text-white font-semibold transition-all duration-200 hover:bg-primary border-primary border h-[35px]">
+                          <a href="https://educraft.benchmark.school/">Enroll Now</a>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-center mt-16 lg:float-left md:float-left md:w-1/2 lg:w-2/6">
+                <div class="flex items-center">
+                  <div class="bg-gray-200 w-full h-[388px] rounded-3xl p-4">
+                    <div class="relative">
+                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <div class="absolute bottom-2 left-3">
+                        <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
+                          <div class="w-2 h-2 bg-black rounded-full"></div>
+
+                          <a class="pl-1 text-xs" href="#"> Robotics </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Fire.png" alt="" />
+
+                        <span class="pl-2 text-xs italic text-primary">Enrolled 100+ students</span>
+                      </div>
+
+                      <div class="flex">
+                        <img class="h-[14px] w-[14px]" src="../assets/courses images/Vector.png" alt="" />
+
+                        <span class="text-xs">4.4</span>
+                      </div>
+                    </div>
+                    <div class="pt-2">
+                      <p class="text-sm font-semibold">
+                        Waverio Reaches it’s revenue goals <br />
+                        faster with Company.
+                      </p>
+                    </div>
+
+                    <div class="flex justify-between pt-2">
+                      <span class="text-xs italic font-light text-gray-500">Anwar Sadath AM</span>
+
+                      <span class="text-xs font-light text-gray-500">Grade : 2</span>
+                    </div>
+                    <div class="flex justify-between pt-3">
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/book-bookmark 1.png" alt="" />
+
+                        <p class="pl-2 text-xs text-gray-600">8 Units</p>
+                      </div>
+
+                      <div class="flex items-center">
+                        <img src="../assets/courses images/play btn.png" alt="" />
+
+                        <p class="pl-2 text-xs text-gray-600">16 Lessons</p>
+                      </div>
+
+                      <div>
+                        <button
+                          class="rounded-xl w-[92px] text-xs text-primary hover:text-white font-semibold transition-all duration-200 hover:bg-primary border-primary border h-[35px]">
+                          <a href="https://educraft.benchmark.school/">Enroll Now</a>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-center mt-8">
+              <a class="btn_md primary_bg" href="">
+                <span>Explore All Lessons</span>
+                <span class="flex items-center justify-center bg-white rounded-full bg-opacity-40 w-7 h-7">
+                  <i class="text-sm ri-arrow-right-line"></i></span>
+              </a>
             </div>
           </div>
-        </div>
+        </section>
+        <section>
+          <div class="flex flex-col max-w-screen-xl mx-auto lg:px-5 lg:py-20 lg:w-full md:px-10 lg:flex-row">
+            <div class="lg:w-[50%] ">
+              <h3 class="p-3 text-2xl font-semibold text-primary lg:text-start lg:p-0">How it work</h3>
+              <p class="lg:text-5xl text-3xl  text-center  lg:text-start font-semibold pt-5 text-[#323232]">An easy way
+                to start <br>
+                learning and get new <br>
+                skills here</p>
+              <p class="pt-8 text-xl font-thin text-center text-gray-500 lg:text-start lg:text-lg ">we provides access
+                to educational courses and learning materials
+                through mobile devices or web browsers. These apps have gained
+                immense popularity in recent years due to the convenience they offer in
+                accessing and acquiring knowledge from anywhere at any time.</p>
+              <div class="lg:w-36   h-[52px] flex items-center justify-center lg:mt-8 mt-10">
+                <a class="btn_md primary_bg" href="">
+                  <span class="font-semibold">Get Started</span>
 
-        <!-- footer------------------ -->
+                </a>
+              </div>
 
-        <footer class="max-w-screen-lg m-auto bg-white">
-          <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-            <div class="lg:flex lg:items-start lg:gap-8">
-              <div class="text-teal-600"></div>
-
-              <div class="grid grid-cols-2 gap-12 mt-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
-                <div class="col-span-2"></div>
-
-                <div class="col-span-2 lg:col-span-3 lg:flex lg:items-end"></div>
-
-                <div class="col-span-2 sm:col-span-1">
-                  <p class="font-medium text-gray-900">Services</p>
-
-                  <ul class="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        1on1 Coaching
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Company Review
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Accounts Review
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        HR Consulting
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        SEO Optimisation
-                      </a>
-                    </li>
-                  </ul>
+            </div>
+            <div class="lg:w-[50%]">
+              <div class="flex gap-5 p-5">
+                <div>
+                  <div
+                    class="bg-primary text-white rounded-full w-[45px] h-[45px] justify-center items-center text-xl font-semibold flex">
+                    1</div>
                 </div>
+                <div class="flex flex-col w-full gap-10">
 
-                <div class="col-span-2 sm:col-span-1">
-                  <p class="font-medium text-gray-900">Company</p>
+                  <button
+                    class="transition duration-300 animate-btns2 group focus:outline-none focus:text-opacity-100 text-secondary hover:text-opacity-100 text-opacity-40">
 
-                  <ul class="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        About
-                      </a>
-                    </li>
+                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start ">
 
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Meet the Team
-                      </a>
-                    </li>
+                      <span class="text-xl truncate lg:text-2xl">Explore the course listing page</span>
 
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Accounts Review
-                      </a>
-                    </li>
-                  </ul>
+                      <i class="text-2xl ri-arrow-right-s-line"></i>
+
+                    </div>
+
+                    <div class="w-full overflow-hidden duration-300 max-h-0 group-focus:max-h-full">
+
+                      <p class="mt-5 text-base text-start">Browse through the course listing page or search for a
+                        specific courses that you’re interested in. The application usually have various categories and
+                        filters to help you narrow down your options.
+
+                      </p>
+
+
+                    </div>
+
+                  </button>
                 </div>
-
-                <div class="col-span-2 sm:col-span-1">
-                  <p class="font-medium text-gray-900">Helpful Links</p>
-
-                  <ul class="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Contact
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        FAQs
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Live Chat
-                      </a>
-                    </li>
-                  </ul>
+              </div>
+              <div class="flex gap-5 p-5">
+                <div>
+                  <div
+                    class="bg-primary text-white rounded-full w-[45px] h-[45px] justify-center items-center text-xl font-semibold flex">
+                    2</div>
                 </div>
+                <div class="flex flex-col w-full gap-10">
 
-                <div class="col-span-2 sm:col-span-1">
-                  <p class="font-medium text-gray-900">Legal</p>
+                  <button
+                    class="transition duration-300 animate-btns2 group focus:outline-none focus:text-opacity-100 text-secondary hover:text-opacity-100 text-opacity-40">
 
-                  <ul class="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Accessibility
-                      </a>
-                    </li>
+                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start ">
 
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Returns Policy
-                      </a>
-                    </li>
+                      <span class="text-xl truncate lg:text-2xl">Read course descriptions </span>
 
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Refund Policy
-                      </a>
-                    </li>
+                      <i class="text-2xl ri-arrow-right-s-line"></i>
 
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Hiring Statistics
-                      </a>
-                    </li>
-                  </ul>
+                    </div>
+
+                    <div class="w-full overflow-hidden duration-300 max-h-0 group-focus:max-h-full">
+
+                      <p class="mt-5 text-base text-start">Browse through the course listing page or search for a
+                        specific courses that you’re interested in. The application usually have various categories and
+                        filters to help you narrow down your options.
+
+                      </p>
+
+
+                    </div>
+
+                  </button>
                 </div>
-
-                <div class="col-span-2 sm:col-span-1">
-                  <p class="font-medium text-gray-900">Downloads</p>
-
-                  <ul class="mt-6 space-y-4 text-sm">
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        Marketing Calendar
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="text-gray-700 transition hover:opacity-75">
-                        SEO Infographics
-                      </a>
-                    </li>
-                  </ul>
+              </div>
+              <div class="flex gap-5 p-5">
+                <div>
+                  <div
+                    class="bg-primary text-white rounded-full w-[45px] h-[45px] justify-center items-center text-xl font-semibold flex">
+                    3</div>
                 </div>
+                <div class="flex flex-col w-full gap-10">
 
-                <ul class="flex justify-start col-span-2 gap-6 lg:col-span-5 lg:justify-end">
-                  <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                      <span class="sr-only">Facebook</span>
+                  <button
+                    class="transition duration-300 animate-btns2 group focus:outline-none focus:text-opacity-100 text-secondary hover:text-opacity-100 text-opacity-40">
 
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                          d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </a>
-                  </li>
+                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start ">
 
-                  <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                      <span class="sr-only">Instagram</span>
+                      <span class="text-xl truncate lg:text-2xl">Check the course availability</span>
 
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                          d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </a>
-                  </li>
+                      <i class="text-2xl ri-arrow-right-s-line"></i>
 
-                  <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                      <span class="sr-only">Twitter</span>
+                    </div>
 
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                          d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                      </svg>
-                    </a>
-                  </li>
+                    <div class="w-full overflow-hidden duration-300 max-h-0 group-focus:max-h-full">
 
-                  <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                      <span class="sr-only">GitHub</span>
+                      <p class="mt-5 text-base text-start">Browse through the course listing page or search for a
+                        specific courses that you’re interested in. The application usually have various categories and
+                        filters to help you narrow down your options.
 
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </a>
-                  </li>
+                      </p>
 
-                  <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                      <span class="sr-only">Dribbble</span>
 
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
+                    </div>
+
+                  </button>
+                </div>
+              </div>
+              <div class="flex gap-5 p-5">
+                <div>
+                  <div
+                    class="bg-primary text-white rounded-full w-[45px] h-[45px] justify-center items-center text-xl font-semibold flex">
+                    4</div>
+                </div>
+                <div class="flex flex-col w-full gap-10">
+
+                  <button
+                    class="transition duration-300 animate-btns2 group focus:outline-none focus:text-opacity-100 text-secondary hover:text-opacity-100 text-opacity-40">
+
+                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start ">
+
+                      <span class="text-xl truncate lg:text-2xl">Enroll in the course </span>
+
+                      <i class="text-2xl ri-arrow-right-s-line"></i>
+
+                    </div>
+
+                    <div class="w-full overflow-hidden duration-300 max-h-0 group-focus:max-h-full">
+
+                      <p class="mt-5 text-base text-start">Browse through the course listing page or search for a
+                        specific courses that you’re interested in. The application usually have various categories and
+                        filters to help you narrow down your options.
+
+                      </p>
+
+
+                    </div>
+
+                  </button>
+                </div>
               </div>
             </div>
 
-            <div class="pt-8 mt-8 border-t border-gray-100">
-              <div class="sm:flex sm:justify-between">
-                <p class="text-xs text-gray-500">
-                  &copy; 2022. Company Name. All rights reserved.
-                </p>
 
-                <ul class="flex flex-wrap justify-start gap-4 mt-8 text-xs sm:mt-0 lg:justify-end">
-                  <li>
-                    <a href="#" class="text-gray-500 transition hover:opacity-75">
-                      Terms & Conditions
-                    </a>
-                  </li>
 
-                  <li>
-                    <a href="#" class="text-gray-500 transition hover:opacity-75">
-                      Privacy Policy
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" class="text-gray-500 transition hover:opacity-75">
-                      Cookies
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
-        </footer>
+        </section>
       </div>
     </main>
+    <footer>
+      <div class="lg:h-screen footer">
+        <div class="flex flex-col h-full max-w-screen-xl pt-12 m-auto text-white md:px-5">
+          <div class="footer_top lg:h-[44%] p-6 md:px-14 relative">
+            <div class="relative z-10 w-full h-full p-4 md:p-8 glass_container">
+              <div class="relative flex flex-col items-center h-full gap-10 lg:justify-between lg:flex-row">
+                <div class="flex flex-col gap-3 lg:w-1/2">
+                  <h1 class="text-3xl sm:text-[40px] text-center lg:text-start font-bold mt-14 lg:mt-0">
+                    Get in Touch
+                  </h1>
+                  <p class="text-base font-normal text-center opacity-50 lg:text-start lg:opacity-100">
+                    Let us know how we can ignite your child's creativity,
+                    critical thinking, and problem-solving skills
+                  </p>
+                </div>
+                <div class="flex items-end h-full">
+                  <a class="flex items-center justify-center gap-3 px-6 py-3 bg-white bg-opacity-10 rounded-[56px] hover:primary_bg hover:transition hover:duration-300"
+                    href="./contact.html">
+                    <span class="text-base font-bold">Contact</span>
+                    <span class="flex items-center justify-center bg-white rounded-full bg-opacity-20 w-7 h-7">
+                      <i class="ri-phone-line"></i></span>
+                  </a>
+                </div>
+                <a href="./contact.html"
+                  class="absolute top-0 right-0 flex items-center justify-center w-12 h-12 bg-white hover:primary_bg hover:transition hover:duration-300 bg-opacity-10 rounded-xl">
+                  <i class="text-2xl ri-arrow-right-up-line"></i>
+                </a>
+              </div>
+            </div>
+            <div class="absolute top-0 left-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="103" viewBox="0 0 100 103" fill="none">
+                <path
+                  d="M0.218115 17.77C0.0958221 11.9234 4.56954 7.00307 10.4014 6.57016L87.2423 0.866202C93.5671 0.396711 98.9775 5.35861 99.0558 11.7003L99.8829 78.7149C99.9502 84.1651 96.0161 88.8426 90.635 89.7104L14.5061 101.987C7.91029 103.05 1.89704 98.0367 1.75732 91.3571L0.218115 17.77Z"
+                  fill="url(#paint0_linear_786_2753)" />
+                <defs>
+                  <linearGradient id="paint0_linear_786_2753" x1="107.143" y1="86.784" x2="-0.0452193" y2="4.48317"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FFE986" />
+                    <stop offset="0.5455" stop-color="#FF9396" />
+                    <stop offset="1" stop-color="#962EFF" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <div class="footer_middle lg:h-[44%] h-auto">
+            <div
+              class="grid gap-6 grid-cols-[repeat(auto-fit,_minmax(210px,_1fr))] text-base font-normal p-6 sm:px-20 lg:px-10">
+              <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                <figure>
+                  <img class="mx-auto w-36 md:mx-0" src="../assets/images/brand/logo.png" alt="" />
+                </figure>
+                <p>Lorem ipsum tagline</p>
+                <p>Lorem ipsum tagline</p>
+                <div class="flex items-center md:w-[80%] gap-4 mt-4 px-3 py-3 bg-white rounded-lg">
+                  <span class="text-[#365C83] opacity-50 text-xs">Powered By</span>
+                  <figure>
+                    <img src="../assets/images/Techno-alliance-logo.png" alt="" />
+                  </figure>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                <h1 class="text-3xl opacity-50">Services</h1>
+                <a href="">Courses</a>
+                <a href="">About</a>
+                <a href="">Blog</a>
+                <a href="">Contact</a>
+              </div>
+              <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                <h1 class="text-3xl opacity-50">Resources</h1>
+                <a href="">Courses</a>
+                <a href="">About</a>
+                <a href="">Blog</a>
+                <a href="">Contact</a>
+              </div>
+              <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                <h1 class="text-3xl opacity-50">Contact</h1>
+                <div class="flex items-center gap-4">
+                  <i class="text-2xl ri-mail-line"></i>
+                  <a href="">contact@educraft.ae</a>
+                </div>
+                <div class="flex items-center gap-4">
+                  <i class="text-2xl ri-phone-line"></i>
+                  <span>+971 123 456 789</span>
+                </div>
+                <div class="flex gap-4 pt-5 icons-sm">
+                  <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                    <i class="ri-mail-fill text-[#523B53]"></i>
+                  </a>
+                  <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                    <i class="ri-linkedin-fill text-[#523B53]"></i>
+                  </a>
+                  <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                    <i class="ri-twitter-fill text-[#523B53]"></i>
+                  </a>
+                  <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                    <i class="ri-facebook-fill text-[#523B53]"></i>
+                  </a>
+                  <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                    <i class="ri-instagram-line text-[#523B53]"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer_bottom h-14 lg:h-[12%] w-full flex flex-col items-center px-10 md:px-0 relative">
+            <div class="divider h-[1px] w-full opacity-10 bg-white"></div>
+            <div class="lg:w-[30%] md:w-[45%] w-full flex justify-between m-auto opacity-30 text-base font-normal">
+              <p>© 2023 educraft.ae</p>
+              <p>All rights reserved</p>
+            </div>
+            <div class="absolute bottom-0 w-[90%] h-[9px] primary_bg rounded-t-2xl"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 
+  <!-- LOADER -->
+  <!-- <div class="preloader">
+        <div class="text-container">
+            <svg width="230" height="80" viewBox="0 0 131 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" stroke="url(#paint0_linear_849_4194)" stroke-miterlimit="1">
+                    <path
+                        d="M43.0529 21.6363H49.0947V25.3818H39.0621V9.7756H48.9832V13.4988H43.0529V15.6614H48.4259V19.34H43.0529V21.6363ZM58.4895 9.7756H62.1904V25.3818H58.4895V24.3563C57.7315 25.2481 56.6762 25.694 55.3236 25.694C53.8373 25.694 52.5888 25.1366 51.5781 24.0219C50.5823 22.8923 50.0844 21.4877 50.0844 19.8082C50.0844 18.1287 50.5823 16.7315 51.5781 15.6168C52.5888 14.4872 53.8373 13.9224 55.3236 13.9224C56.6762 13.9224 57.7315 14.3683 58.4895 15.2601V9.7756ZM54.4541 21.5695C54.8852 22.0153 55.45 22.2383 56.1485 22.2383C56.8471 22.2383 57.4119 22.0153 57.8429 21.5695C58.274 21.1236 58.4895 20.5365 58.4895 19.8082C58.4895 19.0799 58.274 18.4928 57.8429 18.0469C57.4119 17.601 56.8471 17.3781 56.1485 17.3781C55.45 17.3781 54.8852 17.601 54.4541 18.0469C54.0231 18.4928 53.8076 19.0799 53.8076 19.8082C53.8076 20.5365 54.0231 21.1236 54.4541 21.5695ZM71.4033 14.2345H75.1042V25.3818H71.4033V24.2671C70.7344 25.2183 69.7015 25.694 68.3043 25.694C67.1004 25.694 66.112 25.2852 65.3391 24.4678C64.5811 23.6354 64.2021 22.4464 64.2021 20.9006V14.2345H67.903V20.4324C67.903 21.0121 68.0517 21.4506 68.3489 21.7478C68.661 22.0451 69.0698 22.1937 69.5751 22.1937C70.1548 22.1937 70.6007 22.0228 70.9128 21.6809C71.2398 21.3242 71.4033 20.8189 71.4033 20.1649V14.2345ZM84.9384 25.7163C82.59 25.7163 80.643 24.9434 79.0972 23.3976C77.5663 21.837 76.8008 19.8974 76.8008 17.5787C76.8008 15.2601 77.5663 13.3279 79.0972 11.7821C80.643 10.2215 82.59 9.44118 84.9384 9.44118C86.3504 9.44118 87.6583 9.7756 88.8622 10.4444C90.0661 11.1133 91.01 12.0125 91.6937 13.1421L88.238 15.1263C87.9407 14.5764 87.4948 14.1453 86.9003 13.8332C86.3206 13.5062 85.6667 13.3427 84.9384 13.3427C83.6899 13.3427 82.6792 13.7366 81.9063 14.5244C81.1483 15.2972 80.7693 16.3154 80.7693 17.5787C80.7693 18.8421 81.1483 19.8676 81.9063 20.6554C82.6792 21.4283 83.6899 21.8147 84.9384 21.8147C85.6667 21.8147 86.3206 21.6586 86.9003 21.3465C87.4948 21.0195 87.9407 20.5736 88.238 20.0088L91.6937 22.0153C91.01 23.1598 90.0661 24.0665 88.8622 24.7353C87.6732 25.3893 86.3652 25.7163 84.9384 25.7163ZM96.9719 16.3079C97.18 15.5796 97.5962 15.0148 98.2204 14.6135C98.8447 14.2122 99.5432 14.0116 100.316 14.0116V18.1138C99.4689 17.98 98.696 18.1361 97.9975 18.582C97.3138 19.0279 96.9719 19.7562 96.9719 20.7668V25.3818H93.271V14.2345H96.9719V16.3079ZM109.306 14.2345H113.006V25.3818H109.306V24.3563C108.548 25.2481 107.492 25.694 106.14 25.694C104.653 25.694 103.405 25.1366 102.394 24.0219C101.398 22.8923 100.9 21.4877 100.9 19.8082C100.9 18.1287 101.398 16.7315 102.394 15.6168C103.405 14.4872 104.653 13.9224 106.14 13.9224C107.492 13.9224 108.548 14.3683 109.306 15.2601V14.2345ZM105.27 21.5695C105.701 22.0153 106.266 22.2383 106.965 22.2383C107.663 22.2383 108.228 22.0153 108.659 21.5695C109.09 21.1236 109.306 20.5365 109.306 19.8082C109.306 19.0799 109.09 18.4928 108.659 18.0469C108.228 17.601 107.663 17.3781 106.965 17.3781C106.266 17.3781 105.701 17.601 105.27 18.0469C104.839 18.4928 104.624 19.0799 104.624 19.8082C104.624 20.5365 104.839 21.1236 105.27 21.5695ZM121.439 12.8746C120.161 12.7854 119.522 13.2387 119.522 14.2345H121.439V17.7794H119.522V25.3818H115.821V17.7794H114.416V14.2345H115.821C115.821 12.6293 116.289 11.4031 117.225 10.5559C118.177 9.70871 119.581 9.33714 121.439 9.44118V12.8746ZM129.749 17.7794H127.43V21.0121C127.43 21.5026 127.609 21.8073 127.965 21.9262C128.322 22.0451 128.917 22.0822 129.749 22.0376V25.3818C127.534 25.6494 125.974 25.4487 125.067 24.7799C124.175 24.0962 123.729 22.87 123.729 21.1013V17.7794H122.057V14.2345H123.729V12.228L127.43 11.1133V14.2345H129.749V17.7794Z"
+                        fill="none" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M17.0371 4.20094H23.5719C24.732 4.20094 25.6724 5.14135 25.6724 6.30141C25.6724 7.46146 24.732 8.40188 23.5719 8.40188H22.7316C22.7001 8.40154 22.6685 8.40137 22.6369 8.40137H17.0356C12.2665 8.40137 8.40039 12.2675 8.40039 17.0366C8.40039 20.8303 10.8468 24.0526 14.248 25.212C15.123 25.5105 16.0611 25.6724 17.0371 25.6724H23.5719C24.732 25.6724 25.6724 26.6128 25.6724 27.7729C25.6724 28.9329 24.732 29.8733 23.5719 29.8733H17.0371C9.9479 29.8733 4.20094 24.1264 4.20094 17.0371C4.20094 9.9479 9.9479 4.20094 17.0371 4.20094ZM28.2743 23.5781C29.2688 24.6922 29.8733 26.1619 29.8733 27.7729C29.8733 31.253 27.0521 34.0743 23.5719 34.0743H17.0371C7.62779 34.0743 0 26.4465 0 17.0371C0 7.62779 7.62779 0 17.0371 0H23.5719C27.0521 0 29.8733 2.82124 29.8733 6.30141C29.8733 7.91208 29.269 9.38162 28.2748 10.4956C30.1103 12.0792 31.2722 14.4222 31.2722 17.0366C31.2722 19.6513 30.1101 21.9945 28.2743 23.5781ZM15.6077 21.236C16.0558 21.3883 16.5361 21.471 17.0356 21.471H22.6369C25.0859 21.471 27.0712 19.4856 27.0712 17.0366C27.0712 14.6103 25.1225 12.6391 22.7047 12.6028H17.0371C14.5881 12.6028 12.6028 14.5881 12.6028 17.0371C12.6028 18.986 13.8601 20.6413 15.6077 21.236ZM18.6697 17.037C18.6697 17.9393 17.9383 18.6707 17.036 18.6707C16.1338 18.6707 15.4023 17.9393 15.4023 17.037C15.4023 16.1348 16.1338 15.4033 17.036 15.4033C17.9383 15.4033 18.6697 16.1348 18.6697 17.037ZM22.6376 18.6707C23.5399 18.6707 24.2713 17.9393 24.2713 17.037C24.2713 16.1348 23.5399 15.4033 22.6376 15.4033C21.7353 15.4033 21.0039 16.1348 21.0039 17.037C21.0039 17.9393 21.7353 18.6707 22.6376 18.6707Z"
+                        fill="" />
+                </g>
+                <defs>
+                    <linearGradient id="paint0_linear_849_4194" x1="35.2669" y1="-2.48048" x2="-7.87687" y2="36.4384"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FF9900" />
+                        <stop offset="1" stop-color="#F06445" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    </div> -->
+  <div class="h-screen lightbox">
+    <div class="videopopup absolute left-1/2 top-1/2 w-[90%] lg:w-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div class="m-auto overflow-hidden rounded-2xl">
+        <!-- <div class="plyr__video-embed" id="player">
+                         <iframe src="" allowfullscreen allowtransparency allow="autoplay"></iframe>
+                    </div> -->
+        <video id="player" playsinline controls data-poster="">
+          <source src="../assets/videos/hero-video.mp4" type="video/mp4" />
+          <!-- <source src="/path/to/video.webm" type="video/webm" />
+
+                    Captions are optional -->
+          <!-- <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default /> -->
+        </video>
+      </div>
+    </div>
+  </div>
   <div class="cursor" id="cursor"></div>
   <script src="../assets/pluggins/jquery/jquery-3.6.3.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  <script src="../assets/pluggins/splittext/SplitText.min.js"></script>
   <script src="../assets/pluggins/scrollsmoother/ss.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+  <script src="../assets/pluggins/cdn.jsdelivr.net/npm/vanilla-lazyload%4017.6.1/dist/lazyload.min.js"></script>
   <script src="../assets/pluggins/locomotive/locomotive-scroll.min.js"></script>
+  <!-- <script src="../assets/pluggins/plyr/dist/plyr.js"></script> -->
   <script src="../assets/js/main.js"></script>
 </body>
 

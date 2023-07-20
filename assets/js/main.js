@@ -37,22 +37,27 @@ gsap.config({
 // });
 // /* After Adding New Content to DOM */
 // smoother.refresh();
-
 window.history.scrollRestoration = "manual";
 ScrollTrigger.clearScrollMemory("manual");
 
 const selectAll = (e) => document.querySelectorAll(e);
 
+initSmoothScroll();
+$(window).on('load',function(){
+	setTimeout(function(){ // allowing 3 secs to fade out loader
+	$('.page-loader').fadeOut('slow');
+	},3500);
+});
 window.onload = function () {
      initPreloader();
      aboutAnimation();
      //   initProgramPage();
 };
 
-initSmoothScroll();
+
 initNavbarFixedTop();
 initNavbarResponsive();
-// initplyrseeVideo();
+initplyrseeVideo();
 
 initscrollFisrt();
 // create
@@ -64,9 +69,9 @@ mm.add("(min-width: 1024px)", () => {
 });
 
 initParallaxImage();
-// initLazyLoad();
+initLazyLoad();
 initbutton();
-// initParallaxVideo();
+initParallaxVideo();
 initScrolltriggerNav();
 
 /**
@@ -604,7 +609,7 @@ function aboutAnimation() {
                     opacity: 0,
                     duration: 1,
                     ease: "power3.out",
-                    delay: 5,
+                    delay: 3.5,
                })
                .from(
                     ".main_about_img", {
@@ -736,6 +741,50 @@ function initonscrolltrigger() {
      }
      if (document.querySelectorAll(".span-lines.animate-2")) {
           const splitLines = new SplitText(".span-lines.animate-2", {
+               type: "lines",
+               linesClass: "line",
+          });
+          const lines = splitLines.lines;
+
+          const makeWrapper = (lines, elClass) => {
+               lines.forEach((line) => {
+                    const lineEl = document.createElement("div");
+                    lineEl.classList = elClass;
+                    line.parentNode.appendChild(lineEl);
+                    lineEl.appendChild(line);
+               });
+          };
+
+          makeWrapper(lines, "lines");
+
+          lines.forEach((pline) => {
+               let tl = gsap.timeline({
+                    scrollTrigger: {
+                         trigger: pline,
+                         toggleActions: "play none none reset",
+                         start: "top 100%",
+                         end: "top 0%",
+                         // markers:!0,
+                    },
+               });
+               tl.from(
+                    pline, {
+                         duration: 1,
+                         opacity: 0,
+                         y: "150%",
+                         rotate: 5,
+                         transformOrigin: "0% 50% -50",
+                         ease: "expo",
+                         stagger: 0.1,
+                         // delay: 0.5
+                         // repeat: -1
+                    },
+                    0.3
+               );
+          });
+     }
+     if (document.querySelectorAll(".ap")) {
+          const splitLines = new SplitText(".ap", {
                type: "lines",
                linesClass: "line",
           });
