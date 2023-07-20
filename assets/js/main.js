@@ -827,11 +827,42 @@ function initonscrolltrigger() {
           // Add animations to the timeline
           timeline.fromTo(
                element, {
-                    xPercent: 100,
+                    xPercent: 50,
                     duration: 1,
                     opacity: 0,
                }, {
                     xPercent: 0,
+                    opacity: 1,
+                    duration: 1,
+               }
+          );
+     });
+     // Assuming you have an array of elements with class "element"
+     const animatebtns2 = document.querySelectorAll(".animate-btns2");
+
+     // Create a timeline for each element
+     animatebtns2.forEach((element) => {
+          const timeline = gsap.timeline({
+               paused: true,
+               scrollTrigger: {
+                    trigger: element,
+                    toggleActions: "play none none reset",
+                    start: "top 100%",
+                    end: "top 0%",
+                    stagger: {
+                         amount: 0.3,
+                    },
+               },
+          });
+
+          // Add animations to the timeline
+          timeline.fromTo(
+               element, {
+                    yPercent: 100,
+                    duration: 1,
+                    opacity: 0,
+               }, {
+                    yPercent: 0,
                     opacity: 1,
                     duration: 1,
                }
