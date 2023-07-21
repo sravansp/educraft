@@ -43,14 +43,21 @@ ScrollTrigger.clearScrollMemory("manual");
 const selectAll = (e) => document.querySelectorAll(e);
 
 initSmoothScroll();
-$(window).on('load',function(){
-	setTimeout(function(){ // allowing 3 secs to fade out loader
-	$('.page-loader').fadeOut('slow');
-	},3500);
+$(window).on('load', function () {
+     setTimeout(function () { // allowing 3 secs to fade out loader
+          $('.page-loaderhome').fadeOut('slow');
+     });
+});
+$(window).on('load', function () {
+     setTimeout(function () { // allowing 3 secs to fade out loader
+          $('.page-loader').fadeOut('slow');
+     }, 3500);
 });
 window.onload = function () {
      initPreloader();
-     aboutAnimation();
+     initHeroLoader();
+     initonscrolltrigger()
+     // aboutAnimation();
      //   initProgramPage();
 };
 
@@ -306,8 +313,7 @@ function initSmoothScroll() {
           },
           // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
           pinType: document.querySelector(".smooth-scroll").style.transform ?
-               "transform" :
-               "fixed",
+               "transform" : "fixed",
      });
 
      ScrollTrigger.defaults({
@@ -660,39 +666,19 @@ function initTricksWords() {
      }
 }
 
+function makeWrapper(lines, elClass) {
+     lines.forEach((line) => {
+          const lineEl = document.createElement("div");
+          lineEl.classList = elClass;
+          line.parentNode.appendChild(lineEl);
+          lineEl.appendChild(line);
+     });
+};
+
 function initonscrolltrigger() {
      // create
      let mm = gsap.matchMedia();
 
-     if (document.querySelector(".span-lines.animate")) {
-          const sla = document.querySelectorAll(".span-lines.animate");
-          sla.forEach((line) => {
-               // let triggerElement = $(this);
-               const slasli = document.querySelectorAll(
-                    ".span-lines.animate .span-line-inner"
-               );
-               // let targetElement = $(".span-lines.animate .span-line-inner");
-
-               let tl = gsap.timeline({
-                    scrollTrigger: {
-                         trigger: line,
-                         toggleActions: "play none none reset",
-                         start: "top 100%",
-                         end: "top 0%",
-                    },
-               });
-               if (slasli) {
-                    tl.from(slasli, {
-                         // y: "100%",
-                         stagger: 0.01,
-                         ease: "power3.out",
-                         duration: 1.5,
-                         delay: 0,
-                         yPercent: 100,
-                    });
-               }
-          });
-     }
 
      // add a media query. When it matches, the associated function will run
      mm.add("(min-width: 1024px)", () => {
@@ -739,67 +725,17 @@ function initonscrolltrigger() {
                });
           });
      }
-     if (document.querySelectorAll(".span-lines.animate-2")) {
-          const splitLines = new SplitText(".span-lines.animate-2", {
-               type: "lines",
-               linesClass: "line",
-          });
-          const lines = splitLines.lines;
 
-          const makeWrapper = (lines, elClass) => {
-               lines.forEach((line) => {
-                    const lineEl = document.createElement("div");
-                    lineEl.classList = elClass;
-                    line.parentNode.appendChild(lineEl);
-                    lineEl.appendChild(line);
-               });
-          };
-
-          makeWrapper(lines, "lines");
-
-          lines.forEach((pline) => {
-               let tl = gsap.timeline({
-                    scrollTrigger: {
-                         trigger: pline,
-                         toggleActions: "play none none reset",
-                         start: "top 100%",
-                         end: "top 0%",
-                         // markers:!0,
-                    },
-               });
-               tl.from(
-                    pline, {
-                         duration: 1,
-                         opacity: 0,
-                         y: "150%",
-                         rotate: 5,
-                         transformOrigin: "0% 50% -50",
-                         ease: "expo",
-                         stagger: 0.1,
-                         // delay: 0.5
-                         // repeat: -1
-                    },
-                    0.3
-               );
-          });
-     }
      if (document.querySelectorAll(".ap")) {
           const splitLines = new SplitText(".ap", {
-               type: "lines",
+               type: "lines,words",
                linesClass: "line",
           });
-          const lines = splitLines.lines;
+          const lines = splitLines.words;
 
-          const makeWrapper = (lines, elClass) => {
-               lines.forEach((line) => {
-                    const lineEl = document.createElement("div");
-                    lineEl.classList = elClass;
-                    line.parentNode.appendChild(lineEl);
-                    lineEl.appendChild(line);
-               });
-          };
 
-          makeWrapper(lines, "lines");
+
+          // makeWrapper(lines, "lines");
 
           lines.forEach((pline) => {
                let tl = gsap.timeline({
@@ -828,176 +764,141 @@ function initonscrolltrigger() {
           });
      }
 
-     // Assuming you have an array of elements with class "element"
-     const elements = document.querySelectorAll(".divider");
 
-     // Create a timeline for each element
-     elements.forEach((element) => {
-          const timeline = gsap.timeline({
-               paused: true,
-               scrollTrigger: {
-                    trigger: element,
-                    toggleActions: "play none none reset",
-                    start: "top 100%",
-                    end: "top 0%",
-               },
-          });
 
-          // Add animations to the timeline
-          timeline.fromTo(
-               element, {
-                    width: "20%",
-                    duration: 1,
-               }, {
-                    width: "100%",
-                    duration: 1,
-               }
-          );
-     });
+     if (document.querySelectorAll(".img_appear")) {
+          // Assuming you have an array of elements with class "element"
+          const img_appear = document.querySelectorAll(".img_appear");
 
-     // Assuming you have an array of elements with class "element"
-     const animatebtns = document.querySelectorAll(".animate-btns");
-
-     // Create a timeline for each element
-     animatebtns.forEach((element) => {
-          const timeline = gsap.timeline({
-               paused: true,
-               scrollTrigger: {
-                    trigger: element,
-                    toggleActions: "play none none reset",
-                    start: "top 100%",
-                    end: "top 0%",
-                    stagger: {
-                         amount: 0.3,
+          // Create a timeline for each element
+          img_appear.forEach((element) => {
+               const timeline = gsap.timeline({
+                    paused: true,
+                    scrollTrigger: {
+                         trigger: element,
+                         toggleActions: "play none none reset",
+                         start: "top 100%",
+                         end: "top 0%",
                     },
-               },
-          });
+               });
 
-          // Add animations to the timeline
-          timeline.fromTo(
-               element, {
-                    xPercent: 50,
-                    duration: 1,
-                    opacity: 0,
-               }, {
-                    xPercent: 0,
-                    opacity: 1,
-                    duration: 1,
-               }
-          );
+               // Add animations to the timeline
+               timeline.fromTo(
+                    element, {
+                         scale: 0.8,
+                         // duration: 1,
+                         opacity: 0,
+                    }, {
+                         scale: 1,
+                         opacity: 1,
+                         duration: 0.5,
+                    }
+               );
+
+          });
+     }
+
+
+}
+
+function initHeroLoader() {
+     var childSplit = new SplitText(".hh-hero", {
+          type: "lines",
+          linesClass: "split-child",
      });
-     // Assuming you have an array of elements with class "element"
-     const animatebtns2 = document.querySelectorAll(".animate-btns2");
-
-     // Create a timeline for each element
-     animatebtns2.forEach((element) => {
-          const timeline = gsap.timeline({
-               paused: true,
-               scrollTrigger: {
-                    trigger: element,
-                    toggleActions: "play none none reset",
-                    start: "top 100%",
-                    end: "top 0%",
-                    stagger: {
-                         amount: 0.3,
-                    },
-               },
-          });
-
-          // Add animations to the timeline
-          timeline.fromTo(
-               element, {
-                    yPercent: 100,
-                    duration: 1,
-                    opacity: 0,
-               }, {
-                    yPercent: 0,
-                    opacity: 1,
-                    duration: 1,
-               }
-          );
+     var childSplitp = new SplitText(".ap-hero", {
+          type: "words,chars",
+          charsClass: "char",
+          wordsClass: "word++"
      });
-
-     // Assuming you have an array of elements with class "element"
-     const img_appear = document.querySelectorAll(".img_appear");
-
-     // Create a timeline for each element
-     img_appear.forEach((element) => {
-          const timeline = gsap.timeline({
-               paused: true,
-               scrollTrigger: {
-                    trigger: element,
-                    toggleActions: "play none none reset",
-                    start: "top 100%",
-                    end: "top 0%",
-               },
-          });
-
-          // Add animations to the timeline
-          timeline.fromTo(
-               element, {
-                    scale: 0,
-                    // duration: 1,
-                    opacity: 0,
-               }, {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.5,
-               }
-          );
-
-          const items = document.querySelectorAll(".data");
-
-          timeline.from(items, {
-               textContent: 0,
-               duration: 4,
-               ease: "power1.in",
-               snap: {
-                    textContent: 1
-               },
+     const tl = gsap.timeline({
+          paused: true,
+          scrollTrigger: {
+               trigger: ".landing_wrapper",
+               // toggleActions: "play none none reset",
+               // start: "top 100%",
+               // end: "top 0%",
                // stagger: {
-                    // each: 1.0,
-                    onUpdate: function () {
-                         this.targets()[0].innerHTML = numberWithCommas(Math.ceil(this.targets()[0].textContent));
-                    },
-               // }
-          });
-
-
-          function numberWithCommas(x) {
-               return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-          }
+               //      amount: 0.3,
+               // },
+          },
      });
 
-     // Assuming you have an array of elements with class "element"
-     const circledivround = document.querySelectorAll(".circle-div-round");
+     // Add animations to the timeline
+     tl.fromTo(
+          ".navbar", {
+               yPercent: -50,
+               // duration: 1,
+               opacity: 0,
+          }, {
+               yPercent: 0,
+               opacity: 1,
+                 // immediateRender: true,
+               duration: 1,
+               delay:4.1
+          }
+     );
+     tl.fromTo(
+          ".bg_student img", {
+               scale: 0.6,
+               // duration: 1,
+               opacity: 0,
+          }, {
+               scale: 1,
+               opacity: 1,
+               duration: 1,
+          }
+     );
 
-     // Create a timeline for each element
-     circledivround.forEach((element) => {
-          const timeline = gsap.timeline({
-               paused: true,
-               scrollTrigger: {
-                    trigger: element,
-                    toggleActions: "play none none reset",
-                    start: "top 100%",
-                    end: "bottom bottom",
-                    stagger: {
-                         amount: 0.3,
-                    },
-               },
+     tl.fromTo(".other_particles img", {
+          opacity: 0,
+          rotate: -80,
+     }, {
+          opacity: 1,
+          rotate: 0,
+          // immediateRender: true,
+          duration: 1,
+          delay: -0.8,
+     });
+
+     childSplit.lines.forEach((line) => {
+          tl.from(line, {
+               duration: 1,
+               yPercent: 200,
+               ease: "power3.out",
+               stagger: 0.1,
+               delay: -0.7,
           });
-
-          // Add animations to the timeline
-          timeline.fromTo(
-               element, {
-                    scale: 0,
-                    duration: 1,
-                    opacity: 0,
-               }, {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 1,
-               }
-          );
+     });
+     childSplitp.words.forEach((words) => {
+          tl.from(words, {
+               duration: 0.7,
+               yPercent: 200,
+               ease: "power3.out",
+               stagger: 0.1,
+               delay: -0.7,
+          });
+     });
+     tl.fromTo(".hero-btn a", {
+          opacity: 0,
+          xPercent: -50,
+     }, {
+          xPercent: 0,
+          opacity: 1,
+          ease: "power3.out",
+          stagger: 0.2,
+          // immediateRender: true,
+          duration: 1,
+          delay: -0.6,
+     });
+     tl.fromTo(".Associated", {
+          opacity: 0,
+     }, {
+         
+          opacity: 1,
+          ease: "power3.out",
+          immediateRender: true,
+          duration: 1,
+          delay: -0.6,
      });
 }

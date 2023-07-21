@@ -1096,6 +1096,29 @@ h1>div {
 
 
 /* PRELOADER CSS */
+.page-loaderhome {
+     width: 100%;
+     height: 100vh;
+     position: absolute;
+     background: #0e0e0e;
+     z-index: 1000;
+     position: fixed;
+     top: 0;
+     left: 0;
+
+
+}
+
+.page-loaderhome .txt {
+     color: #666;
+     text-align: center;
+     top: 40%;
+     position: relative;
+     text-transform: uppercase;
+     letter-spacing: 0.3rem;
+     font-weight: bold;
+     line-height: 1.5;
+}
 .page-loader {
      width: 100%;
      height: 100vh;
