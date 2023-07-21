@@ -61,7 +61,6 @@ window.onload = function () {
      //   initProgramPage();
 };
 
-
 initNavbarFixedTop();
 initNavbarResponsive();
 initplyrseeVideo();
@@ -800,6 +799,7 @@ function initonscrolltrigger() {
 
 
 }
+
 
 function initHeroLoader() {
      var childSplit = new SplitText(".hh-hero", {
