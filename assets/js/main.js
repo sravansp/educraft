@@ -194,21 +194,43 @@ function initNavbarResponsive() {
      //     delay: -0.5,
      // });
 
-     t1.to(".menu-mobile", 1.5, {
+     t1.to(".menu-mobile", 0.9, {
           top: "0%",
           ease: Expo.easeInOut,
-          delay: -0.5,
+          // delay: -0.2,
      });
-
+     //     t1.to(".title-menu", {
+     //           top: "0%",
+     //           ease: Expo.easeInOut,
+     //           delay: -0.5,
+     //      }, 1.5);
+  
      t1.staggerFrom(
-          ".menu-mobile ul li",
+          ".menu-mobile .anime-menu",
           0.75, {
                x: -30,
                opacity: 0,
                ease: Expo.easeOut,
+               delay: -0.5,
           },
           0.1
      );
+
+     // t1.to(".menu-mobile", {
+     //      top: "0%",
+     //      ease: Expo.easeInOut,
+     //      delay: -0.5,
+     // }, 1.5);
+
+     // t1.from(
+     //      ".menu-mobile ul li", {
+     //           x: -30,
+     //           opacity: 0,
+     //           ease: Expo.easeOut,
+     //           stagger: 0.1
+     //      },
+     //      0.75
+     // );
      let isOpen = false;
      t1.reverse();
 
@@ -282,14 +304,14 @@ function initSmoothScroll() {
           mobile: {
                breakpoint: 0,
                smooth: true,
-               // inertia: 0.8,
+               inertia: 0.8,
                getDirection: true,
           },
           tablet: {
                breakpoint: 0,
-               // smooth: true,
-               // inertia: 0.8,
-               // getDirection: true,
+               smooth: true,
+               inertia: 0.8,
+               getDirection: true,
           },
      });
      // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
@@ -833,9 +855,9 @@ function initHeroLoader() {
           }, {
                yPercent: 0,
                opacity: 1,
-                 // immediateRender: true,
+               // immediateRender: true,
                duration: 1,
-               delay:4.1
+               delay: 4.1
           }
      );
      tl.fromTo(
@@ -894,7 +916,7 @@ function initHeroLoader() {
      tl.fromTo(".Associated", {
           opacity: 0,
      }, {
-         
+
           opacity: 1,
           ease: "power3.out",
           immediateRender: true,

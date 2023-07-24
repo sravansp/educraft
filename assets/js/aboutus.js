@@ -110,11 +110,12 @@ function initNavbarResponsive() {
     });
 
     t1.staggerFrom(
-        ".menu-mobile ul li",
+        ".menu-mobile .anime-menu",
         0.75, {
             x: -30,
             opacity: 0,
             ease: Expo.easeOut,
+            delay: -0.5,
         },
         0.1
     );
@@ -557,33 +558,33 @@ function initonscrolltrigger() {
 
         // Create a timeline for each element
         animatebtns2.forEach((element) => {
-        const timeline = gsap.timeline({
-            paused: true,
-            scrollTrigger: {
-                trigger: element,
-                toggleActions: "play none none reset",
-                start: "top 110%",
-                end: "top 0%",
-                markers:!0,
-                stagger: {
-                    amount: 0.3,
+            const timeline = gsap.timeline({
+                paused: true,
+                scrollTrigger: {
+                    trigger: element,
+                    toggleActions: "play none none reset",
+                    start: "top 110%",
+                    end: "top 0%",
+                    // markers:!0,
+                    stagger: {
+                        amount: 0.3,
+                    },
                 },
-            },
-        });
+            });
 
-        // Add animations to the timeline
-        timeline.fromTo(
-            element, {
-                yPercent: 50,
-                duration: 1,
-                opacity: 0,
-            }, {
-                yPercent: 0,
-                opacity: 1,
-                duration: 1,
-                stagger: 0.3
-            }
-        );
+            // Add animations to the timeline
+            timeline.fromTo(
+                element, {
+                    yPercent: 50,
+                    duration: 1,
+                    opacity: 0,
+                }, {
+                    yPercent: 0,
+                    opacity: 1,
+                    duration: 1,
+                    stagger: 0.3
+                }
+            );
         });
     }
     if (document.querySelectorAll(".animate-grids")) {
