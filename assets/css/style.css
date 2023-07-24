@@ -11,12 +11,12 @@
 
 @font-face {
      font-family: "Gilroy-SemiBold";
-     src: url(..fonts/Gilroy/Gilroy-SemiBold.ttf) format("truetype");
+     src: url(../fonts/Gilroy/Gilroy-SemiBold.ttf) format("truetype");
 }
 
 @font-face {
      font-family: "Montserrat-edu";
-     src: url(..font/Montserrat/Montserrat-Regular.ttf) format("truetype");
+     src: url(../fonts/Montserrat/Montserrat-ExtraBold.ttf) format("truetype");
 }
 
 /* Scrollbar Styling */
@@ -508,7 +508,12 @@
 /* Navbar Responsive  */
 
 body.scrolled .navbar-toggle {
-     background-color: var(--secondary-bg);
+     background-color: rgb(39 39 39 / 60%);
+     border-radius: 9999px;
+}
+body.scrolled .navbar-toggle.active {
+     background-color: transparent;
+     /* opacity: 0.5; */
      border-radius: 9999px;
 }
 
@@ -707,7 +712,7 @@ body.scrolled .navbar-toggle {
 
 .horizontal-items .row-img {
      width: 120vw;
-     left: -10vw;
+     left: -16vw;
      will-change: transform;
 }
 
@@ -746,6 +751,7 @@ body.scrolled .navbar-toggle {
 @media screen and (max-width: 540px) {
      .horizontal-items {
           padding-top: calc(var(--section-padding) * 1);
+          padding-bottom: 0;
      }
 
      .horizontal-items .gallery-imgs {
@@ -758,8 +764,11 @@ body.scrolled .navbar-toggle {
      }
 
      .horizontal-items .row-img {
-          width: 120vw;
+          width: 320vw;
      }
+     /* .horizontal-items .row-img {
+          width: 120vw;
+     } */
 
      .horizontal-items .row-img.row-1,
      .horizontal-items .row-img.row-2 {
@@ -776,11 +785,11 @@ body.scrolled .navbar-toggle {
           display: none;
      }
 
-     .horizontal-items .gallery-section {
+     /* .horizontal-items .gallery-section {
           display: none;
           opacity: 0;
           visibility: hidden;
-     }
+     } */
 
      .horizontal-items {
           padding-top: 0;
@@ -943,6 +952,17 @@ body.scrolled .navbar-toggle {
 
 
 .bg_video video {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     min-width: 100%;
+     min-height: 100%;
+     width: auto;
+     height: auto;
+     z-index: -1;
+}
+.bg video {
      position: absolute;
      top: 50%;
      left: 50%;
@@ -1252,3 +1272,24 @@ h1>div {
      right: 16px;
      font-weight: bold;
  }
+ .photobanner {
+     position:absolute; 
+     top:0px; 
+     left:0px; 
+     overflow:hidden; 
+     white-space: nowrap;
+     animation: bannermove 10s linear infinite;
+   }
+   
+   .photobanner img {    
+     margin: 0 0.5em 
+   }
+   
+   @keyframes bannermove {
+     0% {
+         transform: translate(0, 0);
+     }
+     100% {
+         transform: translate(-50%, 0);
+     }
+   }

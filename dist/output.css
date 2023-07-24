@@ -1119,6 +1119,18 @@ video {
   height: 100vh;
 }
 
+.h-\[100px\] {
+  height: 100px;
+}
+
+.h-\[30vh\] {
+  height: 30vh;
+}
+
+.h-\[65vh\] {
+  height: 65vh;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
@@ -1605,6 +1617,10 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#f36f370f\] {
+  background-color: #f36f370f;
+}
+
 .bg-opacity-10 {
   --tw-bg-opacity: 0.1;
 }
@@ -1647,6 +1663,10 @@ video {
 
 .bg-\[url\(\.\.\/assets\/images\/makerspace3\.jpg\)\] {
   background-image: url(../assets/images/makerspace3.jpg);
+}
+
+.bg-\[url\(\.\.\/assets\/images\/bg-section_3\.webp\)\] {
+  background-image: url(../assets/images/bg-section_3.webp);
 }
 
 .bg-cover {
@@ -1709,6 +1729,10 @@ video {
 
 .p-\[38px_0\] {
   padding: 38px 0;
+}
+
+.p-\[15px_0\] {
+  padding: 15px 0;
 }
 
 .px-10 {
@@ -1858,6 +1882,10 @@ video {
   font-family: Poppins;
 }
 
+.font-\[Montserrat-edu\] {
+  font-family: Montserrat-edu;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1966,6 +1994,10 @@ video {
 
 .leading-tight {
   line-height: 1.25;
+}
+
+.leading-\[72px\] {
+  line-height: 72px;
 }
 
 .text-\[\#323232\] {
@@ -2406,6 +2438,10 @@ video {
 
   .md\:h-screen {
     height: 100vh;
+  }
+
+  .md\:h-\[45vh\] {
+    height: 45vh;
   }
 
   .md\:w-1\/2 {
@@ -2946,6 +2982,10 @@ video {
     flex-direction: row;
   }
 
+  .xl\:gap-20 {
+    gap: 5rem;
+  }
+
   .xl\:text-\[4rem\] {
     font-size: 4rem;
   }
@@ -2958,6 +2998,10 @@ video {
 
   .\32xl\:w-full {
     width: 100%;
+  }
+
+  .\32xl\:gap-20 {
+    gap: 5rem;
   }
 
   .\32xl\:pl-20 {
@@ -2985,6 +3029,11 @@ video {
 
   .\32xl\:text-\[120px\] {
     font-size: 120px;
+  }
+
+  .\32xl\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .\32xl\:font-extrabold {

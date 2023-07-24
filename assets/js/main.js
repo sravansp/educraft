@@ -51,7 +51,7 @@ $(window).on('load', function () {
 $(window).on('load', function () {
      setTimeout(function () { // allowing 3 secs to fade out loader
           $('.page-loader').fadeOut('slow');
-     }, 3500);
+     });
 });
 window.onload = function () {
      initPreloader();
@@ -304,14 +304,14 @@ function initSmoothScroll() {
           mobile: {
                breakpoint: 0,
                smooth: true,
-               inertia: 0.8,
-               getDirection: true,
+               // inertia: 0.8,
+               // getDirection: true,
           },
           tablet: {
                breakpoint: 0,
                smooth: true,
-               inertia: 0.8,
-               getDirection: true,
+               // inertia: 0.8,
+               // getDirection: true,
           },
      });
      // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
@@ -819,6 +819,40 @@ function initonscrolltrigger() {
           });
      }
 
+     if (document.querySelectorAll(".animate-btns2")) {
+          // Assuming you have an array of elements with class "element"
+          const animatebtns2 = document.querySelectorAll(".animateystg");
+  
+          // Create a timeline for each element
+          animatebtns2.forEach((element) => {
+              const timeline = gsap.timeline({
+                  paused: true,
+                  scrollTrigger: {
+                      trigger: element,
+                      toggleActions: "play none none reset",
+                      start: "top 100%",
+                      end: "top 0%",
+                      stagger: {
+                          amount: 0.3,
+                      },
+                  },
+              });
+  
+              // Add animations to the timeline
+              timeline.fromTo(
+                  element, {
+                      yPercent: 100,
+                      duration: 1,
+                      opacity: 0,
+                  }, {
+                      yPercent: 0,
+                      opacity: 1,
+                      duration: 1,
+                  }
+              );
+          });
+      }
+
 
 }
 
@@ -856,19 +890,19 @@ function initHeroLoader() {
                yPercent: 0,
                opacity: 1,
                // immediateRender: true,
-               duration: 1,
-               delay: 4.1
+               duration: 0.8,
+               delay: 4.3
           }
      );
      tl.fromTo(
           ".bg_student img", {
                scale: 0.6,
-               // duration: 1,
+               // duration: 0.8,
                opacity: 0,
           }, {
                scale: 1,
                opacity: 1,
-               duration: 1,
+               duration: 0.8,
           }
      );
 
@@ -879,13 +913,13 @@ function initHeroLoader() {
           opacity: 1,
           rotate: 0,
           // immediateRender: true,
-          duration: 1,
-          delay: -0.8,
+          duration: 0.8,
+          delay: -0.5,
      });
 
      childSplit.lines.forEach((line) => {
           tl.from(line, {
-               duration: 1,
+               duration: 0.8,
                yPercent: 200,
                ease: "power3.out",
                stagger: 0.1,
@@ -910,7 +944,7 @@ function initHeroLoader() {
           ease: "power3.out",
           stagger: 0.2,
           // immediateRender: true,
-          duration: 1,
+          duration: 0.8,
           delay: -0.6,
      });
      tl.fromTo(".Associated", {
@@ -920,7 +954,7 @@ function initHeroLoader() {
           opacity: 1,
           ease: "power3.out",
           immediateRender: true,
-          duration: 1,
+          duration: 0.8,
           delay: -0.6,
      });
 }
