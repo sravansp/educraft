@@ -107,7 +107,7 @@
     <main>
       <div class="content">
         <section>
-          <div class="h-[286px] w-full  items-center hero_bg">
+          <div class="h-[286px] w-full items-center hero_bg">
             <div class="relative max-w-screen-xl mx-auto">
               <h1 class="text-6xl font-bold text-center text-white hh lg:pl-10 lg:text-start pt-28">
                 Courses
@@ -118,24 +118,85 @@
         </section>
         <section>
           <div class="max-w-screen-xl px-5 py-20 mx-auto md:px-10 lg:px-20">
-            <div class="top_wrapper">
-              <div class="text-center lg:text-start">
-                <h1 class="text-5xl scale-up">
-                  Popular
-                  <strong class="pl-1 text-primary">
-                    <br class="lg:hidden" />
-                    Courses</strong>
-                </h1>
+            <div class="max-w-screen-xl px-5 py-20 mx-auto md:px-10">
+              <div class="flex flex-col justify-between gap-5 top_wrapper lg:flex-row">
+                <div class="text-center lg:text-start">
+                  <h1 class="text-5xl scale-up">
+                    Popular
+
+                    <strong class="pl-1 text-primary">
+                      <br class="lg:hidden" />
+
+                      Courses</strong>
+                  </h1>
+                </div>
+
+                <div class="flex gap-3 h-[40px]">
+                  <button class="border-2 border-solid border-[#E8E8E8] outline-none rounded-lg lg:w-[130px] h-full">
+                    <div class="flex items-center justify-center">
+                      <i class="ri-equalizer-line"></i>
+
+                      <span class="pl-2">Filters</span>
+                    </div>
+                  </button>
+
+                  <div class="flex items-center justify-center h-full">
+                    <div class="flex border-2 border-solid border-[#E8E8E8] rounded-lg">
+                      <button class="flex items-center justify-center px-4 border-l">
+                        <i class="ri-search-line"></i>
+                      </button>
+
+                      <input type="text" class="w-full py-2 border-none outline-none lg:w-80" placeholder="Search..." />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <div
+              class="flex flex-col justify-between w-full max-w-screen-xl gap-4 px-5 mx-auto lg:items-center lg:flex-row">
+              <div>
+                <label class="text-sm" for="#">Categories</label>
+              </div>
+
+              <div class="flex gap-5 overflow-hidden">
+                <button
+                  class="rounded-3xl px-10 whitespace-nowrap flex items-center justify-center text-xs text-primary hover:text-white font-semibold transition-all duration-200 hover:bg-primary border-primary border h-[35px]">
+                  Graphic Designing
+                </button>
+
+                <button
+                  class="rounded-3xl px-10 whitespace-nowrap flex items-center justify-center text-xs text-primary hover:text-white font-semibold transition-all duration-200 hover:bg-primary border-primary border h-[35px]">
+                  Block Programming
+                </button>
+
+                <button
+                  class="rounded-3xl px-10 whitespace-nowrap flex items-center justify-center text-xs text-primary hover:text-white font-semibold transition-all duration-200 hover:bg-primary border-primary border h-[35px]">
+                  Coding
+                </button>
+
+                <button
+                  class="rounded-3xl px-10 whitespace-nowrap flex items-center justify-center text-xs text-primary hover:text-white font-semibold transition-all duration-200 hover:bg-primary border-primary border h-[35px]">
+                  Artificial Intelligence
+                </button>
+
+                <button
+                  class="rounded-3xl px-10 whitespace-nowrap flex items-center justify-center text-xs text-primary hover:text-white font-semibold transition-all duration-200 hover:bg-primary border-primary border h-[35px]">
+                  Artificial Intelligence
+                </button>
+              </div>
+            </div>
+
             <div class="flex flex-wrap justify-center gap-5 pt-16 overflow-hidden lg:justify-between card-wrapper">
               <!-- cards------------------>
 
               <div class="flex justify-center lg:float-left md:float-left animate-grids">
                 <div class="flex items-center">
-                  <div class="bg-white border-[#D6D6D6] border-[0.8px] border-solid w-full h-[400px] rounded-3xl p-4">
+                  <div
+                    class="bg-white border-[#D6D6D6] border-[0.8px] border-solid sm: w-[343px] h-[400px] rounded-3xl p-4">
                     <div class="relative">
-                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <img class="h-[220px] w-full object-cover object-center rounded-xl"
+                        src="../assets/images/courses/1.webp" alt="" />
                       <div class="absolute bottom-2 left-3">
                         <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
                           <div class="w-2 h-2 bg-black rounded-full"></div>
@@ -192,12 +253,13 @@
                   </div>
                 </div>
               </div>
-
               <div class="flex justify-center lg:float-left md:float-left animate-grids">
                 <div class="flex items-center">
-                  <div class="bg-white border-[#D6D6D6] border-[0.8px] border-solid w-full h-[400px] rounded-3xl p-4">
+                  <div
+                    class="bg-white border-[#D6D6D6] border-[0.8px] border-solid sm: w-[343px] h-[400px] rounded-3xl p-4">
                     <div class="relative">
-                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <img class="h-[220px] w-full object-cover object-center rounded-xl"
+                        src="../assets/images/courses/2.webp" alt="" />
                       <div class="absolute bottom-2 left-3">
                         <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
                           <div class="w-2 h-2 bg-black rounded-full"></div>
@@ -254,12 +316,13 @@
                   </div>
                 </div>
               </div>
-
               <div class="flex justify-center lg:float-left md:float-left animate-grids">
                 <div class="flex items-center">
-                  <div class="bg-white border-[#D6D6D6] border-[0.8px] border-solid w-full h-[400px] rounded-3xl p-4">
+                  <div
+                    class="bg-white border-[#D6D6D6] border-[0.8px] border-solid sm: w-[343px] h-[400px] rounded-3xl p-4">
                     <div class="relative">
-                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <img class="h-[220px] w-full object-cover object-center rounded-xl"
+                        src="../assets/images/courses/3.webp" alt="" />
                       <div class="absolute bottom-2 left-3">
                         <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
                           <div class="w-2 h-2 bg-black rounded-full"></div>
@@ -316,12 +379,13 @@
                   </div>
                 </div>
               </div>
-
               <div class="flex justify-center lg:float-left md:float-left animate-grids">
                 <div class="flex items-center">
-                  <div class="bg-white border-[#D6D6D6] border-[0.8px] border-solid w-full h-[400px] rounded-3xl p-4">
+                  <div
+                    class="bg-white border-[#D6D6D6] border-[0.8px] border-solid sm: w-[343px] h-[400px] rounded-3xl p-4">
                     <div class="relative">
-                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <img class="h-[220px] w-full object-cover object-center rounded-xl"
+                        src="../assets/images/courses/4.webp" alt="" />
                       <div class="absolute bottom-2 left-3">
                         <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
                           <div class="w-2 h-2 bg-black rounded-full"></div>
@@ -378,12 +442,13 @@
                   </div>
                 </div>
               </div>
-
               <div class="flex justify-center lg:float-left md:float-left animate-grids">
                 <div class="flex items-center">
-                  <div class="bg-white border-[#D6D6D6] border-[0.8px] border-solid w-full h-[400px] rounded-3xl p-4">
+                  <div
+                    class="bg-white border-[#D6D6D6] border-[0.8px] border-solid sm: w-[343px] h-[400px] rounded-3xl p-4">
                     <div class="relative">
-                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <img class="h-[220px] w-full object-cover object-center rounded-xl"
+                        src="../assets/images/courses/5.webp" alt="" />
                       <div class="absolute bottom-2 left-3">
                         <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
                           <div class="w-2 h-2 bg-black rounded-full"></div>
@@ -440,12 +505,13 @@
                   </div>
                 </div>
               </div>
-
               <div class="flex justify-center lg:float-left md:float-left animate-grids">
                 <div class="flex items-center">
-                  <div class="bg-white border-[#D6D6D6] border-[0.8px] border-solid w-full h-[400px] rounded-3xl p-4">
+                  <div
+                    class="bg-white border-[#D6D6D6] border-[0.8px] border-solid sm: w-[343px] h-[400px] rounded-3xl p-4">
                     <div class="relative">
-                      <img class="h-[220px]" src="../assets/images/Rectangle 114.png" alt="" />
+                      <img class="h-[220px] w-full object-cover object-center rounded-xl"
+                        src="../assets/images/courses/6.png" alt="" />
                       <div class="absolute bottom-2 left-3">
                         <div class="bg-gray-200 rounded-3xl w-[85px] h-7 flex items-center justify-center">
                           <div class="w-2 h-2 bg-black rounded-full"></div>
@@ -502,7 +568,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
             <div class="flex items-center justify-center mt-8">
               <a class="btn_md primary_bg" href="">
@@ -515,55 +580,51 @@
         </section>
         <section>
           <div class="flex flex-col max-w-screen-xl mx-auto lg:px-5 lg:py-20 lg:w-full md:px-10 lg:flex-row">
-            <div class="lg:w-[50%] ">
-              <h3 class="p-3 text-2xl font-semibold text-primary lg:text-start lg:p-0 ap">How it work</h3>
-              <p class="lg:text-5xl text-3xl hh  text-center  lg:text-start font-semibold pt-5 text-[#323232]">An easy
-                way to start learning and get new skills here</p>
-              <p class="pt-8 text-xl font-thin text-center text-gray-500 ap lg:text-start lg:text-lg ">we provides
-                access
-                to educational courses and learning materials
-                through mobile devices or web browsers. These apps have gained
-                immense popularity in recent years due to the convenience they offer in
-                accessing and acquiring knowledge from anywhere at any time.</p>
-              <div class="lg:w-36   h-[52px] flex items-center justify-center lg:mt-8 mt-10">
+            <div class="lg:w-[50%]">
+              <h3 class="p-3 text-2xl font-semibold text-primary lg:text-start lg:p-0 ap">
+                How it work
+              </h3>
+              <p class="lg:text-5xl text-3xl hh text-center lg:text-start font-semibold pt-5 text-[#323232]">
+                An easy way to start learning and get new skills here
+              </p>
+              <p class="pt-8 text-xl font-thin text-center text-gray-500 ap lg:text-start lg:text-lg">
+                we provides access to educational courses and learning
+                materials through mobile devices or web browsers. These apps
+                have gained immense popularity in recent years due to the
+                convenience they offer in accessing and acquiring knowledge
+                from anywhere at any time.
+              </p>
+              <div class="lg:w-36 h-[52px] flex items-center justify-center lg:mt-8 mt-10">
                 <a class="btn_md primary_bg" href="">
                   <span class="font-semibold">Get Started</span>
-
                 </a>
               </div>
-
             </div>
             <div class="lg:w-[50%]">
               <div class="flex gap-5 p-5">
                 <div>
                   <div
                     class="bg-primary text-white rounded-full w-[45px] h-[45px] justify-center items-center text-xl font-semibold flex">
-                    1</div>
+                    1
+                  </div>
                 </div>
                 <div class="flex flex-col w-full gap-10">
-
                   <button
                     class="transition duration-300 animate-btns2 group focus:outline-none focus:text-opacity-100 text-secondary hover:text-opacity-100 text-opacity-40">
-
-                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start ">
-
+                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start">
                       <span class="text-xl truncate lg:text-2xl">Explore the course listing page</span>
 
                       <i class="text-2xl ri-arrow-right-s-line"></i>
-
                     </div>
 
                     <div class="w-full overflow-hidden duration-300 max-h-0 group-focus:max-h-full">
-
-                      <p class="mt-5 text-base text-start">Browse through the course listing page or search for a
-                        specific courses that you’re interested in. The application usually have various categories and
+                      <p class="mt-5 text-base text-start">
+                        Browse through the course listing page or search for a
+                        specific courses that you’re interested in. The
+                        application usually have various categories and
                         filters to help you narrow down your options.
-
                       </p>
-
-
                     </div>
-
                   </button>
                 </div>
               </div>
@@ -571,32 +632,27 @@
                 <div>
                   <div
                     class="bg-primary text-white rounded-full w-[45px] h-[45px] justify-center items-center text-xl font-semibold flex">
-                    2</div>
+                    2
+                  </div>
                 </div>
                 <div class="flex flex-col w-full gap-10">
-
                   <button
                     class="transition duration-300 animate-btns2 group focus:outline-none focus:text-opacity-100 text-secondary hover:text-opacity-100 text-opacity-40">
-
-                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start ">
-
-                      <span class="text-xl truncate lg:text-2xl">Read course descriptions </span>
+                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start">
+                      <span class="text-xl truncate lg:text-2xl">Read course descriptions
+                      </span>
 
                       <i class="text-2xl ri-arrow-right-s-line"></i>
-
                     </div>
 
                     <div class="w-full overflow-hidden duration-300 max-h-0 group-focus:max-h-full">
-
-                      <p class="mt-5 text-base text-start">Browse through the course listing page or search for a
-                        specific courses that you’re interested in. The application usually have various categories and
+                      <p class="mt-5 text-base text-start">
+                        Browse through the course listing page or search for a
+                        specific courses that you’re interested in. The
+                        application usually have various categories and
                         filters to help you narrow down your options.
-
                       </p>
-
-
                     </div>
-
                   </button>
                 </div>
               </div>
@@ -604,32 +660,26 @@
                 <div>
                   <div
                     class="bg-primary text-white rounded-full w-[45px] h-[45px] justify-center items-center text-xl font-semibold flex">
-                    3</div>
+                    3
+                  </div>
                 </div>
                 <div class="flex flex-col w-full gap-10">
-
                   <button
                     class="transition duration-300 animate-btns2 group focus:outline-none focus:text-opacity-100 text-secondary hover:text-opacity-100 text-opacity-40">
-
-                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start ">
-
+                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start">
                       <span class="text-xl truncate lg:text-2xl">Check the course availability</span>
 
                       <i class="text-2xl ri-arrow-right-s-line"></i>
-
                     </div>
 
                     <div class="w-full overflow-hidden duration-300 max-h-0 group-focus:max-h-full">
-
-                      <p class="mt-5 text-base text-start">Browse through the course listing page or search for a
-                        specific courses that you’re interested in. The application usually have various categories and
+                      <p class="mt-5 text-base text-start">
+                        Browse through the course listing page or search for a
+                        specific courses that you’re interested in. The
+                        application usually have various categories and
                         filters to help you narrow down your options.
-
                       </p>
-
-
                     </div>
-
                   </button>
                 </div>
               </div>
@@ -637,39 +687,31 @@
                 <div>
                   <div
                     class="bg-primary text-white rounded-full w-[45px] h-[45px] justify-center items-center text-xl font-semibold flex">
-                    4</div>
+                    4
+                  </div>
                 </div>
                 <div class="flex flex-col w-full gap-10">
-
                   <button
                     class="transition duration-300 animate-btns2 group focus:outline-none focus:text-opacity-100 text-secondary hover:text-opacity-100 text-opacity-40">
-
-                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start ">
-
-                      <span class="text-xl truncate lg:text-2xl">Enroll in the course </span>
+                    <div class="flex items-center justify-center h-12 font-semibold lg:gap-5 lg:justify-start">
+                      <span class="text-xl truncate lg:text-2xl">Enroll in the course
+                      </span>
 
                       <i class="text-2xl ri-arrow-right-s-line"></i>
-
                     </div>
 
                     <div class="w-full overflow-hidden duration-300 max-h-0 group-focus:max-h-full">
-
-                      <p class="mt-5 text-base text-start">Browse through the course listing page or search for a
-                        specific courses that you’re interested in. The application usually have various categories and
+                      <p class="mt-5 text-base text-start">
+                        Browse through the course listing page or search for a
+                        specific courses that you’re interested in. The
+                        application usually have various categories and
                         filters to help you narrow down your options.
-
                       </p>
-
-
                     </div>
-
                   </button>
                 </div>
               </div>
             </div>
-
-
-
           </div>
         </section>
       </div>
