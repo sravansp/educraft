@@ -42,7 +42,7 @@ ScrollTrigger.clearScrollMemory("manual");
 
 const selectAll = (e) => document.querySelectorAll(e);
 
-initSmoothScroll();
+
 $(window).on('load', function () {
      setTimeout(function () { // allowing 3 secs to fade out loader
           $('.page-loaderhome').fadeOut('slow');
@@ -54,31 +54,33 @@ $(window).on('load', function () {
      });
 });
 window.onload = function () {
+     initSmoothScroll();
      initPreloader();
      initHeroLoader();
      initonscrolltrigger()
      // aboutAnimation();
      //   initProgramPage();
+     initNavbarFixedTop();
+     initNavbarResponsive();
+     initplyrseeVideo();
+
+     initscrollFisrt();
+     // create
+     let mm = gsap.matchMedia();
+
+     // add a media query. When it matches, the associated function will run
+     mm.add("(min-width: 1024px)", () => {
+          initsecondAnime();
+     });
+
+     initParallaxImage();
+     initLazyLoad();
+     initbutton();
+     initParallaxVideo();
+     initScrolltriggerNav();
 };
 
-initNavbarFixedTop();
-initNavbarResponsive();
-initplyrseeVideo();
 
-initscrollFisrt();
-// create
-let mm = gsap.matchMedia();
-
-// add a media query. When it matches, the associated function will run
-mm.add("(min-width: 1024px)", () => {
-     initsecondAnime();
-});
-
-initParallaxImage();
-initLazyLoad();
-initbutton();
-initParallaxVideo();
-initScrolltriggerNav();
 
 /**
  * Scrolltrigger Scroll Check
@@ -204,7 +206,7 @@ function initNavbarResponsive() {
      //           ease: Expo.easeInOut,
      //           delay: -0.5,
      //      }, 1.5);
-  
+
      t1.staggerFrom(
           ".menu-mobile .anime-menu",
           0.75, {
@@ -822,36 +824,36 @@ function initonscrolltrigger() {
      if (document.querySelectorAll(".animate-btns2")) {
           // Assuming you have an array of elements with class "element"
           const animatebtns2 = document.querySelectorAll(".animateystg");
-  
+
           // Create a timeline for each element
           animatebtns2.forEach((element) => {
-              const timeline = gsap.timeline({
-                  paused: true,
-                  scrollTrigger: {
-                      trigger: element,
-                      toggleActions: "play none none reset",
-                      start: "top 100%",
-                      end: "top 0%",
-                      stagger: {
-                          amount: 0.3,
-                      },
-                  },
-              });
-  
-              // Add animations to the timeline
-              timeline.fromTo(
-                  element, {
-                      yPercent: 100,
-                      duration: 1,
-                      opacity: 0,
-                  }, {
-                      yPercent: 0,
-                      opacity: 1,
-                      duration: 1,
-                  }
-              );
+               const timeline = gsap.timeline({
+                    paused: true,
+                    scrollTrigger: {
+                         trigger: element,
+                         toggleActions: "play none none reset",
+                         start: "top 100%",
+                         end: "top 0%",
+                         stagger: {
+                              amount: 0.3,
+                         },
+                    },
+               });
+
+               // Add animations to the timeline
+               timeline.fromTo(
+                    element, {
+                         yPercent: 100,
+                         duration: 1,
+                         opacity: 0,
+                    }, {
+                         yPercent: 0,
+                         opacity: 1,
+                         duration: 1,
+                    }
+               );
           });
-      }
+     }
 
 
 }

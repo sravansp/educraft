@@ -1346,7 +1346,7 @@ logo-slider img {
 @media (max-width: 900px) {
      logo-slider {
           --image-size: 140px;
-          --image-size: min(max(50px, 10vw), 100px);
+          /* --image-size: min(max(50px, 10vw), 100px); */
      }
 }
 
