@@ -13,30 +13,27 @@ gsap.config({
      },
 });
 
-// const tl = gsap.timeline();
+document.addEventListener("keydown", function (e) {
+     if ((e.keyCode == "61" ||
+               e.keyCode == "107" ||
+               e.keyCode == "173" ||
+               e.keyCode == "109" ||
+               e.keyCode == "187" ||
+               e.keyCode == "189")) {
+          e.preventDefault();
+     }
+});
+document.addEventListener(
+     "wheel",
+     function (e) {
+          e.preventDefault();
+     }, {
+          passive: false
+     }
+);
 
-// tl.from(".hero-tittle", 1.8, {
-//   y: 100,
-//   ease: "power4.out",
-//   delay: 1,
-//   skewY: 7,
-//   stagger: {
-//     amount: 0.3
-//   }
-// })
-// // smooth scrolling container
-// const smoother = ScrollSmoother.create({
-//      // wrapper: ".body",
-//      content: ".scroll_smoother",
-//      smooth: 0.9,
-//      effects: true,
-//      normalizeScroll: true,
-//      smoothTouch: 0.1,
-//      speed: 5,
 
-// });
-// /* After Adding New Content to DOM */
-// smoother.refresh();
+
 window.history.scrollRestoration = "manual";
 ScrollTrigger.clearScrollMemory("manual");
 
@@ -62,7 +59,7 @@ window.onload = function () {
      //   initProgramPage();
      initNavbarFixedTop();
      initNavbarResponsive();
-     initplyrseeVideo();
+
 
      initscrollFisrt();
      // create
@@ -79,7 +76,7 @@ window.onload = function () {
      initParallaxVideo();
      initScrolltriggerNav();
 };
-
+initplyrseeVideo();
 
 
 /**
@@ -439,7 +436,7 @@ function initsecondAnime() {
 
           .fromTo(
                ".css-macbook", {
-                    scale: 3.5,
+                    scale: 2.8,
                }, {
                     scale: 0.7,
                     duration: 9000,
