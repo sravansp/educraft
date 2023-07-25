@@ -13,6 +13,9 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link href="../assets/pluggins/locomotive/locomotive-scroll.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="../assets/pluggins/plyr/dist/plyr.css" /> -->
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
     <!-- STYLE & CUSTOM CSS  -->
     <link rel="stylesheet" href="../assets/css/style.css" />
     <!-- REMIX ICON  -->
@@ -77,9 +80,9 @@
                 </button>
             </div>
 
-             <div class="menu-mobile fixed -top-[120%] h-screen w-full z-40 bg-white">
+            <div class="menu-mobile fixed -top-[120%] h-screen w-full z-40 bg-white">
                 <div class="data flex justify-start items-center pl-[20%] h-full">
-                    
+
                     <ul>
                         <div class="text-base text-black m-pb-8 title-menu text-opacity-40 anime-menu">
                             Menu
@@ -103,13 +106,13 @@
                         <li class="text-black text-4xl m-[0.5em_0] font-medium anime-menu">
                             <a data-text="6" href="./contact.html">Contact</a>
                         </li>
-                        
+
                         <div class="flex flex-col gap-2 pt-8 text-base text-black footer-menu">
                             <div class="text-base text-black text-opacity-40 anime-menu">Get in Touch</div>
                             <div class="anime-menu">contact@educraft.ae</div>
                         </div>
                     </ul>
-                    
+
                 </div>
             </div>
         </div>
@@ -118,10 +121,95 @@
     <div class="mx-auto scroll_smoother smooth-scroll">
         <main>
             <div class="content">
-                <section class="z-10 flex items-center justify-center min-h-screen text-white hero_bg">
-                    <h1 class="text-2xl">Under Construction</h1>
+                <div class="relative items-center w-full overflow-hidden hero_bg">
+                    <div class="relative h-full max-w-screen-xl mx-auto lg:px-10 pt-28">
+                        <h1 class="text-5xl text-center text-white md:text-6xl hh lg:text-start ">
+                            <strong>Blog</strong> Posts
+                        </h1>
+                        <img class="hidden lg:block mx-auto lg:absolute scale-up w-[189px]"
+                            src="../assets/images/2 lines.png" alt="" />
+
+                        <div
+                            class="glass_container w-[calc(100%_-_5rem)] h-auto lg:h-[125px] mx-auto mt-20 mb-10 p-10 ">
+                            <p class="text-lg text-center text-white md:text-xl">Knowledge is a window to the world, you
+                                have to be diligent in reading so you know the
+                                world. Here, we will share you knowledge about various topics. Enjoy Reading!!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="text-secondary">
+                    <div class="relative max-w-screen-xl px-10 py-10 mx-auto">
+                        <div class="slider_card swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div
+                                        class="flex flex-col w-full h-full gap-5 px-5 py-10 bg-primary rounded-3xl bg-opacity-30 md:p-10 lg:p-20">
+                                        <div
+                                            class="flex items-center gap-3 p-2 pr-4 mx-auto bg-white rounded-full w-fit">
+                                            <div class="overflow-hidden rounded-full w-11 h-11">
+                                                <img src="../assets/images/final-1.png" alt="">
+                                            </div>
+                                            <div class="text-name">
+                                                <span>Asif Al Hamdan</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-heading">
+                                            <h1 class="text-4xl text-center hh">
+                                                Starts With
+                                                <strong class="text-primary">Revolutionary Thinking</strong>
+                                            </h1>
+                                        </div>
+                                        <div class="text-para">
+                                            <p class="text-xl text-center md:text-2xl ap">
+                                                Knowledge is a window to the world, you have to be diligent in reading
+                                                so
+                                                you
+                                                know
+                                                the world. Here, we will share you knowledge about various topics. Enjoy
+                                                Reading!!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div
+                                        class="flex flex-col w-full h-full gap-5 px-5 py-10 bg-primary rounded-3xl bg-opacity-30 md:p-10 lg:p-20">
+                                        <div
+                                            class="flex items-center gap-3 p-2 pr-4 mx-auto bg-white rounded-full w-fit">
+                                            <div class="overflow-hidden rounded-full w-11 h-11">
+                                                <img src="../assets/images/final-1.png" alt="">
+                                            </div>
+                                            <div class="text-name">
+                                                <span>Asif Al Hamdan</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-heading">
+                                            <h1 class="text-4xl text-center hh">
+                                                Starts With
+                                                <strong class="text-primary">Revolutionary Thinking</strong>
+                                            </h1>
+                                        </div>
+                                        <div class="text-para">
+                                            <p class="text-xl text-center md:text-2xl ap">
+                                                Knowledge is a window to the world, you have to be diligent in reading
+                                                so
+                                                you
+                                                know
+                                                the world. Here, we will share you knowledge about various topics. Enjoy
+                                                Reading!!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </section>
-             
+
             </div>
         </main>
         <footer>
@@ -179,7 +267,8 @@
                             class="grid gap-6 grid-cols-[repeat(auto-fit,_minmax(210px,_1fr))] text-base font-normal p-6 sm:px-20 lg:px-10">
                             <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
                                 <figure>
-                                    <img class="mx-auto w-36 md:mx-0" src="../assets/images/brand/logo-orange.svg" alt="" />
+                                    <img class="mx-auto w-36 md:mx-0" src="../assets/images/brand/logo-orange.svg"
+                                        alt="" />
                                 </figure>
                                 <p>Lorem ipsum tagline</p>
                                 <p>Lorem ipsum tagline</p>
@@ -301,8 +390,12 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script> -->
     <!-- <script src="../assets/pluggins/cdn.jsdelivr.net/npm/vanilla-lazyload%4017.6.1/dist/lazyload.min.js"></script> -->
     <script src="../assets/pluggins/locomotive/locomotive-scroll.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <!-- <script src="../assets/pluggins/plyr/dist/plyr.js"></script> -->
     <script src="../assets/js/aboutus.js"></script>
+
+
 </body>
 
 </html>

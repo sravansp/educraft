@@ -8,6 +8,7 @@ module.exports = {
     "./pages/test.html",
     "./pages/programs.html",
     "./pages/aboutus.html",
+    "./pages/blog.html",
   ],
   theme: {
     extend: {

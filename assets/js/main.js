@@ -59,7 +59,7 @@ window.onload = function () {
      initSmoothScroll();
      initPreloader();
      initHeroLoader();
-     initonscrolltrigger()
+     
      // aboutAnimation();
      //   initProgramPage();
      initNavbarFixedTop();
@@ -74,12 +74,12 @@ window.onload = function () {
      mm.add("(min-width: 1024px)", () => {
           initsecondAnime();
      });
-
      initParallaxImage();
      initLazyLoad();
      initbutton();
      initParallaxVideo();
      initScrolltriggerNav();
+     initonscrolltrigger()
 };
 initplyrseeVideo();
 
@@ -405,7 +405,7 @@ function initsecondAnime() {
                // markers: !0,
                scrub: !0,
                pin: !0,
-               // end: '+=200%',
+               // end: '+=400%',
                toggleClass: "acceso",
           },
 
@@ -816,19 +816,51 @@ function initonscrolltrigger() {
                     }, {
                          scale: 1,
                          opacity: 1,
-                         duration: 0.5,
+                         duration: 0.8,
                     }
                );
 
           });
      }
-
-     if (document.querySelectorAll(".animate-btns2")) {
+     if (document.querySelectorAll(".animate-btns")) {
           // Assuming you have an array of elements with class "element"
-          const animatebtns2 = document.querySelectorAll(".animateystg");
+          const animatebtns = document.querySelectorAll(".animate-btns");
+  
+          // Create a timeline for each element
+          animatebtns.forEach((element) => {
+              const timeline = gsap.timeline({
+                  paused: true,
+                  scrollTrigger: {
+                      trigger: element,
+                      toggleActions: "play none none reset",
+                      start: "top 100%",
+                      end: "top 0%",
+                      stagger: {
+                          amount: 0.3,
+                      },
+                  },
+              });
+  
+              // Add animations to the timeline
+              timeline.fromTo(
+                  element, {
+                      xPercent: 50,
+                      duration: 1,
+                      opacity: 0,
+                  }, {
+                      xPercent: 0,
+                      opacity: 1,
+                      duration: 1,
+                  }
+              );
+          });
+      }
+     if (document.querySelectorAll(".animateystg")) {
+          // Assuming you have an array of elements with class "element"
+          const animateystg = document.querySelectorAll(".animateystg");
 
           // Create a timeline for each element
-          animatebtns2.forEach((element) => {
+          animateystg.forEach((element) => {
                const timeline = gsap.timeline({
                     paused: true,
                     scrollTrigger: {
@@ -959,6 +991,6 @@ function initHeroLoader() {
           ease: "power3.out",
           immediateRender: true,
           duration: 0.8,
-          delay: -0.6,
+          delay: -0.7,
      });
 }

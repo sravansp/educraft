@@ -8,15 +8,15 @@
     <title>About Us | Educraft | A place every student should be.</title>
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico" />
 
+    <link href="../assets/pluggins/locomotive/locomotive-scroll.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/pluggins/plyr/dist/plyr.css" />
+    <!-- REMIX ICON  -->
+    <link rel="stylesheet" href="../assets/pluggins/remixicon/remixicon.css" />
+    <!-- STYLE & CUSTOM CSS  -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <!-- TAILWIND CSS  -->
     <link href="../dist/output.css" rel="stylesheet" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <link href="../assets/pluggins/locomotive/locomotive-scroll.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/pluggins/plyr/dist/plyr.css" />
-    <!-- STYLE & CUSTOM CSS  -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <!-- REMIX ICON  -->
-    <link rel="stylesheet" href="../assets/pluggins/remixicon/remixicon.css" />
 </head>
 
 <body class="body font-[Poppins] text-sm box-border">
@@ -77,9 +77,9 @@
                 </button>
             </div>
 
-             <div class="menu-mobile fixed -top-[120%] h-screen w-full z-40 bg-white">
+            <div class="menu-mobile fixed -top-[120%] h-screen w-full z-40 bg-white">
                 <div class="data flex justify-start items-center pl-[20%] h-full">
-                    
+
                     <ul>
                         <div class="text-base text-black m-pb-8 title-menu text-opacity-40 anime-menu">
                             Menu
@@ -103,13 +103,13 @@
                         <li class="text-black text-4xl m-[0.5em_0] font-medium anime-menu">
                             <a data-text="6" href="./contact.html">Contact</a>
                         </li>
-                        
+
                         <div class="flex flex-col gap-2 pt-8 text-base text-black footer-menu">
                             <div class="text-base text-black text-opacity-40 anime-menu">Get in Touch</div>
                             <div class="anime-menu">contact@educraft.ae</div>
                         </div>
                     </ul>
-                    
+
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@
                                     class="text-4xl font-semibold text-center animate-element1 lg:text-start md:text-5xl">
                                     Our Story
                                 </h1>
-                                <img class="mx-auto lg:absolute scale-up" src="../assets/images/2 lines.png" alt="" />
+                                <img class="hidden lg:block mx-auto lg:absolute scale-up w-[189px]" src="../assets/images/2 lines.png" alt="" />
 
                             </div>
 
@@ -145,10 +145,10 @@
                         </div>
                     </div>
                 </section>
-                <div class="relative h-auto scrollable_section lg:h-80">
+                <div class="relative h-auto overflow-hidden scrollable_section lg:h-80">
                     <!-- Desktop Version  -->
-                    <div class="lg:flex h-full flex-nowrap w-[130%] overflow-hidden items-center gap-20 hidden"
-                        data-scroll data-scroll-speed="5" data-scroll-direction="horizontal">
+                    <div class="lg:flex h-full flex-nowrap w-[130%] items-center gap-20 hidden" data-scroll
+                        data-scroll-speed="5" data-scroll-direction="horizontal">
                         <div class="text-scroll">
                             <p class="text-4xl md:text-6xl lg:text-6xl">
                                 Starts With <br />
@@ -204,7 +204,7 @@
 
                 <section>
                     <div class="flex flex-col max-w-screen-xl gap-16 px-5 py-20 mx-auto overflow-hidden md:px-10">
-                        <div class="flex flex-col justify-between gap-5 md:flex-row">
+                        <div class="flex flex-col items-center justify-between gap-5 md:flex-row md:items-start">
                             <div class="svg_ md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0">
                                 <div class="inline-block overview-icon">
                                     <svg class="object-cover svgsprite -star w-14 h-14">
@@ -213,12 +213,12 @@
                                 </div>
                             </div>
                             <div
-                                class="relative flex flex-col gap-4 svg_text md:gap-0 md:flex-row md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0">
+                                class="relative flex flex-col items-center gap-4 svg_text md:gap-0 md:flex-row md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0 md:items-start">
                                 <div class="top-0 md:absolute -left-48">
                                     <h1 class="text-base">Embracing Change</h1>
                                 </div>
                                 <div class="text-2xl font-medium">
-                                    <p class="span-lines animate-2">
+                                    <p class="flex flex-col items-center span-lines animate-2 md:items-start">
                                         Together, we set out to reimagine the traditional syllabus
                                         and integrate new technologies into the classroom
                                     </p>
@@ -251,7 +251,7 @@
                         <div
                             class="divider h-[1px] max-w-screen-xl mx-auto px-5 md:px-10 bg-black w-full hidden lg:block">
                         </div>
-                        <div class="flex flex-col justify-between md:flex-row">
+                        <div class="flex flex-col items-center justify-between md:flex-row md:items-start">
                             <div class="svg_ md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0">
                                 <div class="inline-block overview-icon">
                                     <svg class="object-cover svgsprite -star w-14 h-14">
@@ -260,12 +260,12 @@
                                 </div>
                             </div>
                             <div
-                                class="relative flex flex-col gap-4 svg_text md:gap-0 md:flex-row md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0">
+                                class="relative flex flex-col items-center gap-4 svg_text md:gap-0 md:flex-row md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0 md:items-start">
                                 <div class="top-0 md:absolute -left-48">
                                     <h1 class="text-base">Revamped Curriculum</h1>
                                 </div>
                                 <div class="text-2xl font-medium">
-                                    <p class="span-lines animate-2">
+                                    <p class="flex flex-col items-center span-lines animate-2 md:items-start">
                                         We created a revamped curriculum that blends essential
                                         academic knowledge with practical hands-on experience
                                     </p>
@@ -299,7 +299,7 @@
                     <!-- <div class="bg2 bg-image2">
                     </div> -->
                     <div class="flex flex-col max-w-screen-xl gap-16 px-5 py-20 mx-auto md:px-10">
-                        <div class="flex flex-col justify-between gap-5 md:flex-row">
+                        <div class="flex flex-col items-center justify-between gap-5 md:flex-row md:items-start">
                             <div class="md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0">
                                 <div class="text-heading">
                                     <h1
@@ -319,25 +319,28 @@
                         </div>
                         <!-- Divider Line  -->
                         <div class="divider h-[1px] max-w-screen-xl mx-auto px-5 md:px-10 bg-black w-full z-10"></div>
-                        <div class="flex flex-col justify-end lg:flex-row">
-                            <div
-                                class="relative flex flex-col gap-4 svg_text lg:gap-0 lg:flex-row lg:min-w-2/5 lg:m-0 lg:basis-1/2 lg:min-w-1/2">
-                                <div class="top-0 lg:absolute -left-52">
-                                    <h1 class="text-base">Training the Trailblazers</h1>
-                                </div>
-                                <div class="text-2xl font-medium">
-                                    <p class="span-lines animate-2">
-                                        Armed with their expertise, they are ready to empower
-                                        teachers and students alike, inspiring a generation of
-                                        tech-savvy innovators.
-                                    </p>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex flex-col justify-end lg:flex-row">
+                                <div
+                                    class="relative flex flex-col items-center gap-4 svg_text lg:gap-0 lg:flex-row lg:min-w-2/5 lg:m-0 lg:basis-1/2 lg:min-w-1/2 md:items-start">
+                                    <div class="top-0 lg:absolute -left-52">
+                                        <h1 class="text-base">Training the Trailblazers</h1>
+                                    </div>
+                                    <div class="text-2xl font-medium">
+                                        <p class="flex flex-col items-center span-lines animate-2 md:items-start">
+                                            Armed with their expertise, they are ready to empower
+                                            teachers and students alike, inspiring a generation of
+                                            tech-savvy innovators.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="relative ml-auto overflow-hidden about-3-img md:w-1/2">
-                            <figure class="object-cover object-center">
-                                <img src="../assets/images/about/about-3-bg.webp" alt="" />
-                            </figure>
+                            <div
+                                class="relative ml-auto lg:mr-auto lg:ml-0 -scale-x-[1] lg:scale-x-[1] overflow-hidden about-3-img md:w-1/2 img_appear">
+                                <figure class="object-cover object-center">
+                                    <img src="../assets/images/about/about-3-bg.webp" alt="" />
+                                </figure>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -368,14 +371,14 @@
                         </div>
                         <!-- Divider Line  -->
                         <div class="divider h-[1px] max-w-screen-xl mx-auto px-5 md:px-10 bg-black w-full"></div>
-                        <div class="flex flex-col justify-between gap-5 md:flex-row">
+                        <div class="flex flex-col items-center justify-between gap-5 md:flex-row md:items-start">
                             <div
-                                class="relative flex flex-col gap-5 svg_text md:gap-0 md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0">
+                                class="relative flex flex-col items-center gap-5 svg_text md:gap-0 md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0 md:items-start">
                                 <div class="top-0">
                                     <h1 class="text-base">Revamped Curriculum</h1>
                                 </div>
                                 <div class="text-2xl font-medium">
-                                    <p class="span-lines animate-2">
+                                    <p class="flex flex-col items-center span-lines animate-2 md:items-start">
                                         We created a revamped curriculum that blends essential
                                         academic knowledge with practical hands-on experience
                                     </p>
@@ -398,9 +401,9 @@
                         <div
                             class="flex flex-col justify-between max-w-screen-xl gap-5 px-5 mx-auto md:flex-row md:px-10">
                             <div
-                                class="flex items-center h-full left_wrap lg:justify-center md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0">
+                                class="flex items-center justify-center h-full left_wrap md:justify-start lg:justify-center md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0">
                                 <h1
-                                    class="hh text-5xl leading-[60px] md:text-6xl md:leading-[80px] lg:text-7xl lg:leading-[102px] uppercase">
+                                    class="hh text-5xl leading-[60px] md:text-6xl md:leading-[80px] lg:text-7xl lg:leading-[102px] uppercase flex flex-col items-center lg:items-start">
                                     <strong class="text-primary">EduCraft</strong> <br />
                                     represents a <br />
                                     paradigm <br />
@@ -409,7 +412,8 @@
                                 </h1>
                             </div>
                             <div class="right_wrap md:basis-2/5 md:min-w-2/5 md:m-0 lg:basis-1/2 lg:min-w-1/2 lg:m-0">
-                                <div class="flex flex-col justify-between h-full gap-5 md:py-20">
+                                <div
+                                    class="flex flex-col items-center justify-between h-full gap-5 md:py-20 md:items-start">
                                     <div class="star-anime">
                                         <div class="overview-icon inline-block lg:absolute right-[20%]">
                                             <svg class="object-cover svgsprite -star w-14 h-14">
@@ -417,7 +421,7 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <p class="text-2xl span-lines animate-2">
+                                    <p class="flex flex-col items-center text-2xl span-lines animate-2 md:items-start">
                                         EduCraft embarks on a bold journey, implementing its
                                         innovative approach in Oxford Schools, and expands its
                                         reach, seizing opportunities for growth, including a

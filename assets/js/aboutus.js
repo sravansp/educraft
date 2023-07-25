@@ -54,12 +54,14 @@ $(window).on('load', function () {
         $('.page-loader').fadeOut('slow');
     }, 1000);
 });
-window.onload = function () {
+
+window.onload = setTimeout(function () {
     //  initPreloader();
     aboutAnimation();
     initAccordian();
     //   initProgramPage();
-};
+    initsliderBlog();
+}, 1000);
 
 
 initNavbarFixedTop();
@@ -641,7 +643,7 @@ function initonscrolltrigger() {
                 }, {
                     scale: 1,
                     opacity: 1,
-                    duration: 0.5,
+                    duration: 0.8,
                 }
             );
 
@@ -822,6 +824,35 @@ function initAccordian() {
         el.addEventListener("click", function () {
             console.log("The " + el.innerText + " button was clicked.");
         });
+    });
+
+}
+
+function initsliderBlog() {
+    var swiper2 = new Swiper(".slider_card", {
+        cssMode: true,
+        speed: 1000,
+        direction: 'horizontal',
+        spaceBetween: 30,
+        centeredSlides: true,
+        zoom: true,
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+        mousewheel: {
+            invert: true,
+        },
+        // autoplay: {
+        //     delay: 2000,
+        // },
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        slidesPerView: 1,
+
     });
 
 }
