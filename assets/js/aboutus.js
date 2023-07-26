@@ -46,8 +46,8 @@ window.history.scrollRestoration = "manual";
 ScrollTrigger.clearScrollMemory("manual");
 
 const selectAll = (e) => document.querySelectorAll(e);
-
 initSmoothScroll();
+initsliderBlog();
 
 $(window).on('load', function () {
     setTimeout(function () { // allowing 3 secs to fade out loader
@@ -60,7 +60,7 @@ window.onload = setTimeout(function () {
     aboutAnimation();
     initAccordian();
     //   initProgramPage();
-    initsliderBlog();
+   
 }, 1000);
 
 
@@ -502,6 +502,7 @@ function initonscrolltrigger() {
                     toggleActions: "play none none reset",
                     start: "top 100%",
                     end: "top 0%",
+                    // markers:!0,
                 },
             });
 
@@ -597,16 +598,14 @@ function initonscrolltrigger() {
                     start: "top 110%",
                     end: "top 0%",
                     // markers:!0,
-                    stagger: {
-                        amount: 0.3,
-                    },
+                    stagger: 0.3
                 },
             });
 
             // Add animations to the timeline
             timeline.fromTo(
                 element, {
-                    yPercent: 50,
+                    yPercent: 30,
                     duration: 1,
                     opacity: 0,
                 }, {
@@ -618,7 +617,7 @@ function initonscrolltrigger() {
             );
         });
     }
-    if (document.querySelectorAll(".animate-grids")) {
+    if (document.querySelectorAll(".img_appear")) {
         // Assuming you have an array of elements with class "element"
         const img_appear = document.querySelectorAll(".img_appear");
 
@@ -829,29 +828,26 @@ function initAccordian() {
 }
 
 function initsliderBlog() {
-    var swiper2 = new Swiper(".slider_card", {
-        cssMode: true,
-        speed: 1000,
-        direction: 'horizontal',
-        spaceBetween: 30,
-        centeredSlides: true,
-        zoom: true,
-        keyboard: {
-            enabled: true,
-            onlyInViewport: false,
-        },
-        mousewheel: {
-            invert: true,
-        },
-        // autoplay: {
-        //     delay: 2000,
-        // },
+    var blogslider = $("#blogslider");
+    blogslider.owlCarousel({
+        items: 1,
         loop: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        slidesPerView: 1,
+        margin: 40,
+        autoplay: true,
+        smartSpeed: 1500,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: false,
+        responsiveClass: true,
+
+    });
+    var blogslidermenu = $("#blogslidermenu");
+    blogslidermenu.owlCarousel({
+        items: 5,
+        autoWidth:true,
+        margin: 20,
+        dots: false,
+        smartSpeed: 1500,
+        responsiveClass: true,
 
     });
 

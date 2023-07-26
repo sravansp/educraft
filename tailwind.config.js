@@ -9,6 +9,7 @@ module.exports = {
     "./pages/programs.html",
     "./pages/aboutus.html",
     "./pages/blog.html",
+    "./pages/post.html",
   ],
   theme: {
     extend: {
