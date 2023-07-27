@@ -107,24 +107,11 @@ function initNavbarResponsive() {
         paused: true,
     });
 
-    // t1.to(".one", 0.5, {
-    //     y: 6,
-    //     rotation: 45,
-    //     ease: Expo.easeInOut,
-    // });
-    // t1.to(".two", 0.5, {
-    //     y: -6,
-    //     rotation: -45,
-    //     ease: Expo.easeInOut,
-    //     delay: -0.5,
-    // });
-
-    t1.to(".menu-mobile", 1.5, {
+    t1.to(".menu-mobile", 0.9, {
         top: "0%",
         ease: Expo.easeInOut,
-        delay: -0.5,
+        // delay: -0.2,
     });
-
     t1.staggerFrom(
         ".menu-mobile .anime-menu",
         0.75, {
@@ -833,7 +820,7 @@ function initsliderBlog() {
         blogslidermenu.owlCarousel({
             items: 5,
             loop: true,
-            autoWidth:true,
+            autoWidth: true,
             margin: 20,
             dots: false,
             smartSpeed: 1500,

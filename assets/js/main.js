@@ -185,30 +185,11 @@ function initNavbarResponsive() {
      var t1 = gsap.timeline({
           paused: true,
      });
-
-     // t1.to(".one", 0.5, {
-     //     y: 6,
-     //     rotation: 45,
-     //     ease: Expo.easeInOut,
-     // });
-     // t1.to(".two", 0.5, {
-     //     y: -6,
-     //     rotation: -45,
-     //     ease: Expo.easeInOut,
-     //     delay: -0.5,
-     // });
-
      t1.to(".menu-mobile", 0.9, {
           top: "0%",
           ease: Expo.easeInOut,
           // delay: -0.2,
      });
-     //     t1.to(".title-menu", {
-     //           top: "0%",
-     //           ease: Expo.easeInOut,
-     //           delay: -0.5,
-     //      }, 1.5);
-
      t1.staggerFrom(
           ".menu-mobile .anime-menu",
           0.75, {
@@ -220,21 +201,6 @@ function initNavbarResponsive() {
           0.1
      );
 
-     // t1.to(".menu-mobile", {
-     //      top: "0%",
-     //      ease: Expo.easeInOut,
-     //      delay: -0.5,
-     // }, 1.5);
-
-     // t1.from(
-     //      ".menu-mobile ul li", {
-     //           x: -30,
-     //           opacity: 0,
-     //           ease: Expo.easeOut,
-     //           stagger: 0.1
-     //      },
-     //      0.75
-     // );
      let isOpen = false;
      t1.reverse();
 

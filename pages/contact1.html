@@ -3,22 +3,23 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Educraft | A place every student should be.</title>
+    <title>Contact Us | Educraft | A place every student should be.</title>
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico" />
 
     <!-- TAILWIND CSS  -->
     <link href="../dist/output.css" rel="stylesheet" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-
+    <link href="../assets/pluggins/locomotive/locomotive-scroll.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="../assets/pluggins/plyr/dist/plyr.css" /> -->
     <!-- STYLE & CUSTOM CSS  -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link href="../assets/pluggins/locomotive/locomotive-scroll.css" rel="stylesheet" />
     <!-- REMIX ICON  -->
     <link rel="stylesheet" href="../assets/pluggins/remixicon/remixicon.css" />
 </head>
 
-<body class="font-[Poppins]">
+<body class="body font-[Poppins] text-sm box-border">
     <header>
         <nav id="navbar" class="fixed top-0 z-50 hidden w-full h-24 bg-opacity-50 navbar lg:block">
             <div
@@ -76,7 +77,7 @@
                 </button>
             </div>
 
-            <div class="menu-mobile fixed -top-[120%] h-screen w-full z-40 bg-white">
+             <div class="menu-mobile fixed -top-[120%] h-screen w-full z-40 bg-white">
                 <div class="data flex justify-start items-center pl-[20%] h-full">
                     
                     <ul>
@@ -113,127 +114,139 @@
             </div>
         </div>
     </header>
-    <div class="content smooth-scroll">
-        <section class="z-10 bg-[#f36f370f] section section_4">
-            <div class="h-full gap-8 px-10 py-20 m-auto md:h-screen max-w-screen-2xl md:flex">
-                <div class="flex flex-col justify-center gap-10 md:gap-20 md:w-1/2">
-                    <div class="text-secondary">
-                        <h1 class="text-4xl font-bold hh lg:text-5xl">
-                            Experience a fun <span class="flex">and safe <img class="h-full pl-4 "
-                                    src="../assets/images/pink boxx.jpg" alt="" /></span>
-                            MakerSpace for Kids
-                            to learn robotics
+
+    <div class="mx-auto scroll_smoother smooth-scroll">
+        <main>
+            <div class="content">
+                <div class="h-[286px] w-full relative items-center hero_bg">
+                    <div class="max-w-screen-xl mx-auto ">
+                        <h1 class="text-6xl font-bold text-center text-white hh lg:pl-12 lg:text-start pt-28">
+                            Contact
                         </h1>
-                    </div>
-
-                    <p class="w-full text-lg ap">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quas
-                        molestiae rem laboriosa excepturi laudantium fugit autem? Lorem ipsum
-                        dolor sit amet consectetur adipisicing elit. Placeat quas molestiae
-                        rem laboriosa excepturi laudantium fugit autem laudantium fugit autem
-                    </p>
-
-                    <div class="flex items-center gap-8">
-                        <a class="btn_md primary_bg" href="">
-                            <span>Contact Us</span>
-                            <span class="flex items-center justify-center bg-white rounded-full bg-opacity-40 w-7 h-7">
-                                <i class="text-sm ri-arrow-right-line"></i></span>
-                        </a>
-                        <a href="" class="no-underline">Request a call</a>
-                    </div>
-
-                    <div class="flex justify-between w-full">
-                        <div><img src="../assets/images/logo1.svg" alt=""></div>
-                        <div><img src="../assets/images/logo2.svg" alt=""></div>
-                        <div><img src="../assets/images/logo3.svg" alt=""></div>
-                        <div><img src="../assets/images/logo4.svg" alt=""></div>
+                        <img class="hidden lg:block mx-auto lg:absolute scale-up w-[189px]" src="../assets/images/2 lines.png" alt="" />
                     </div>
                 </div>
-
-                <!-- Right Section  -->
-
-                <div class="flex w-full pt-10 md:pt-0 md:w-1/2">
-                    <!-- container (3 boxes) -->
-                    <div class="flex flex-col w-full gap-5">
-                        <!-- Right side top  -->
-                        <!-- <div class=""> -->
-                        <!-- 1st box  -->
-                        <div
-                            class="relative flex flex-col w-full overflow-hidden markerspace rounded-3xl h-2/3 img_appear">
-                            <img class="object-cover w-full h-full" src="../assets/images/makerspace1.jpg" alt="" />
-
-                            <!-- MakerSpace icon -->
-                            <div class="absolute top-3 left-3">
-                                <button>
-                                    <img class="w-[80%]" src="../assets/images/Makerspace White icon.png" alt="" />
+                <div class="flex items-center justify-center max-w-screen-xl py-20 mx-auto mt-10 lg:justify-between ">
+                    <div>
+                        <span class="flex justify-center font-bold text lg:flex-none lg:justify-start">Contact
+                            us</span>
+                        <h1 class="font-semibold text-[#323232] mt-5 text-center lg:text-start text-5xl">
+                            Let's Connect
+                        </h1>
+                        <p class="text-center mt-7 lg:text-base lg:text-start">
+                            Looking for help? Fill out the form below.
+                            <br class="lg:hidden md:hidden" />
+                            Lorem <br class="hidden md:hidden lg:block" />solet det.
+                        </p>
+                        <div>
+                            <div class="flex flex-col gap-10 mt-6">
+                                <form class="bg-white rounded">
+                                    <div class="">
+                                        <label class="block mb-2 text-sm font-bold text-gray-700" for="name">
+                                            Name
+                                        </label>
+                                        <input
+                                            class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            id="Name" type="text" placeholder="Enter your name" />
+                                    </div>
+                                    <div class="mt-5">
+                                        <label class="block mb-2 text-sm font-bold text-gray-700" for="Email">
+                                            Email
+                                        </label>
+                                        <input
+                                            class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            id="Email" type="text" placeholder="Enter your email" />
+                                    </div>
+                                    <div class="mt-5">
+                                        <label class="block mb-2 text-sm font-bold text-gray-700" for="Email">
+                                            Phone number
+                                        </label>
+                                        <input
+                                            class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            id="Email" type="text" placeholder="Enter your phone number" />
+                                    </div>
+                                    <div class="mt-5">
+                                        <label class="block mb-2 text-sm font-bold text-gray-700" for="Email">
+                                            Message
+                                        </label>
+                                        <label for="message"
+                                            class="block text-sm font-medium text-gray-900 dark:text-white">How can
+                                            we
+                                            help
+                                            you?</label>
+                                        <textarea id="message" rows="4"
+                                            class="block p-2.5 w-full text-sm bg-gray-50 rounded-lg border border-gray-300"
+                                            placeholder="How can we help you?"></textarea>
+                                    </div>
+                                </form>
+                                <button class="rounded-3xl md:w-[550px] lg:w-[350px] button1 h-12 md:h-[52px]">
+                                    <span class="text-sm font-semibold text-white">Send Message</span>
                                 </button>
                             </div>
-
-                            <!-- orange arrow icon bottom right -->
-                            <div class="icon">
-                                <div class="flex items-center justify-center iconbox primary_bg">
-                                    <img src="../assets/images/arrow-right-up.png" alt="">
-                                </div>
-                            </div>
-                            <!-- <div class="absolute bottom-3 right-3">
-                                    <button>
-                                        <img src="../assets/images/arrow link button.png" alt="" />
-                                    </button>
-                                </div> -->
                         </div>
-                        <!-- </div> -->
+                    </div>
+                    <!-- section----------------------- -->
+                    <div class="hidden lg:block">
+                        <div class="lg:relative">
+                            <img class="object-center w-[789px] h-[700px] lg:block hidden rounded-3xl object-cover"
+                                src="../assets/images/contact/discussion.png" alt="" />
 
-                        <!-- Right side bottom  -->
-                        <div class="flex w-full gap-5 h-1/3">
-                            <!-- 2nd box  -->
-                            <div class="relative w-full h-full overflow-hidden rounded-3xl img_appear">
-                                <img class="object-cover w-full h-full" src="../assets/images/makerspace2.png" alt="" />
+                            <div
+                                class="w-[380px] location bg-white bg-opacity-50 lg:absolute h-[146px] top-[75%] rounded-3xl lg:left-[5%] lg:flex">
+                                <div class="lg:flex lg:flex-col m-3 p-1 w-[70%]">
+                                    <div class="flex items-center">
+                                        <img src="../assets/images/contact/Placeholder.png" alt="" />
+                                        <span class="pl-2 text-sm">7th Avenue, 1661 Bayview <br />
+                                            Sharjah, UAE</span>
+                                    </div>
 
-                                <!-- Future Makers Icon  -->
-                                <div class="absolute top-3 left-3">
-                                    <button>
-                                        <img class="w-[80%]" src="../assets/images/future makers.png" alt="" />
-                                    </button>
+                                    <div class="flex items-center pt-3">
+                                        <img src="../assets/images/contact/Viber.png" alt="" />
+                                        <span class="pl-4 text-sm">+971 123 456 789</span>
+                                    </div>
+                                    <div class="flex items-center pt-3">
+                                        <img src="../assets/images/contact/Email.png" alt="" />
+                                        <span class="pl-4 text-sm">info@educraft.ae</span>
+                                    </div>
                                 </div>
-
-                                <!-- white arrow button  -->
-                                <div class="absolute bottom-5 right-5">
-                                    <button>
-                                        <img src="../assets/images/white arrow button.png" alt="" />
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- 3rd box  -->
-                            <div class="relative h-full overflow-hidden rounded-3xl img_appear">
-                                <img class="object-cover w-full h-full" src="../assets/images/makerspace3.jpg" alt="" />
-
-                                <!-- event icon  -->
-                                <div class="absolute top-3 left-3">
-                                    <button>
-                                        <img class="w-[80%]" src="../assets/images/event icon.png" alt="" />
-                                    </button>
+                                <div class="items-center justify-center flex mt-[30px]">
+                                    <img class="object-cover object-center" src="../assets/images/contact/map.png"
+                                        alt="" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div
+                    class="w-[380px] location lg:hidden flex md:flex rounded-3xl md:items-center md:w-[410px] md:justify-between md:mx-36">
+                    <div class="flex flex-col m-3 p-1 w-[70%]">
+                        <div class="flex items-center">
+                            <img src="../assets/images/contact/Placeholder.png" alt="" />
+                            <span class="pl-2 text-sm">7th Avenue,1661 Bayview <br />
+                                Sharjah, UAE</span>
+                        </div>
+
+                        <div class="flex items-center pt-3">
+                            <img src="../assets/images/contact/Viber.png" alt="" />
+                            <span class="pl-4 text-sm">+971 123 456 789</span>
+                        </div>
+                        <div class="flex items-center pt-3">
+                            <img src="../assets/images/contact/Email.png" alt="" />
+                            <span class="pl-4 text-sm">info@educraft.ae</span>
+                        </div>
+                    </div>
+                    <div class="top-0 flex items-center justify-center">
+                        <img class="object-cover object-center" src="../assets/images/contact/map.png" alt="" />
+                    </div>
+                </div>
             </div>
-        </section>
-        <div class="img-scroller relative overflow-hidden h-[100px]">
-            <div class="flex photobanner">
-                 <img src="https://i.stack.imgur.com/xckZy.jpg" alt=""><img
-                      src="https://i.stack.imgur.com/CVgbr.jpg" alt=""><img
-                      src="https://i.stack.imgur.com/7c4yC.jpg" alt=""><img
-                      src="https://i.stack.imgur.com/RTiml.jpg" alt=""><img
-                      src="https://i.stack.imgur.com/xckZy.jpg" alt=""><img
-                      src="https://i.stack.imgur.com/CVgbr.jpg" alt=""><img
-                      src="https://i.stack.imgur.com/7c4yC.jpg" alt=""><img
-                      src="https://i.stack.imgur.com/RTiml.jpg" alt="">
-            </div>
-       </div>
+
+
+
+        </main>
         <footer>
-            <div class="lg:h-screen footer">
+            <div class="mt-16 lg:h-screen footer">
                 <div class="flex flex-col h-full max-w-screen-xl pt-12 m-auto text-white md:px-5">
                     <div class="footer_top lg:h-[44%] p-6 md:px-14 relative">
                         <div class="relative z-10 w-full h-full p-4 md:p-8 glass_container">
@@ -244,97 +257,130 @@
                                         class="text-3xl sm:text-[40px] text-center lg:text-start font-bold mt-14 lg:mt-0">
                                         Get in Touch
                                     </h1>
+
                                     <p
                                         class="text-base font-normal text-center opacity-50 lg:text-start lg:opacity-100">
                                         Let us know how we can ignite your child's creativity,
                                         critical thinking, and problem-solving skills
                                     </p>
                                 </div>
+
                                 <div class="flex items-end h-full">
                                     <a class="flex items-center justify-center gap-3 px-6 py-3 bg-white bg-opacity-10 rounded-[56px] hover:primary_bg hover:transition hover:duration-300"
                                         href="./contact.html">
                                         <span class="text-base font-bold">Contact</span>
+
                                         <span
                                             class="flex items-center justify-center bg-white rounded-full bg-opacity-20 w-7 h-7">
                                             <i class="ri-phone-line"></i></span>
                                     </a>
                                 </div>
+
                                 <a href="./contact.html"
                                     class="absolute top-0 right-0 flex items-center justify-center w-12 h-12 bg-white hover:primary_bg hover:transition hover:duration-300 bg-opacity-10 rounded-xl">
                                     <i class="text-2xl ri-arrow-right-up-line"></i>
                                 </a>
                             </div>
                         </div>
+
                         <div class="absolute top-0 left-0">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="103" viewBox="0 0 100 103"
                                 fill="none">
                                 <path
                                     d="M0.218115 17.77C0.0958221 11.9234 4.56954 7.00307 10.4014 6.57016L87.2423 0.866202C93.5671 0.396711 98.9775 5.35861 99.0558 11.7003L99.8829 78.7149C99.9502 84.1651 96.0161 88.8426 90.635 89.7104L14.5061 101.987C7.91029 103.05 1.89704 98.0367 1.75732 91.3571L0.218115 17.77Z"
                                     fill="url(#paint0_linear_786_2753)" />
+
                                 <defs>
                                     <linearGradient id="paint0_linear_786_2753" x1="107.143" y1="86.784" x2="-0.0452193"
                                         y2="4.48317" gradientUnits="userSpaceOnUse">
                                         <stop stop-color="#FFE986" />
+
                                         <stop offset="0.5455" stop-color="#FF9396" />
+
                                         <stop offset="1" stop-color="#962EFF" />
                                     </linearGradient>
                                 </defs>
                             </svg>
                         </div>
                     </div>
+
                     <div class="footer_middle lg:h-[44%] h-auto">
                         <div
                             class="grid gap-6 grid-cols-[repeat(auto-fit,_minmax(210px,_1fr))] text-base font-normal p-6 sm:px-20 lg:px-10">
                             <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
                                 <figure>
-                                    <img class="w-36" src="../assets/images/brand/logo.png" alt="" />
+                                    <img class="mx-auto w-36 md:mx-0" src="../assets/images/brand/logo-orange.svg" alt="" />
                                 </figure>
+
                                 <p>Lorem ipsum tagline</p>
+
                                 <p>Lorem ipsum tagline</p>
+
                                 <div class="flex items-center md:w-[80%] gap-4 mt-4 px-3 py-3 bg-white rounded-lg">
                                     <span class="text-[#365C83] opacity-50 text-xs">Powered By</span>
+
                                     <figure>
                                         <img src="../assets/images/Techno-alliance-logo.png" alt="" />
                                     </figure>
                                 </div>
                             </div>
+
                             <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
                                 <h1 class="text-3xl opacity-50">Services</h1>
+
                                 <a href="">Courses</a>
+
                                 <a href="">About</a>
+
                                 <a href="">Blog</a>
+
                                 <a href="">Contact</a>
                             </div>
+
                             <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
                                 <h1 class="text-3xl opacity-50">Resources</h1>
+
                                 <a href="">Courses</a>
+
                                 <a href="">About</a>
+
                                 <a href="">Blog</a>
+
                                 <a href="">Contact</a>
                             </div>
+
                             <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
                                 <h1 class="text-3xl opacity-50">Contact</h1>
+
                                 <div class="flex items-center gap-4">
                                     <i class="text-2xl ri-mail-line"></i>
+
                                     <a href="">contact@educraft.ae</a>
                                 </div>
+
                                 <div class="flex items-center gap-4">
                                     <i class="text-2xl ri-phone-line"></i>
+
                                     <span>+971 123 456 789</span>
                                 </div>
+
                                 <div class="flex gap-4 pt-5 icons-sm">
                                     <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
                                         <i class="ri-mail-fill text-[#523B53]"></i>
                                     </a>
+
                                     <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
                                         <i class="ri-linkedin-fill text-[#523B53]"></i>
                                     </a>
+
                                     <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
                                         <i class="ri-twitter-fill text-[#523B53]"></i>
                                     </a>
+
                                     <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
                                         <i class="ri-facebook-fill text-[#523B53]"></i>
                                     </a>
+
                                     <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
                                         <i class="ri-instagram-line text-[#523B53]"></i>
                                     </a>
@@ -342,66 +388,36 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="footer_bottom h-14 lg:h-[12%] w-full flex flex-col items-center px-10 md:px-0 relative">
                         <div class="h-[1px] w-full opacity-10 bg-white"></div>
+
                         <div
                             class="lg:w-[30%] md:w-[45%] w-full flex justify-between m-auto opacity-30 text-base font-normal">
                             <p>© 2023 educraft.ae</p>
+
                             <p>All rights reserved</p>
                         </div>
+
                         <div class="absolute bottom-0 w-[90%] h-[9px] primary_bg rounded-t-2xl"></div>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-    <style>
-        .footer {
-            background: linear-gradient(108.38deg,
-                    #221d33 1.7%,
-                    #3a2b46 45.59%,
-                    #523b53 98.92%);
-        }
-
-        .glass_container {
-            border-radius: 13.497px;
-            background: linear-gradient(135deg,
-                    rgba(255, 255, 255, 0.4) 3.04%,
-                    rgba(255, 255, 255, 0) 96.03%);
-            backdrop-filter: blur(13.497163772583008px);
-            /* border: 1.18px solid; */
-        }
-
-        .glass_container::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 13.497px;
-            padding: 1px;
-            background: linear-gradient(307deg,
-                    rgba(81, 66, 89, 0) -26.1%,
-                    #ffffff73 113.74%),
-                linear-gradient(130deg, #9d9d9d -7.91%, rgba(0, 0, 0, 0) 69.8%),
-                linear-gradient(359deg, #b6a08c 10.07%, rgba(0, 0, 0, 0.14) 64.5%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-    </style>
-    <div class="cursor" id="cursor"></div>
+    <div class="page-loader">
+        <div class="spinner"></div>
+        <div class="txt">© 2023 educraft.ae</div>
+    </div>
     <script src="../assets/pluggins/jquery/jquery-3.6.3.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="../assets/pluggins/scrollsmoother/ss.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="../assets/pluggins/splittext/SplitText.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script> -->
     <script src="../assets/pluggins/locomotive/locomotive-scroll.min.js"></script>
-    <script src="../assets/pluggins/cdn.jsdelivr.net/npm/vanilla-lazyload%4017.6.1/dist/lazyload.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-
+    <script src="../assets/js/aboutus.js"></script>
 </body>
 
 </html>
