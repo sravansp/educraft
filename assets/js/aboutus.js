@@ -591,7 +591,7 @@ function initonscrolltrigger() {
             // Add animations to the timeline
             timeline.fromTo(
                 element, {
-                    yPercent: 50,
+                    yPercent: 20,
                     duration: 1,
                     opacity: 0,
                 }, {
