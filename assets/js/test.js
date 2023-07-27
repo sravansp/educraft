@@ -54,19 +54,32 @@ $(window).on('load', function () {
         $('.page-loader').fadeOut('slow');
     }, 1000);
 });
-// window.onload = function () {
-
-// };
-
-window.onload = setTimeout(function () {
+window.onload = function () {
+    //  initPreloader();
     aboutAnimation();
     initAccordian();
-    initNavbarFixedTop();
-    initNavbarResponsive();
-    initbutton();
-    initScrolltriggerNav();
-}, 1000);
+    //   initProgramPage();
+};
 
+
+initNavbarFixedTop();
+initNavbarResponsive();
+// initplyrseeVideo();
+
+// initscrollFisrt();
+// create
+let mm = gsap.matchMedia();
+
+// add a media query. When it matches, the associated function will run
+mm.add("(min-width: 1024px)", () => {
+    //  initsecondAnime();
+});
+
+// initParallaxImage();
+// initLazyLoad();
+initbutton();
+// initParallaxVideo();
+initScrolltriggerNav();
 
 /**
  * Scrolltrigger Scroll Check
@@ -194,18 +207,18 @@ function initSmoothScroll() {
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector(".smooth-scroll"),
         smooth: true,
-        // mobile: {
-        //     // breakpoint: 0,
-        //     smooth: false,
-        //     // inertia: 0.8,
-        //     // getDirection: true,
-        // },
-        // tablet: {
-        //     // breakpoint: 0,
-        //     smooth: false,
-        //     // inertia: 0.8,
-        //     // getDirection: true,
-        // },
+        mobile: {
+            breakpoint: 0,
+            smooth: false,
+            // inertia: 0.8,
+            getDirection: true,
+        },
+        tablet: {
+            breakpoint: 0,
+            smooth: true,
+            // inertia: 0.8,
+            // getDirection: true,
+        },
     });
     // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
     locoScroll.on("scroll", ScrollTrigger.update);
@@ -570,10 +583,10 @@ function initonscrolltrigger() {
     }
     if (document.querySelectorAll(".animate-grids")) {
         // Assuming you have an array of elements with class "element"
-        const animategrids = document.querySelectorAll(".animate-grids");
+        const animatebtns2 = document.querySelectorAll(".animate-grids");
 
         // Create a timeline for each element
-        animategrids.forEach((element) => {
+        animatebtns2.forEach((element) => {
             const timeline = gsap.timeline({
                 paused: true,
                 scrollTrigger: {
@@ -603,7 +616,7 @@ function initonscrolltrigger() {
             );
         });
     }
-    if (document.querySelectorAll(".img_appear")) {
+    if (document.querySelectorAll(".animate-grids")) {
         // Assuming you have an array of elements with class "element"
         const img_appear = document.querySelectorAll(".img_appear");
 
@@ -812,9 +825,7 @@ function initAccordian() {
     });
 
 }
-
 initsliderBlog();
-
 function initsliderBlog() {
     if (document.querySelector(".owl-carousel")) {
         var blogslider = $("#blogslider");
@@ -832,8 +843,7 @@ function initsliderBlog() {
         var blogslidermenu = $("#blogslidermenu");
         blogslidermenu.owlCarousel({
             items: 5,
-            loop: true,
-            autoWidth:true,
+            autoWidth: true,
             margin: 20,
             dots: false,
             smartSpeed: 1500,
