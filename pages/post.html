@@ -66,7 +66,8 @@
                 class="flex justify-between items-center h-[56px] px-5 md:px-10 py-10 bg-transparent fixed z-50 w-full">
                 <div class="pl-2 logo_animation logo_mobile">
                     <div class="relative z-40 flex items-center justify-center gap-2 header_logo">
-                        <a href="./index.html"> <img class="w-[100px]" src="../assets/images/brand/logo-orange.svg" alt="" /></a>
+                        <a href="./index.html"> <img class="w-[100px]" src="../assets/images/brand/logo-orange.svg"
+                                alt="" /></a>
                     </div>
                 </div>
                 <button class="navbar-toggle" id="toggle" type="button">
@@ -363,8 +364,7 @@
                             <div
                                 class="relative flex flex-col items-center w-full h-full gap-10 lg:justify-between lg:flex-row">
                                 <div class="flex flex-col gap-3 lg:w-1/2">
-                                    <h1
-                                        class="text-3xl sm:text-[40px] text-center lg:text-start font-bold">
+                                    <h1 class="text-3xl sm:text-[40px] text-center lg:text-start font-bold">
                                         Subscribe
                                     </h1>
                                     <p
@@ -377,19 +377,25 @@
                                 <div class="flex items-center w-full h-full lg:w-1/2">
                                     <form action="" class="w-full">
                                         <div class="flex flex-col gap-4">
-                                            <div class="relative flex flex-col items-center justify-between gap-4 lg:flex-row">
-                                                <div class="flex items-center w-full px-6 bg-white rounded-full input-subscribe bg-opacity-10 h-11">
+                                            <div
+                                                class="relative flex flex-col items-center justify-between gap-4 lg:flex-row">
+                                                <div
+                                                    class="flex items-center w-full px-6 bg-white rounded-full input-subscribe bg-opacity-10 h-11">
                                                     <input class="w-full bg-transparent border-none outline-none"
                                                         type="text" name="email" placeholder="Enter your email"
                                                         id="email" />
                                                 </div>
-    
-                                                <button type="submit"
+
+                                                <button id="subscribe" type="button"
                                                     class="flex items-center justify-center gap-3 text-base btn_md primary_bg">
                                                     Subscribe
                                                 </button>
                                             </div>
-                                            <p class="text-base text-center lg:text-start"><span class="text-primary">Thank you !</span> You will receive the latest content delivered straight to your inbox.</p>
+                                            <p class="hidden text-base text-center lg:text-start subscribe-text">
+                                                <span class="text-primary">Thank you !</span> You will
+                                                receive the latest content delivered straight to your
+                                                inbox.
+                                            </p>
                                         </div>
                                     </form>
                                 </div>
@@ -514,7 +520,7 @@
     </div> -->
     <div class="page-loader">
         <div class="spinner"></div>
-        
+
     </div>
     <div class="h-screen lightbox">
         <div class="videopopup absolute left-1/2 top-1/2 w-[90%] lg:w-1/2 -translate-x-1/2 -translate-y-1/2">

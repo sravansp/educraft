@@ -65,7 +65,9 @@ window.onload = setTimeout(function () {
     initNavbarResponsive();
     initbutton();
     initScrolltriggerNav();
+    initsubscribe();
 }, 1000);
+
 
 
 /**
@@ -830,4 +832,19 @@ function initsliderBlog() {
     }
 
 
+}
+
+function initsubscribe() {
+    $("#subscribe").click(function () {
+        $(".subscribe-text").toggle(function () {
+                $(this).animate({
+                    // style change
+                }, 500);
+            },
+            function () {
+                $(this).animate({
+                    // style change back
+                }, 500);
+            });
+    });
 }

@@ -528,7 +528,7 @@ function initPreloader() {
                ease: "Power3.easeOut",
           })
           .from(".preloader .text-container svg", {
-               duration: 2.7,
+               duration: 2,
                delay: 1,
                // y: 70,
                // skewY: 10,
@@ -801,9 +801,7 @@ function initonscrolltrigger() {
                       toggleActions: "play none none reset",
                       start: "top 100%",
                       end: "top 0%",
-                      stagger: {
-                          amount: 0.3,
-                      },
+                      stagger: 0.3,
                   },
               });
   
@@ -870,10 +868,10 @@ function initHeroLoader() {
           wordsClass: "word++"
      });
      const tl = gsap.timeline({
-          paused: true,
+          // paused: true,
           scrollTrigger: {
                trigger: ".landing_wrapper",
-               // toggleActions: "play none none reset",
+               toggleActions: "play none none none",
                // start: "top 100%",
                // end: "top 0%",
                // stagger: {
@@ -892,8 +890,9 @@ function initHeroLoader() {
                yPercent: 0,
                opacity: 1,
                // immediateRender: true,
-               duration: 0.8,
-               delay: 4.3
+               duration: 0.7,
+               delay: 3.6,
+               ease: "power4.out",
           }
      );
      tl.fromTo(
@@ -915,7 +914,7 @@ function initHeroLoader() {
           opacity: 1,
           rotate: 0,
           // immediateRender: true,
-          duration: 0.8,
+          duration: 1.5,
           delay: -0.5,
      });
 
@@ -925,7 +924,7 @@ function initHeroLoader() {
                yPercent: 200,
                ease: "power3.out",
                stagger: 0.1,
-               delay: -0.7,
+               delay: -1,
           });
      });
      childSplitp.words.forEach((words) => {
@@ -939,13 +938,13 @@ function initHeroLoader() {
      });
      tl.fromTo(".hero-btn a", {
           opacity: 0,
-          xPercent: -50,
+          x: -50,
      }, {
-          xPercent: 0,
+          x: 0,
           opacity: 1,
-          ease: "power3.out",
-          stagger: 0.2,
-          // immediateRender: true,
+          // ease: "power3.out",
+          // stagger: 0.2,
+          immediateRender: true,
           duration: 0.8,
           delay: -0.6,
      });
