@@ -924,7 +924,7 @@ function initHeroLoader() {
                yPercent: 200,
                ease: "power3.out",
                stagger: 0.1,
-               delay: -1,
+               delay: -1.6,
           });
      });
      childSplitp.words.forEach((words) => {
@@ -933,28 +933,26 @@ function initHeroLoader() {
                yPercent: 200,
                ease: "power3.out",
                stagger: 0.1,
-               delay: -0.7,
+               delay: -1.5,
           });
      });
      tl.fromTo(".hero-btn a", {
           opacity: 0,
-          x: -50,
+          y: -50,
      }, {
-          x: 0,
+          y: 0,
           opacity: 1,
           // ease: "power3.out",
           // stagger: 0.2,
-          immediateRender: true,
           duration: 0.8,
-          delay: -0.6,
+          delay: -0.7,
      });
      tl.fromTo(".Associated", {
           opacity: 0,
      }, {
 
           opacity: 1,
-          ease: "power3.out",
-          immediateRender: true,
+          // ease: "power3.out",
           duration: 0.8,
           delay: -0.7,
      });

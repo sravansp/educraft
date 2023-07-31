@@ -1330,7 +1330,7 @@ h1>div {
 
 
 logo-slider {
-     --image-size: 100px;
+     --image-size: 180px;
      /* border: 1px solid #575757; */
      padding: 20px;
      overflow: hidden;
@@ -1357,6 +1357,7 @@ logo-slider img {
      min-width: var(--image-size);
      width: var(--image-size);
      margin: 0 1vw;
+     object-fit: scale-down;
 }
 
 
