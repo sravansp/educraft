@@ -1248,7 +1248,7 @@ h1>div {
      height: 56px;
      border-radius: 50%;
      border: 3px solid transparent;
-     border-bottom-color: #FF3D00;
+     border-bottom-color: var(--primary-color);
    }
    
    @keyframes rotation {

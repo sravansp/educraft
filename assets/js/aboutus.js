@@ -57,19 +57,37 @@ $(window).on('load', function () {
 // window.onload = function () {
 
 // };
+window.addEventListener("DOMContentLoaded", (event) => {
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    window.addEventListener("resize", reportWindowSize);
 
-window.onload = setTimeout(function () {
-    aboutAnimation();
-    initAccordian();
-    initNavbarFixedTop();
-    initNavbarResponsive();
-    initbutton();
-    initScrolltriggerNav();
-    initsubscribe();
-}, 1000);
+    function reportWindowSize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        console.log(width);
+    }
+
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+    window.addEventListener("resize", () => {
+
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    });
+    window.onload = setTimeout(function () {
+        aboutAnimation();
+        initAccordian();
+        initNavbarFixedTop();
+        initNavbarResponsive();
+        initbutton();
+        initScrolltriggerNav();
+        initsubscribe();
+    }, 1000);
 
 
-
+})
 
 /**
  * Scrolltrigger Scroll Check
@@ -836,7 +854,7 @@ function initsliderBlog() {
             margin: 10,
             responsiveClass: true,
             nav: false,
-            loop: false,
+            loop: true,
             autoWidth: true,
             navigation: false,
             dots: false,
