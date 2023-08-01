@@ -66,8 +66,8 @@ window.onload = setTimeout(function () {
     initbutton();
     initScrolltriggerNav();
     initsubscribe();
-    initsliderBlog();
 }, 1000);
+initsliderBlog();
 
 
 
