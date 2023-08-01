@@ -66,6 +66,7 @@ window.onload = setTimeout(function () {
     initbutton();
     initScrolltriggerNav();
     initsubscribe();
+    initsliderBlog();
 }, 1000);
 
 
@@ -802,8 +803,6 @@ function initAccordian() {
 
 }
 
-initsliderBlog();
-
 function initsliderBlog() {
     if (document.querySelector(".owl-carousel")) {
         var blogslider = $("#blogslider");
@@ -821,12 +820,25 @@ function initsliderBlog() {
         var blogslidermenu = $("#blogslidermenu");
         blogslidermenu.owlCarousel({
             items: 5,
+            margin: 10,
+            responsiveClass: true,
+            nav: false,
             loop: true,
             autoWidth: true,
-            margin: 20,
+            navigation: false,
             dots: false,
-            smartSpeed: 1500,
+
+        });
+        var courseslidermenu = $("#courseslidermenu");
+        courseslidermenu.owlCarousel({
+            items: 5,
+            margin: 10,
             responsiveClass: true,
+            nav: false,
+            loop: false,
+            autoWidth: true,
+            navigation: false,
+            dots: false,
 
         });
     }

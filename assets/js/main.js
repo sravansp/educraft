@@ -15,27 +15,27 @@ gsap.config({
 
 document.addEventListener("keydown", function (e) {
      if (e.ctrlKey &&
-         (e.keyCode == "61" ||
-             e.keyCode == "107" ||
-             e.keyCode == "173" ||
-             e.keyCode == "109" ||
-             e.keyCode == "187" ||
-             e.keyCode == "189")
+          (e.keyCode == "61" ||
+               e.keyCode == "107" ||
+               e.keyCode == "173" ||
+               e.keyCode == "109" ||
+               e.keyCode == "187" ||
+               e.keyCode == "189")
      ) {
-         e.preventDefault();
+          e.preventDefault();
      }
- });
- document.addEventListener(
+});
+document.addEventListener(
      "wheel",
      function (e) {
-         if (e.ctrlKey) {
-             e.preventDefault();
-         }
+          if (e.ctrlKey) {
+               e.preventDefault();
+          }
      }, {
-         passive: false
+          passive: false
      }
- );
- 
+);
+
 
 
 
@@ -59,7 +59,7 @@ window.onload = function () {
      initSmoothScroll();
      initPreloader();
      initHeroLoader();
-     
+
      // aboutAnimation();
      //   initProgramPage();
      initNavbarFixedTop();
@@ -77,9 +77,9 @@ window.onload = function () {
      initParallaxImage();
      initLazyLoad();
      initbutton();
-     initParallaxVideo();
+     // initParallaxVideo();
      initScrolltriggerNav();
-     initonscrolltrigger()
+     initonscrolltrigger();
 };
 initplyrseeVideo();
 
@@ -152,33 +152,6 @@ function initParallaxImage() {
      });
 }
 
-function initParallaxVideo() {
-     // Parallax Video
-     // JavaScript
-     // Initialize GSAP timeline
-     const parallaxtl = gsap.timeline({});
-
-     // Calculate the scroll range for parallax effect
-     const scrollRange =
-          document.querySelector(".parallax-container").offsetHeight -
-          window.innerHeight;
-
-     // Scroll event handler
-     function parallaxScroll() {
-          const scrollTop = window.offsetTop || document.documentElement.scrollTop;
-
-          // Calculate the parallax effect for the video position
-          const videoPosition = (scrollTop / scrollRange) * 100;
-
-          // Update the video position using GSAP
-          parallaxtl.to(".parallax-video", {
-               y: -videoPosition + "%",
-          });
-     }
-
-     // Register the scroll event listener
-     window.addEventListener("scroll", parallaxScroll);
-}
 
 function initNavbarResponsive() {
      // console.clear();
@@ -791,34 +764,34 @@ function initonscrolltrigger() {
      if (document.querySelectorAll(".animate-btns")) {
           // Assuming you have an array of elements with class "element"
           const animatebtns = document.querySelectorAll(".animate-btns");
-  
+
           // Create a timeline for each element
           animatebtns.forEach((element) => {
-              const timeline = gsap.timeline({
-                  paused: true,
-                  scrollTrigger: {
-                      trigger: element,
-                      toggleActions: "play none none reset",
-                      start: "top 100%",
-                      end: "top 0%",
-                      stagger: 0.3,
-                  },
-              });
-  
-              // Add animations to the timeline
-              timeline.fromTo(
-                  element, {
-                      xPercent: 50,
-                      duration: 1,
-                      opacity: 0,
-                  }, {
-                      xPercent: 0,
-                      opacity: 1,
-                      duration: 1,
-                  }
-              );
+               const timeline = gsap.timeline({
+                    paused: true,
+                    scrollTrigger: {
+                         trigger: element,
+                         toggleActions: "play none none reset",
+                         start: "top 100%",
+                         end: "top 0%",
+                         stagger: 0.3,
+                    },
+               });
+
+               // Add animations to the timeline
+               timeline.fromTo(
+                    element, {
+                         xPercent: 50,
+                         duration: 1,
+                         opacity: 0,
+                    }, {
+                         xPercent: 0,
+                         opacity: 1,
+                         duration: 1,
+                    }
+               );
           });
-      }
+     }
      if (document.querySelectorAll(".animateystg")) {
           // Assuming you have an array of elements with class "element"
           const animateystg = document.querySelectorAll(".animateystg");
@@ -923,24 +896,24 @@ function initHeroLoader() {
                duration: 0.8,
                yPercent: 200,
                ease: "power3.out",
-               stagger: 0.1,
-               delay: -1.6,
+               stagger: 0.3,
+               delay: -1.2,
           });
      });
      childSplitp.words.forEach((words) => {
           tl.from(words, {
-               duration: 0.7,
+               duration: 0.8,
                yPercent: 200,
                ease: "power3.out",
                stagger: 0.1,
-               delay: -1.5,
+               delay: -1.2,
           });
      });
      tl.fromTo(".hero-btn a", {
           opacity: 0,
-          y: -50,
+          // y: -50,
      }, {
-          y: 0,
+          // y: 0,
           opacity: 1,
           // ease: "power3.out",
           // stagger: 0.2,
@@ -954,6 +927,7 @@ function initHeroLoader() {
           opacity: 1,
           // ease: "power3.out",
           duration: 0.8,
-          delay: -0.7,
+          delay: -0.6,
      });
 }
+
