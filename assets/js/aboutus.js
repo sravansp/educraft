@@ -67,7 +67,7 @@ window.onload = setTimeout(function () {
     initScrolltriggerNav();
     initsubscribe();
 }, 1000);
-initsliderBlog();
+
 
 
 
@@ -802,6 +802,7 @@ function initAccordian() {
     });
 
 }
+initsliderBlog();
 
 function initsliderBlog() {
     if (document.querySelector(".owl-carousel")) {
