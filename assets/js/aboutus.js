@@ -786,7 +786,8 @@ function initAccordian() {
                 });
                 TweenLite.to(content, 0.3, {
                     height: 0,
-                    borderTopWidth: 0
+                    // borderTopWidth: 0
+                    paddingBottom:0
                 });
                 TweenMax.to(arrow, 0.3, {
                     rotation: 0,
@@ -808,7 +809,8 @@ function initAccordian() {
 
                     TweenLite.to(openContent, 0.3, {
                         height: 0,
-                        borderTopWidth: 0
+                        // borderTopWidth: 0
+                        paddingBottom:0
                     });
                     TweenMax.to(openArrow, 0.3, {
                         rotation: 0,
@@ -824,7 +826,8 @@ function initAccordian() {
                 });
                 TweenLite.set(content, {
                     height: "auto",
-                    borderTopWidth: "2px"
+                    // borderTopWidth: "2px"
+                    paddingBottom:"20px"
                 });
                 TweenLite.from(content, 0.5, {
                     height: 0,
