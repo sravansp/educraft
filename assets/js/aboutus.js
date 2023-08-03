@@ -663,7 +663,37 @@ function initonscrolltrigger() {
             // }
         });
     }
+    if (document.querySelectorAll(".img_appear2")) {
+        // Assuming you have an array of elements with class "element"
+        const img_appear = document.querySelectorAll(".img_appear2");
 
+        // Create a timeline for each element
+        img_appear.forEach((element) => {
+             const timeline = gsap.timeline({
+                  paused: true,
+                  scrollTrigger: {
+                       trigger: element,
+                       toggleActions: "play none none reset",
+                       start: "top 100%",
+                       end: "top 0%",
+                  },
+             });
+
+             // Add animations to the timeline
+             timeline.fromTo(
+                  element, {
+                       scale: 0.5,
+                       // duration: 1,
+                       opacity: 0,
+                  }, {
+                       scale: 1,
+                       opacity: 1,
+                       duration: 1,
+                  }
+             );
+
+        });
+   }
     if (document.querySelectorAll(".circle-div-round")) {
 
 
@@ -820,8 +850,8 @@ function initAccordian() {
     });
 
 }
-initsliderBlog();
 
+initsliderBlog();
 function initsliderBlog() {
     if (document.querySelector(".owl-carousel")) {
         var blogslider = $("#blogslider");
