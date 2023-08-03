@@ -27,6 +27,11 @@
         transition: 0.3s;
         opacity: 0.4;
     }
+    .primary_bg_op_3 {
+        background: var(--primary-bg);
+        transition: 0.3s;
+        opacity: 0.3;
+    }
 
     .ed-white {
         background: var(--ed-white);

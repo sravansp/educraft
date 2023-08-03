@@ -217,7 +217,7 @@ function initSmoothScroll() {
     });
     // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
     locoScroll.on("scroll", ScrollTrigger.update);
-
+   
     // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
     ScrollTrigger.scrollerProxy(".smooth-scroll", {
         scrollTop(value) {
@@ -237,7 +237,7 @@ function initSmoothScroll() {
         pinType: document.querySelector(".smooth-scroll").style.transform ?
             "transform" : "fixed",
     });
-
+    new ResizeObserver(() => scroll.update()).observe(document.querySelector(".smooth-scroll"))
     ScrollTrigger.defaults({
         scroller: ".smooth-scroll",
     });
