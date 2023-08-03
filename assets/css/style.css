@@ -1132,7 +1132,9 @@ h1>div {
 .text-heading {
      width: 100%;
 }
-
+.line, .span-line {
+     overflow: hidden;
+}
 
 
 /* PRELOADER CSS */
