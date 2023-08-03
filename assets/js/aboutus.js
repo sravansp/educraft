@@ -276,6 +276,14 @@ function aboutAnimation() {
                 ease: "power3.out",
                 delay: 1,
             })
+            .from(".about_h_underline", {
+                y: 20,
+                // stagger: 0.05,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out",
+                delay: -0.5,
+            })
             .from(
                 ".main_about_img", {
                     y: 100,
