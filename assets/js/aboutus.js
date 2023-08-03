@@ -237,10 +237,10 @@ function initSmoothScroll() {
         pinType: document.querySelector(".smooth-scroll").style.transform ?
             "transform" : "fixed",
     });
-    new ResizeObserver(() => scroll.update()).observe(document.querySelector(".smooth-scroll"))
-    ScrollTrigger.defaults({
-        scroller: ".smooth-scroll",
-    });
+    // new ResizeObserver(() => scroll.update()).observe(document.querySelector(".smooth-scroll"))
+    // ScrollTrigger.defaults({
+    //     scroller: ".smooth-scroll",
+    // });
 
     /**
      * Remove Old Locomotive Scrollbar
