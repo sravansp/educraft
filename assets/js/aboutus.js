@@ -48,6 +48,7 @@ ScrollTrigger.clearScrollMemory("manual");
 const selectAll = (e) => document.querySelectorAll(e);
 
 initSmoothScroll();
+window.addEventListener("resize", initSmoothScroll);
 
 $(window).on('load', function () {
     setTimeout(function () { // allowing 3 secs to fade out loader
@@ -379,10 +380,12 @@ function initonscrolltrigger() {
     });
 
     if (document.querySelectorAll(".hh")) {
+
         var childSplit = new SplitText(".hh", {
             type: "lines",
             linesClass: "split-child",
         });
+        var mask = new SplitText(".hh", { types: "lines", linesClass: "split-parent"});
         childSplit.lines.forEach((line) => {
             let tl = gsap.timeline({
                 scrollTrigger: {
