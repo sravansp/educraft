@@ -11,7 +11,9 @@ gsap.config({
           top: "%",
           rotation: "rad",
      },
+
 });
+ScrollTrigger.clearScrollMemory("manual");
 
 document.addEventListener("keydown", function (e) {
      if (e.ctrlKey &&
@@ -40,9 +42,12 @@ document.addEventListener(
 
 
 window.history.scrollRestoration = "manual";
-ScrollTrigger.clearScrollMemory("manual");
+
 
 const selectAll = (e) => document.querySelectorAll(e);
+
+window.addEventListener("resize", initSmoothScroll);
+initSmoothScroll();
 
 
 $(window).on('load', function () {
@@ -55,8 +60,15 @@ $(window).on('load', function () {
           $('.page-loader').fadeOut('slow');
      });
 });
+
+
 window.onload = function () {
-     initSmoothScroll();
+     initAll()
+};
+
+
+function initAll() {
+     // initSmoothScroll();
      initPreloader();
      initHeroLoader();
 
@@ -80,10 +92,8 @@ window.onload = function () {
      // initParallaxVideo();
      initScrolltriggerNav();
      initonscrolltrigger();
-};
-initplyrseeVideo();
-
-
+     initplyrseeVideo();
+}
 /**
  * Scrolltrigger Scroll Check
  */
@@ -282,6 +292,7 @@ function initSmoothScroll() {
 
      ScrollTrigger.defaults({
           scroller: ".smooth-scroll",
+          // invalidateOnRefresh: true,
      });
 
      /**
@@ -299,6 +310,7 @@ function initSmoothScroll() {
 
      // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
      ScrollTrigger.refresh();
+     ScrollTrigger.update()
 }
 
 function initscrollFisrt() {
@@ -312,6 +324,7 @@ function initscrollFisrt() {
                // markers: true,
                //end: '+=200%',
                end: "+=400%", // two more sections so 2*100% more here
+               invalidateOnRefresh: true,
           },
      });
 }
@@ -346,6 +359,7 @@ function initsecondAnime() {
                pin: !0,
                // end: '+=400%',
                toggleClass: "acceso",
+               invalidateOnRefresh: true,
           },
 
           // scrollTrigger: {
@@ -447,6 +461,7 @@ function initsecondAnime() {
                end: "+=8000",
                // scroller: ".smooth-scroll",
                scrub: !0,
+               invalidateOnRefresh: true,
           },
      });
      // once(videoElem, "loadedmetadata", () => {
@@ -961,4 +976,3 @@ function initHeroLoader() {
           delay: -0.6,
      });
 }
-

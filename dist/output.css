@@ -836,22 +836,6 @@ video {
   order: 2;
 }
 
-.col-span-2 {
-  grid-column: span 2 / span 2;
-}
-
-.col-start-2 {
-  grid-column-start: 2;
-}
-
-.col-start-3 {
-  grid-column-start: 3;
-}
-
-.row-start-1 {
-  grid-row-start: 1;
-}
-
 .float-left {
   float: left;
 }
@@ -1031,10 +1015,6 @@ video {
   height: 1px;
 }
 
-.h-\[200px\] {
-  height: 200px;
-}
-
 .h-\[220px\] {
   height: 220px;
 }
@@ -1045,6 +1025,10 @@ video {
 
 .h-\[30vh\] {
   height: 30vh;
+}
+
+.h-\[336px\] {
+  height: 336px;
 }
 
 .h-\[350px\] {
@@ -1117,10 +1101,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[336px\] {
-  height: 336px;
 }
 
 .max-h-0 {
@@ -1302,20 +1282,8 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.grid-flow-col {
-  grid-auto-flow: column;
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
 .grid-cols-\[repeat\(auto-fit\2c _minmax\(210px\2c _1fr\)\)\] {
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-}
-
-.grid-rows-2 {
-  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -1612,10 +1580,6 @@ video {
 
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
-}
-
-.bg-opacity-30 {
-  --tw-bg-opacity: 0.3;
 }
 
 .bg-opacity-40 {
@@ -2489,10 +2453,6 @@ video {
     flex-basis: 40%;
   }
 
-  .md\:basis-1\/2 {
-    flex-basis: 50%;
-  }
-
   .md\:basis-3\/5 {
     flex-basis: 60%;
   }
@@ -2565,11 +2525,6 @@ video {
   .md\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
-  }
-
-  .md\:py-10 {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
   }
 
   .md\:pb-3 {
@@ -2905,10 +2860,6 @@ video {
     padding-right: 5rem;
   }
 
-  .lg\:pl-6 {
-    padding-left: 1.5rem;
-  }
-
   .lg\:text-start {
     text-align: start;
   }
@@ -2962,12 +2913,12 @@ video {
     line-height: 1.75rem;
   }
 
-  .lg\:leading-\[102px\] {
-    line-height: 102px;
+  .lg\:leading-\[100px\] {
+    line-height: 100px;
   }
 
-  .lg\:leading-\[1\] {
-    line-height: 1;
+  .lg\:leading-\[102px\] {
+    line-height: 102px;
   }
 
   .lg\:leading-\[60px\] {
@@ -2980,14 +2931,6 @@ video {
 
   .lg\:leading-none {
     line-height: 1;
-  }
-
-  .lg\:leading-\[100px\] {
-    line-height: 100px;
-  }
-
-  .lg\:leading-\[\] {
-    line-height: ;
   }
 
   .lg\:opacity-100 {
