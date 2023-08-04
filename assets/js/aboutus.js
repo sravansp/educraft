@@ -48,7 +48,7 @@ ScrollTrigger.clearScrollMemory("manual");
 const selectAll = (e) => document.querySelectorAll(e);
 
 initSmoothScroll();
-window.addEventListener("resize", initSmoothScroll);
+// window.addEventListener("resize", initSmoothScroll);
 
 $(window).on('load', function () {
     setTimeout(function () { // allowing 3 secs to fade out loader
@@ -77,19 +77,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty("--vh", `${vh}px`);
     });
-    window.onload = setTimeout(function () {
-        aboutAnimation();
-        initAccordian();
-        initNavbarFixedTop();
-        initNavbarResponsive();
-        initbutton();
-        initScrolltriggerNav();
-        initsubscribe();
-    }, 1000);
-
-
+    
+    
 })
 
+window.onload = setTimeout(function () {
+    aboutAnimation();
+    initAccordian();
+    initNavbarFixedTop();
+    initNavbarResponsive();
+    initbutton();
+    initScrolltriggerNav();
+    initsubscribe();
+}, 1000);
 /**
  * Scrolltrigger Scroll Check
  */

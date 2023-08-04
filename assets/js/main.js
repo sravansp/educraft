@@ -13,8 +13,6 @@ gsap.config({
      },
 
 });
-ScrollTrigger.clearScrollMemory("manual");
-
 document.addEventListener("keydown", function (e) {
      if (e.ctrlKey &&
           (e.keyCode == "61" ||
@@ -39,15 +37,24 @@ document.addEventListener(
 );
 
 
-
+ScrollTrigger.clearScrollMemory("manual");
 
 window.history.scrollRestoration = "manual";
 
 
 const selectAll = (e) => document.querySelectorAll(e);
+let mm = gsap.matchMedia();
 
-window.addEventListener("resize", initSmoothScroll);
-initSmoothScroll();
+// mm.add("(min-width: 1024px)", () => {
+
+     window.addEventListener('resize', function (event) {
+          ScrollTrigger.refresh();
+          // initSmoothScroll();
+          console.log("resize");
+     }, true);
+//      // addEventListener("resize", initSmoothScroll);
+
+// });
 
 
 $(window).on('load', function () {
@@ -60,15 +67,36 @@ $(window).on('load', function () {
           $('.page-loader').fadeOut('slow');
      });
 });
+window.addEventListener("DOMContentLoaded", (event) => {
+     let width = window.innerWidth;
+     let height = window.innerHeight;
+     window.addEventListener("resize", reportWindowSize);
+ 
+     function reportWindowSize() {
+         width = window.innerWidth;
+         height = window.innerHeight;
+         console.log(width);
+     }
+ 
+     let vh = window.innerHeight * 0.01;
+     document.documentElement.style.setProperty("--vh", `${vh}px`);
+ 
+     window.addEventListener("resize", () => {
+ 
+         let vh = window.innerHeight * 0.01;
+         document.documentElement.style.setProperty("--vh", `${vh}px`);
+     });
 
-
-window.onload = function () {
      initAll()
-};
+});
+// window.onload = function () {
+
+//      initAll()
+// };
 
 
 function initAll() {
-     // initSmoothScroll();
+     initSmoothScroll();
      initPreloader();
      initHeroLoader();
 
@@ -80,7 +108,7 @@ function initAll() {
 
      initscrollFisrt();
      // create
-     let mm = gsap.matchMedia();
+
 
      // add a media query. When it matches, the associated function will run
      mm.add("(min-width: 1024px)", () => {
@@ -310,7 +338,6 @@ function initSmoothScroll() {
 
      // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
      ScrollTrigger.refresh();
-     ScrollTrigger.update()
 }
 
 function initscrollFisrt() {
@@ -916,13 +943,14 @@ function initHeroLoader() {
      );
      tl.fromTo(
           ".bg_student img", {
-               scale: 0.6,
+               // scale: 0.7,
                // duration: 0.8,
                opacity: 0,
           }, {
-               scale: 1,
+               // scale: 1,
+               ease: "power4.out",
                opacity: 1,
-               duration: 0.8,
+               duration: 1,
           }
      );
 
