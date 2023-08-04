@@ -820,6 +820,10 @@ video {
   right: 10%;
 }
 
+.-right-\[8\%\] {
+  right: -8%;
+}
+
 .-z-20 {
   z-index: -20;
 }
@@ -2641,6 +2645,10 @@ video {
 
   .lg\:-left-\[10\%\] {
     left: -10%;
+  }
+
+  .lg\:right-\[10\%\] {
+    right: 10%;
   }
 
   .lg\:float-left {
