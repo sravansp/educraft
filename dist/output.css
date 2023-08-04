@@ -2413,6 +2413,10 @@ video {
     height: 100vh;
   }
 
+  .md\:h-\[336px\] {
+    height: 336px;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -2726,6 +2730,10 @@ video {
 
   .lg\:h-screen {
     height: 100vh;
+  }
+
+  .lg\:h-\[336px\] {
+    height: 336px;
   }
 
   .lg\:min-h-screen {
