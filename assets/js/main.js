@@ -13,6 +13,22 @@ gsap.config({
      },
 
 });
+const locoScroll = new LocomotiveScroll({
+     el: document.querySelector(".smooth-scroll"),
+     smooth: true,
+     // mobile: {
+     //      breakpoint: 0,
+     //      smooth: false,
+     //      // inertia: 0.8,
+     //      // getDirection: true,
+     // },
+     // tablet: {
+     //      breakpoint: 0,
+     //      smooth: true,
+     //      // inertia: 0.8,
+     //      // getDirection: true,
+     // },
+});
 document.addEventListener("keydown", function (e) {
      if (e.ctrlKey &&
           (e.keyCode == "61" ||
@@ -49,7 +65,7 @@ let mm = gsap.matchMedia();
 
      window.addEventListener('resize', function (event) {
           ScrollTrigger.refresh();
-          // initSmoothScroll();
+          locoScroll.update();
           console.log("resize");
      }, true);
 //      // addEventListener("resize", initSmoothScroll);
@@ -63,9 +79,9 @@ $(window).on('load', function () {
      });
 });
 $(window).on('load', function () {
-     setTimeout(function () { // allowing 3 secs to fade out loader
+   
           $('.page-loader').fadeOut('slow');
-     });
+   
 });
 window.addEventListener("DOMContentLoaded", (event) => {
      let width = window.innerWidth;
@@ -543,12 +559,15 @@ function initPreloader() {
                ease: "Power3.easeOut",
           })
           .from(".preloader .text-container svg", {
-               duration: 2,
-               delay: 1,
+               // duration: 2,
+               // delay: 1,
                // y: 70,
                // skewY: 10,
                // stagger: 0.4,
                ease: "Power3.easeOut",
+          })
+          .to(".preloader .text-container svg", {
+               display: "none",
           })
           .to(".preloader", {
                duration: 1,
@@ -937,7 +956,7 @@ function initHeroLoader() {
                opacity: 1,
                // immediateRender: true,
                duration: 0.7,
-               delay: 3.6,
+               delay: 1.5,
                ease: "power4.out",
           }
      );

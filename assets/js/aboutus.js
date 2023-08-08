@@ -12,7 +12,22 @@ gsap.config({
         rotation: "rad",
     },
 });
-
+const locoScroll = new LocomotiveScroll({
+    el: document.querySelector(".smooth-scroll"),
+    smooth: true,
+    // mobile: {
+    //     // breakpoint: 0,
+    //     smooth: false,
+    //     // inertia: 0.8,
+    //     // getDirection: true,
+    // },
+    // tablet: {
+    //     // breakpoint: 0,
+    //     smooth: false,
+    //     // inertia: 0.8,
+    //     // getDirection: true,
+    // },
+});
 
 // to prevent page zoom 
 
@@ -76,6 +91,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty("--vh", `${vh}px`);
+        ScrollTrigger.refresh();
+        locoScroll.update();
     });
     
     
@@ -200,22 +217,7 @@ function initNavbarFixedTop() {
 }
 
 function initSmoothScroll() {
-    const locoScroll = new LocomotiveScroll({
-        el: document.querySelector(".smooth-scroll"),
-        smooth: true,
-        // mobile: {
-        //     // breakpoint: 0,
-        //     smooth: false,
-        //     // inertia: 0.8,
-        //     // getDirection: true,
-        // },
-        // tablet: {
-        //     // breakpoint: 0,
-        //     smooth: false,
-        //     // inertia: 0.8,
-        //     // getDirection: true,
-        // },
-    });
+    
     // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
     locoScroll.on("scroll", ScrollTrigger.update);
    
