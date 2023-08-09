@@ -1614,6 +1614,10 @@ video {
   background-image: url(../assets/images/bg-section_3.webp);
 }
 
+.bg-\[url\(\.\.\/assets\/images\/scroller-bg\.webp\)\] {
+  background-image: url(../assets/images/scroller-bg.webp);
+}
+
 .bg-cover {
   background-size: cover;
 }
