@@ -64,8 +64,9 @@ let mm = gsap.matchMedia();
 // mm.add("(min-width: 1024px)", () => {
 
      window.addEventListener('resize', function (event) {
-          ScrollTrigger.refresh();
           locoScroll.update();
+          ScrollTrigger.refresh();
+          initParallaxImage();
           console.log("resize");
      }, true);
 //      // addEventListener("resize", initSmoothScroll);
@@ -77,12 +78,9 @@ $(window).on('load', function () {
      setTimeout(function () { // allowing 3 secs to fade out loader
           $('.page-loaderhome').fadeOut('slow');
      });
+     $('.page-loader').fadeOut('slow');
 });
-$(window).on('load', function () {
-   
-          $('.page-loader').fadeOut('slow');
-   
-});
+
 window.addEventListener("DOMContentLoaded", (event) => {
      let width = window.innerWidth;
      let height = window.innerHeight;
@@ -197,9 +195,9 @@ function initParallaxImage() {
                          trigger: section,
                          start: () => (i ? "top bottom" : "top top"),
                          end: "bottom top",
-                         scroller: ".smooth-scroll",
+                         // scroller: ".smooth-scroll",
                          scrub: true,
-                         invalidateOnRefresh: true, // to make it responsive
+                         // invalidateOnRefresh: true, // to make it responsive
                     },
                }
           );
