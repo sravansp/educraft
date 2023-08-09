@@ -64,8 +64,8 @@ let mm = gsap.matchMedia();
 // mm.add("(min-width: 1024px)", () => {
 
      window.addEventListener('resize', function (event) {
-          ScrollTrigger.refresh();
           locoScroll.update();
+          ScrollTrigger.refresh();
           console.log("resize");
      }, true);
 //      // addEventListener("resize", initSmoothScroll);
