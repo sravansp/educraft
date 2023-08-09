@@ -970,19 +970,11 @@ function initHeroLoader() {
                ease: "power4.out",
                opacity: 1,
                duration: 1,
+               // delay: -0.5,
           }
      );
 
-     tl.fromTo(".other_particles img", {
-          opacity: 0,
-          rotate: -80,
-     }, {
-          opacity: 1,
-          rotate: 0,
-          // immediateRender: true,
-          duration: 1.5,
-          delay: -0.5,
-     });
+  
 
      childSplit.lines.forEach((line) => {
           tl.from(line, {
@@ -1002,7 +994,17 @@ function initHeroLoader() {
                delay: -1.2,
           });
      });
-     tl.fromTo(".hero-btn a", {
+     tl.fromTo(".other_particles img", {
+          opacity: 0,
+          rotate: -80,
+     }, {
+          opacity: 1,
+          rotate: 0,
+          // immediateRender: true,
+          duration: 1.5,
+          delay: -1,
+     });
+     gsap.fromTo(".hero-btn a", {
           opacity: 0,
           // y: -50,
      }, {
@@ -1011,15 +1013,15 @@ function initHeroLoader() {
           // ease: "power3.out",
           // stagger: 0.2,
           duration: 0.8,
-          delay: -0.7,
+          delay: 2.5,
      });
-     tl.fromTo(".Associated", {
+     gsap.fromTo(".Associated", {
           opacity: 0,
      }, {
 
           opacity: 1,
           // ease: "power3.out",
           duration: 0.8,
-          delay: -0.6,
+          delay: 2.5,
      });
 }

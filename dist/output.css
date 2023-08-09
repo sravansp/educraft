@@ -2066,6 +2066,10 @@ video {
   opacity: 0.5;
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
 .mix-blend-exclusion {
   mix-blend-mode: exclusion;
 }
