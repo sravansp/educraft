@@ -146,20 +146,21 @@ function initNavbarResponsive() {
         paused: true,
     });
 
-    t1.to(".menu-mobile", 0.9, {
+    t1.to(".menu-mobile", {
         top: "0%",
         ease: Expo.easeInOut,
+        duration:0.9
         // delay: -0.2,
     });
-    t1.staggerFrom(
-        ".menu-mobile .anime-menu",
-        0.75, {
+    t1.from(
+        ".menu-mobile .anime-menu", {
             x: -30,
             opacity: 0,
             ease: Expo.easeOut,
             delay: -0.5,
-        },
-        0.1
+            stagger:0.1,
+            duration:0.75
+        }
     );
     let isOpen = false;
     t1.reverse();

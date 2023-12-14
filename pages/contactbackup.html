@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Blog Post | Educraft | Empowering Education with Coding, Robotics, and Competitive Exam Success.</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico" />
+    <meta name="description" content="Unlock your potential with EduCraft! We offer cutting-edge programs in coding, robotics, and specialized coaching for competitive exam success. Prepare for the future and achieve your academic goals with our expert faculty and comprehensive study materials!" />
+    <!-- TAILWIND CSS  -->
+    <link href="../dist/output.css" rel="stylesheet" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="../assets/pluggins/locomotive/locomotive-scroll.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="../assets/pluggins/plyr/dist/plyr.css" /> -->
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../assets/pluggins/owlcarousel/dist/assets/owl.carousel.min.css" />
+
+    <!-- STYLE & CUSTOM CSS  -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <!-- REMIX ICON  -->
+    <link rel="stylesheet" href="../assets/pluggins/remixicon/remixicon.css" />
+</head>
+
+<body class="body font-[Poppins] text-sm box-border">
+    <header>
+        <nav id="navbar" class="fixed top-0 z-50 hidden w-full h-24 bg-opacity-50 navbar lg:block">
+            <div
+                class="navbar_wrapper max-w-screen-xl mx-auto h-24 lg:flex items-center justify-between gap-[20px] pl-5 pr-5 sm:pl-10 sm:pr-10 lg:px-10">
+                <div class="flex items-center justify-between gap-32 max-w-screen-2xl">
+                    <div class="logo_animation">
+                        <div class="relative flex items-center justify-center gap-2 header_logo">
+                            <a href="./index.html">
+                                <img class="w-[100px]" src="../assets/images/brand/logo-orange.svg" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="items-center hidden gap-8 nav_items sm:flex text-md target">
+                        <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+                            href="./courses.html">Courses</a>
+                        <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+                            href="./programs.html">Programs</a>
+                        <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+                            href="./aboutus.html">About Us</a>
+                        <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+                            href="./blog.html">Blog</a>
+                        <a class="grid text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+                            href="./contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between gap-8">
+                    <a class="flex gap-2 text-white transition-all duration-200 nav__links place-items-center hover:text-primary"
+                        href="https://educraftbeta.benchmark.school/site/login"><span>Login</span> <i
+                            class="ri-login-circle-line"></i></a>
+                    <a class="p-2 px-4 text-sm text-black transition duration-300 bg-white rounded-full hover:text-white button"
+                        data-magnetic href="https://educraftbeta.benchmark.school/site/login">
+                        <span class="text-btn">Try it free</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="lg:hidden">
+            <div
+                class="flex justify-between items-center h-[56px] px-5 md:px-10 py-10 bg-transparent fixed z-50 w-full">
+                <div class="pl-2 logo_animation logo_mobile">
+                    <div class="relative z-40 flex items-center justify-center gap-2 header_logo">
+                        <a href="./index.html">
+                            <img class="w-[100px]" src="../assets/images/brand/logo-orange.svg" alt="" /></a>
+                    </div>
+                </div>
+                <button class="navbar-toggle" id="toggle" type="button">
+                    <svg viewBox="0 0 100 100" width="50">
+                        <path class="line top"
+                            d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+                        <path class="line middle" d="m 30,50 h 40" />
+                        <path class="line bottom"
+                            d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="menu-mobile fixed -top-[120%] h-screen w-full z-40 bg-white">
+                <div class="data flex justify-start items-center pl-[20%] h-full">
+                    <ul>
+                        <div class="text-base text-black m-pb-8 title-menu text-opacity-40 anime-menu">
+                            Menu
+                        </div>
+
+                        <li class="text-black text-4xl m-[0.5em_0] font-medium anime-menu">
+                            <a data-text="1" href="./index.html">Home</a>
+                        </li>
+                        <li class="text-black text-4xl m-[0.5em_0] font-medium anime-menu">
+                            <a data-text="2" href="./courses.html">Courses</a>
+                        </li>
+                        <li class="text-black text-4xl m-[0.5em_0] font-medium anime-menu">
+                            <a data-text="3" href="./programs.html">Programs</a>
+                        </li>
+                        <li class="text-black text-4xl m-[0.5em_0] font-medium anime-menu">
+                            <a data-text="4" href="./aboutus.html">About Us</a>
+                        </li>
+                        <li class="text-black text-4xl m-[0.5em_0] font-medium anime-menu">
+                            <a data-text="5" href="./blog.html">Blog</a>
+                        </li>
+                        <li class="text-black text-4xl m-[0.5em_0] font-medium anime-menu">
+                            <a data-text="6" href="./contact.html">Contact</a>
+                        </li>
+
+                        <div class="flex flex-col gap-2 pt-8 text-base text-black footer-menu">
+                            <div class="text-base text-black text-opacity-40 anime-menu">
+                                Get in Touch
+                            </div>
+                            <div class="anime-menu">info@educraft.io</div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mx-auto scroll_smoother smooth-scroll">
+        <main>
+            <div class="content">
+                <div class="relative items-center w-full overflow-hidden hero_bg">
+                    <div class="relative h-full max-w-screen-xl pb-12 mx-auto lg:px-10 pt-28">
+                        <div class="flex justify-center w-full lg:flex-col lg:justify-start">
+                        <h1 class="text-4xl text-center text-white md:text-5xl lg:text-6xl hh lg:text-start">
+                            Contact Us
+                        </h1>
+                        <img class="hidden lg:block scale-up w-[189px]"
+                            src="../assets/images/2 lines.png" alt="" />
+                            </div>
+                    </div>
+                </div>
+
+                <section>
+                    <div class="relative h-full max-w-screen-xl px-5 py-20 mx-auto md:px-10 article_section">
+                        <div class="flex items-center justify-center gap-28 lg:justify-between">
+                            <div class="lg:w-3/5">
+                                <!-- <p class="flex justify-center font-bold ap text lg:flex-none lg:justify-start">Contact
+                                    us</p> -->
+                                <h1 class="hh font-semibold text-[#323232] mt-5 text-center lg:text-start text-5xl">
+                                    Let's Connect
+                                </h1>
+                                <p class="text-center mt-7 lg:text-base lg:text-start ap">
+                                    Looking for help? Fill out the form below.
+                                    <br class="lg:hidden md:hidden" />
+                                    Lorem <br class="hidden md:hidden lg:block" />solet det.
+                                </p>
+                                <div>
+                                    <div class="flex flex-col gap-10 mt-6">
+                                        <form class="w-full bg-white rounded">
+                                            <div class="flex flex-col gap-5 text-black">
+                                                <div class="animate-grids">
+                                                    <label class="block mb-2 text-base font-bold" for="name">
+                                                        Name
+                                                    </label>
+                                                    <input
+                                                        class="w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
+                                                        id="Name" type="text" name="Name" placeholder="Enter your name" />
+                                                </div>
+                                                <div class="animate-grids">
+                                                    <label class="block mb-2 text-base font-bold" for="Email">
+                                                        Email
+                                                    </label>
+                                                    <input
+                                                        class="w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
+                                                        id="Email" type="text" name="Email" placeholder="Enter your email" />
+                                                </div>
+                                                <div class="animate-grids">
+                                                    <label class="block mb-2 text-base font-bold" for="Email">
+                                                        Phone number
+                                                    </label>
+                                                    <input
+                                                        class="w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
+                                                        id="phone" type="text" name="Phone" placeholder="Enter your phone number" />
+                                                </div>
+                                                <div class="animate-grids">
+                                                    <label class="block mb-2 text-base font-bold" for="Email">
+                                                        Message
+                                                    </label>
+                                                    <textarea id="message" name="Message" rows="4"
+                                                        class="block p-2.5 w-full text-sm rounded-md border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black"
+                                                        placeholder="How can we help you?"></textarea>
+                                                </div>
+                                                <button type="submit" class="w-full lg:w-1/3 btn_md primary_bg animate-grids">
+                                                    Send Message
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- section----------------------- -->
+                            <div class="items-center hidden lg:flex lg:w-2/5">
+                                <div class="w-full h-full overflow-hidden lg:relative rounded-3xl bg_video img_appear">
+
+                                    <!-- <video class="object-cover" autoplay muted loop>
+                                            <source src="../assets/images/contact/paper.mp4" type="video/mp4" />
+                                            Your browser does not support the video tag.
+                                        </video> -->
+                                    <img class="object-cover object-center h-full"
+                                        src="../assets/images/contact/discussion.webp" alt="">
+                                    <!-- </div -->
+                                    <div
+                                        class="w-[calc(100%_-_5.5%)] location bg-white bg-opacity-50 lg:absolute h-auto bottom-[1.5%] rounded-3xl lg:flex justify-between p-4 left-1/2 -translate-x-1/2">
+                                        <div class="lg:flex lg:flex-col">
+                                            <div class="flex items-center">
+                                                <img src="../assets/images/contact/Placeholder.png" alt="" />
+                                                <span class="pl-2 text-sm">7th Avenue, 1661 Bayview <br />
+                                                    Sharjah, UAE</span>
+                                            </div>
+
+                                            <div class="flex items-center pt-3">
+                                                <img src="../assets/images/contact/Viber.png" alt="" />
+                                                <span class="pl-4 text-sm">+971 123 456 789</span>
+                                            </div>
+                                            <div class="flex items-center pt-3">
+                                                <img src="../assets/images/contact/Email.png" alt="" />
+                                                <span class="pl-4 text-sm">info@educraft.io</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-center">
+                                            <img class="object-cover object-center"
+                                                src="../assets/images/contact/map.png" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex justify-center pt-5 location lg:hidden md:flex rounded-3xl md:items-centern md:mx-auto">
+                            <div class="flex flex-col p-1 m-3">
+                                <div class="flex items-center">
+                                    <img src="../assets/images/contact/Placeholder.png" alt="" />
+                                    <span class="pl-2 text-sm">7th Avenue,1661 Bayview <br />
+                                        Sharjah, UAE</span>
+                                </div>
+
+                                <div class="flex items-center pt-3">
+                                    <img src="../assets/images/contact/Viber.png" alt="" />
+                                    <span class="pl-4 text-sm">+971 123 456 789</span>
+                                </div>
+                                <div class="flex items-center pt-3">
+                                    <img src="../assets/images/contact/Email.png" alt="" />
+                                    <span class="pl-4 text-sm">info@educraft.io</span>
+                                </div>
+                            </div>
+                            <div class="top-0 flex items-center justify-center">
+                                <img class="object-cover object-center" src="../assets/images/contact/map.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <div class="footer">
+                <div class="flex flex-col h-full max-w-screen-xl pt-12 m-auto text-white md:px-5">
+                    <!--  -->
+                    <div class="footer_middle lg:h-[44%] h-auto py-10">
+                        <div
+                            class="grid gap-6 grid-cols-[repeat(auto-fit,_minmax(210px,_1fr))] text-base font-normal p-6 sm:px-20 lg:px-10">
+                            <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                                <img class="mx-auto w-36 md:mx-0" src="../assets/images/brand/logo-orange.svg" alt="" />
+
+                                <p>Nurturing Minds</p>                <p>Igniting Innovation</p>
+                                <div class="flex items-center md:w-[80%] gap-4 mt-4 px-3 py-3 bg-white rounded-lg">
+                                    <span class="text-[#365C83] opacity-50 text-xs">Powered By</span>
+
+                                    <img src="../assets/images/Techno-alliance-logo.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                                <h1 class="text-3xl opacity-50">Services</h1>
+                                <a href="./courses.html">Courses</a>
+                                <a href="./aboutus.html">About</a>
+                                <a href="./blog.html">Blog</a>
+                                <a href="./contact.html">Contact</a>
+                            </div>
+                            <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                                <h1 class="text-3xl opacity-50">Links</h1>
+                                <a href="#">Privacy Policy</a>
+                                <a href="#">Terms & Conditions</a>
+                                <a href="#">Support</a>
+                                <a href="#">Careers</a>
+                            </div>
+                            <div class="flex flex-col gap-3 mx-auto text-center child_mfooter sm:text-start md:mx-0">
+                                <h1 class="text-3xl opacity-50">Contact</h1>
+                                <div class="flex items-center gap-4">
+                                    <i class="text-2xl ri-mail-line"></i>
+                                    <a href="mailto:info@educraft.io">info@educraft.io</a>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <i class="text-2xl ri-phone-line"></i>
+                                    <span>+971 123 456 789</span>
+                                </div>
+                                <div class="flex gap-4 pt-5 icons-sm">
+                                    <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                                        <i class="ri-mail-fill text-[#523B53]"></i>
+                                    </a>
+                                    <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                                        <i class="ri-linkedin-fill text-[#523B53]"></i>
+                                    </a>
+                                    <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                                        <i class="ri-twitter-fill text-[#523B53]"></i>
+                                    </a>
+                                    <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                                        <i class="ri-facebook-fill text-[#523B53]"></i>
+                                    </a>
+                                    <a href="#" class="flex items-center justify-center bg-white rounded-full w-7 h-7">
+                                        <i class="ri-instagram-line text-[#523B53]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col items-center w-full px-10 footer_bottom h-14 md:px-0">
+                        <div class="divider h-[1px] w-full opacity-10 bg-white"></div>
+                        <div
+                            class="lg:w-[30%] md:w-[45%] w-full flex justify-between m-auto opacity-30 text-base font-normal">
+                            <p>© 2023 educraft.ae</p>
+                            <p>All rights reserved</p>
+                        </div>
+                        <div class="absolute bottom-0 w-[90%] h-[9px] primary_bg rounded-t-2xl"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- LOADER -->
+ 
+    <div class="page-loader">
+         <!-- <div class="spinner"></div> -->
+    <div class="loader"></div>
+        
+    </div>
+    <div class="h-screen lightbox">
+        <div class="videopopup absolute left-1/2 top-1/2 w-[90%] lg:w-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div class="m-auto overflow-hidden rounded-2xl">
+                <!-- <div class="plyr__video-embed" id="player">
+                         <iframe src="" allowfullscreen allowtransparency allow="autoplay"></iframe>
+                    </div> -->
+                <video id="player" playsinline controls data-poster="">
+                    <source src="../assets/videos/hero-video.mp4" type="video/mp4" />
+                    <!-- <source src="/path/to/video.webm" type="video/webm" />
+
+                    Captions are optional -->
+                    <!-- <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default /> -->
+                </video>
+            </div>
+        </div>
+    </div>
+    <div class="cursor" id="cursor"></div>
+    <script src="../assets/pluggins/jquery/jquery-3.6.3.min.js"></script>
+
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+ 
+    <script src="../assets/pluggins/splittext/SplitText.min.js"></script>
+    <script src="../assets/pluggins/locomotive/locomotive-scroll.min.js"></script>
+    <script src="../assets/pluggins/owlcarousel/dist/owl.carousel.min.js"></script>
+    <script src="../assets/js/aboutus.js"></script>
+</body>
+
+</html>
