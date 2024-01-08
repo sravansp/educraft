@@ -15,7 +15,7 @@ gsap.config({
 });
 const locoScroll = new LocomotiveScroll({
      el: document.querySelector(".smooth-scroll"),
-     smooth: true,
+     // smooth: true,
      // mobile: {
      //      breakpoint: 0,
      //      smooth: false,
@@ -104,6 +104,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
      });
 
      initAll()
+
+
+    
 });
 // window.onload = function () {
 
@@ -355,6 +358,31 @@ function initSmoothScroll() {
 
      // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
      ScrollTrigger.refresh();
+
+   	/* Locomotive Anchor Scroll */
+
+        const anchorLinks = document.querySelectorAll(
+          'a[href^=\\#]:not([href$=\\#])'
+        );
+      
+        anchorLinks.forEach((anchorLink) => {
+          let hashval = anchorLink.getAttribute('href');
+          let target = document.querySelector(hashval);
+      
+          anchorLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+      
+            anchorLinks.forEach((anchorLink) => {
+              anchorLink.classList.remove('active');
+            });
+      
+            e.target.classList.add('active');
+      
+            locoScroll.scrollTo(target);
+           
+          });
+        });
 }
 
 function initscrollFisrt() {
@@ -1026,3 +1054,27 @@ function initHeroLoader() {
           delay: 2.5,
      });
 }
+
+// let links = gsap.utils.toArray(".link-portal");
+// links.forEach(a => {
+//   let element = document.querySelector(a.getAttribute("href")),
+//       linkST = ScrollTrigger.create({
+//             trigger: element,
+//             start: "top top"
+//           });
+//   ScrollTrigger.create({
+//     trigger: element,
+//     start: "top center",
+//     end: "bottom center",
+//     onToggle: self => self.isActive && setActive(a)
+//   });
+//   a.addEventListener("click", e => {
+//     e.preventDefault();
+//     gsap.to(window, {duration: 1, scrollTo: linkST.start, overwrite: "auto"});
+//   });
+// });
+
+// function setActive(link) {
+//   links.forEach(el => el.classList.remove("active"));
+//   link.classList.add("active");
+// }

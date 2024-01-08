@@ -14,7 +14,7 @@ gsap.config({
 });
 const locoScroll = new LocomotiveScroll({
     el: document.querySelector(".smooth-scroll"),
-    smooth: true,
+    // smooth: true,
     // mobile: {
     //     // breakpoint: 0,
     //     smooth: false,
@@ -626,56 +626,40 @@ function initonscrolltrigger() {
         });
     }
     if (document.querySelectorAll(".img_appear")) {
-        // Assuming you have an array of elements with class "element"
-        const img_appear = document.querySelectorAll(".img_appear");
+        const imgAppearElements = document.querySelectorAll(".img_appear");
 
-        // Create a timeline for each element
-        img_appear.forEach((element) => {
-            const timeline = gsap.timeline({
-                paused: true,
+        imgAppearElements.forEach((element) => {
+            gsap.from(element, {
+                scale: 0.8,
+                opacity: 0,
                 scrollTrigger: {
                     trigger: element,
                     toggleActions: "play none none reset",
-                    start: "top 100%",
-                    end: "top 0%",
+                    start: "top 80%",
+                    end: "bottom 20%",
+                },
+                onComplete: () => {
+                    const countElements = element.querySelectorAll(".data-count");
+        
+                    countElements.forEach((countElement) => {
+                        const endValue = parseInt(countElement.textContent, 10);
+        
+                        const countUp = new CountUp(countElement, 0, endValue, 0, {
+                            duration: 2, // Adjust the duration of the counting animation
+                        });
+        
+                        if (!countUp.error) {
+                            countUp.start();
+                        } else {
+                            console.error(countUp.error);
+                        }
+                    });
                 },
             });
-
-            // Add animations to the timeline
-            timeline.fromTo(
-                element, {
-                    scale: 0.8,
-                    // duration: 1,
-                    opacity: 0,
-                }, {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.5,
-                }
-            );
-
-            // const items = document.querySelectorAll(".data-count");
-
-            // timeline.from(items, {
-            //     textContent: 0,
-            //     duration: 4,
-            //     ease: "power1.in",
-            //     snap: {
-            //         textContent: 1
-            //     },
-            //     // stagger: {
-            //     // each: 1.0,
-            //     onUpdate: function () {
-            //         this.targets()[0].innerHTML = numberWithCommas(Math.ceil(this.targets()[0].textContent));
-            //     },
-            //     // }
-            // });
-
-
-            // function numberWithCommas(x) {
-            //     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            // }
         });
+        
+        
+
     }
     if (document.querySelectorAll(".img_appear2")) {
         // Assuming you have an array of elements with class "element"
