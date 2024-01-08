@@ -218,7 +218,22 @@ function initNavbarFixedTop() {
 }
 
 function initSmoothScroll() {
-    
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector(".smooth-scroll"),
+        smooth: true,
+        // mobile: {
+        //      breakpoint: 0,
+        //      smooth: false,
+        //      // inertia: 0.8,
+        //      // getDirection: true,
+        // },
+        // tablet: {
+        //      breakpoint: 0,
+        //      smooth: true,
+        //      // inertia: 0.8,
+        //      // getDirection: true,
+        // },
+   });
     // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
     locoScroll.on("scroll", ScrollTrigger.update);
    
