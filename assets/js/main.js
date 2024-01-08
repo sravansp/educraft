@@ -13,8 +13,8 @@ gsap.config({
      },
 
 });
-const locoScroll = new LocomotiveScroll({
-     el: document.querySelector(".smooth-scroll"),
+// const locoScroll = new LocomotiveScroll({
+//      el: document.querySelector(".smooth-scroll"),
      // smooth: true,
      // mobile: {
      //      breakpoint: 0,
@@ -28,7 +28,7 @@ const locoScroll = new LocomotiveScroll({
      //      // inertia: 0.8,
      //      // getDirection: true,
      // },
-});
+// });
 document.addEventListener("keydown", function (e) {
      if (e.ctrlKey &&
           (e.keyCode == "61" ||
