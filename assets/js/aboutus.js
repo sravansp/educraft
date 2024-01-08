@@ -12,22 +12,22 @@ gsap.config({
         rotation: "rad",
     },
 });
-// const locoScroll = new LocomotiveScroll({
-    // el: document.querySelector(".smooth-scroll"),
+const locoScroll = new LocomotiveScroll({
+    el: document.querySelector(".smooth-scroll"),
     // smooth: true,
     // mobile: {
-    //     // breakpoint: 0,
-    //     smooth: false,
-    //     // inertia: 0.8,
-    //     // getDirection: true,
+        // breakpoint: 0,
+        // smooth: false,
+        // inertia: 0.8,
+        // getDirection: true,
     // },
     // tablet: {
-    //     // breakpoint: 0,
-    //     smooth: false,
-    //     // inertia: 0.8,
-    //     // getDirection: true,
+        // breakpoint: 0,
+        // smooth: false,
+        // inertia: 0.8,
+        // getDirection: true,
     // },
-// });
+});
 
 // to prevent page zoom 
 
@@ -61,6 +61,11 @@ window.history.scrollRestoration = "manual";
 ScrollTrigger.clearScrollMemory("manual");
 
 const selectAll = (e) => document.querySelectorAll(e);
+window.addEventListener('resize', function (event) {
+    locoScroll.update();
+    ScrollTrigger.refresh();
+    console.log("resize");
+}, true);
 
 initSmoothScroll();
 // window.addEventListener("resize", initSmoothScroll);
