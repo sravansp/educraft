@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, user-scalable=no" />
   <title>
-    Blog Post | Educraft | Empowering Education with Coding, Robotics, and
+    Contact US | Educraft | Empowering Education with Coding, Robotics, and
     Competitive Exam Success.
   </title>
   <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico" />
@@ -150,46 +150,38 @@
                 </p>
                 <div>
                   <div class="flex flex-col gap-10 mt-6">
-                    <form class="w-full bg-white rounded" onsubmit="sendEmail(); reset(); return false;">
+                    <form id="myForm" class="w-full bg-white rounded" onsubmit="return validateForm() && sendEmail(); resetForm();">
                       <div class="flex flex-col gap-5 text-black">
-                        <div class="animate-grids">
-                          <label class="block mb-2 text-base font-bold" for="name">
-                            Name
-                          </label>
-                          <input
-                            class="w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
-                            id="Name" type="text" name="Name" placeholder="Enter your name" required />
-                        </div>
-                        <div class="animate-grids">
-                          <label class="block mb-2 text-base font-bold" for="Email">
-                            Email
-                          </label>
-                          <input
-                            class="w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
-                            id="Email" type="text" name="Email" placeholder="Enter your email" required />
-                        </div>
-                        <div class="animate-grids">
-                          <label class="block mb-2 text-base font-bold" for="Email">
-                            Phone number
-                          </label>
-                          <input
-                            class="w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
-                            id="phone" type="text" name="Phone" placeholder="Enter your phone number" required />
-                        </div>
-                        <div class="animate-grids">
-                          <label class="block mb-2 text-base font-bold" for="Email">
-                            Message
-                          </label>
-                          <textarea id="message" name="Message" rows="4"
-                            class="block p-2.5 w-full text-sm rounded-md border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black"
-                            placeholder="How can we help you?"></textarea>
-                        </div>
-                        <button type="submit" class="w-full lg:w-1/3 btn_md primary_bg animate-grids"
-                          onclick="openPopup()">
-                          Send Message
-                        </button>
+                          <div class="animate-grids">
+                              <label class="block mb-2 text-base font-bold" for="Name">Name<span class="text-primary">*</span></label>
+                              <input class="w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
+                                  id="Name" type="text" name="Name" placeholder="Enter your name" required />
+                              <div id="nameError" class="error-message"></div>
+                          </div>
+                          <div class="animate-grids">
+                              <label class="block mb-2 text-base font-bold" for="Email">Email<span class="text-primary">*</span></label>
+                              <input class="w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
+                                  id="Email" type="text" name="Email" placeholder="Enter your email" required />
+                              <div id="emailError" class="error-message"></div>
+                          </div>
+                          <div class="animate-grids">
+                              <label class="block mb-2 text-base font-bold" for="phone">Phone number<span class="text-primary">*</span></label>
+                              <input class="w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
+                                  id="phone" type="text" name="Phone" placeholder="Enter your phone number" required />
+                              <div id="phoneError" class="error-message"></div>
+                          </div>
+                          <div class="animate-grids">
+                              <label class="block mb-2 text-base font-bold" for="message">Message<span class="text-primary">*</span></label>
+                              <textarea id="message" name="Message" rows="4"
+                                  class="block p-2.5 w-full text-sm rounded-md border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black"
+                                  placeholder="How can we help you?" required></textarea>
+                              <div id="messageError" class="error-message"></div>
+                          </div>
+                          <button type="submit" class="w-full lg:w-1/3 btn_md primary_bg animate-grids">
+                              Send Message
+                          </button>
                       </div>
-                    </form>
+                  </form>
                   </div>
                 </div>
               </div>
@@ -335,13 +327,34 @@
   </div>
 
   <div id="popup" class="popup">
-   <div class="bg-white">
-    <i class="ri-checkbox-circle-fill primary_bg"></i>
-   </div>
+  <div class="relative flex flex-col gap-4">
+    <i class="ri-checkbox-circle-line text-primary"></i>
     <h2>Thank You!</h2>
     <p>Message Sent Successfully! One of our executive will get in touch with you soon.</p>
     <button type="button" onclick="closePopup()" class="w-full mt-5 btn_md primary_bg animate-grid">OK</button>
   </div>
+  </div>
+  <!-- <div id="authOverlay" class="fixed top-0 left-0 z-10 flex items-center justify-center w-full h-full px-2 py-3 overflow-y-auto origin-center scale-y-0 -translate-x-full opacity-0 bg-white/80 backdrop-blur-sm">
+    <div id="fourth" class="max-w-sm p-3 m-auto mb-0 border shadow-sm bg-white/0 sm:mb-auto border-white/0 rounded-2xl">
+        <div id="second" class="w-full p-4 scale-y-0 bg-white shadow-sm opacity-0 sm:p-8 rounded-xl">
+
+            
+            <div id="third" class="relative scale-y-0 opacity-0">
+
+                <h1 class="mb-4 text-3xl font-bold text-center text-cyan-400">
+                    Hello!
+                </h1>
+
+                <p class="mb-4 text-center text-neutral-500/80">I am a modal open and close animation made with GSAP and tailwindcss.</p>
+
+                <div class="text-center">
+                    <button onclick="closeAuthModal()" class="bg-neutral-100 text-neutral-400 font-semibold text-xl rounded-md border-b-[3px] px-3 py-1">Close</button>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+</div> -->
 
   <!-- LOADER -->
 
@@ -385,5 +398,6 @@
     })();
   </script>
   <script src="../assets/js/popup.js"></script>
-  </body >
-</html >
+</body>
+
+</html>

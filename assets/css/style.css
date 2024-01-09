@@ -1624,7 +1624,7 @@ input:-webkit-autofill:active {
      left: 50%;
      transform: translate(-50%, -50%) scale(0.1);
      text-align: center;
-     padding: 0 30px 30px;
+     padding: 30px;
      visibility: hidden;
      transition: transform 0.4s, top 0.4s;
      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -1643,9 +1643,9 @@ input:-webkit-autofill:active {
 }
  
  
-.ri-checkbox-circle-fill{
-     font-size: 100px;
-     margin-top: -50px;
-     border-radius: 50%; 
-     color: white;
+.popup i {
+     font-size: 50px;
+}
+.error-message {
+     color: rgb(255, 71, 71);
 }
