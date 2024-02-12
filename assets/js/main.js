@@ -15,7 +15,7 @@ gsap.config({
 });
 const locoScroll = new LocomotiveScroll({
      el: document.querySelector(".smooth-scroll"),
-     // smooth: true,
+     smooth: true,
      // mobile: {
      //      breakpoint: 0,
      //      smooth: false,
@@ -54,8 +54,8 @@ document.addEventListener(
 
 
 ScrollTrigger.clearScrollMemory("manual");
-
 window.history.scrollRestoration = "manual";
+
 
 
 const selectAll = (e) => document.querySelectorAll(e);
@@ -252,39 +252,39 @@ function initNavbarResponsive() {
 }
 
 function initNavbarFixedTop() {
-     var scrollUp = document.querySelector(".navbar");
+     // var scrollUp = document.querySelector(".navbar");
 
-     ScrollTrigger.create({
-          start: "top -50",
-          end: 99999,
-          scroller: ".smooth-scroll",
-          // markers: true,
-          toggleClass: {
-               className: "navbar--scrolled",
-               targets: ".navbar",
-          },
-     });
+     // ScrollTrigger.create({
+     //      start: "top -50",
+     //      end: 99999,
+     //      scroller: ".smooth-scroll",
+     //      // markers: true,
+     //      toggleClass: {
+     //           className: "navbar--scrolled",
+     //           targets: ".navbar",
+     //      },
+     // });
 
-     ScrollTrigger.create({
-          start: "top -300",
-          end: 99999,
-          scroller: ".smooth-scroll",
-          toggleClass: {
-               className: "navbar--up",
-               targets: ".navbar",
-          },
-          onUpdate: ({
-               direction
-          }) => {
-               if (direction == -1) {
-                    scrollUp.classList.remove("navbar--up");
-               } else {
-                    scrollUp.classList.add("navbar--up");
-               }
-          },
-     });
+     // ScrollTrigger.create({
+     //      start: "top -300",
+     //      end: 99999,
+     //      scroller: ".smooth-scroll",
+     //      toggleClass: {
+     //           className: "navbar--up",
+     //           targets: ".navbar",
+     //      },
+     //      onUpdate: ({
+     //           direction
+     //      }) => {
+     //           if (direction == -1) {
+     //                scrollUp.classList.remove("navbar--up");
+     //           } else {
+     //                scrollUp.classList.add("navbar--up");
+     //           }
+     //      },
+     // });
 
-     const elem = document.querySelectorAll(".navbar");
+     // const elem = document.querySelectorAll(".navbar");
 }
 
 /**
@@ -299,9 +299,9 @@ function initLazyLoad() {
 }
 
 function initSmoothScroll() {
-     const locoScroll = new LocomotiveScroll({
-          el: document.querySelector(".smooth-scroll"),
-          smooth: true,
+     // const locoScroll = new LocomotiveScroll({
+     //      el: document.querySelector(".smooth-scroll"),
+     //      smooth: true,
           // mobile: {
           //      breakpoint: 0,
           //      smooth: false,
@@ -314,7 +314,35 @@ function initSmoothScroll() {
           //      // inertia: 0.8,
           //      // getDirection: true,
           // },
-     });
+     // });
+     const navbar = document.querySelector(".navbar");
+    const navHeight = navbar.offsetHeight;
+    let lastScrollY = locoScroll.scroll.instance.scroll.y;
+    let scrollingUp = false;
+
+    locoScroll.on("scroll", function(scroll) {
+        const currentScrollY = scroll.scroll.y;
+
+        if (currentScrollY > lastScrollY && currentScrollY > navHeight) {
+            // Scrolling down
+            navbar.classList.add("navbar--scrolled");
+            navbar.classList.add("navbar--up");
+            scrollingUp = false;
+        } else if (currentScrollY <= navHeight) {
+            // At the top
+            navbar.classList.remove("navbar--scrolled");
+            navbar.classList.remove("navbar--up");
+            scrollingUp = false;
+        } else {
+            // Scrolling up
+            if (!scrollingUp) {
+                navbar.classList.remove("navbar--up");
+            }
+            scrollingUp = true;
+        }
+
+        lastScrollY = currentScrollY;
+    });
      // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
      locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -347,7 +375,7 @@ function initSmoothScroll() {
       * Remove Old Locomotive Scrollbar
       */
 
-     const scrollbar = selectAll(".c-scrollbar");
+     const scrollbar = document.querySelectorAll(".c-scrollbar");
 
      if (scrollbar.length > 1) {
           scrollbar[0].remove();
@@ -359,6 +387,11 @@ function initSmoothScroll() {
      // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
      ScrollTrigger.refresh();
 
+      // Refresh Locomotive Scroll on window resize
+    window.addEventListener("resize", () => {
+     locoScroll.update();
+     ScrollTrigger.refresh();
+ });
    	/* Locomotive Anchor Scroll */
 
         const anchorLinks = document.querySelectorAll(

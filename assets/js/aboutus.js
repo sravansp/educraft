@@ -14,7 +14,7 @@ gsap.config({
 });
 const locoScroll = new LocomotiveScroll({
     el: document.querySelector(".smooth-scroll"),
-    // smooth: true,
+    smooth: true,
     // mobile: {
         // breakpoint: 0,
         // smooth: false,
@@ -67,7 +67,7 @@ window.addEventListener('resize', function (event) {
     console.log("resize");
 }, true);
 
-initSmoothScroll();
+
 // window.addEventListener("resize", initSmoothScroll);
 
 $(window).on('load', function () {
@@ -96,22 +96,23 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty("--vh", `${vh}px`);
-        locoScroll.update();
-        ScrollTrigger.refresh();
+        // locoScroll.update();
+        // ScrollTrigger.refresh();
     });
     
     
+    window.onload = setTimeout(function () {
+        initSmoothScroll();
+        aboutAnimation();
+        initAccordian();
+        initNavbarFixedTop();
+        initNavbarResponsive();
+        initbutton();
+        initScrolltriggerNav();
+        initsubscribe();
+    }, 1000);
 })
 
-window.onload = setTimeout(function () {
-    aboutAnimation();
-    initAccordian();
-    initNavbarFixedTop();
-    initNavbarResponsive();
-    initbutton();
-    initScrolltriggerNav();
-    initsubscribe();
-}, 1000);
 /**
  * Scrolltrigger Scroll Check
  */
@@ -187,68 +188,85 @@ function initNavbarResponsive() {
 }
 
 function initNavbarFixedTop() {
-    var scrollUp = document.querySelector(".navbar");
+    // var scrollUp = document.querySelector(".navbar");
 
-    ScrollTrigger.create({
-        start: "top -50",
-        end: 99999,
-        scroller: ".smooth-scroll",
-        // markers: true,
-        toggleClass: {
-            className: "navbar--scrolled",
-            targets: ".navbar",
-        },
-    });
+    // ScrollTrigger.create({
+    //     start: "top -50",
+    //     end: 99999,
+    //     scroller: ".smooth-scroll",
+    //     // markers: true,
+    //     toggleClass: {
+    //         className: "navbar--scrolled",
+    //         targets: ".navbar",
+    //     },
+    // });
 
-    ScrollTrigger.create({
-        start: "top -300",
-        end: 99999,
-        scroller: ".smooth-scroll",
-        toggleClass: {
-            className: "navbar--up",
-            targets: ".navbar",
-        },
-        onUpdate: ({
-            direction
-        }) => {
-            if (direction == -1) {
-                scrollUp.classList.remove("navbar--up");
-            } else {
-                scrollUp.classList.add("navbar--up");
-            }
-        },
-    });
+    // ScrollTrigger.create({
+    //     start: "top -300",
+    //     end: 99999,
+    //     scroller: ".smooth-scroll",
+    //     toggleClass: {
+    //         className: "navbar--up",
+    //         targets: ".navbar",
+    //     },
+    //     onUpdate: ({
+    //         direction
+    //     }) => {
+    //         if (direction == -1) {
+    //             scrollUp.classList.remove("navbar--up");
+    //         } else {
+    //             scrollUp.classList.add("navbar--up");
+    //         }
+    //     },
+    // });
 
-    const elem = document.querySelectorAll(".navbar");
+    // const elem = document.querySelectorAll(".navbar");
 }
 
 function initSmoothScroll() {
-    const locoScroll = new LocomotiveScroll({
-        el: document.querySelector(".smooth-scroll"),
-        smooth: true,
-        // mobile: {
-        //      breakpoint: 0,
-        //      smooth: false,
-        //      // inertia: 0.8,
-        //      // getDirection: true,
-        // },
-        // tablet: {
-        //      breakpoint: 0,
-        //      smooth: true,
-        //      // inertia: 0.8,
-        //      // getDirection: true,
-        // },
-   });
-    // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+    // const locoScroll = new LocomotiveScroll({
+    //     el: document.querySelector(".smooth-scroll"),
+    //     smooth: true,
+    // });
+
+    const navbar = document.querySelector(".navbar");
+    const navHeight = navbar.offsetHeight;
+    let lastScrollY = locoScroll.scroll.instance.scroll.y;
+    let scrollingUp = false;
+
+    locoScroll.on("scroll", function(scroll) {
+        const currentScrollY = scroll.scroll.y;
+
+        if (currentScrollY > lastScrollY && currentScrollY > navHeight) {
+            // Scrolling down
+            navbar.classList.add("navbar--scrolled");
+            navbar.classList.add("navbar--up");
+            scrollingUp = false;
+        } else if (currentScrollY <= navHeight) {
+            // At the top
+            navbar.classList.remove("navbar--scrolled");
+            navbar.classList.remove("navbar--up");
+            scrollingUp = false;
+        } else {
+            // Scrolling up
+            if (!scrollingUp) {
+                navbar.classList.remove("navbar--up");
+            }
+            scrollingUp = true;
+        }
+
+        lastScrollY = currentScrollY;
+    });
+
+
     locoScroll.on("scroll", ScrollTrigger.update);
-   
-    // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+
     ScrollTrigger.scrollerProxy(".smooth-scroll", {
         scrollTop(value) {
             return arguments.length ?
                 locoScroll.scrollTo(value, 0, 0) :
                 locoScroll.scroll.instance.scroll.y;
-        }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+        },
         getBoundingClientRect() {
             return {
                 top: 0,
@@ -257,31 +275,54 @@ function initSmoothScroll() {
                 height: window.innerHeight,
             };
         },
-        // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
         pinType: document.querySelector(".smooth-scroll").style.transform ?
             "transform" : "fixed",
     });
-    // new ResizeObserver(() => scroll.update()).observe(document.querySelector(".smooth-scroll"))
+
     ScrollTrigger.defaults({
         scroller: ".smooth-scroll",
     });
 
-    /**
-     * Remove Old Locomotive Scrollbar
-     */
-
-    const scrollbar = selectAll(".c-scrollbar");
-
+    const scrollbar = document.querySelectorAll(".c-scrollbar");
     if (scrollbar.length > 1) {
         scrollbar[0].remove();
     }
 
-    // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-    // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
+
+     // Refresh Locomotive Scroll on window resize
+     window.addEventListener("resize", () => {
+        locoScroll.update();
+        ScrollTrigger.refresh();
+    });
+
+    	/* Locomotive Anchor Scroll */
+
+        const anchorLinks = document.querySelectorAll(
+            'a[href^=\\#]:not([href$=\\#])'
+          );
+        
+          anchorLinks.forEach((anchorLink) => {
+            let hashval = anchorLink.getAttribute('href');
+            let target = document.querySelector(hashval);
+        
+            anchorLink.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+        
+              anchorLinks.forEach((anchorLink) => {
+                anchorLink.classList.remove('active');
+              });
+        
+              e.target.classList.add('active');
+        
+              locoScroll.scrollTo(target);
+             
+            });
+          });
 }
+
 
 function aboutAnimation() {
     let reveal = document.querySelectorAll(".section_wrapper_1");
@@ -290,35 +331,35 @@ function aboutAnimation() {
         let headings = el.querySelectorAll(".animate-element1");
         let p = el.querySelectorAll("p");
 
-        let tl = gsap
-            .timeline()
-            .from(headings, {
-                y: 50,
-                // stagger: 0.05,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out",
-                // delay: 1,
-            })
-            .from(".about_h_underline", {
-                y: 20,
-                // stagger: 0.05,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out",
-                delay: -0.5,
-            })
-            .from(
-                ".main_about_img", {
-                    y: 100,
-                    // stagger: 0.05,
-                    opacity: 0,
-                    duration: 1.5,
-                    // delay:-0.5,
-                    ease: "power3.out",
-                },
-                "-=0.6"
-            );
+        // let tl = gsap
+        //     .timeline()
+        //     .from(headings, {
+        //         y: 50,
+        //         // stagger: 0.05,
+        //         opacity: 0,
+        //         duration: 1,
+        //         ease: "power3.out",
+        //         // delay: 1,
+        //     })
+        //     .from(".about_h_underline", {
+        //         y: 20,
+        //         // stagger: 0.05,
+        //         opacity: 0,
+        //         duration: 1,
+        //         ease: "power3.out",
+        //         delay: -0.5,
+        //     })
+        //     .from(
+        //         ".main_about_img", {
+        //             y: 100,
+        //             // stagger: 0.05,
+        //             opacity: 0,
+        //             duration: 1.5,
+        //             // delay:-0.5,
+        //             ease: "power3.out",
+        //         },
+        //         "-=0.6"
+        //     );
 
         // ScrollTrigger.create({
         //      trigger: el,
