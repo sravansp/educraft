@@ -61,12 +61,15 @@ window.history.scrollRestoration = "manual";
 ScrollTrigger.clearScrollMemory("manual");
 
 const selectAll = (e) => document.querySelectorAll(e);
-window.addEventListener('resize', function (event) {
-    locoScroll.update();
-    ScrollTrigger.refresh();
-    console.log("resize");
-}, true);
+// window.addEventListener('resize', function (event) {
+//     locoScroll.update();
+//     ScrollTrigger.refresh();
+//     console.log("resize");
+// }, true);
 
+window.addEventListener('resize', function() {
+    animation.invalidate();
+});
 
 // window.addEventListener("resize", initSmoothScroll);
 
