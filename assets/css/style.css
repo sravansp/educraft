@@ -577,7 +577,7 @@ body.scrolled .navbar-toggle.active {
 }
 
 .navbar-toggle.active .line {
-     stroke: #000;
+     stroke: #fff;
 }
 
 .navbar-toggle.active .line.top {
