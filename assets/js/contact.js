@@ -12,36 +12,36 @@ function validateForm() {
 
     // Simple validation for each field
     if (name.trim() === "") {
-        displayErrorMessage("nameError", "Please enter your name");
+        displayErrorMessage("nameError", "Please enter your Name");
         isValid = false;
     }
 
     if (email.trim() === "") {
-        displayErrorMessage("emailError", "Please enter your email address");
+        displayErrorMessage("emailError", "Please enter your Email");
         isValid = false;
     } else {
         // Email validation using a regular expression
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            displayErrorMessage("emailError", "Please enter a valid email address");
+            displayErrorMessage("emailError", "Please enter a valid Email");
             isValid = false;
         }
     }
 
     if (phone.trim() === "") {
-        displayErrorMessage("phoneError", "Please enter your phone number");
+        displayErrorMessage("phoneError", "Please enter your Phone Number");
         isValid = false;
     } else {
         // Phone number validation (you can customize based on your requirements)
         var phoneRegex = /^\d{10}$/; // Assumes a 10-digit phone number
         if (!phoneRegex.test(phone)) {
-            displayErrorMessage("phoneError", "Please enter a valid phone number");
+            displayErrorMessage("phoneError", "Please enter a valid Phone Number");
             isValid = false;
         }
     }
 
     if (message.trim() === "") {
-        displayErrorMessage("messageError", "Please enter your message");
+        displayErrorMessage("messageError", "Please enter your Message");
         isValid = false;
     }
 
