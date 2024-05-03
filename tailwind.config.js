@@ -18,7 +18,7 @@ module.exports = {
         // // => @media (min-width: 374px) { ... }
         'xs': '500px',
         // // => @media (min-width: 500px) { ... }
-        '6xl': '2444px',
+        '6xl': '2400px',
       },
       colors: {
         primary: '#f36f37',
