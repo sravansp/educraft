@@ -2066,6 +2066,10 @@ video {
   line-height: 1.25;
 }
 
+.\!leading-\[60px\] {
+  line-height: 60px !important;
+}
+
 .text-\[\#323232\] {
   --tw-text-opacity: 1;
   color: rgb(50 50 50 / var(--tw-text-opacity));
