@@ -159,13 +159,17 @@ function initScrolltriggerNav() {
 
 // Navbar button
 function initbutton() {
-     document.querySelector(".button").onmousemove = function (e) {
-          var x = e.pageX - e.target.offsetLeft;
-          var y = e.pageY - e.target.offsetTop;
+          if (document.querySelector(".button")) {
+               document.querySelector(".button").onmousemove = function (e) {
+                    var x = e.pageX - e.target.offsetLeft;
+                    var y = e.pageY - e.target.offsetTop;
 
-          e.target.style.setProperty("--x", x + "px");
-          e.target.style.setProperty("--y", y + "px");
-     };
+                    e.target.style.setProperty("--x", x + "px");
+                    e.target.style.setProperty("--y", y + "px");
+               };
+          }
+
+   
      var th1 = gsap.timeline({
           repeat: -1,
      });
