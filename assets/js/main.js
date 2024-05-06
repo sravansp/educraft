@@ -327,7 +327,7 @@ function initSmoothScroll() {
     locoScroll.on("scroll", function(scroll) {
         const currentScrollY = scroll.scroll.y;
 
-        if (currentScrollY > lastScrollY && currentScrollY > navHeight) {
+        if (currentScrollY > lastScrollY && currentScrollY > 25) {
             // Scrolling down
             navbar.classList.add("navbar--scrolled");
             navbar.classList.add("navbar--up");
