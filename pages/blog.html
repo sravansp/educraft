@@ -11,7 +11,8 @@
         content="Unlock your potential with EduCraft! We offer cutting-edge programs in coding, robotics, and specialized coaching for competitive exam success. Prepare for the future and achieve your academic goals with our expert faculty and comprehensive study materials!" />
 
     <!-- TAILWIND CSS  -->
-    <link href="../dist/output.css" rel="stylesheet" />
+    <!-- <link href="../dist/output.css" rel="stylesheet" /> -->
+    <link href="../src/output.css" rel="stylesheet">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="../assets/pluggins/owlcarousel/dist/assets/owl.carousel.min.css" />
     <link href="../assets/pluggins/locomotive/locomotive-scroll.css" rel="stylesheet" />
@@ -63,7 +64,7 @@
         </nav>
         <div class="lg:hidden">
             <div
-                class="flex justify-between items-center h-[56px] px-5 md:px-10 py-10 bg-transparent fixed z-50 w-full">
+                class="flex justify-between items-center h-[56px] px-5 md:px-10 py-10 bg-white/20 backdrop-blur-xl fixed z-50 w-full">
                 <div class="pl-2 logo_animation logo_mobile">
                     <div class="relative z-40 flex items-center justify-center gap-2 header_logo">
                         <a href="./index.html"> <img class="w-[100px]" src="../assets/images/brand/logo-orange.svg"
@@ -265,7 +266,7 @@
                                     <div class="flex justify-between">
                                         <div class="flex gap-2">
                                             <i class="text-green-400 ri-checkbox-blank-circle-fill"></i>
-                                            <span id="readmin">7 min read</span>
+                                            <span id="readmin">5 min read</span>
                                         </div>
                                         <div class="flex gap-3">
                                             <i class="text-gray-400 ri-eye-fill"></i>
@@ -300,13 +301,13 @@
                                         </div>
                                         <div class="flex gap-3">
                                             <i class="text-gray-400 ri-eye-fill"></i>
-                                            <span id="viewscount">12K Viewers</span>
+                                            <span id="viewscount">10K Viewers</span>
                                         </div>
                                     </div>
                                     <div class="flex card-title">
                                         <h1 class="text-2xl font-bold" id="card-title-header">9 Ways AI is Revolutionizing the Healthcare Industry! </h1>
                                     </div>
-                                    <div class="flex card-para">
+                                    <div class="flex card-para pt-0 lg:pt-8">
                                         <p class="text-base text-opacity-50" id="card-para">Artificial Intelligence (AI) is revolutionizing the healthcare industry, with emerging applications that have the potential ...</p>
                                     </div>
                                     <div class="card-button">
@@ -327,11 +328,11 @@
                                     <div class="flex justify-between">
                                         <div class="flex gap-2">
                                             <i class="text-green-400 ri-checkbox-blank-circle-fill"></i>
-                                            <span id="readmin">7 min read</span>
+                                            <span id="readmin">12 min read</span>
                                         </div>
                                         <div class="flex gap-3">
                                             <i class="text-gray-400 ri-eye-fill"></i>
-                                            <span id="viewscount">12K Viewers</span>
+                                            <span id="viewscount">8K Viewers</span>
                                         </div>
                                     </div>
                                     <div class="flex card-title">
@@ -472,65 +473,51 @@
             <div class="lg:h-screen 2xl:h-full footer">
                 <div class="flex flex-col h-full max-w-screen-xl pt-12 m-auto text-white md:px-5">
                     <div class="footer_top lg:h-[44%] p-6 md:px-14 relative">
-                        <div class="relative z-10 w-full h-full p-4 overflow-hidden md:p-8 glass_container">
-                            <div
-                                class="relative flex flex-col items-center w-full h-full gap-10 lg:justify-between lg:flex-row">
-                                <div class="flex flex-col gap-3 lg:w-1/2">
-                                    <h1 class="text-3xl sm:text-[40px] text-center lg:text-start font-bold">
-                                        Subscribe
-                                    </h1>
-                                    <p
-                                        class="text-base font-normal text-center opacity-50 lg:text-start lg:opacity-100">
-                                        All updates you can get it here with just one click of the subscribe so you can
-                                        stay up to date
-                                    </p>
-                                </div>
+                        <div class="relative z-10 w-full h-full lg:h-[200px] p-4 md:p-8 glass_container ">
+                             <div
+                                  class="relative flex flex-col items-center h-full gap-10 lg:justify-between lg:flex-row">
+                                  <div class="flex flex-col gap-3 lg:w-1/2">
+                                       <h1
+                                            class="text-3xl sm:text-[40px] text-center lg:text-start font-bold mt-14 lg:mt-0">
+                                            Get in Touch</h1>
+                                       <p
+                                            class="text-base font-normal text-center opacity-50 lg:text-start lg:opacity-100">
+                                            Let us know how we can ignite your child's creativity, critical
+                                            thinking and problem-solving skills.</p>
+                                  </div>
+                                  <div class="flex items-end h-full">
 
-                                <div class="flex items-center w-full h-full lg:w-1/2">
-                                    <form action="" class="w-full">
-                                        <div class="flex flex-col gap-4">
-                                            <div
-                                                class="relative flex flex-col items-center justify-between gap-4 lg:flex-row">
-                                                <div
-                                                    class="flex items-center w-full px-6 bg-white rounded-full input-subscribe bg-opacity-10 h-11">
-                                                    <input class="w-full bg-transparent border-none outline-none"
-                                                        type="text" name="email" placeholder="Enter your email"
-                                                        id="email" />
-                                                </div>
-
-                                                <button id="subscribe" type="button"
-                                                    class="flex items-center justify-center gap-3 text-base btn_md primary_bg">
-                                                    Subscribe
-                                                </button>
-                                            </div>
-                                            <p class="hidden text-base text-center lg:text-start subscribe-text">
-                                                <span class="text-primary">Thank you !</span> You will
-                                                receive the latest content delivered straight to your
-                                                inbox.
-                                            </p>
-                                        </div>
-                                    </form>
-                                </div>
-
-                            </div>
+                                       <a class="flex items-center justify-center gap-3 px-6 py-3 bg-white bg-opacity-10 rounded-[56px] hover:primary_bg hover:transition hover:duration-300"
+                                            href="./contact.html">
+                                            <span class="text-base font-bold ">Contact</span>
+                                            <span
+                                                 class="flex items-center justify-center bg-white rounded-full bg-opacity-20 w-7 h-7">
+                                                 <i class="ri-phone-line"></i></span>
+                                       </a>
+                                  </div>
+                                  <a href="./contact.html"
+                                       class="absolute top-0 right-0 flex items-center justify-center w-12 h-12 bg-white hover:primary_bg hover:transition hover:duration-300 bg-opacity-10 rounded-xl">
+                                       <i class="text-2xl ri-arrow-right-up-line"></i>
+                                  </a>
+                             </div>
                         </div>
                         <div class="absolute top-0 left-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="103" viewBox="0 0 100 103"
-                                fill="none">
-                                <path
-                                    d="M0.218115 17.77C0.0958221 11.9234 4.56954 7.00307 10.4014 6.57016L87.2423 0.866202C93.5671 0.396711 98.9775 5.35861 99.0558 11.7003L99.8829 78.7149C99.9502 84.1651 96.0161 88.8426 90.635 89.7104L14.5061 101.987C7.91029 103.05 1.89704 98.0367 1.75732 91.3571L0.218115 17.77Z"
-                                    fill="url(#paint0_linear_786_2753)" />
-                                <defs>
-                                    <linearGradient id="paint0_linear_786_2753" x1="107.143" y1="86.784" x2="-0.0452193"
-                                        y2="4.48317" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#FFE986" />
-                                        <stop offset="0.5455" stop-color="#FF9396" />
-                                        <stop offset="1" stop-color="#962EFF" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
+                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="103"
+                                  viewBox="0 0 100 103" fill="none">
+                                  <path d="M0.218115 17.77C0.0958221 11.9234 4.56954 7.00307 10.4014 6.57016L87.2423 0.866202C93.5671 0.396711 98.9775 5.35861 99.0558 11.7003L99.8829 78.7149C99.9502 84.1651 96.0161 88.8426 90.635 89.7104L14.5061 101.987C7.91029 103.05 1.89704 98.0367 1.75732 91.3571L0.218115 17.77Z"
+                                       fill="url(#paint0_linear_786_2753)" />
+                                  <defs>
+                                       <linearGradient id="paint0_linear_786_2753" x1="107.143" y1="86.784"
+                                            x2="-0.0452193" y2="4.48317" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#FFE986" />
+                                            <stop offset="0.5455" stop-color="#FF9396" />
+                                            <stop offset="1" stop-color="#962EFF" />
+                                       </linearGradient>
+                                  </defs>
+                             </svg>
                         </div>
-                    </div>
+
+                   </div>
                     <div class="footer_middle lg:h-[44%] h-auto">
                         <div
                             class="grid gap-6 grid-cols-[repeat(auto-fit,_minmax(210px,_1fr))] text-base font-normal p-6 sm:px-20 lg:px-10">
