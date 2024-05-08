@@ -156,15 +156,17 @@
                       <div class="flex flex-col gap-5 text-black">
                           <div class="animate-grids">
                               <label class="block mb-2 text-base font-bold" for="Name">Name<span class="text-primary">*</span></label>
-                              <input class="w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
+                              <input class="prevent-emoji w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
                                   id="Name" type="text" name="Name" placeholder="Enter your Name" required />
                               <div id="nameError" class="error-message"></div>
+                              <div class="error-has-emoji"></div>
                           </div>
                           <div class="animate-grids">
                               <label class="block mb-2 text-base font-bold" for="Email">Email<span class="text-primary">*</span></label>
-                              <input class="w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
+                              <input class="prevent-emoji w-full px-3 py-2 leading-tight border-[1.5px] focus:border-primary outline-none border-opacity-20 border-black rounded-md"
                                   id="Email" type="text" name="Email" placeholder="Enter your Email" required />
                               <div id="emailError" class="error-message"></div>
+                              <!-- <div class="error-has-emoji"></div> -->
                           </div>
                           <div class="animate-grids">
                               <label class="block mb-2 text-base font-bold" for="phone">Phone Number<span class="text-primary">*</span></label>
@@ -436,6 +438,57 @@
     })();
   </script>
   <script src="../assets/js/popup.js"></script>
+  <script>
+    jQuery(document).ready(function($) {
+  // Regex taken from https://www.regextester.com/106421
+  var RE_EMOJI = /(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g;
+  var $doc = $(document);
+  var $input = $('.prevent-emoji');
+  var $error = $('.error-has-emoji');
+  var cmdDown = false;
+  
+  $doc.on('keydown', function (event) {
+    // Mac Command
+    if (event.which === 91 || event.which === 92) {
+      cmdDown = true;
+    }
+  });
+  
+  $doc.on('keyup', function (event) {
+    // Mac Command
+    if (event.which === 91 || event.which === 92) {
+      cmdDown = false;
+    }
+  });
+  
+  $doc.on('keydown', '.prevent-emoji', function (event) {
+    if (event.which === 32 && event.ctrlKey && cmdDown) {
+      event.preventDefault();
+      $error.text("🙅‍ You cannot use the emoji keyboard here!");
+    }
+  });
+  
+  $doc.on('keyup', '.prevent-emoji', function (event) {
+    var $elem = $(this);
+    var content = $elem.val();
+    if (RE_EMOJI.test(content)) {
+      $elem.val(content.replace(RE_EMOJI, ''));
+      $error.text("🙅‍ Emoji characters are not supported!");
+    }
+  });
+  
+  $doc.on('change', '.prevent-emoji', function (event) {
+    var $elem = $(this);
+    var content = $elem.val();
+    if (RE_EMOJI.test(content)) {
+      $elem.val(content.replace(RE_EMOJI, ''));
+      $error.text("🙅‍ Emoji characters are not supported!");
+    } else {
+      $error.text("");
+    }
+  });
+});
+  </script>
 </body>
 
 </html>

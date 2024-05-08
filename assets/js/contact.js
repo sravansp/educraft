@@ -87,6 +87,8 @@ function sendEmail() {
 
     // Return false to prevent the form from submitting (handled by onsubmit attribute)
     return false;
+
+    
 }
 
 function openPopup() {
